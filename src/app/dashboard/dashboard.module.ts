@@ -29,6 +29,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ComponentsModule,
+    PlotlyModule,
     RouterModule.forChild(routes),
     NgCircleProgressModule.forRoot({
       // set defaults here

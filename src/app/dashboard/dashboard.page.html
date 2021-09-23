@@ -2,16 +2,14 @@
   <ion-toolbar>
     <div class="toolbar-bg">
       <ion-title class="ion-no-padding">
-        <img src="../../assets/images/mia-wht.png" width="200" alt="">
+        <img src="../../assets/images/mia-wht.png" width="200" alt="" />
       </ion-title>
 
       <ion-buttons slot="end" class="ion-text-right">
-        <app-user-bar>
-        </app-user-bar>
+        <app-user-bar> </app-user-bar>
       </ion-buttons>
     </div>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content>
@@ -30,124 +28,209 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-      <ion-slides>
-        <ion-slide>
-          <ion-card style="margin-left: 0px;" class="card-stats">
-            <ion-grid class="ion-no-padding"> 
+    <ion-slides>
+      <ion-slide>
+        <ion-card style="margin-left: 0px" class="card-stats">
+          <ion-grid class="ion-no-padding">
             <ion-row class="ion-no-padding">
-              <ion-col class="ion-no-padding" style="padding-top: 16px;" size-md="3" size-sm="3" size-lg="3" size-xs="3">
-             
-                  <ion-label class="ion-text-center" color="primary">
-                    <h1><strong>2,108{{totalpati}}</strong></h1>
-                    <p style="color: #9F9C9C !important; font-size: 12px;">Pacientes</p>
-                  </ion-label>
-             
+              <ion-col
+                class="ion-no-padding"
+                style="padding-top: 16px"
+                size-md="3"
+                size-sm="3"
+                size-lg="3"
+                size-xs="3"
+              >
+                <ion-label class="ion-text-center" color="primary">
+                  <h1><strong>2,108{{totalpati}}</strong></h1>
+                  <p style="color: #9f9c9c !important; font-size: 12px">
+                    Pacientes
+                  </p>
+                </ion-label>
               </ion-col>
 
-              <ion-col class="ion-no-padding" size-md="2" size-sm="2" size-lg="2" size-xs="2" style="text-align: center;">
-                <circle-progress percent="{{geralpoint}}" [clockwise]=false [showTitle]=true [showSubtitle]=false
-                  [space]=-10 [radius]="28" [outerStrokeWidth]="10" [innerStrokeWidth]="10"
-                  [outerStrokeColor]="'#2694A3'" [titleColor]="'#2694A3'" [innerStrokeColor]="'#e7e8ea'"
-                  [animation]="true" [animationDuration]="300" [showUnits]=false></circle-progress>
+              <ion-col
+                class="ion-no-padding"
+                size-md="2"
+                size-sm="2"
+                size-lg="2"
+                size-xs="2"
+                style="text-align: center"
+              >
+                <circle-progress
+                  percent="{{geralpoint}}"
+                  [clockwise]="false"
+                  [showTitle]="true"
+                  [showSubtitle]="false"
+                  [space]="-10"
+                  [radius]="28"
+                  [outerStrokeWidth]="10"
+                  [innerStrokeWidth]="10"
+                  [outerStrokeColor]="'#2694A3'"
+                  [titleColor]="'#2694A3'"
+                  [innerStrokeColor]="'#e7e8ea'"
+                  [animation]="true"
+                  [animationDuration]="300"
+                  [showUnits]="false"
+                ></circle-progress>
               </ion-col>
 
-              <ion-col  class="ion-no-padding" size-md="2.5" size-sm="2.5" size-lg="2.5" size-xs="2.5">
-                <h4 *ngIf="geralpoint" style="color: #2694A3" class="h4-stats" ><strong>{{geralpoint}} MEUS <br>
-                    PACIENTES</strong></h4>
+              <ion-col
+                class="ion-no-padding"
+                size-md="2.5"
+                size-sm="2.5"
+                size-lg="2.5"
+                size-xs="2.5"
+              >
+                <h4 *ngIf="geralpoint" style="color: #2694a3" class="h4-stats">
+                  <strong
+                    >{{geralpoint}} MEUS <br />
+                    PACIENTES</strong
+                  >
+                </h4>
               </ion-col>
 
-              <ion-col class="ion-no-padding" size-md="2" size-sm="2" size-lg="2" size-xs="2" style="text-align: center;">
-                <circle-progress percent="{{globalpoint}}" [clockwise]=false [showTitle]=true [showSubtitle]=false
-                  [space]=-10 [radius]="28" [outerStrokeWidth]="10" [innerStrokeWidth]="10"
-                  [outerStrokeColor]="'#EF9C92'" [titleColor]="'#EF9C92'" [innerStrokeColor]="'#e7e8ea'"
-                  [animation]="true" [animationDuration]="300" [showUnits]=false></circle-progress>
+              <ion-col
+                class="ion-no-padding"
+                size-md="2"
+                size-sm="2"
+                size-lg="2"
+                size-xs="2"
+                style="text-align: center"
+              >
+                <circle-progress
+                  percent="{{globalpoint}}"
+                  [clockwise]="false"
+                  [showTitle]="true"
+                  [showSubtitle]="false"
+                  [space]="-10"
+                  [radius]="28"
+                  [outerStrokeWidth]="10"
+                  [innerStrokeWidth]="10"
+                  [outerStrokeColor]="'#EF9C92'"
+                  [titleColor]="'#EF9C92'"
+                  [innerStrokeColor]="'#e7e8ea'"
+                  [animation]="true"
+                  [animationDuration]="300"
+                  [showUnits]="false"
+                ></circle-progress>
               </ion-col>
 
-              <ion-col class="ion-no-padding" size-md="2.5" size-sm="2.5" size-lg="2.5" size-xs="2.5">
-                <h4 style="color: #EF9C92" class="h4-stats"><strong>POPULAÇÃO <br> GLOBAL</strong>
+              <ion-col
+                class="ion-no-padding"
+                size-md="2.5"
+                size-sm="2.5"
+                size-lg="2.5"
+                size-xs="2.5"
+              >
+                <h4 style="color: #ef9c92" class="h4-stats">
+                  <strong
+                    >POPULAÇÃO <br />
+                    GLOBAL</strong
+                  >
                 </h4>
               </ion-col>
             </ion-row>
           </ion-grid>
-          </ion-card>
-        </ion-slide>
+        </ion-card>
+      </ion-slide>
 
-        <ion-slide>
-          <ion-card style="margin-right: 0px;" class="card-stats">
-            <ion-row>
-              <ion-col size="3">
-                <ion-item lines="none" style="border-right: 1px solid #999999;">
-                  <ion-label class="ion-text-center" color="secondary">
-                    <ion-icon class="icon-stats" name="sad"></ion-icon>
-                    <h2>54 {{instaveis}}</h2>
-                    <p class="p-stats">INSTÁVEIS</p>
-                  </ion-label>
-                </ion-item>
-              </ion-col>
+      <ion-slide>
+        <ion-card style="margin-right: 0px" class="card-stats">
+          <ion-row>
+            <ion-col size="3">
+              <ion-item lines="none" style="border-right: 1px solid #999999">
+                <ion-label class="ion-text-center" color="secondary">
+                  <ion-icon class="icon-stats" name="sad"></ion-icon>
+                  <h2>54 {{instaveis}}</h2>
+                  <p class="p-stats">INSTÁVEIS</p>
+                </ion-label>
+              </ion-item>
+            </ion-col>
 
-              <ion-col size="3">
-                <ion-item lines="none" style="border-right: 1px solid #999999;">
-                  <ion-label class="ion-text-center" color="secondary">
-                    <ion-icon class="icon-stats" name="phone-portrait"></ion-icon>
-                    <h2>321 {{inativos}}</h2>
-                    <p class="p-stats">INATIVOS</p>
-                  </ion-label>
-                </ion-item>
-              </ion-col>
+            <ion-col size="3">
+              <ion-item lines="none" style="border-right: 1px solid #999999">
+                <ion-label class="ion-text-center" color="secondary">
+                  <ion-icon class="icon-stats" name="phone-portrait"></ion-icon>
+                  <h2>321 {{inativos}}</h2>
+                  <p class="p-stats">INATIVOS</p>
+                </ion-label>
+              </ion-item>
+            </ion-col>
 
-              <ion-col size="3">
-                <ion-item lines="none" style="border-right: 1px solid #999999;">
-                  <ion-label class="ion-text-center" color="primary">
-                    <ion-icon class="icon-stats" name="logo-rss"></ion-icon>
-                    <h2>{{bioconectados || 0}}</h2>
-                    <p class="p-stats">BIOCONECTADOS</p>
-                  </ion-label>
-                </ion-item>
-              </ion-col>
+            <ion-col size="3">
+              <ion-item lines="none" style="border-right: 1px solid #999999">
+                <ion-label class="ion-text-center" color="primary">
+                  <ion-icon class="icon-stats" name="logo-rss"></ion-icon>
+                  <h2>{{bioconectados || 0}}</h2>
+                  <p class="p-stats">BIOCONECTADOS</p>
+                </ion-label>
+              </ion-item>
+            </ion-col>
 
-              <ion-col size="3">
-                <ion-item lines="none">
-                  <ion-label class="ion-text-center" color="primary">
-                    <ion-icon class="icon-stats" name="happy"></ion-icon>
-                    <h2>1.200{{estaveis}}</h2>
-                    <p class="p-stats">ESTÁVEIS</p>
-                  </ion-label>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-          </ion-card>
-        </ion-slide>
-      </ion-slides>
-      <ion-grid>
+            <ion-col size="3">
+              <ion-item lines="none">
+                <ion-label class="ion-text-center" color="primary">
+                  <ion-icon class="icon-stats" name="happy"></ion-icon>
+                  <h2>1.200{{estaveis}}</h2>
+                  <p class="p-stats">ESTÁVEIS</p>
+                </ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+    <ion-grid>
       <ion-row>
         <ion-col size="1">
           <div class="arrow-circle">
-            <img (click)="prevSlide()" class="arrow-img" src="../../assets/images/back-arrow.png">
+            <img
+              (click)="prevSlide()"
+              class="arrow-img"
+              src="../../assets/images/back-arrow.png"
+            />
           </div>
         </ion-col>
 
         <ion-col size="10">
           <div [hidden]="slideLength.length == 0">
-            <ion-slides no-padding [options]="slideOpts" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)"
-              (ionSlideDidChange)="slideChanged(slider)">
+            <ion-slides
+              no-padding
+              [options]="slideOpts"
+              #slider
+              (ionSlidesDidLoad)="slidesDidLoad(slider)"
+              (ionSlideDidChange)="slideChanged(slider)"
+            >
               <ion-slide>
                 <ion-card class="slide-card">
                   <ion-row>
                     <ion-col size="3">
-                      <img class="slide-img" src="../../assets/images/person.png">
+                      <img
+                        class="slide-img"
+                        src="../../assets/images/person.png"
+                      />
                     </ion-col>
 
                     <ion-col size="9">
                       <h4 class="h4-slide">
-                        <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong>
+                        <strong
+                          >ID: {{'*******************'+(slide_Uid |
+                          slice:20:24)}}</strong
+                        >
                       </h4>
                       <p class="p-slide-title">Historic 360</p>
-                      <p class="p-slide-subtitle">Ultima analise as {{slideDate}}, hoje</p>
+                      <p class="p-slide-subtitle">
+                        Ultima analise as {{slideDate}}, hoje
+                      </p>
                     </ion-col>
                   </ion-row>
 
                   <ion-row>
-                    <ion-col size="12" style="background: #F78888 0% 0% no-repeat padding-box;">
+                    <ion-col
+                      size="12"
+                      style="background: #f78888 0% 0% no-repeat padding-box"
+                    >
                       <p class="p-slide-bottom">Paciente com:</p>
                       <p class="p-slide-bottom">{{slidePatology}}</p>
                     </ion-col>
@@ -155,24 +238,47 @@
 
                   <ion-row>
                     <ion-col size="12">
-                      <img (click)="get_emot()" class="mind-img" src="../../assets/images/mind-icon.png">
+                      <!--  <img (click)="get_emot()" class="mind-img" src="../../assets/images/mind-icon.png">
                       <img (click)="get_corpo()" class="body-img" src="../../assets/images/body-icon.png">
                       <img (click)="get_mente()" class="emot-img" src="../../assets/images/emot-icon.png">
-                      <canvas id="radarChart" style="margin-top: 45px" width="300" height="320"
-                        responsive="true"></canvas>
+                   <canvas id="radarChart" style="margin-top: 45px" width="300" height="320"
+                        responsive="true"></canvas>-->
+                      <div style="display: flex;">
+                        <plotly-plot class="plotly-chart"
+                          [data]="graph.data"
+                          [layout]="graph.layout"
+                          [useResizeHandler]="true"
+                          [style]="{position: 'relative'}"
+                        >
+                        </plotly-plot>
+                      </div>
                     </ion-col>
                   </ion-row>
 
-                  <ion-row style="margin-top: 11%;">
-                    <ion-col size="6" style="padding: 0px;">
-                      <ion-button (click)="openProntuario('body')" class="slide-btn" expand="block" color="secondary">
-                        <ion-icon style="color: #00000042;" slot="start" name="heart"></ion-icon>
+                  <ion-row style="margin-top: 5%;">
+                    <ion-col size="6" style="padding: 0px">
+                      <ion-button
+                        (click)="openProntuario('body')"
+                        class="slide-btn"
+                        expand="block"
+                        color="secondary"
+                      >
+                        <ion-icon
+                          style="color: #00000042"
+                          slot="start"
+                          name="heart"
+                        ></ion-icon>
                         <p>PRONTUARIO</p>
                       </ion-button>
                     </ion-col>
 
-                    <ion-col size="6" style="padding: 0px;">
-                      <ion-button (click)="nextSlide()" class="slide-btn" expand="block" color="primary">
+                    <ion-col size="6" style="padding: 0px">
+                      <ion-button
+                        (click)="nextSlide()"
+                        class="slide-btn"
+                        expand="block"
+                        color="primary"
+                      >
                         <ion-icon slot="start" name="checkmark"></ion-icon>
                         OK
                       </ion-button>
@@ -184,13 +290,19 @@
           </div>
 
           <div *ngIf="slideLength.length == 0">
-            <h2 style="text-align: center; margin-top: 100px;">Fim das pendências de hoje!</h2>
+            <h2 style="text-align: center; margin-top: 100px">
+              Fim das pendências de hoje!
+            </h2>
           </div>
         </ion-col>
 
         <ion-col size="1">
           <div class="arrow-circle">
-            <img (click)="nextSlide()" class="arrow-img" src="../../assets/images/forward-arrow.png">
+            <img
+              (click)="nextSlide()"
+              class="arrow-img"
+              src="../../assets/images/forward-arrow.png"
+            />
           </div>
         </ion-col>
       </ion-row>
@@ -198,7 +310,7 @@
 
     <!-- Chart Maps -->
     <ion-card class="ion-no-padding ion-no-margin card-style">
-      <ion-card-header style="padding-bottom: 0px;">
+      <ion-card-header style="padding-bottom: 0px">
         <ion-grid>
           <ion-row>
             <ion-col>
@@ -206,33 +318,54 @@
                 <ion-label color="primary" class="ion-text-wrap">
                   <h2><strong>CONTROLE EPIDÊMIOLÓGICO</strong></h2>
                   <p>Indicadores e mapa de calor</p>
-                  <p style="color: #3C3C3C;">DE 10/03/2020 á 20/03/2020</p>
+                  <p style="color: #3c3c3c">DE 10/03/2020 á 20/03/2020</p>
                 </ion-label>
               </ion-item>
             </ion-col>
 
             <ion-col>
               <ion-item lines="none">
-                <ion-icon (click)="prevYear()" slot='start' name="ios-arrow-back"></ion-icon>
+                <ion-icon
+                  (click)="prevYear()"
+                  slot="start"
+                  name="ios-arrow-back"
+                ></ion-icon>
                 <ion-label class="ion-text-center">
                   <p>Selecione o ano</p>
                   <h2><strong>{{months[monthIndex]}} {{year}}</strong></h2>
-                  <ion-button size="small" shape="round" mode="ios">Mensal</ion-button>
-                  <ion-button size="small" shape="round" mode="ios" fill="outline">Anual</ion-button>
+                  <ion-button size="small" shape="round" mode="ios"
+                    >Mensal</ion-button
+                  >
+                  <ion-button
+                    size="small"
+                    shape="round"
+                    mode="ios"
+                    fill="outline"
+                    >Anual</ion-button
+                  >
                 </ion-label>
-                <ion-icon (click)="nextYear()" slot='end' name="ios-arrow-forward"></ion-icon>
+                <ion-icon
+                  (click)="nextYear()"
+                  slot="end"
+                  name="ios-arrow-forward"
+                ></ion-icon>
               </ion-item>
             </ion-col>
 
             <ion-col>
               <ion-item lines="none">
                 <ion-label class="ion-text-center">
-                  <p style="padding-left: 60%;">Selecione a patologia</p>
+                  <p style="padding-left: 60%">Selecione a patologia</p>
                 </ion-label>
               </ion-item>
 
               <div>
-                <ion-select placeholder="Select One" value="covid" ok-text="Okay" cancel-text="Dismiss">
+                <ion-select
+                  placeholder="Select One"
+                  value="covid"
+                  ok-text="Okay"
+                  cancel-text="Dismiss"
+                >
                   <ion-select-option value="covid">COVID 19</ion-select-option>
                   <ion-select-option value="hiv">HIV</ion-select-option>
                 </ion-select>
@@ -334,7 +467,7 @@
         </ion-grid>
       </ion-card-header>
 
-      <ion-card-content style="padding: 0;">
+      <ion-card-content style="padding: 0">
         <!-- <div #map id="map"></div> -->
       </ion-card-content>
     </ion-card>
@@ -349,22 +482,38 @@
                 <ion-label color="primary" class="ion-text-wrap">
                   <h2><strong>HISTÓRICO GERAL</strong></h2>
                   <p>Linha do tempo de evolução dos meus pacientes</p>
-                  <p style="color: #3C3C3C;">DE 10/03/2020 á 20/03/2020</p>
+                  <p style="color: #3c3c3c">DE 10/03/2020 á 20/03/2020</p>
                 </ion-label>
               </ion-item>
             </ion-col>
 
             <ion-col>
               <ion-item lines="none">
-                <ion-icon (click)="prevYear()" slot='start' name="ios-arrow-back"></ion-icon>
+                <ion-icon
+                  (click)="prevYear()"
+                  slot="start"
+                  name="ios-arrow-back"
+                ></ion-icon>
                 <ion-label class="ion-text-center">
                   <p>Selecione o ano</p>
                   <h2><strong>{{months[monthIndex]}} {{year}}</strong></h2>
-                  <ion-button size="small" shape="round" mode="ios">Mensal</ion-button>
-                  <ion-button (click)="loadHistoricoGeral()" size="small" shape="round" mode="ios" fill="outline">Anual
+                  <ion-button size="small" shape="round" mode="ios"
+                    >Mensal</ion-button
+                  >
+                  <ion-button
+                    (click)="loadHistoricoGeral()"
+                    size="small"
+                    shape="round"
+                    mode="ios"
+                    fill="outline"
+                    >Anual
                   </ion-button>
                 </ion-label>
-                <ion-icon (click)="nextYear()" slot='end' name="ios-arrow-forward"></ion-icon>
+                <ion-icon
+                  (click)="nextYear()"
+                  slot="end"
+                  name="ios-arrow-forward"
+                ></ion-icon>
               </ion-item>
             </ion-col>
             <ion-col></ion-col>
@@ -385,23 +534,45 @@
               <ion-item lines="none">
                 <ion-label color="primary" class="ion-text-wrap">
                   <h2><strong>FATORES DE RISCO</strong></h2>
-                  <p>Fatores que impactam na qualidade de vida dos meus pacientes</p>
-                  <p style="color: #3C3C3C;">De 10/03/2020 á 20/03/2020</p>
+                  <p>
+                    Fatores que impactam na qualidade de vida dos meus pacientes
+                  </p>
+                  <p style="color: #3c3c3c">De 10/03/2020 á 20/03/2020</p>
                 </ion-label>
               </ion-item>
             </ion-col>
 
             <ion-col>
               <ion-item lines="none">
-                <ion-icon (click)="prevYear()" slot='start' name="ios-arrow-back"></ion-icon>
+                <ion-icon
+                  (click)="prevYear()"
+                  slot="start"
+                  name="ios-arrow-back"
+                ></ion-icon>
                 <ion-label class="ion-text-center">
                   <p>Selecione o mês</p>
                   <h2><strong>{{months[monthIndex]}} {{year}}</strong></h2>
-                  <ion-button (click)="mensal_RiskFactor()" size="small" shape="round" mode="ios">Mensal</ion-button>
-                  <ion-button (click)="loadRiskFactor()" size="small" shape="round" mode="ios" fill="outline">Anual
+                  <ion-button
+                    (click)="mensal_RiskFactor()"
+                    size="small"
+                    shape="round"
+                    mode="ios"
+                    >Mensal</ion-button
+                  >
+                  <ion-button
+                    (click)="loadRiskFactor()"
+                    size="small"
+                    shape="round"
+                    mode="ios"
+                    fill="outline"
+                    >Anual
                   </ion-button>
                 </ion-label>
-                <ion-icon (click)="nextYear()" slot='end' name="ios-arrow-forward"></ion-icon>
+                <ion-icon
+                  (click)="nextYear()"
+                  slot="end"
+                  name="ios-arrow-forward"
+                ></ion-icon>
               </ion-item>
             </ion-col>
 
@@ -410,13 +581,12 @@
         </ion-grid>
       </ion-card-header>
       <ion-card-content>
-
         <ion-grid>
           <ion-row class="ion-align-items-center">
             <ion-col size="1">
               <ion-item lines="none">
                 <ion-avatar>
-                  <img src="../../assets/images/img2.jpeg" alt="">
+                  <img src="../../assets/images/img2.jpeg" alt="" />
                 </ion-avatar>
               </ion-item>
             </ion-col>
@@ -434,7 +604,7 @@
             <ion-col size="1">
               <ion-item lines="none">
                 <ion-avatar>
-                  <img src="../../assets/images/img5.jpeg" alt="">
+                  <img src="../../assets/images/img5.jpeg" alt="" />
                 </ion-avatar>
               </ion-item>
             </ion-col>
@@ -451,7 +621,7 @@
             <ion-col size="1">
               <ion-item lines="none">
                 <ion-avatar>
-                  <img src="../../assets/images/img1.jpeg" alt="">
+                  <img src="../../assets/images/img1.jpeg" alt="" />
                 </ion-avatar>
               </ion-item>
             </ion-col>
@@ -468,7 +638,7 @@
             <ion-col size="1">
               <ion-item lines="none">
                 <ion-avatar>
-                  <img src="../../assets/images/img3.jpeg" alt="">
+                  <img src="../../assets/images/img3.jpeg" alt="" />
                 </ion-avatar>
               </ion-item>
             </ion-col>
@@ -485,7 +655,7 @@
             <ion-col size="1">
               <ion-item lines="none">
                 <ion-avatar>
-                  <img src="../../assets/images/img4.jpeg" alt="">
+                  <img src="../../assets/images/img4.jpeg" alt="" />
                 </ion-avatar>
               </ion-item>
             </ion-col>
@@ -498,7 +668,6 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-
       </ion-card-content>
     </ion-card>
 
@@ -512,22 +681,42 @@
                 <ion-label color="primary" class="ion-text-wrap">
                   <h2><strong>AUDIÊNCIA DOS MEUS PACIENTES</strong></h2>
                   <p>Audiência segmentada por gênero</p>
-                  <p style="color: #3C3C3C;">DE 10/03/2020 á 20/03/2020</p>
+                  <p style="color: #3c3c3c">DE 10/03/2020 á 20/03/2020</p>
                 </ion-label>
               </ion-item>
             </ion-col>
 
             <ion-col>
               <ion-item lines="none">
-                <ion-icon (click)="prevYear()" slot='start' name="ios-arrow-back"></ion-icon>
+                <ion-icon
+                  (click)="prevYear()"
+                  slot="start"
+                  name="ios-arrow-back"
+                ></ion-icon>
                 <ion-label class="ion-text-center">
                   <p>Selecione o ano</p>
                   <h2><strong>{{months[monthIndex]}} {{year}}</strong></h2>
-                  <ion-button (click)="audienceMonthly()" size="small" shape="round" mode="ios">Mensal</ion-button>
-                  <ion-button (click)="loadAudience()" size="small" shape="round" mode="ios" fill="outline">Anual
+                  <ion-button
+                    (click)="audienceMonthly()"
+                    size="small"
+                    shape="round"
+                    mode="ios"
+                    >Mensal</ion-button
+                  >
+                  <ion-button
+                    (click)="loadAudience()"
+                    size="small"
+                    shape="round"
+                    mode="ios"
+                    fill="outline"
+                    >Anual
                   </ion-button>
                 </ion-label>
-                <ion-icon (click)="nextYear()" slot='end' name="ios-arrow-forward"></ion-icon>
+                <ion-icon
+                  (click)="nextYear()"
+                  slot="end"
+                  name="ios-arrow-forward"
+                ></ion-icon>
               </ion-item>
             </ion-col>
             <ion-col></ion-col>
@@ -540,5 +729,4 @@
       </ion-card-content>
     </ion-card>
   </div>
-
 </ion-content>
