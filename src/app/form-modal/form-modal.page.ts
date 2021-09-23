@@ -401,7 +401,7 @@ export class FormModalPage implements OnInit {
       console.log("After parse ", res);
       if (res) {
         res.subscribe((data) => {
-          console.log("Multiple form submit API > ", data.text());
+          console.log("Multiple form submit API > ", data);
 
         }, (err) => {
           console.log("API error -> ", err);

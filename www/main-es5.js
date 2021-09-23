@@ -2311,7 +2311,7 @@
 
                         if (res) {
                           res.subscribe(function (data) {
-                            console.log("Multiple form submit API > ", data.text());
+                            console.log("Multiple form submit API > ", data);
                           }, function (err) {
                             console.log("API error -> ", err);
 

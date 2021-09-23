@@ -38,8 +38,8 @@
     "plotly.js-dist": "^2.1.0",
     "rxjs": "~6.6.7",
     "tslib": "^1.10.0",
-    "web": "0.0.2",
     "zone.js": "~0.10.2"
+
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.801.2",

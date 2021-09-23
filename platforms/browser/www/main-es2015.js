@@ -1223,7 +1223,7 @@ class FormModalPage {
                 console.log("After parse ", res);
                 if (res) {
                     res.subscribe((data) => {
-                        console.log("Multiple form submit API > ", data.text());
+                        console.log("Multiple form submit API > ", data);
                     }, (err) => {
                         console.log("API error -> ", err);
                         this.api.proccessError(err);
