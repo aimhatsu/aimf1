@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div *ngIf="userData">
+	<div style="text-align: end">
+		<i class="fa fa-window-close" (click)="closeLoginPop()"></i>
+	</div>
+	<!-- <ion-list>
+    <ion-item>
+      <h2>User Data</h2>
+    </ion-item>
+    <ion-item style="padding: 0px 10px 0px 0px;">
+      <p class="p-name">{{userData.snome}}</p>
+    </ion-item>
+    <ion-item style="padding: 0px 10px 0px 0px;">
+      <p class="p-name"> {{userData.nome}} </p>
+    </ion-item>
+
+    <ion-item style="padding: 0px 10px 0px 0px;text-align: center;">
+      <img class="fingerprint-img" src="../../assets/images/finger-print.png">
+    </ion-item>
+
+    <ion-item style="padding: 0px 10px 0px 0px;">
+      <img class="person-img" src="../../assets/images/Avatar.png">
+    </ion-item>
+  </ion-list> -->
+	<!-- <ion-content [fullscreen]="true" [scrollEvents]="true"> -->
+	<div style="max-height: 550px; overflow-y: auto">
+		<ion-list lines="full" class="ion-no-margin">
+			<form (ngSubmit)="editForm()" class="form-content-style">
+				<ion-list-header lines="full">
+					<ion-label>Informação do usuário</ion-label>
+				</ion-list-header>
+
+				<ion-item>
+					<ion-label>Nome:</ion-label>
+					<ion-input placeholder="nome" type="text" [(ngModel)]="name" name="name"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>Sobrenome:</ion-label>
+					<ion-input placeholder="snome" type="text" [(ngModel)]="sname" name="sname"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>E-mail:</ion-label>
+					<ion-input placeholder="email" type="text" [(ngModel)]="email" name="email"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>WhatsApp:</ion-label>
+					<ion-input placeholder="whats" type="text" [(ngModel)]="whats" name="whats"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>Especialidade:</ion-label>
+					<ion-input
+						placeholder="especialidade"
+						type="text"
+						[(ngModel)]="specialty"
+						name="specialty"
+					></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>Nº de Registro:</ion-label>
+					<ion-input placeholder="registro" type="text" [(ngModel)]="record" name="record"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>CPF / CNPJ:</ion-label>
+					<ion-input placeholder="cpfcnpj" type="text" [(ngModel)]="cpfcnpj" name="cpfcnpj"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>CEP:</ion-label>
+					<ion-input placeholder="cep" type="text" [(ngModel)]="zipCode" name="zipCode"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>Estado:</ion-label>
+					<ion-input placeholder="estado" type="text" [(ngModel)]="state" name="state"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>Cidade:</ion-label>
+					<ion-input placeholder="cidade" type="text" [(ngModel)]="city" name="city"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>Endereço:</ion-label>
+					<ion-input placeholder="endereco" type="text" [(ngModel)]="address" name="address"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label>Senha:</ion-label>
+					<ion-input placeholder="whats" type="text" [(ngModel)]="password" name="password"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label>Confirme a sua senha:</ion-label>
+					<ion-input placeholder="whats" type="text" [(ngModel)]="cpassword" name="cpassword"></ion-input>
+				</ion-item>
+
+				<ion-button type="submit" expand="full">Editar Informação</ion-button>
+			</form>
+		</ion-list>
+	</div>
+
+	<!-- </ion-content> -->
+</div>

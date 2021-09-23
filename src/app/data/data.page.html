@@ -1,0 +1,570 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="toolbar-bg">
+
+      <ion-title>
+        <img src="../../assets/images/mia-wht.png" width="200" alt="">
+      </ion-title>
+
+      <ion-buttons slot="end" class="ion-text-right">
+        <app-user-bar></app-user-bar>
+      </ion-buttons>
+    </div>
+
+    <div class="toolbar-bg" style="box-shadow: 0px 0px 0px #00000059 !important;">
+      <ion-segment color="secondary" (ionChange)="segmentChange($event)" [(ngModel)]="tab">
+        <ion-segment-button value="forms">FORMULÁRIOS</ion-segment-button>
+        <ion-segment-button value="status">STATUS</ion-segment-button>
+        <ion-segment-button value="rec">RECOMENDAÇÕES</ion-segment-button>
+      </ion-segment>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div wrap-box>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <div *ngIf="moreOptions" class="tab-options">
+
+        <div *ngIf="tab == 'forms'">
+          <ion-row>
+            <ion-col size="3" (click)="open_multiple()">
+              <img class="tab-icon-imgs" style="width: 19px; height: 16px;" src="../../assets/images/list-icon.png">
+            </ion-col>
+
+            <ion-col size="3" (click)="open_binaria()">
+              <img class="tab-icon-imgs" style="width: 20px; height: 20px;" src="../../assets/images/binary-icon.png">
+            </ion-col>
+
+            <ion-col size="3" (click)="open_gestalt()">
+              <img class="tab-icon-imgs" style="width: 16px; height: 20px;" src="../../assets/images/photo-icon.png">
+            </ion-col>
+
+            <ion-col size="3" (click)="open_levels()">
+              <img class="tab-icon-imgs" style="width: 18px; height: 18px;" src="../../assets/images/tune-bar-icon.png">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="3" (click)="open_multiple()">
+              <p class="tab-p-style">Múltipla</p>
+            </ion-col>
+
+            <ion-col size="3" (click)="open_binaria()">
+              <p class="tab-p-style">Binária</p>
+            </ion-col>
+
+            <ion-col size="3" (click)="open_gestalt()">
+              <p class="tab-p-style">Gestalt</p>
+            </ion-col>
+
+            <ion-col size="3" (click)="open_levels()">
+              <p class="tab-p-style">Níveis</p>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div *ngIf="tab == 'status'">
+          <ion-row>
+            <ion-col size="6" (click)="open_patologia()">
+              <img class="tab-icon-imgs" style="width: 16px; height: 18px;"
+                src="../../assets/images/bug-report-icon.png">
+            </ion-col>
+
+            <ion-col size="6" (click)="open_biomarcador()">
+              <img class="tab-icon-imgs" style="width: 16px; height: 16px;" src="../../assets/images/bubble-icon.png">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="6" (click)="open_patologia()">
+              <p class="tab-p-style">Patologia</p>
+            </ion-col>
+
+            <ion-col size="6" (click)="open_biomarcador()">
+              <p class="tab-p-style">Biomarcador</p>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div *ngIf="tab == 'rec'">
+          <ion-row>
+            <ion-col size="3" (click)="open_tratamento()">
+              <img class="tab-icon-imgs" style="width: 20px; height: 20px;" src="../../assets/images/spa-icon.png">
+            </ion-col>
+
+            <ion-col size="3" (click)="open_content()">
+              <img class="tab-icon-imgs" style="width: 20px; height: 16px;" src="../../assets/images/movie-icon.png">
+            </ion-col>
+
+            <ion-col size="3" (click)="open_food()">
+              <img class="tab-icon-imgs" style="width: 22px; height: 19px;" src="../../assets/images/cart-icon.png">
+            </ion-col>
+
+            <ion-col size="3" (click)="open_activity()">
+              <img class="tab-icon-imgs" style="width: 23px; height: 23px;" src="../../assets/images/setting-icon.png">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="3" (click)="open_tratamento()">
+              <p class="tab-p-style">Tratamento</p>
+            </ion-col>
+
+            <ion-col size="3" (click)="open_content()">
+              <p class="tab-p-style">Conteúdo</p>
+            </ion-col>
+
+            <ion-col size="3" (click)="open_food()">
+              <p class="tab-p-style">Alimentação</p>
+            </ion-col>
+
+            <ion-col size="3" (click)="open_activity()">
+              <p class="tab-p-style">Atividades</p>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+
+      <div style="display: flex;">
+        <ion-fab-button style="margin-right: 8px;" (click)="(moreOptions)? moreOptions = false : moreOptions = true">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+
+        <ion-fab-button (click)="openFilter()">
+          <ion-icon name="md-funnel"></ion-icon>
+        </ion-fab-button>
+      </div>
+    </ion-fab>
+
+    <div *ngIf="tab =='rec'">
+      <ion-grid class="ion-no-padding">
+        <ion-row class="sub-toolbar">
+          <ion-col size="8">
+            <h1>GESTÃO DE RECOMENDAÇÕES </h1>
+            <p>Você é o cientista que define padrões para cuidar de vidas. Obrigado!</p>
+          </ion-col>
+
+          <ion-col size="4">
+            <ion-item lines="none" class="search-bar">
+              <ion-input class="search-input" type="text" placeholder="Pesquise uma recomentação...">
+                <ion-icon class="searchbar-icon" ios="ios-search" md="md-search"></ion-icon>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-card class="data-card">
+        <ion-list>
+          <ion-item lines="none">
+            <ion-label>
+              <h2><strong>Output</strong></h2>
+            </ion-label>
+          </ion-item>
+
+          <ion-item lines="none" class="item-bg-dark">
+            <div style="width: 92px"></div>
+            <ion-label>
+              <p>Categoria <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+            <ion-label>
+              <p>Status <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Ordem <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Tipo <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Nome <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Unidade <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Vídeo Link <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item lines="none" *ngFor="let i of [0,1]">
+            <ion-button style="margin: 0px 8px 0px 8px;" fill="clear" color="secondary" slot="start">
+              <ion-icon name="md-create"></ion-icon>
+            </ion-button>
+
+            <ion-button style="margin: 0px 8px 0px 8px;" fill="clear" color="secondary" slot="start">
+              <ion-icon name="trash"></ion-icon>
+            </ion-button>
+
+            <ion-label>
+              <p>Categoria</p>
+            </ion-label>
+
+            <ion-label>
+              <p>Patologia</p>
+            </ion-label>
+
+            <ion-label>
+              <p>Ordem</p>
+            </ion-label>
+
+            <ion-label>
+              <p>Conteúdos</p>
+            </ion-label>
+
+            <ion-label>
+              <p>Tratamentos</p>
+            </ion-label>
+
+            <ion-label>
+              <p>Alimentação</p>
+            </ion-label>
+
+            <ion-label>
+              <p>Exercícios</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    </div>
+
+    <!-- Formularios -->
+    <div *ngIf="tab =='forms'">
+      <ion-grid class="ion-no-padding">
+        <ion-row class="sub-toolbar">
+          <ion-col size="8">
+            <h1>GESTÃO DE FORMULÁRIOS </h1>
+            <p>Você é o cientista que define padrões para cuidar de vidas. Obrigado!</p>
+          </ion-col>
+
+          <ion-col size="4">
+            <ion-item lines="none" class="search-bar">
+              <ion-input class="search-input" type="text" placeholder="Pesquise um formulário ou item...">
+                <ion-icon class="searchbar-icon" ios="ios-search" md="md-search"></ion-icon>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-card class="data-card">
+        <ion-list>
+          <ion-item lines="none">
+            <ion-label>
+              <h2><strong>Input</strong></h2>
+            </ion-label>
+          </ion-item>
+
+          <ion-item lines="none" class="item-bg-dark">
+            <div style="width: 85px"></div>
+            <ion-label>
+              <p>Categoria <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Formulário <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Tipo <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Parâmetro <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Ordem <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+
+            <ion-label>
+              <p>Questão <ion-icon class="dropdown-icon" name="ios-arrow-down"></ion-icon>
+              </p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item lines="none" *ngFor="let item of allFilters; let i = index"
+            [ngClass]="{'item-bg-dark': 1 === i % 2}">
+            <ion-button (click)="edit_multiple(item)" style="margin: 0px 8px 0px 8px;" fill="clear" color="secondary" slot="start">
+              <ion-icon name="md-create"></ion-icon>
+            </ion-button>
+
+            <ion-button (click)="del_multiple(item)" style="margin: 0px 8px 0px 8px;" fill="clear" color="secondary" slot="start">
+              <ion-icon name="trash"></ion-icon>
+            </ion-button>
+
+            <ion-label>
+              <p>{{item.category}}</p>
+            </ion-label>
+
+            <ion-label>
+              <p>{{item.formulario}}</p>
+            </ion-label>
+
+            <ion-label>
+              <p>{{item.tipo}}</p>
+            </ion-label>
+
+            <ion-label>
+              <p>{{item.parametro}}</p>
+            </ion-label>
+
+            <ion-label>
+              <p>{{item.ordem}}</p>
+            </ion-label>
+
+            <ion-label class="ion-text-wrap">
+              <p>{{item.pergunta}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    </div>
+    <!-- End Formularios -->
+
+    <!-- Status -->
+    <div *ngIf="tab =='status'">
+      <ion-grid class="ion-no-padding">
+        <ion-row class="sub-toolbar">
+          <ion-col size="8">
+            <h1>GESTÃO DE STATUS </h1>
+            <p>Você é o cientista que define padrões para cuidar de vidas. Obrigado!</p>
+          </ion-col>
+
+          <ion-col size="4">
+            <ion-item lines="none" class="search-bar">
+              <ion-input class="search-input" type="text" placeholder="Pesquise uma patologia ou biomarcador...">
+                <ion-icon class="searchbar-icon" ios="ios-search" md="md-search"></ion-icon>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-card class="data-card">
+        <ion-grid style="padding: 0px;">
+          <ion-row>
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-label>
+                  <h2><strong>Data processing</strong></h2>
+                </ion-label>
+              </ion-item>
+            </ion-col>
+
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-label>
+                  <h2><strong>Biomarcadores</strong></h2>
+                </ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="6" style="padding: 0px;">
+              <ion-row class="item-bg-dark">
+                <ion-col size="0.5">
+
+                </ion-col>
+
+                <ion-col size="1.5" class="col-style">
+                  <ion-label>
+                    <p><strong>Nome</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="1.5" class="col-style">
+                  <ion-label>
+                    <p><strong>Categoria</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="1.5" class="col-style">
+                  <ion-label>
+                    <p><strong>Código</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="2" class="col-style">
+                  <ion-label>
+                    <p><strong>Tipo</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="2.5" class="col-style">
+                  <ion-label>
+                    <p><strong>Formulário</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="2.5" class="col-style">
+                  <ion-label>
+                    <p><strong>Parâmetro</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let item of allFilters; let i = index" [ngClass]="{'item-bg-dark': 1 === i % 2}">
+                <ion-col size="0.5">
+                  <ion-icon (click)="editStatus(item)" style="padding: 2px;" color="secondary" name="md-create">
+                  </ion-icon>
+                  <ion-icon (click)="delStatus()" style="padding: 2px;" color="secondary" name="trash"></ion-icon>
+                </ion-col>
+
+                <ion-col size="1.5" class="col-style">
+                  <ion-label>
+                    <p>{{item.nome}}
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="1.5" class="col-style">
+                  <ion-label>
+                    <p>{{item.category}}
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="1.5" class="col-style">
+                  <ion-label>
+                    <p>{{item.cid}}
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="2" class="col-style">
+                  <ion-label>
+                    <p>{{item.type}}
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="2.5" class="col-style">
+                  <ion-label>
+                    <p>{{item.form}}
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="2.5" class="col-style">
+                  <ion-label>
+                    <p>{{item.patolog}}
+                    </p>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+
+            <ion-col size="6" style="padding: 0px;">
+              <ion-row class="item-bg-darker">
+                <ion-col size="3" class="col-style">
+                  <ion-label>
+                    <p><strong>Exames lab.</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="3" class="col-style">
+                  <ion-label>
+                    <p><strong>Exames presenciais</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="3" class="col-style">
+                  <ion-label>
+                    <p><strong>Autoexames</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="3" class="col-style">
+                  <ion-label>
+                    <p><strong>Biossenssores</strong>
+                    </p>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let item of status_biomark; let i = index" [ngClass]="{'item-bg-dark': 1 === i % 2}">
+                <ion-col size="3" class="col-style">
+                  <ion-label>
+                    <p>
+                      <ion-icon color="secondary" name="md-create"></ion-icon> {{item.labs}}
+                    </p><br>
+                    <p>
+                      <ion-icon (click)="delBiomark('labs')" color="secondary" name="trash"></ion-icon>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="3" class="col-style">
+                  <ion-label>
+                    <p>
+                      <ion-icon color="secondary" name="md-create"></ion-icon> {{item.exams}}
+                    </p>
+                    <br>
+                    <p>
+                      <ion-icon (click)="delBiomark('exams')" color="secondary" name="trash"></ion-icon>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="3" class="col-style">
+                  <ion-label>
+                    <p>
+                      <ion-icon color="secondary" name="md-create"></ion-icon> {{item.autoexams}}
+                    </p>
+                    <br>
+                    <p>
+                      <ion-icon (click)="delBiomark('autoexams')" color="secondary" name="trash"></ion-icon>
+                    </p>
+                  </ion-label>
+                </ion-col>
+
+                <ion-col size="3" class="col-style">
+                  <ion-label>
+                    <p>
+                      <ion-icon color="secondary" name="md-create"></ion-icon> {{item.biosens}}
+                    </p>
+                    <br>
+                    <p>
+                      <ion-icon (click)="delBiomark('biosens')" color="secondary" name="trash"></ion-icon>
+                    </p>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div>
+    <!-- End Status -->
+  </div>
+</ion-content>
