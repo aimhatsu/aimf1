@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[32], {
     /***/
-    "lfGF":
-    /*!*****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-select_3.entry.js ***!
-      \*****************************************************************/
-
-    /*! exports provided: ion_select, ion_select_option, ion_select_popover */
-
-    /***/
-    function lfGF(module, __webpack_exports__, __webpack_require__) {
+    "lfGF": function lfGF(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

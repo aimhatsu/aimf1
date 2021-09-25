@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["shadow-css-a3f00b33-js"], {
     /***/
-    "JmUR":
-    /*!******************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/shadow-css-a3f00b33.js ***!
-      \******************************************************************/
-
-    /*! exports provided: scopeCss */
-
-    /***/
-    function JmUR(module, __webpack_exports__, __webpack_require__) {
+    "JmUR": function JmUR(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

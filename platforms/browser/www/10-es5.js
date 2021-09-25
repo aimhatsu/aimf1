@@ -15,15 +15,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[10], {
     /***/
-    "/CAe":
-    /*!**************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-col_3.entry.js ***!
-      \**************************************************************/
-
-    /*! exports provided: ion_col, ion_grid, ion_row */
-
-    /***/
-    function CAe(module, __webpack_exports__, __webpack_require__) {
+    "/CAe": function CAe(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

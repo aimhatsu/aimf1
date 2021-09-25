@@ -9,15 +9,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[23], {
     /***/
-    "0tOe":
-    /*!*********************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-progress-bar.entry.js ***!
-      \*********************************************************************/
-
-    /*! exports provided: ion_progress_bar */
-
-    /***/
-    function tOe(module, __webpack_exports__, __webpack_require__) {
+    "0tOe": function tOe(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

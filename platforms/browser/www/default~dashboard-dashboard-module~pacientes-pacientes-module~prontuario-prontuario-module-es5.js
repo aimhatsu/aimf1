@@ -7,15 +7,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~dashboard-dashboard-module~pacientes-pacientes-module~prontuario-prontuario-module"], {
     /***/
-    "+s0g":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/nl.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function s0g(module, exports, __webpack_require__) {
+    "+s0g": function s0g(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Dutch [nl]
       //! author : Joris Röling : https://github.com/jorisroling
@@ -107,15 +99,7 @@
     },
 
     /***/
-    "//9w":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/se.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function w(module, exports, __webpack_require__) {
+    "//9w": function w(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Northern Sami [se]
       //! authors : Bård Rolstad Henriksen : https://github.com/karamell
@@ -182,15 +166,7 @@
     },
 
     /***/
-    "/X5v":
-    /*!************************************************!*\
-      !*** ./node_modules/moment/locale/x-pseudo.js ***!
-      \************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function X5v(module, exports, __webpack_require__) {
+    "/X5v": function X5v(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Pseudo [x-pseudo]
       //! author : Andrew Hood : https://github.com/andrewhood125
@@ -262,15 +238,7 @@
     },
 
     /***/
-    "0mo+":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/bo.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function mo(module, exports, __webpack_require__) {
+    "0mo+": function mo(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Tibetan [bo]
       //! author : Thupten N. Chakrishar : https://github.com/vajradog
@@ -396,15 +364,7 @@
     },
 
     /***/
-    "0tRk":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/pt-br.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function tRk(module, exports, __webpack_require__) {
+    "0tRk": function tRk(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Portuguese (Brazil) [pt-br]
       //! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
@@ -470,15 +430,7 @@
     },
 
     /***/
-    "1ppg":
-    /*!*******************************************!*\
-      !*** ./node_modules/moment/locale/fil.js ***!
-      \*******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function ppg(module, exports, __webpack_require__) {
+    "1ppg": function ppg(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Filipino [fil]
       //! author : Dan Hagman : https://github.com/hagmandan
@@ -548,15 +500,7 @@
     },
 
     /***/
-    "1rYy":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/hy-am.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function rYy(module, exports, __webpack_require__) {
+    "1rYy": function rYy(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Armenian [hy-am]
       //! author : Armendarabyan : https://github.com/armendarabyan
@@ -660,15 +604,7 @@
     },
 
     /***/
-    "1xZ4":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ca.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function xZ4(module, exports, __webpack_require__) {
+    "1xZ4": function xZ4(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Catalan [ca]
       //! author : Juan G. Hurtado : https://github.com/juanghurtado
@@ -762,15 +698,7 @@
     },
 
     /***/
-    "2fjn":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/fr-ca.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function fjn(module, exports, __webpack_require__) {
+    "2fjn": function fjn(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : French (Canada) [fr-ca]
       //! author : Jonathan Abourbih : https://github.com/jonbca
@@ -849,15 +777,7 @@
     },
 
     /***/
-    "2ykv":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/nl-be.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function ykv(module, exports, __webpack_require__) {
+    "2ykv": function ykv(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Dutch (Belgium) [nl-be]
       //! author : Joris Röling : https://github.com/jorisroling
@@ -947,15 +867,7 @@
     },
 
     /***/
-    "3E1r":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/hi.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function E1r(module, exports, __webpack_require__) {
+    "3E1r": function E1r(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Hindi [hi]
       //! author : Mayank Singhal : https://github.com/mayanksinghal
@@ -1097,15 +1009,7 @@
     },
 
     /***/
-    "4MV3":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/gu.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function MV3(module, exports, __webpack_require__) {
+    "4MV3": function MV3(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Gujarati [gu]
       //! author : Kaushik Thanki : https://github.com/Kaushik1987
@@ -1236,15 +1140,7 @@
     },
 
     /***/
-    "4dOw":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/en-ie.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function dOw(module, exports, __webpack_require__) {
+    "4dOw": function dOw(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : English (Ireland) [en-ie]
       //! author : Chris Cartlidge : https://github.com/chriscartlidge
@@ -1315,15 +1211,7 @@
     },
 
     /***/
-    "6+QB":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ms.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function QB(module, exports, __webpack_require__) {
+    "6+QB": function QB(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Malay [ms]
       //! author : Weldan Jamili : https://github.com/weldan
@@ -1413,15 +1301,7 @@
     },
 
     /***/
-    "6B0Y":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/km.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function B0Y(module, exports, __webpack_require__) {
+    "6B0Y": function B0Y(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Cambodian [km]
       //! author : Kruy Vanna : https://github.com/kruyvanna
@@ -1534,15 +1414,7 @@
     },
 
     /***/
-    "7BjC":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/et.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function BjC(module, exports, __webpack_require__) {
+    "7BjC": function BjC(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Estonian [et]
       //! author : Henry Kehlmann : https://github.com/madhenry
@@ -1632,15 +1504,7 @@
     },
 
     /***/
-    "7C5Q":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/en-in.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function C5Q(module, exports, __webpack_require__) {
+    "7C5Q": function C5Q(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : English (India) [en-in]
       //! author : Jatin Agrawal : https://github.com/jatinag22
@@ -1711,15 +1575,7 @@
     },
 
     /***/
-    "7aV9":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/si.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function aV9(module, exports, __webpack_require__) {
+    "7aV9": function aV9(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Sinhalese [si]
       //! author : Sampath Sitinamaluwa : https://github.com/sampathsris
@@ -1796,15 +1652,7 @@
     },
 
     /***/
-    "8/+R":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/pa-in.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function R(module, exports, __webpack_require__) {
+    "8/+R": function R(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Punjabi (India) [pa-in]
       //! author : Harpreet Singh : https://github.com/harpreetkhalsagtbit
@@ -1935,15 +1783,7 @@
     },
 
     /***/
-    "8mBD":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/pt.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function mBD(module, exports, __webpack_require__) {
+    "8mBD": function mBD(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Portuguese [pt]
       //! author : Jefferson : https://github.com/jalex79
@@ -2016,15 +1856,7 @@
     },
 
     /***/
-    "9rRi":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/gd.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function rRi(module, exports, __webpack_require__) {
+    "9rRi": function rRi(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Scottish Gaelic [gd]
       //! author : Jon Ashdown : https://github.com/jonashdown
@@ -2100,15 +1932,7 @@
     },
 
     /***/
-    "A+xa":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/cv.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function AXa(module, exports, __webpack_require__) {
+    "A+xa": function AXa(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Chuvash [cv]
       //! author : Anatoly Mironov : https://github.com/mirontoli
@@ -2178,15 +2002,7 @@
     },
 
     /***/
-    "AQ68":
-    /*!***********************************************!*\
-      !*** ./node_modules/moment/locale/uz-latn.js ***!
-      \***********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function AQ68(module, exports, __webpack_require__) {
+    "AQ68": function AQ68(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Uzbek Latin [uz-latn]
       //! author : Rasulbek Mirzayev : github.com/Rasulbeeek
@@ -2251,15 +2067,7 @@
     },
 
     /***/
-    "AvvY":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ml.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function AvvY(module, exports, __webpack_require__) {
+    "AvvY": function AvvY(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Malayalam [ml]
       //! author : Floyd Pink : https://github.com/floydpink
@@ -2344,15 +2152,7 @@
     },
 
     /***/
-    "B55N":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ja.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function B55N(module, exports, __webpack_require__) {
+    "B55N": function B55N(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Japanese [ja]
       //! author : LI Long : https://github.com/baryon
@@ -2506,15 +2306,7 @@
     },
 
     /***/
-    "BVg3":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/is.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function BVg3(module, exports, __webpack_require__) {
+    "BVg3": function BVg3(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Icelandic [is]
       //! author : Hinrik Örn Sigurðsson : https://github.com/hinrik
@@ -2676,15 +2468,7 @@
     },
 
     /***/
-    "ByF4":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/fo.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function ByF4(module, exports, __webpack_require__) {
+    "ByF4": function ByF4(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Faroese [fo]
       //! author : Ragnar Johannesen : https://github.com/ragnar123
@@ -2752,15 +2536,7 @@
     },
 
     /***/
-    "CjzT":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/es-do.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function CjzT(module, exports, __webpack_require__) {
+    "CjzT": function CjzT(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Spanish (Dominican Republic) [es-do]
       ;
@@ -2859,15 +2635,7 @@
     },
 
     /***/
-    "CoRJ":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/ar-ma.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function CoRJ(module, exports, __webpack_require__) {
+    "CoRJ": function CoRJ(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Arabic (Morocco) [ar-ma]
       //! author : ElFadili Yassine : https://github.com/ElFadiliY
@@ -2934,15 +2702,7 @@
     },
 
     /***/
-    "D/JM":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/eu.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function DJM(module, exports, __webpack_require__) {
+    "D/JM": function DJM(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Basque [eu]
       //! author : Eneko Illarramendi : https://github.com/eillarra
@@ -3015,15 +2775,7 @@
     },
 
     /***/
-    "DKr+":
-    /*!************************************************!*\
-      !*** ./node_modules/moment/locale/gom-latn.js ***!
-      \************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function DKr(module, exports, __webpack_require__) {
+    "DKr+": function DKr(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Konkani Latin script [gom-latn]
       //! author : The Discoverer : https://github.com/WikiDiscoverer
@@ -3159,15 +2911,7 @@
     },
 
     /***/
-    "Dkky":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/fr-ch.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Dkky(module, exports, __webpack_require__) {
+    "Dkky": function Dkky(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : French (Switzerland) [fr-ch]
       //! author : Gaspard Bucher : https://github.com/gaspard
@@ -3252,15 +2996,7 @@
     },
 
     /***/
-    "Dmvi":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/en-au.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Dmvi(module, exports, __webpack_require__) {
+    "Dmvi": function Dmvi(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : English (Australia) [en-au]
       //! author : Jared Morse : https://github.com/jarcoal
@@ -3331,15 +3067,7 @@
     },
 
     /***/
-    "DoHr":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/tr.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function DoHr(module, exports, __webpack_require__) {
+    "DoHr": function DoHr(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Turkish [tr]
       //! authors : Erhan Gundogan : https://github.com/erhangundogan,
@@ -3458,15 +3186,7 @@
     },
 
     /***/
-    "DxQv":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/da.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function DxQv(module, exports, __webpack_require__) {
+    "DxQv": function DxQv(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Danish [da]
       //! author : Ulrik Nielsen : https://github.com/mrbase
@@ -3533,15 +3253,7 @@
     },
 
     /***/
-    "Dzi0":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/tl-ph.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Dzi0(module, exports, __webpack_require__) {
+    "Dzi0": function Dzi0(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Tagalog (Philippines) [tl-ph]
       //! author : Dan Hagman : https://github.com/hagmandan
@@ -3610,15 +3322,7 @@
     },
 
     /***/
-    "E+lV":
-    /*!***********************************************!*\
-      !*** ./node_modules/moment/locale/sr-cyrl.js ***!
-      \***********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function ELV(module, exports, __webpack_require__) {
+    "E+lV": function ELV(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Serbian Cyrillic [sr-cyrl]
       //! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
@@ -3733,15 +3437,7 @@
     },
 
     /***/
-    "EOgW":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/th.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function EOgW(module, exports, __webpack_require__) {
+    "EOgW": function EOgW(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Thai [th]
       //! author : Kridsada Thanabulpong : https://github.com/sirn
@@ -3816,15 +3512,7 @@
     },
 
     /***/
-    "Fnuy":
-    /*!**********************************************!*\
-      !*** ./node_modules/moment/locale/oc-lnc.js ***!
-      \**********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Fnuy(module, exports, __webpack_require__) {
+    "Fnuy": function Fnuy(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Occitan, lengadocian dialecte [oc-lnc]
       //! author : Quentin PAGÈS : https://github.com/Quenty31
@@ -3907,15 +3595,7 @@
     },
 
     /***/
-    "G0Uy":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/mt.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function G0Uy(module, exports, __webpack_require__) {
+    "G0Uy": function G0Uy(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Maltese (Malta) [mt]
       //! author : Alessandro Maruccia : https://github.com/alesma
@@ -3982,15 +3662,7 @@
     },
 
     /***/
-    "H8ED":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/be.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function H8ED(module, exports, __webpack_require__) {
+    "H8ED": function H8ED(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Belarusian [be]
       //! author : Dmitry Demidov : https://github.com/demidov91
@@ -4134,15 +3806,7 @@
     },
 
     /***/
-    "HP3h":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/ar-ly.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function HP3h(module, exports, __webpack_require__) {
+    "HP3h": function HP3h(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Arabic (Lybia) [ar-ly]
       //! author : Ali Hmer: https://github.com/kikoanis
@@ -4264,15 +3928,7 @@
     },
 
     /***/
-    "IBtZ":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ka.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function IBtZ(module, exports, __webpack_require__) {
+    "IBtZ": function IBtZ(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Georgian [ka]
       //! author : Irakli Janiashvili : https://github.com/IrakliJani
@@ -4369,15 +4025,7 @@
     },
 
     /***/
-    "Ivi+":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ko.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Ivi(module, exports, __webpack_require__) {
+    "Ivi+": function Ivi(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Korean [ko]
       //! author : Kyungwook, Park : https://github.com/kyungw00k
@@ -4467,15 +4115,7 @@
     },
 
     /***/
-    "JCF/":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ku.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function JCF(module, exports, __webpack_require__) {
+    "JCF/": function JCF(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Kurdish [ku]
       //! author : Shahram Mebashar : https://github.com/ShahramMebashar
@@ -4587,15 +4227,7 @@
     },
 
     /***/
-    "JVSJ":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/bs.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function JVSJ(module, exports, __webpack_require__) {
+    "JVSJ": function JVSJ(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Bosnian [bs]
       //! author : Nedim Cholich : https://github.com/frontyard
@@ -4773,15 +4405,7 @@
     },
 
     /***/
-    "JvlW":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/lt.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function JvlW(module, exports, __webpack_require__) {
+    "JvlW": function JvlW(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Lithuanian [lt]
       //! author : Mindaugas Mozūras : https://github.com/mmozuras
@@ -4913,15 +4537,7 @@
     },
 
     /***/
-    "K/tc":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/af.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function KTc(module, exports, __webpack_require__) {
+    "K/tc": function KTc(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Afrikaans [af]
       //! author : Werner Mollentze : https://github.com/wernerm
@@ -5001,15 +4617,7 @@
     },
 
     /***/
-    "KSF8":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/vi.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function KSF8(module, exports, __webpack_require__) {
+    "KSF8": function KSF8(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Vietnamese [vi]
       //! author : Bang Nguyen : https://github.com/bangnk
@@ -5098,15 +4706,7 @@
     },
 
     /***/
-    "KTz0":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/me.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function KTz0(module, exports, __webpack_require__) {
+    "KTz0": function KTz0(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Montenegrin [me]
       //! author : Miodrag Nikač <miodrag@restartit.me> : https://github.com/miodragnikac
@@ -5220,15 +4820,7 @@
     },
 
     /***/
-    "Loxo":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/uz.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Loxo(module, exports, __webpack_require__) {
+    "Loxo": function Loxo(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Uzbek [uz]
       //! author : Sardor Muminov : https://github.com/muminoff
@@ -5293,15 +4885,7 @@
     },
 
     /***/
-    "MO+k":
-    /*!*********************************************!*\
-      !*** ./node_modules/chart.js/dist/Chart.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function MOK(module, exports, __webpack_require__) {
+    "MO+k": function MOK(module, exports, __webpack_require__) {
       /*!
        * Chart.js v2.9.4
        * https://www.chartjs.org
@@ -14206,9 +13790,7 @@
          */
 
 
-        function mergeScaleConfig()
-        /* config objects ... */
-        {
+        function mergeScaleConfig() {
           return helpers$1.merge(Object.create(null), [].slice.call(arguments), {
             merger: function merger(key, target, source, options) {
               if (key === 'xAxes' || key === 'yAxes') {
@@ -14249,9 +13831,7 @@
          */
 
 
-        function mergeConfig()
-        /* config objects ... */
-        {
+        function mergeConfig() {
           return helpers$1.merge(Object.create(null), [].slice.call(arguments), {
             merger: function merger(key, target, source, options) {
               var tval = target[key] || Object.create(null);
@@ -18126,8 +17706,8 @@
 
               for (datasetIndex = 0; datasetIndex < datasets.length; datasetIndex++) {
                 meta = chart.getDatasetMeta(datasetIndex);
-                var key = [meta.type, // we have a separate stack for stack=undefined datasets when the opts.stacked is undefined
-                opts.stacked === undefined && meta.stack === undefined ? datasetIndex : '', meta.stack].join('.');
+                var key = [// we have a separate stack for stack=undefined datasets when the opts.stacked is undefined
+                meta.type, opts.stacked === undefined && meta.stack === undefined ? datasetIndex : '', meta.stack].join('.');
 
                 if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta)) {
                   if (valuesPerStack[key] === undefined) {
@@ -20971,15 +20551,7 @@
     },
 
     /***/
-    "OIYi":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/en-ca.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function OIYi(module, exports, __webpack_require__) {
+    "OIYi": function OIYi(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : English (Canada) [en-ca]
       //! author : Jonathan Abourbih : https://github.com/jonbca
@@ -21044,15 +20616,7 @@
     },
 
     /***/
-    "Oaa7":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/en-gb.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Oaa7(module, exports, __webpack_require__) {
+    "Oaa7": function Oaa7(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : English (United Kingdom) [en-gb]
       //! author : Chris Gedrim : https://github.com/chrisgedrim
@@ -21123,15 +20687,7 @@
     },
 
     /***/
-    "Ob0Z":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/mr.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Ob0Z(module, exports, __webpack_require__) {
+    "Ob0Z": function Ob0Z(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Marathi [mr]
       //! author : Harshad Kale : https://github.com/kalehv
@@ -21366,15 +20922,7 @@
     },
 
     /***/
-    "OjkT":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ne.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function OjkT(module, exports, __webpack_require__) {
+    "OjkT": function OjkT(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Nepalese [ne]
       //! author : suvash : https://github.com/suvash
@@ -21504,15 +21052,7 @@
     },
 
     /***/
-    "OmwH":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/zh-mo.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function OmwH(module, exports, __webpack_require__) {
+    "OmwH": function OmwH(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Chinese (Macau) [zh-mo]
       //! author : Ben : https://github.com/ben-lin
@@ -21627,15 +21167,7 @@
     },
 
     /***/
-    "Oxv6":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/tg.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Oxv6(module, exports, __webpack_require__) {
+    "Oxv6": function Oxv6(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Tajik [tg]
       //! author : Orif N. Jr. : https://github.com/orif-jr
@@ -21761,15 +21293,7 @@
     },
 
     /***/
-    "PA2r":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/cs.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function PA2r(module, exports, __webpack_require__) {
+    "PA2r": function PA2r(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Czech [cs]
       //! author : petrbela : https://github.com/petrbela
@@ -21976,15 +21500,7 @@
     },
 
     /***/
-    "PeUW":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ta.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function PeUW(module, exports, __webpack_require__) {
+    "PeUW": function PeUW(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Tamil [ta]
       //! author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
@@ -22121,15 +21637,7 @@
     },
 
     /***/
-    "PpIw":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/kn.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function PpIw(module, exports, __webpack_require__) {
+    "PpIw": function PpIw(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Kannada [kn]
       //! author : Rajeev Naik : https://github.com/rajeevnaikte
@@ -22262,15 +21770,7 @@
     },
 
     /***/
-    "Qj4J":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/ar-kw.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Qj4J(module, exports, __webpack_require__) {
+    "Qj4J": function Qj4J(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Arabic (Kuwait) [ar-kw]
       //! author : Nusret Parlak: https://github.com/nusretparlak
@@ -22336,15 +21836,7 @@
     },
 
     /***/
-    "RAwQ":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/lb.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function RAwQ(module, exports, __webpack_require__) {
+    "RAwQ": function RAwQ(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Luxembourgish [lb]
       //! author : mweimerskirch : https://github.com/mweimerskirch
@@ -22504,15 +21996,7 @@
     },
 
     /***/
-    "RnhZ":
-    /*!**************************************************!*\
-      !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
-      \**************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function RnhZ(module, exports, __webpack_require__) {
+    "RnhZ": function RnhZ(module, exports, __webpack_require__) {
       var map = {
         "./af": "K/tc",
         "./af.js": "K/tc",
@@ -22812,15 +22296,7 @@
     },
 
     /***/
-    "Rw8l":
-    /*!***********************************************************!*\
-      !*** ./src/app/components/user-bar/user-bar.component.ts ***!
-      \***********************************************************/
-
-    /*! exports provided: UserBarComponent */
-
-    /***/
-    function Rw8l(module, __webpack_exports__, __webpack_require__) {
+    "Rw8l": function Rw8l(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -22835,13 +22311,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 
@@ -22859,7 +22335,7 @@
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/common */
-      "ofXK");
+      "SVse");
 
       function UserBarComponent_div_0_Template(rf, ctx) {
         if (rf & 1) {
@@ -22986,7 +22462,7 @@
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonGrid"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonRow"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonCol"]],
-        styles: [".item-bg[_ngcontent-%COMP%] {\n  background: transparent;\n}\n\n.person-img[_ngcontent-%COMP%] {\n  width: 43px;\n  height: 40px;\n}\n\n.fingerprint-img[_ngcontent-%COMP%] {\n  margin-top: 5px;\n  width: 25px;\n  height: 25px;\n}\n\n.p-name[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 0.8rem;\n  color: #ffffff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy91c2VyLWJhci91c2VyLWJhci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHVCQUFBO0FBQ0o7O0FBRUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUVBO0VBQ0ksZUFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FBQ0o7O0FBRUE7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0FBQ0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3VzZXItYmFyL3VzZXItYmFyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLml0ZW0tYmd7XHJcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxufVxyXG5cclxuLnBlcnNvbi1pbWd7XHJcbiAgICB3aWR0aDogNDNweDtcclxuICAgIGhlaWdodDogNDBweDtcclxufVxyXG5cclxuLmZpbmdlcnByaW50LWltZ3tcclxuICAgIG1hcmdpbi10b3A6IDVweDtcclxuICAgIHdpZHRoOiAyNXB4O1xyXG4gICAgaGVpZ2h0OiAyNXB4O1xyXG59XHJcblxyXG4ucC1uYW1le1xyXG4gICAgbWFyZ2luLXRvcDogOHB4O1xyXG4gICAgZm9udC1zaXplOiAwLjhyZW07XHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxufSJdfQ== */"]
+        styles: [".item-bg[_ngcontent-%COMP%] {\n  background: transparent;\n}\n\n.person-img[_ngcontent-%COMP%] {\n  width: 43px;\n  height: 40px;\n}\n\n.fingerprint-img[_ngcontent-%COMP%] {\n  margin-top: 5px;\n  width: 25px;\n  height: 25px;\n}\n\n.p-name[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 0.8rem;\n  color: #ffffff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy91c2VyLWJhci91c2VyLWJhci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHVCQUFBO0FBQ0o7O0FBRUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUVBO0VBQ0ksZUFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FBQ0o7O0FBRUE7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0FBQ0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3VzZXItYmFyL3VzZXItYmFyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLml0ZW0tYmd7XG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG59XG5cbi5wZXJzb24taW1ne1xuICAgIHdpZHRoOiA0M3B4O1xuICAgIGhlaWdodDogNDBweDtcbn1cblxuLmZpbmdlcnByaW50LWltZ3tcbiAgICBtYXJnaW4tdG9wOiA1cHg7XG4gICAgd2lkdGg6IDI1cHg7XG4gICAgaGVpZ2h0OiAyNXB4O1xufVxuXG4ucC1uYW1le1xuICAgIG1hcmdpbi10b3A6IDhweDtcbiAgICBmb250LXNpemU6IDAuOHJlbTtcbiAgICBjb2xvcjogI2ZmZmZmZjtcbn0iXX0= */"]
       });
       /*@__PURE__*/
 
@@ -23011,15 +22487,7 @@
     },
 
     /***/
-    "S6ln":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/hr.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function S6ln(module, exports, __webpack_require__) {
+    "S6ln": function S6ln(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Croatian [hr]
       //! author : Bojan Marković : https://github.com/bmarkovic
@@ -23201,15 +22669,7 @@
     },
 
     /***/
-    "SFxW":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/az.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function SFxW(module, exports, __webpack_require__) {
+    "SFxW": function SFxW(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Azerbaijani [az]
       //! author : topchiyev : https://github.com/topchiyev
@@ -23322,15 +22782,7 @@
     },
 
     /***/
-    "SatO":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/zh-hk.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function SatO(module, exports, __webpack_require__) {
+    "SatO": function SatO(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Chinese (Hong Kong) [zh-hk]
       //! author : Ben : https://github.com/ben-lin
@@ -23446,15 +22898,7 @@
     },
 
     /***/
-    "UDhR":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/id.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function UDhR(module, exports, __webpack_require__) {
+    "UDhR": function UDhR(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Indonesian [id]
       //! author : Mohammad Satrio Utomo : https://github.com/tyok
@@ -23545,15 +22989,7 @@
     },
 
     /***/
-    "USCx":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ga.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function USCx(module, exports, __webpack_require__) {
+    "USCx": function USCx(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Irish or Irish Gaelic [ga]
       //! author : André Silva : https://github.com/askpt
@@ -23629,15 +23065,7 @@
     },
 
     /***/
-    "UpQW":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ur.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function UpQW(module, exports, __webpack_require__) {
+    "UpQW": function UpQW(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Urdu [ur]
       //! author : Sawood Alam : https://github.com/ibnesayeed
@@ -23722,15 +23150,7 @@
     },
 
     /***/
-    "Ur1D":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ss.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Ur1D(module, exports, __webpack_require__) {
+    "Ur1D": function Ur1D(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : siSwati [ss]
       //! author : Nicolai Davies<mail@nicolai.io> : https://github.com/nicolaidavies
@@ -23827,15 +23247,7 @@
     },
 
     /***/
-    "V2x9":
-    /*!*******************************************!*\
-      !*** ./node_modules/moment/locale/tet.js ***!
-      \*******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function V2x9(module, exports, __webpack_require__) {
+    "V2x9": function V2x9(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Tetun Dili (East Timor) [tet]
       //! author : Joshua Brooks : https://github.com/joshbrooks
@@ -23908,15 +23320,7 @@
     },
 
     /***/
-    "Vclq":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/es-us.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Vclq(module, exports, __webpack_require__) {
+    "Vclq": function Vclq(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Spanish (United States) [es-us]
       //! author : bustta : https://github.com/bustta
@@ -24017,15 +23421,7 @@
     },
 
     /***/
-    "WYrj":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/dv.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function WYrj(module, exports, __webpack_require__) {
+    "WYrj": function WYrj(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Maldivian [dv]
       //! author : Jawish Hameed : https://github.com/jawish
@@ -24109,15 +23505,7 @@
     },
 
     /***/
-    "Wv91":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/tk.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Wv91(module, exports, __webpack_require__) {
+    "Wv91": function Wv91(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Turkmen [tk]
       //! author : Atamyrat Abdyrahmanov : https://github.com/atamyratabdy
@@ -24221,15 +23609,7 @@
     },
 
     /***/
-    "WxRl":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/hu.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function WxRl(module, exports, __webpack_require__) {
+    "WxRl": function WxRl(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Hungarian [hu]
       //! author : Adam Brunner : https://github.com/adambrunner
@@ -24363,15 +23743,7 @@
     },
 
     /***/
-    "X709":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/sv.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function X709(module, exports, __webpack_require__) {
+    "X709": function X709(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Swedish [sv]
       //! author : Jens Alm : https://github.com/ulmus
@@ -24444,15 +23816,7 @@
     },
 
     /***/
-    "XDpg":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/zh-cn.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function XDpg(module, exports, __webpack_require__) {
+    "XDpg": function XDpg(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Chinese (China) [zh-cn]
       //! author : suupic : https://github.com/suupic
@@ -24589,15 +23953,7 @@
     },
 
     /***/
-    "XLvN":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/te.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function XLvN(module, exports, __webpack_require__) {
+    "XLvN": function XLvN(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Telugu [te]
       //! author : Krishna Chaitanya Thota : https://github.com/kcthota
@@ -24694,15 +24050,7 @@
     },
 
     /***/
-    "YRex":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/ug-cn.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function YRex(module, exports, __webpack_require__) {
+    "YRex": function YRex(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Uyghur (China) [ug-cn]
       //! author: boyaq : https://github.com/boyaq
@@ -24821,15 +24169,7 @@
     },
 
     /***/
-    "YuTi":
-    /*!***********************************!*\
-      !*** (webpack)/buildin/module.js ***!
-      \***********************************/
-
-    /*! no static exports found */
-
-    /***/
-    function YuTi(module, exports) {
+    "YuTi": function YuTi(module, exports) {
       module.exports = function (module) {
         if (!module.webpackPolyfill) {
           module.deprecate = function () {};
@@ -24859,15 +24199,7 @@
     },
 
     /***/
-    "Z4QM":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/sd.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Z4QM(module, exports, __webpack_require__) {
+    "Z4QM": function Z4QM(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Sindhi [sd]
       //! author : Narain Sagar : https://github.com/narainsagar
@@ -24951,15 +24283,7 @@
     },
 
     /***/
-    "ZAMP":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/ms-my.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function ZAMP(module, exports, __webpack_require__) {
+    "ZAMP": function ZAMP(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Malay [ms-my]
       //! note : DEPRECATED, the correct one is [ms]
@@ -25050,15 +24374,7 @@
     },
 
     /***/
-    "Zduo":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/eo.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function Zduo(module, exports, __webpack_require__) {
+    "Zduo": function Zduo(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Esperanto [eo]
       //! author : Colin Dean : https://github.com/colindean
@@ -25141,15 +24457,7 @@
     },
 
     /***/
-    "aIdf":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/br.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function aIdf(module, exports, __webpack_require__) {
+    "aIdf": function aIdf(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Breton [br]
       //! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
@@ -25298,15 +24606,7 @@
     },
 
     /***/
-    "aIsn":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/mi.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function aIsn(module, exports, __webpack_require__) {
+    "aIsn": function aIsn(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Maori [mi]
       //! author : John Corrigan <robbiecloset@gmail.com> : https://github.com/johnideal
@@ -25377,15 +24677,7 @@
     },
 
     /***/
-    "aQkU":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/mk.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function aQkU(module, exports, __webpack_require__) {
+    "aQkU": function aQkU(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Macedonian [mk]
       //! author : Borislav Mickov : https://github.com/B0k0
@@ -25485,15 +24777,7 @@
     },
 
     /***/
-    "b1Dy":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/en-nz.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function b1Dy(module, exports, __webpack_require__) {
+    "b1Dy": function b1Dy(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : English (New Zealand) [en-nz]
       //! author : Luke McGregor : https://github.com/lukemcgregor
@@ -25564,15 +24848,7 @@
     },
 
     /***/
-    "bOMt":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/nb.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function bOMt(module, exports, __webpack_require__) {
+    "bOMt": function bOMt(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Norwegian Bokmål [nb]
       //! authors : Espen Hovlandsdal : https://github.com/rexxars
@@ -25645,15 +24921,7 @@
     },
 
     /***/
-    "bXm7":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/kk.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function bXm7(module, exports, __webpack_require__) {
+    "bXm7": function bXm7(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Kazakh [kk]
       //! authors : Nurlan Rakhimzhanov : https://github.com/nurlan
@@ -25746,15 +25014,7 @@
     },
 
     /***/
-    "bYM6":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/ar-tn.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function bYM6(module, exports, __webpack_require__) {
+    "bYM6": function bYM6(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale  :  Arabic (Tunisia) [ar-tn]
       //! author : Nader Toukabri : https://github.com/naderio
@@ -25820,15 +25080,7 @@
     },
 
     /***/
-    "bpih":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/it.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function bpih(module, exports, __webpack_require__) {
+    "bpih": function bpih(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Italian [it]
       //! author : Lorenzo : https://github.com/aliem
@@ -25915,15 +25167,7 @@
     },
 
     /***/
-    "bxKX":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/it-ch.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function bxKX(module, exports, __webpack_require__) {
+    "bxKX": function bxKX(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Italian (Switzerland) [it-ch]
       //! author : xfh : https://github.com/xfh
@@ -26000,15 +25244,7 @@
     },
 
     /***/
-    "cRix":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/fy.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function cRix(module, exports, __webpack_require__) {
+    "cRix": function cRix(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Frisian [fy]
       //! author : Robin van der Vliet : https://github.com/robin0van0der0v
@@ -26089,15 +25325,7 @@
     },
 
     /***/
-    "czMo":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/en-il.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function czMo(module, exports, __webpack_require__) {
+    "czMo": function czMo(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : English (Israel) [en-il]
       //! author : Chris Gedrim : https://github.com/chrisgedrim
@@ -26162,15 +25390,7 @@
     },
 
     /***/
-    "dNwA":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/sw.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function dNwA(module, exports, __webpack_require__) {
+    "dNwA": function dNwA(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Swahili [sw]
       //! author : Fahad Kassim : https://github.com/fadsel
@@ -26236,15 +25456,7 @@
     },
 
     /***/
-    "e+ae":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/sk.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function eAe(module, exports, __webpack_require__) {
+    "e+ae": function eAe(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Slovak [sk]
       //! author : Martin Minka : https://github.com/k2s
@@ -26438,15 +25650,7 @@
     },
 
     /***/
-    "fzPg":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/yo.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function fzPg(module, exports, __webpack_require__) {
+    "fzPg": function fzPg(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Yoruba Nigeria [yo]
       //! author : Atolagbe Abisoye : https://github.com/andela-batolagbe
@@ -26513,15 +25717,7 @@
     },
 
     /***/
-    "gVVK":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/sl.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function gVVK(module, exports, __webpack_require__) {
+    "gVVK": function gVVK(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Slovenian [sl]
       //! author : Robert Sedovšek : https://github.com/sedovsek
@@ -26724,15 +25920,7 @@
     },
 
     /***/
-    "gekB":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/fi.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function gekB(module, exports, __webpack_require__) {
+    "gekB": function gekB(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Finnish [fi]
       //! author : Tarmo Aidantausta : https://github.com/bleadof
@@ -26861,15 +26049,7 @@
     },
 
     /***/
-    "gjCT":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/ar-sa.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function gjCT(module, exports, __webpack_require__) {
+    "gjCT": function gjCT(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Arabic (Saudi Arabia) [ar-sa]
       //! author : Suhail Alkowaileet : https://github.com/xsoh
@@ -26980,15 +26160,7 @@
     },
 
     /***/
-    "hKrs":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/bg.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function hKrs(module, exports, __webpack_require__) {
+    "hKrs": function hKrs(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Bulgarian [bg]
       //! author : Krasen Borisov : https://github.com/kraz
@@ -27089,15 +26261,7 @@
     },
 
     /***/
-    "honF":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/my.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function honF(module, exports, __webpack_require__) {
+    "honF": function honF(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Burmese [my]
       //! author : Squar team, mysquar.com
@@ -27198,15 +26362,7 @@
     },
 
     /***/
-    "iEDd":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/gl.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function iEDd(module, exports, __webpack_require__) {
+    "iEDd": function iEDd(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Galician [gl]
       //! author : Juan G. Hurtado : https://github.com/juanghurtado
@@ -27291,15 +26447,7 @@
     },
 
     /***/
-    "iYuL":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/es.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function iYuL(module, exports, __webpack_require__) {
+    "iYuL": function iYuL(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Spanish [es]
       //! author : Julio Napurí : https://github.com/julionc
@@ -27400,15 +26548,7 @@
     },
 
     /***/
-    "j1ZV":
-    /*!*************************************************!*\
-      !*** ./src/app/components/components.module.ts ***!
-      \*************************************************/
-
-    /*! exports provided: ComponentsModule */
-
-    /***/
-    function j1ZV(module, __webpack_exports__, __webpack_require__) {
+    "j1ZV": function j1ZV(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -27423,19 +26563,19 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/common */
-      "ofXK");
+      "SVse");
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 
@@ -27482,15 +26622,7 @@
     },
 
     /***/
-    "jUeY":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/el.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function jUeY(module, exports, __webpack_require__) {
+    "jUeY": function jUeY(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Greek [el]
       //! author : Aggelos Karalias : https://github.com/mehiel
@@ -27601,15 +26733,7 @@
     },
 
     /***/
-    "jVdC":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/pl.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function jVdC(module, exports, __webpack_require__) {
+    "jVdC": function jVdC(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Polish [pl]
       //! author : Rafal Hirsz : https://github.com/evoL
@@ -27758,15 +26882,7 @@
     },
 
     /***/
-    "jfSC":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/fa.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function jfSC(module, exports, __webpack_require__) {
+    "jfSC": function jfSC(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Persian [fa]
       //! author : Ebrahim Byagowi : https://github.com/ebraminio
@@ -27879,15 +26995,7 @@
     },
 
     /***/
-    "jnO4":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ar.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function jnO4(module, exports, __webpack_require__) {
+    "jnO4": function jnO4(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Arabic [ar]
       //! author : Abdel Said: https://github.com/abdelsaid
@@ -28025,15 +27133,7 @@
     },
 
     /***/
-    "kEOa":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/bn.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function kEOa(module, exports, __webpack_require__) {
+    "kEOa": function kEOa(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Bengali [bn]
       //! author : Kaushik Gandhi : https://github.com/kaushikgandhi
@@ -28157,15 +27257,7 @@
     },
 
     /***/
-    "kOpN":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/zh-tw.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function kOpN(module, exports, __webpack_require__) {
+    "kOpN": function kOpN(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Chinese (Taiwan) [zh-tw]
       //! author : Ben : https://github.com/ben-lin
@@ -28279,15 +27371,7 @@
     },
 
     /***/
-    "l5ep":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/cy.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function l5ep(module, exports, __webpack_require__) {
+    "l5ep": function l5ep(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Welsh [cy]
       //! author : Robert Allen : https://github.com/robgallen
@@ -28376,15 +27460,7 @@
     },
 
     /***/
-    "lXzo":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ru.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function lXzo(module, exports, __webpack_require__) {
+    "lXzo": function lXzo(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Russian [ru]
       //! author : Viktorminator : https://github.com/Viktorminator
@@ -28582,15 +27658,7 @@
     },
 
     /***/
-    "lYtQ":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/mn.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function lYtQ(module, exports, __webpack_require__) {
+    "lYtQ": function lYtQ(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Mongolian [mn]
       //! author : Javkhlantugs Nyamdorj : https://github.com/javkhaanj7
@@ -28707,15 +27775,7 @@
     },
 
     /***/
-    "lgnt":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ky.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function lgnt(module, exports, __webpack_require__) {
+    "lgnt": function lgnt(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Kyrgyz [ky]
       //! author : Chyngyz Arystan uulu : https://github.com/chyngyz
@@ -28808,15 +27868,7 @@
     },
 
     /***/
-    "loYQ":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/bn-bd.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function loYQ(module, exports, __webpack_require__) {
+    "loYQ": function loYQ(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Bengali (Bangladesh) [bn-bd]
       //! author : Asraf Hossain Patoary : https://github.com/ashwoolford
@@ -28952,15 +28004,7 @@
     },
 
     /***/
-    "lyxo":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/ro.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function lyxo(module, exports, __webpack_require__) {
+    "lyxo": function lyxo(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Romanian [ro]
       //! author : Vlad Gurdiga : https://github.com/gurdiga
@@ -29049,15 +28093,7 @@
     },
 
     /***/
-    "nyYc":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/fr.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function nyYc(module, exports, __webpack_require__) {
+    "nyYc": function nyYc(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : French [fr]
       //! author : John Fischer : https://github.com/jfroffice
@@ -29159,15 +28195,7 @@
     },
 
     /***/
-    "o1bE":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/ar-dz.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function o1bE(module, exports, __webpack_require__) {
+    "o1bE": function o1bE(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Arabic (Algeria) [ar-dz]
       //! author : Amine Roukh: https://github.com/Amine27
@@ -29276,15 +28304,7 @@
     },
 
     /***/
-    "p/rL":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/bm.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function pRL(module, exports, __webpack_require__) {
+    "p/rL": function pRL(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Bambara [bm]
       //! author : Estelle Comment : https://github.com/estellecomment
@@ -29349,15 +28369,7 @@
     },
 
     /***/
-    "qvJo":
-    /*!************************************************!*\
-      !*** ./node_modules/moment/locale/gom-deva.js ***!
-      \************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function qvJo(module, exports, __webpack_require__) {
+    "qvJo": function qvJo(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Konkani Devanagari script [gom-deva]
       //! author : The Discoverer : https://github.com/WikiDiscoverer
@@ -29493,15 +28505,7 @@
     },
 
     /***/
-    "raLr":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/uk.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function raLr(module, exports, __webpack_require__) {
+    "raLr": function raLr(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Ukrainian [uk]
       //! author : zemlanin : https://github.com/zemlanin
@@ -29666,15 +28670,7 @@
     },
 
     /***/
-    "s+uk":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/de-at.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function sUk(module, exports, __webpack_require__) {
+    "s+uk": function sUk(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : German (Austria) [de-at]
       //! author : lluchs : https://github.com/lluchs
@@ -29763,15 +28759,7 @@
     },
 
     /***/
-    "sp3z":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/lo.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function sp3z(module, exports, __webpack_require__) {
+    "sp3z": function sp3z(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Lao [lo]
       //! author : Ryan Hart : https://github.com/ryanhart2
@@ -29846,15 +28834,7 @@
     },
 
     /***/
-    "t+mt":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/en-sg.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function tMt(module, exports, __webpack_require__) {
+    "t+mt": function tMt(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : English (Singapore) [en-sg]
       //! author : Matthew Castrillon-Madrigal : https://github.com/techdimension
@@ -29925,15 +28905,7 @@
     },
 
     /***/
-    "tGlX":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/de.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function tGlX(module, exports, __webpack_require__) {
+    "tGlX": function tGlX(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : German [de]
       //! author : lluchs : https://github.com/lluchs
@@ -30021,15 +28993,7 @@
     },
 
     /***/
-    "tT3J":
-    /*!************************************************!*\
-      !*** ./node_modules/moment/locale/tzm-latn.js ***!
-      \************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function tT3J(module, exports, __webpack_require__) {
+    "tT3J": function tT3J(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Central Atlas Tamazight Latin [tzm-latn]
       //! author : Abdel Said : https://github.com/abdelsaid
@@ -30094,15 +29058,7 @@
     },
 
     /***/
-    "tUCv":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/jv.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function tUCv(module, exports, __webpack_require__) {
+    "tUCv": function tUCv(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Javanese [jv]
       //! author : Rony Lantip : https://github.com/lantip
@@ -30193,15 +29149,7 @@
     },
 
     /***/
-    "tbfe":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/es-mx.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function tbfe(module, exports, __webpack_require__) {
+    "tbfe": function tbfe(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Spanish (Mexico) [es-mx]
       //! author : JC Franco : https://github.com/jcfranco
@@ -30302,15 +29250,7 @@
     },
 
     /***/
-    "u3GI":
-    /*!*********************************************!*\
-      !*** ./node_modules/moment/locale/de-ch.js ***!
-      \*********************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function u3GI(module, exports, __webpack_require__) {
+    "u3GI": function u3GI(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : German (Switzerland) [de-ch]
       //! author : sschueller : https://github.com/sschueller
@@ -30396,15 +29336,7 @@
     },
 
     /***/
-    "uEye":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/nn.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function uEye(module, exports, __webpack_require__) {
+    "uEye": function uEye(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Nynorsk [nn]
       //! authors : https://github.com/mechuwind
@@ -30476,15 +29408,7 @@
     },
 
     /***/
-    "uXwI":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/lv.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function uXwI(module, exports, __webpack_require__) {
+    "uXwI": function uXwI(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Latvian [lv]
       //! author : Kristaps Karlsons : https://github.com/skakri
@@ -30593,15 +29517,7 @@
     },
 
     /***/
-    "wQk9":
-    /*!*******************************************!*\
-      !*** ./node_modules/moment/locale/tzm.js ***!
-      \*******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function wQk9(module, exports, __webpack_require__) {
+    "wQk9": function wQk9(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Central Atlas Tamazight [tzm]
       //! author : Abdel Said : https://github.com/abdelsaid
@@ -30666,15 +29582,7 @@
     },
 
     /***/
-    "wd/R":
-    /*!***************************************!*\
-      !*** ./node_modules/moment/moment.js ***!
-      \***************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function wdR(module, exports, __webpack_require__) {
+    "wd/R": function wdR(module, exports, __webpack_require__) {
       /* WEBPACK VAR INJECTION */
       (function (module) {
         var require; //! moment.js
@@ -35796,15 +34704,7 @@
     },
 
     /***/
-    "x6pH":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/he.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function x6pH(module, exports, __webpack_require__) {
+    "x6pH": function x6pH(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Hebrew [he]
       //! author : Tomer Cohen : https://github.com/tomer
@@ -35912,15 +34812,7 @@
     },
 
     /***/
-    "yPMs":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/sq.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function yPMs(module, exports, __webpack_require__) {
+    "yPMs": function yPMs(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Albanian [sq]
       //! author : Flakërim Ismani : https://github.com/flakerimi
@@ -35997,15 +34889,7 @@
     },
 
     /***/
-    "z1FC":
-    /*!*******************************************!*\
-      !*** ./node_modules/moment/locale/tzl.js ***!
-      \*******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function z1FC(module, exports, __webpack_require__) {
+    "z1FC": function z1FC(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Talossan [tzl]
       //! author : Robin van der Vliet : https://github.com/robin0van0der0v
@@ -36105,15 +34989,7 @@
     },
 
     /***/
-    "z3Vd":
-    /*!*******************************************!*\
-      !*** ./node_modules/moment/locale/tlh.js ***!
-      \*******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function z3Vd(module, exports, __webpack_require__) {
+    "z3Vd": function z3Vd(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Klingon [tlh]
       //! author : Dominika Kruk : https://github.com/amaranthrose
@@ -36240,15 +35116,7 @@
     },
 
     /***/
-    "zx6S":
-    /*!******************************************!*\
-      !*** ./node_modules/moment/locale/sr.js ***!
-      \******************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function zx6S(module, exports, __webpack_require__) {
+    "zx6S": function zx6S(module, exports, __webpack_require__) {
       //! moment.js locale configuration
       //! locale : Serbian [sr]
       //! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j

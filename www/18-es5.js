@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[18], {
     /***/
-    "cABk":
-    /*!****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-loading.entry.js ***!
-      \****************************************************************/
-
-    /*! exports provided: ion_loading */
-
-    /***/
-    function cABk(module, __webpack_exports__, __webpack_require__) {
+    "cABk": function cABk(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -315,16 +307,18 @@
             var _Object$assign;
 
             var message = this.message,
-                spinner = this.spinner;
+                spinner = this.spinner,
+                htmlAttributes = this.htmlAttributes;
             var mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
-              onIonBackdropTap: this.onBackdropTap,
-              tabindex: "-1",
+            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({
+              tabindex: "-1"
+            }, htmlAttributes, {
               style: {
                 zIndex: "".concat(40000 + this.overlayIndex)
               },
+              onIonBackdropTap: this.onBackdropTap,
               "class": Object.assign(Object.assign({}, Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)), (_Object$assign = {}, _defineProperty(_Object$assign, mode, true), _defineProperty(_Object$assign, 'loading-translucent', this.translucent), _Object$assign))
-            }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
+            }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
               visible: this.showBackdrop,
               tappable: this.backdropDismiss
             }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {

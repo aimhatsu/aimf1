@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[28], {
     /***/
-    "STjf":
-    /*!**********************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-ripple-effect.entry.js ***!
-      \**********************************************************************/
-
-    /*! exports provided: ion_ripple_effect */
-
-    /***/
-    function STjf(module, __webpack_exports__, __webpack_require__) {
+    "STjf": function STjf(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

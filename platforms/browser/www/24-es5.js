@@ -19,15 +19,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[24], {
     /***/
-    "h11V":
-    /*!****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-radio_2.entry.js ***!
-      \****************************************************************/
-
-    /*! exports provided: ion_radio, ion_radio_group */
-
-    /***/
-    function h11V(module, __webpack_exports__, __webpack_require__) {
+    "h11V": function h11V(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

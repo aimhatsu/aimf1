@@ -9,15 +9,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7], {
     /***/
-    "ydQj":
-    /*!***************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-card_5.entry.js ***!
-      \***************************************************************/
-
-    /*! exports provided: ion_card, ion_card_content, ion_card_header, ion_card_subtitle, ion_card_title */
-
-    /***/
-    function ydQj(module, __webpack_exports__, __webpack_require__) {
+    "ydQj": function ydQj(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

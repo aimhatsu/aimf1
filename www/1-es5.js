@@ -15,15 +15,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1], {
     /***/
-    "Q8AI":
-    /*!**************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-alert.entry.js ***!
-      \**************************************************************/
-
-    /*! exports provided: ion_alert */
-
-    /***/
-    function Q8AI(module, __webpack_exports__, __webpack_require__) {
+    "Q8AI": function Q8AI(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -48,9 +40,9 @@
       /* harmony import */
 
 
-      var _button_active_4927a4c1_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./button-active-4927a4c1.js */
-      "JbSX");
+      var _button_active_d4bd4f74_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./button-active-d4bd4f74.js */
+      "Zcj0");
       /* harmony import */
 
 
@@ -84,9 +76,9 @@
       /* harmony import */
 
 
-      var _index_f49d994d_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-      /*! ./index-f49d994d.js */
-      "iWo5");
+      var _index_34cb2743_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ./index-34cb2743.js */
+      "KF81");
       /* harmony import */
 
 
@@ -392,7 +384,7 @@
               return;
             }
 
-            this.gesture = Object(_button_active_4927a4c1_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.wrapperEl, function (refEl) {
+            this.gesture = Object(_button_active_d4bd4f74_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.wrapperEl, function (refEl) {
               return refEl.classList.contains('alert-button');
             });
             this.gesture.enable(true);
@@ -742,22 +734,25 @@
 
             var overlayIndex = this.overlayIndex,
                 header = this.header,
-                subHeader = this.subHeader;
+                subHeader = this.subHeader,
+                htmlAttributes = this.htmlAttributes;
             var mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
             var hdrId = "alert-".concat(overlayIndex, "-hdr");
             var subHdrId = "alert-".concat(overlayIndex, "-sub-hdr");
             var msgId = "alert-".concat(overlayIndex, "-msg");
-            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
-              role: "dialog",
+            var role = this.inputs.length > 0 || this.buttons.length > 0 ? 'alertdialog' : 'alert';
+            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({
+              role: role,
               "aria-modal": "true",
-              tabindex: "-1",
+              tabindex: "-1"
+            }, htmlAttributes, {
               style: {
                 zIndex: "".concat(20000 + overlayIndex)
               },
               "class": Object.assign(Object.assign({}, Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__["g"])(this.cssClass)), (_Object$assign = {}, _defineProperty(_Object$assign, mode, true), _defineProperty(_Object$assign, 'alert-translucent', this.translucent), _Object$assign)),
               onIonAlertWillDismiss: this.dispatchCancelHandler,
               onIonBackdropTap: this.onBackdropTap
-            }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
+            }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
               tappable: this.backdropDismiss
             }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
               tabindex: "0"

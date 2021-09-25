@@ -27,15 +27,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[29], {
     /***/
-    "k5eQ":
-    /*!****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-route_4.entry.js ***!
-      \****************************************************************/
-
-    /*! exports provided: ion_route, ion_route_redirect, ion_router, ion_router_link */
-
-    /***/
-    function k5eQ(module, __webpack_exports__, __webpack_require__) {
+    "k5eQ": function k5eQ(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -931,9 +923,8 @@
           this.state = 0;
           this.lastState = 0;
           /**
-           * By default `ion-router` will match the routes at the root path ("/").
-           * That can be changed when
-           *
+           * The root path to use when matching URLs. By default, this is set to "/", but you can specify
+           * an alternate prefix for all URL paths.
            */
 
           this.root = '/';

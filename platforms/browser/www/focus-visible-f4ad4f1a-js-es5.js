@@ -1,15 +1,7 @@
 (function () {
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["focus-visible-f4ad4f1a-js"], {
     /***/
-    "Tsnu":
-    /*!*********************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/focus-visible-f4ad4f1a.js ***!
-      \*********************************************************************/
-
-    /*! exports provided: startFocusVisible */
-
-    /***/
-    function Tsnu(module, __webpack_exports__, __webpack_require__) {
+    "Tsnu": function Tsnu(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

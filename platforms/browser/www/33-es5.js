@@ -25,15 +25,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[33], {
     /***/
-    "5xYT":
-    /*!****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-slide_2.entry.js ***!
-      \****************************************************************/
-
-    /*! exports provided: ion_slide, ion_slides */
-
-    /***/
-    function xYT(module, __webpack_exports__, __webpack_require__) {
+    "5xYT": function xYT(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -186,6 +178,11 @@
 
             return optionsChanged;
           }()
+        }, {
+          key: "componentWillLoad",
+          value: function componentWillLoad() {
+            console.warn("[Deprecation Warning]: ion-slides has been deprecated and will be removed in Ionic Framework v7.0. We recommend using the framework-specific integrations that Swiper.js provides, allowing for faster bug fixes and an improved developer experience. See https://ionicframework.com/docs/api/slides#migration for more information including migration steps.");
+          }
         }, {
           key: "connectedCallback",
           value: function connectedCallback() {

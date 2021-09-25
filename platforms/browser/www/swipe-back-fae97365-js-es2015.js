@@ -1,8 +1,8 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["swipe-back-ee838cf8-js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["swipe-back-fae97365-js"],{
 
-/***/ "IYAk":
+/***/ "Pu4v":
 /*!******************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/swipe-back-ee838cf8.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/swipe-back-fae97365.js ***!
   \******************************************************************/
 /*! exports provided: createSwipeBackGesture */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSwipeBackGesture", function() { return createSwipeBackGesture; });
 /* harmony import */ var _helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers-dd7e4b7b.js */ "1vRN");
-/* harmony import */ var _index_f49d994d_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-f49d994d.js */ "iWo5");
+/* harmony import */ var _index_34cb2743_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-34cb2743.js */ "KF81");
 /* harmony import */ var _gesture_controller_31cb6bb9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gesture-controller-31cb6bb9.js */ "y08P");
 
 
@@ -50,7 +50,7 @@ const createSwipeBackGesture = (el, canStartHandler, onStartHandler, onMoveHandl
      */
     onEndHandler(shouldComplete, (stepValue <= 0) ? 0.01 : Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_0__["j"])(0, stepValue, 0.9999), realDur);
   };
-  return Object(_index_f49d994d_js__WEBPACK_IMPORTED_MODULE_1__["createGesture"])({
+  return Object(_index_34cb2743_js__WEBPACK_IMPORTED_MODULE_1__["createGesture"])({
     el,
     gestureName: 'goback-swipe',
     gesturePriority: 40,
@@ -68,4 +68,4 @@ const createSwipeBackGesture = (el, canStartHandler, onStartHandler, onMoveHandl
 /***/ })
 
 }]);
-//# sourceMappingURL=swipe-back-ee838cf8-js-es2015.js.map
+//# sourceMappingURL=swipe-back-fae97365-js-es2015.js.map

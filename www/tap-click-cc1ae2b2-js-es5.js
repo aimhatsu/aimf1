@@ -1,15 +1,7 @@
 (function () {
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["tap-click-cc1ae2b2-js"], {
     /***/
-    "cg4z":
-    /*!*****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/tap-click-cc1ae2b2.js ***!
-      \*****************************************************************/
-
-    /*! exports provided: startTapClick */
-
-    /***/
-    function cg4z(module, __webpack_exports__, __webpack_require__) {
+    "cg4z": function cg4z(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

@@ -9,15 +9,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[9], {
     /***/
-    "czK9":
-    /*!*************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-chip.entry.js ***!
-      \*************************************************************/
-
-    /*! exports provided: ion_chip */
-
-    /***/
-    function czK9(module, __webpack_exports__, __webpack_require__) {
+    "czK9": function czK9(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

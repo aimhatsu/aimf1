@@ -3,15 +3,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["tabs-tabs-module"], {
     /***/
-    "MJr+":
-    /*!***********************************!*\
-      !*** ./src/app/tabs/tabs.page.ts ***!
-      \***********************************/
-
-    /*! exports provided: TabsPage */
-
-    /***/
-    function MJr(module, __webpack_exports__, __webpack_require__) {
+    "MJr+": function MJr(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -26,13 +18,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
 
       var TabsPage = function TabsPage() {
         _classCallCheck(this, TabsPage);
@@ -112,7 +104,7 @@
           }
         },
         directives: [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonTabs"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonTabBar"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonRow"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonCol"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonTabButton"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonIcon"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonLabel"]],
-        styles: [".tabs-bg[_ngcontent-%COMP%] {\n  background: transparent linear-gradient(266deg, #2694A3 0%, #01426A 100%) 0% 0% no-repeat padding-box;\n  box-shadow: 0px -5px 30px #505C6229;\n  opacity: 1;\n}\n\n.tabs-btn[_ngcontent-%COMP%] {\n  background: transparent;\n  color: #ffffff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFicy90YWJzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFHQUFBO0VBQ0EsbUNBQUE7RUFDQSxVQUFBO0FBQ0o7O0FBRUE7RUFDSSx1QkFBQTtFQUNBLGNBQUE7QUFDSiIsImZpbGUiOiJzcmMvYXBwL3RhYnMvdGFicy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGFicy1iZ3tcclxuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50IGxpbmVhci1ncmFkaWVudCgyNjZkZWcsICMyNjk0QTMgMCUsICMwMTQyNkEgMTAwJSkgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gICAgYm94LXNoYWRvdzogMHB4IC01cHggMzBweCAjNTA1QzYyMjk7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG59XHJcblxyXG4udGFicy1idG57XHJcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuICAgIGNvbG9yOiAjZmZmZmZmO1xyXG59XHJcbiJdfQ== */"]
+        styles: [".tabs-bg[_ngcontent-%COMP%] {\n  background: transparent linear-gradient(266deg, #2694A3 0%, #01426A 100%) 0% 0% no-repeat padding-box;\n  box-shadow: 0px -5px 30px #505C6229;\n  opacity: 1;\n}\n\n.tabs-btn[_ngcontent-%COMP%] {\n  background: transparent;\n  color: #ffffff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFicy90YWJzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFHQUFBO0VBQ0EsbUNBQUE7RUFDQSxVQUFBO0FBQ0o7O0FBRUE7RUFDSSx1QkFBQTtFQUNBLGNBQUE7QUFDSiIsImZpbGUiOiJzcmMvYXBwL3RhYnMvdGFicy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGFicy1iZ3tcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCBsaW5lYXItZ3JhZGllbnQoMjY2ZGVnLCAjMjY5NEEzIDAlLCAjMDE0MjZBIDEwMCUpIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcbiAgICBib3gtc2hhZG93OiAwcHggLTVweCAzMHB4ICM1MDVDNjIyOTtcbiAgICBvcGFjaXR5OiAxO1xufVxuXG4udGFicy1idG57XG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gICAgY29sb3I6ICNmZmZmZmY7XG59XG4iXX0= */"]
       });
       /*@__PURE__*/
 
@@ -133,15 +125,7 @@
     },
 
     /***/
-    "hO9l":
-    /*!*************************************!*\
-      !*** ./src/app/tabs/tabs.module.ts ***!
-      \*************************************/
-
-    /*! exports provided: TabsPageModule */
-
-    /***/
-    function hO9l(module, __webpack_exports__, __webpack_require__) {
+    "hO9l": function hO9l(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -156,25 +140,25 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common */
-      "ofXK");
+      "SVse");
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/forms */
-      "3Pt+");
+      "s7LF");
       /* harmony import */
 
 
@@ -225,15 +209,7 @@
     },
 
     /***/
-    "kB8F":
-    /*!*********************************************!*\
-      !*** ./src/app/tabs/tabs-routing.module.ts ***!
-      \*********************************************/
-
-    /*! exports provided: TabsPageRoutingModule */
-
-    /***/
-    function kB8F(module, __webpack_exports__, __webpack_require__) {
+    "kB8F": function kB8F(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -248,13 +224,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/router */
-      "tyNb");
+      "iInd");
       /* harmony import */
 
 

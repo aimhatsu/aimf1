@@ -7,15 +7,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
     /***/
-    "+fvF":
-    /*!***********************************************!*\
-      !*** ./src/app/form-modal/form-modal.page.ts ***!
-      \***********************************************/
-
-    /*! exports provided: FormModalPage */
-
-    /***/
-    function fvF(module, __webpack_exports__, __webpack_require__) {
+    "+fvF": function fvF(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -36,13 +28,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/router */
-      "tyNb");
+      "iInd");
       /* harmony import */
 
 
@@ -54,19 +46,19 @@
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/forms */
-      "3Pt+");
+      "s7LF");
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      "ofXK");
+      "SVse");
 
       function FormModalPage_div_7_Template(rf, ctx) {
         if (rf & 1) {
@@ -2447,7 +2439,7 @@
           }
         },
         directives: [_ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonHeader"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonToolbar"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonButtons"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonIcon"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonTitle"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonContent"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormGroupDirective"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonItem"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonLabel"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonInput"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["TextValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControlName"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonButton"]],
-        styles: ["ion-label[_ngcontent-%COMP%] {\n  color: #2694a3 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9ybS1tb2RhbC9mb3JtLW1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHlCQUFBO0FBQ0oiLCJmaWxlIjoic3JjL2FwcC9mb3JtLW1vZGFsL2Zvcm0tbW9kYWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWxhYmVse1xyXG4gICAgY29sb3I6ICMyNjk0YTMgIWltcG9ydGFudDtcclxufSJdfQ== */"]
+        styles: ["ion-label[_ngcontent-%COMP%] {\n  color: #2694a3 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9ybS1tb2RhbC9mb3JtLW1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHlCQUFBO0FBQ0oiLCJmaWxlIjoic3JjL2FwcC9mb3JtLW1vZGFsL2Zvcm0tbW9kYWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWxhYmVse1xuICAgIGNvbG9yOiAjMjY5NGEzICFpbXBvcnRhbnQ7XG59Il19 */"]
       });
       /*@__PURE__*/
 
@@ -2487,31 +2479,15 @@
     },
 
     /***/
-    0:
-    /*!***************************!*\
-      !*** multi ./src/main.ts ***!
-      \***************************/
-
-    /*! no static exports found */
-
-    /***/
-    function _(module, exports, __webpack_require__) {
+    0: function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! C:\Users\anacl\server\aimf1\aimf1\src\main.ts */
+      /*! C:\Users\felip\OneDrive\Área de Trabalho\aimf1-main\aimf1-main\src\main.ts */
       "zUnb");
       /***/
     },
 
     /***/
-    "AytR":
-    /*!*****************************************!*\
-      !*** ./src/environments/environment.ts ***!
-      \*****************************************/
-
-    /*! exports provided: environment */
-
-    /***/
-    function AytR(module, __webpack_exports__, __webpack_require__) {
+    "AytR": function AytR(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2542,15 +2518,7 @@
     },
 
     /***/
-    "E2f4":
-    /*!*****************************************************!*\
-      !*** ./src/app/services/storage/storage.service.ts ***!
-      \*****************************************************/
-
-    /*! exports provided: StorageService */
-
-    /***/
-    function E2f4(module, __webpack_exports__, __webpack_require__) {
+    "E2f4": function E2f4(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2565,13 +2533,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _ionic_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @ionic/storage */
-      "e8h1");
+      "xgBC");
 
       var StorageService = /*#__PURE__*/function () {
         function StorageService(storage) {
@@ -2628,15 +2596,7 @@
     },
 
     /***/
-    "Sy1n":
-    /*!**********************************!*\
-      !*** ./src/app/app.component.ts ***!
-      \**********************************/
-
-    /*! exports provided: AppComponent */
-
-    /***/
-    function Sy1n(module, __webpack_exports__, __webpack_require__) {
+    "Sy1n": function Sy1n(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2651,25 +2611,25 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 
       var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @ionic-native/splash-screen/ngx */
-      "54vc");
+      "y2f/");
       /* harmony import */
 
 
       var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @ionic-native/status-bar/ngx */
-      "VYYF");
+      "p74H");
 
       var AppComponent = /*#__PURE__*/function () {
         function AppComponent(navCtrl, platform, splashScreen, statusBar) {
@@ -2748,15 +2708,7 @@
     },
 
     /***/
-    "YrRj":
-    /*!*************************************************************!*\
-      !*** ./src/app/components/user-data/user-data.component.ts ***!
-      \*************************************************************/
-
-    /*! exports provided: UserDataComponent */
-
-    /***/
-    function YrRj(module, __webpack_exports__, __webpack_require__) {
+    "YrRj": function YrRj(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2777,13 +2729,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 
@@ -2801,13 +2753,13 @@
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common */
-      "ofXK");
+      "SVse");
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/forms */
-      "3Pt+");
+      "s7LF");
 
       function UserDataComponent_div_1_Template(rf, ctx) {
         if (rf & 1) {
@@ -3393,7 +3345,7 @@
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonList"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NgForm"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonListHeader"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonLabel"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonItem"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonInput"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["TextValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NgModel"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonButton"]],
-        styles: [".person-img[_ngcontent-%COMP%] {\n  width: 43px;\n  height: 40px;\n}\n\n.fingerprint-img[_ngcontent-%COMP%] {\n  margin-top: 5px;\n  width: 25px;\n  height: 25px;\n}\n\n.p-name[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 0.8rem;\n  color: black;\n}\n\nion-item[_ngcontent-%COMP%]   ion-label[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n\nion-item[_ngcontent-%COMP%]   ion-input[_ngcontent-%COMP%] {\n  font-size: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy91c2VyLWRhdGEvdXNlci1kYXRhLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0MsV0FBQTtFQUNBLFlBQUE7QUFDRDs7QUFFQTtFQUNDLGVBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQUNEOztBQUVBO0VBQ0MsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtBQUNEOztBQUdDO0VBQ0MsZUFBQTtBQUFGOztBQUVDO0VBQ0MsZUFBQTtBQUFGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy91c2VyLWRhdGEvdXNlci1kYXRhLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBlcnNvbi1pbWcge1xyXG5cdHdpZHRoOiA0M3B4O1xyXG5cdGhlaWdodDogNDBweDtcclxufVxyXG5cclxuLmZpbmdlcnByaW50LWltZyB7XHJcblx0bWFyZ2luLXRvcDogNXB4O1xyXG5cdHdpZHRoOiAyNXB4O1xyXG5cdGhlaWdodDogMjVweDtcclxufVxyXG5cclxuLnAtbmFtZSB7XHJcblx0bWFyZ2luLXRvcDogOHB4O1xyXG5cdGZvbnQtc2l6ZTogMC44cmVtO1xyXG5cdGNvbG9yOiBibGFjaztcclxufVxyXG5cclxuaW9uLWl0ZW0ge1xyXG5cdGlvbi1sYWJlbCB7XHJcblx0XHRmb250LXNpemU6IDE2cHg7XHJcblx0fVxyXG5cdGlvbi1pbnB1dCB7XHJcblx0XHRmb250LXNpemU6IDEycHg7XHJcblx0fVxyXG59XHJcbiJdfQ== */"]
+        styles: [".person-img[_ngcontent-%COMP%] {\n  width: 43px;\n  height: 40px;\n}\n\n.fingerprint-img[_ngcontent-%COMP%] {\n  margin-top: 5px;\n  width: 25px;\n  height: 25px;\n}\n\n.p-name[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 0.8rem;\n  color: black;\n}\n\nion-item[_ngcontent-%COMP%]   ion-label[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n\nion-item[_ngcontent-%COMP%]   ion-input[_ngcontent-%COMP%] {\n  font-size: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy91c2VyLWRhdGEvdXNlci1kYXRhLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0MsV0FBQTtFQUNBLFlBQUE7QUFDRDs7QUFFQTtFQUNDLGVBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQUNEOztBQUVBO0VBQ0MsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtBQUNEOztBQUdDO0VBQ0MsZUFBQTtBQUFGOztBQUVDO0VBQ0MsZUFBQTtBQUFGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy91c2VyLWRhdGEvdXNlci1kYXRhLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBlcnNvbi1pbWcge1xuXHR3aWR0aDogNDNweDtcblx0aGVpZ2h0OiA0MHB4O1xufVxuXG4uZmluZ2VycHJpbnQtaW1nIHtcblx0bWFyZ2luLXRvcDogNXB4O1xuXHR3aWR0aDogMjVweDtcblx0aGVpZ2h0OiAyNXB4O1xufVxuXG4ucC1uYW1lIHtcblx0bWFyZ2luLXRvcDogOHB4O1xuXHRmb250LXNpemU6IDAuOHJlbTtcblx0Y29sb3I6IGJsYWNrO1xufVxuXG5pb24taXRlbSB7XG5cdGlvbi1sYWJlbCB7XG5cdFx0Zm9udC1zaXplOiAxNnB4O1xuXHR9XG5cdGlvbi1pbnB1dCB7XG5cdFx0Zm9udC1zaXplOiAxMnB4O1xuXHR9XG59XG4iXX0= */"]
       });
       /*@__PURE__*/
 
@@ -3422,15 +3374,7 @@
     },
 
     /***/
-    "ZAI4":
-    /*!*******************************!*\
-      !*** ./src/app/app.module.ts ***!
-      \*******************************/
-
-    /*! exports provided: AppModule */
-
-    /***/
-    function ZAI4(module, __webpack_exports__, __webpack_require__) {
+    "ZAI4": function ZAI4(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3445,55 +3389,55 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/platform-browser */
-      "jhN1");
+      "cUpR");
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/router */
-      "tyNb");
+      "iInd");
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/forms */
-      "3Pt+");
+      "s7LF");
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/common/http */
-      "tk/3");
+      "IheW");
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 
       var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ionic-native/splash-screen/ngx */
-      "54vc");
+      "y2f/");
       /* harmony import */
 
 
       var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic-native/status-bar/ngx */
-      "VYYF");
+      "p74H");
       /* harmony import */
 
 
       var _ionic_storage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @ionic/storage */
-      "e8h1");
+      "xgBC");
       /* harmony import */
 
 
@@ -3511,7 +3455,7 @@
 
       var ng_circle_progress__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ng-circle-progress */
-      "K1R0");
+      "B0QU");
       /* harmony import */
 
 
@@ -3589,15 +3533,7 @@
     },
 
     /***/
-    "kLfG":
-    /*!*****************************************************************************************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm lazy ^\.\/.*\.entry\.js$ include: \.entry\.js$ exclude: \.system\.entry\.js$ namespace object ***!
-      \*****************************************************************************************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function kLfG(module, exports, __webpack_require__) {
+    "kLfG": function kLfG(module, exports, __webpack_require__) {
       var map = {
         "./ion-action-sheet.entry.js": ["dUtr", "common", 0],
         "./ion-alert.entry.js": ["Q8AI", "common", 1],
@@ -3670,15 +3606,7 @@
     },
 
     /***/
-    "lGQG":
-    /*!******************************************!*\
-      !*** ./src/app/services/auth.service.ts ***!
-      \******************************************/
-
-    /*! exports provided: AuthService */
-
-    /***/
-    function lGQG(module, __webpack_exports__, __webpack_require__) {
+    "lGQG": function lGQG(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3699,13 +3627,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common/http */
-      "tk/3");
+      "IheW");
       /* harmony import */
 
 
@@ -3928,15 +3856,7 @@
     },
 
     /***/
-    "oZWX":
-    /*!*********************************************!*\
-      !*** ./src/app/services/api/api.service.ts ***!
-      \*********************************************/
-
-    /*! exports provided: ApiService */
-
-    /***/
-    function oZWX(module, __webpack_exports__, __webpack_require__) {
+    "oZWX": function oZWX(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3957,13 +3877,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/common/http */
-      "tk/3");
+      "IheW");
       /* harmony import */
 
 
@@ -3981,7 +3901,7 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
 
       var apiURL = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiURL;
 
@@ -4167,15 +4087,7 @@
     },
 
     /***/
-    "vY5A":
-    /*!***************************************!*\
-      !*** ./src/app/app-routing.module.ts ***!
-      \***************************************/
-
-    /*! exports provided: AppRoutingModule */
-
-    /***/
-    function vY5A(module, __webpack_exports__, __webpack_require__) {
+    "vY5A": function vY5A(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4190,13 +4102,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/router */
-      "tyNb");
+      "iInd");
 
       var routes = [{
         path: '',
@@ -4319,15 +4231,7 @@
     },
 
     /***/
-    "zUnb":
-    /*!*********************!*\
-      !*** ./src/main.ts ***!
-      \*********************/
-
-    /*! no exports provided */
-
-    /***/
-    function zUnb(module, __webpack_exports__, __webpack_require__) {
+    "zUnb": function zUnb(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4336,7 +4240,7 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
@@ -4354,7 +4258,7 @@
 
       var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/platform-browser */
-      "jhN1");
+      "cUpR");
 
       if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].production) {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
@@ -4368,15 +4272,7 @@
     },
 
     /***/
-    "zn8P":
-    /*!******************************************************!*\
-      !*** ./$$_lazy_route_resource lazy namespace object ***!
-      \******************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function zn8P(module, exports) {
+    "zn8P": function zn8P(module, exports) {
       function webpackEmptyAsyncContext(req) {
         // Here Promise.resolve().then() is used instead of new Promise() to prevent
         // uncaught exception popping up in devtools

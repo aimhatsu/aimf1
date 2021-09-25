@@ -7,15 +7,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["register-register-module"], {
     /***/
-    "b0Bx":
-    /*!*******************************************!*\
-      !*** ./src/app/register/register.page.ts ***!
-      \*******************************************/
-
-    /*! exports provided: RegisterPage */
-
-    /***/
-    function b0Bx(module, __webpack_exports__, __webpack_require__) {
+    "b0Bx": function b0Bx(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -30,7 +22,7 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
@@ -54,25 +46,25 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/forms */
-      "3Pt+");
+      "s7LF");
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      "ofXK");
+      "SVse");
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/router */
-      "tyNb");
+      "iInd");
 
       function RegisterPage_p_88_Template(rf, ctx) {
         if (rf & 1) {
@@ -631,7 +623,7 @@
           }
         },
         directives: [_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonContent"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonItem"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonIcon"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonLabel"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonInput"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["TextValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonButton"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["RouterLinkDelegate"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterLink"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonSpinner"]],
-        styles: [".bg-style[_ngcontent-%COMP%] {\n  height: 180% !important;\n}\n\n.back-shadow[_ngcontent-%COMP%] {\n  height: 0% !important;\n}\n\n.user-login-area[_ngcontent-%COMP%]:after {\n  content: \"\";\n  height: 180% !important;\n}\n\nion-item[_ngcontent-%COMP%] {\n  --color: #ffffff;\n  --highlight-height: 0 ;\n}\n\n.side-icon[_ngcontent-%COMP%] {\n  margin: 0px 8px 0px 0px;\n}\n\n.term-style[_ngcontent-%COMP%] {\n  margin-bottom: 5%;\n  color: #ffffff;\n  text-align: center;\n}\n\n.form-error[_ngcontent-%COMP%] {\n  font-size: 0.8rem;\n  color: red;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcmVnaXN0ZXIvcmVnaXN0ZXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksdUJBQUE7QUFDSjs7QUFFQTtFQUNJLHFCQUFBO0FBQ0o7O0FBRUE7RUFDQyxXQUFBO0VBQ0EsdUJBQUE7QUFDRDs7QUFFQTtFQUNJLGdCQUFBO0VBQ0Esc0JBQUE7QUFDSjs7QUFFQTtFQUNJLHVCQUFBO0FBQ0o7O0FBRUE7RUFDSSxpQkFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtBQUNKOztBQUVBO0VBQ0ksaUJBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7QUFDSiIsImZpbGUiOiJzcmMvYXBwL3JlZ2lzdGVyL3JlZ2lzdGVyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5iZy1zdHlsZXtcclxuICAgIGhlaWdodDogMTgwJSAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uYmFjay1zaGFkb3d7XHJcbiAgICBoZWlnaHQ6IDAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi51c2VyLWxvZ2luLWFyZWE6YWZ0ZXIge1xyXG5cdGNvbnRlbnQ6IFwiXCI7XHJcblx0aGVpZ2h0OiAxODAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmlvbi1pdGVte1xyXG4gICAgLS1jb2xvcjogI2ZmZmZmZjtcclxuICAgIC0taGlnaGxpZ2h0LWhlaWdodDogMFxyXG59XHJcblxyXG4uc2lkZS1pY29ue1xyXG4gICAgbWFyZ2luOiAwcHggOHB4IDBweCAwcHg7XHJcbn1cclxuXHJcbi50ZXJtLXN0eWxle1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNSU7XHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLmZvcm0tZXJyb3J7XHJcbiAgICBmb250LXNpemU6IDAuOHJlbTtcclxuICAgIGNvbG9yOiByZWQ7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn0iXX0= */"]
+        styles: [".bg-style[_ngcontent-%COMP%] {\n  height: 180% !important;\n}\n\n.back-shadow[_ngcontent-%COMP%] {\n  height: 0% !important;\n}\n\n.user-login-area[_ngcontent-%COMP%]:after {\n  content: \"\";\n  height: 180% !important;\n}\n\nion-item[_ngcontent-%COMP%] {\n  --color: #ffffff;\n  --highlight-height: 0 ;\n}\n\n.side-icon[_ngcontent-%COMP%] {\n  margin: 0px 8px 0px 0px;\n}\n\n.term-style[_ngcontent-%COMP%] {\n  margin-bottom: 5%;\n  color: #ffffff;\n  text-align: center;\n}\n\n.form-error[_ngcontent-%COMP%] {\n  font-size: 0.8rem;\n  color: red;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcmVnaXN0ZXIvcmVnaXN0ZXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksdUJBQUE7QUFDSjs7QUFFQTtFQUNJLHFCQUFBO0FBQ0o7O0FBRUE7RUFDQyxXQUFBO0VBQ0EsdUJBQUE7QUFDRDs7QUFFQTtFQUNJLGdCQUFBO0VBQ0Esc0JBQUE7QUFDSjs7QUFFQTtFQUNJLHVCQUFBO0FBQ0o7O0FBRUE7RUFDSSxpQkFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtBQUNKOztBQUVBO0VBQ0ksaUJBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7QUFDSiIsImZpbGUiOiJzcmMvYXBwL3JlZ2lzdGVyL3JlZ2lzdGVyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5iZy1zdHlsZXtcbiAgICBoZWlnaHQ6IDE4MCUgIWltcG9ydGFudDtcbn1cblxuLmJhY2stc2hhZG93e1xuICAgIGhlaWdodDogMCUgIWltcG9ydGFudDtcbn1cblxuLnVzZXItbG9naW4tYXJlYTphZnRlciB7XG5cdGNvbnRlbnQ6IFwiXCI7XG5cdGhlaWdodDogMTgwJSAhaW1wb3J0YW50O1xufVxuXG5pb24taXRlbXtcbiAgICAtLWNvbG9yOiAjZmZmZmZmO1xuICAgIC0taGlnaGxpZ2h0LWhlaWdodDogMFxufVxuXG4uc2lkZS1pY29ue1xuICAgIG1hcmdpbjogMHB4IDhweCAwcHggMHB4O1xufVxuXG4udGVybS1zdHlsZXtcbiAgICBtYXJnaW4tYm90dG9tOiA1JTtcbiAgICBjb2xvcjogI2ZmZmZmZjtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5mb3JtLWVycm9ye1xuICAgIGZvbnQtc2l6ZTogMC44cmVtO1xuICAgIGNvbG9yOiByZWQ7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */"]
       });
       /*@__PURE__*/
 
@@ -660,15 +652,7 @@
     },
 
     /***/
-    "x5bZ":
-    /*!*********************************************!*\
-      !*** ./src/app/register/register.module.ts ***!
-      \*********************************************/
-
-    /*! exports provided: RegisterPageModule */
-
-    /***/
-    function x5bZ(module, __webpack_exports__, __webpack_require__) {
+    "x5bZ": function x5bZ(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -683,31 +667,31 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/common */
-      "ofXK");
+      "SVse");
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/forms */
-      "3Pt+");
+      "s7LF");
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
-      "tyNb");
+      "iInd");
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 

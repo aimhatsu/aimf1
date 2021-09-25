@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[40], {
     /***/
-    "L3sA":
-    /*!**************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-toast.entry.js ***!
-      \**************************************************************/
-
-    /*! exports provided: ion_toast */
-
-    /***/
-    function L3sA(module, __webpack_exports__, __webpack_require__) {
+    "L3sA": function L3sA(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -492,16 +484,19 @@
               'toast-wrapper': true
             }, "toast-".concat(this.position), true);
 
-            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+            var role = allButtons.length > 0 ? 'dialog' : 'status';
+            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({
+              role: role,
+              tabindex: "-1"
+            }, this.htmlAttributes, {
               style: {
                 zIndex: "".concat(60000 + this.overlayIndex)
               },
               "class": Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color, Object.assign(Object.assign(_defineProperty({}, mode, true), Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)), {
                 'toast-translucent': this.translucent
               })),
-              tabindex: "-1",
               onIonToastWillDismiss: this.dispatchCancelHandler
-            }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
+            }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
               "class": wrapperClass
             }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
               "class": "toast-container",

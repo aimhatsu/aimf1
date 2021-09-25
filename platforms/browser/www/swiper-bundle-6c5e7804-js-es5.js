@@ -5,7 +5,7 @@
 
   function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
   function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -23,15 +23,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["swiper-bundle-6c5e7804-js"], {
     /***/
-    "PduG":
-    /*!*********************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/swiper.bundle-6c5e7804.js ***!
-      \*********************************************************************/
-
-    /*! exports provided: Swiper */
-
-    /***/
-    function PduG(module, __webpack_exports__, __webpack_require__) {
+    "PduG": function PduG(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1161,14 +1153,14 @@
             // Latest Chrome and webkits Fix
             if (win.WebKitCSSMatrix) curTransform = transformMatrix.m41; // Crazy IE10 Matrix
             else if (matrix.length === 16) curTransform = parseFloat(matrix[12]); // Normal Browsers
-              else curTransform = parseFloat(matrix[4]);
+            else curTransform = parseFloat(matrix[4]);
           }
 
           if (axis === 'y') {
             // Latest Chrome and webkits Fix
             if (win.WebKitCSSMatrix) curTransform = transformMatrix.m42; // Crazy IE10 Matrix
             else if (matrix.length === 16) curTransform = parseFloat(matrix[13]); // Normal Browsers
-              else curTransform = parseFloat(matrix[5]);
+            else curTransform = parseFloat(matrix[5]);
           }
 
           return curTransform || 0;
@@ -3096,8 +3088,7 @@
         var electron = ua.toLowerCase().indexOf('electron') >= 0;
         var macos = platform === 'MacIntel'; // iPadOs 13 fix
 
-        if (!ipad && macos && Support.touch && (screenWidth === 1024 && screenHeight === 1366 || // Pro 12.9
-        screenWidth === 834 && screenHeight === 1194 // Pro 11
+        if (!ipad && macos && Support.touch && (screenWidth === 1024 && screenHeight === 1366 || screenWidth === 834 && screenHeight === 1194 // Pro 11
         || screenWidth === 834 && screenHeight === 1112 // Pro 10.5
         || screenWidth === 768 && screenHeight === 1024 // other
         )) {

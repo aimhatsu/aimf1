@@ -9,15 +9,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[5], {
     /***/
-    "Q2Bp":
-    /*!*****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-backdrop.entry.js ***!
-      \*****************************************************************/
-
-    /*! exports provided: ion_backdrop */
-
-    /***/
-    function Q2Bp(module, __webpack_exports__, __webpack_require__) {
+    "Q2Bp": function Q2Bp(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

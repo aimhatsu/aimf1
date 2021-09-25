@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[16], {
     /***/
-    "MGMP":
-    /*!**********************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-item-option_3.entry.js ***!
-      \**********************************************************************/
-
-    /*! exports provided: ion_item_option, ion_item_options, ion_item_sliding */
-
-    /***/
-    function MGMP(module, __webpack_exports__, __webpack_require__) {
+    "MGMP": function MGMP(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -245,6 +237,8 @@
           /* None */
           ;
           this.optsDirty = true;
+          this.closestContent = null;
+          this.initialContentScrollY = true;
           this.state = 2
           /* Disabled */
           ;
@@ -273,16 +267,17 @@
                   switch (_context2.prev = _context2.next) {
                     case 0:
                       this.item = this.el.querySelector('ion-item');
-                      _context2.next = 3;
+                      this.closestContent = this.el.closest('ion-content');
+                      _context2.next = 4;
                       return this.updateOptions();
 
-                    case 3:
-                      _context2.next = 5;
+                    case 4:
+                      _context2.next = 6;
                       return Promise.resolve().then(__webpack_require__.bind(null,
-                      /*! ./index-f49d994d.js */
-                      "iWo5"));
+                      /*! ./index-34cb2743.js */
+                      "KF81"));
 
-                    case 5:
+                    case 6:
                       this.gesture = _context2.sent.createGesture({
                         el: this.el,
                         gestureName: 'item-swipe',
@@ -303,7 +298,7 @@
                       });
                       this.disabledChanged();
 
-                    case 7:
+                    case 8:
                     case "end":
                       return _context2.stop();
                   }
@@ -641,14 +636,40 @@
 
             if (selected && selected !== this.el) {
               this.closeOpened();
-              return false;
             }
 
             return !!(this.rightOptions || this.leftOptions);
           }
         }, {
+          key: "disableContentScrollY",
+          value: function disableContentScrollY() {
+            if (this.closestContent === null) {
+              return;
+            }
+
+            this.initialContentScrollY = this.closestContent.scrollY;
+            this.closestContent.scrollY = false;
+          }
+        }, {
+          key: "restoreContentScrollY",
+          value: function restoreContentScrollY() {
+            if (this.closestContent === null) {
+              return;
+            }
+
+            this.closestContent.scrollY = this.initialContentScrollY;
+          }
+        }, {
           key: "onStart",
           value: function onStart() {
+            /**
+             * We need to query for the ion-item
+             * every time the gesture starts. Developers
+             * may toggle ion-item elements via *ngIf.
+             */
+            this.item = this.el.querySelector('ion-item'); // Prevent scrolling during gesture
+
+            this.disableContentScrollY();
             openSlidingItem = this.el;
 
             if (this.tmr !== undefined) {
@@ -721,6 +742,8 @@
         }, {
           key: "onEnd",
           value: function onEnd(gesture) {
+            // Restore ion-content scrollY to initial value when gesture ends
+            this.restoreContentScrollY();
             var velocity = gesture.velocityX;
             var restingPoint = this.openAmount > 0 ? this.optsWidthRightSide : -this.optsWidthLeftSide; // Check if the drag didn't clear the buttons mid-point
             // and we aren't moving fast enough to swipe open

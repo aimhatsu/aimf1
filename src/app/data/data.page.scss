@@ -51,13 +51,28 @@ ion-segment{
 .data-card{
     margin: 10px 10% 0px  10%;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 1px 6px 12px #00000031;
     border-radius: 10px;
+<<<<<<< Updated upstream
     min-height: 150px;
 
 }
 
 
+=======
+
+}
+
+.question-div{
+    max-height: 0px;
+    overflow-y: hidden;
+    transition: ease-in-out 200ms max-height;
+}
+.question-div.opened {
+      max-height: 3000px;
+    transition: ease-in-out 600ms max-height;
+}
+>>>>>>> Stashed changes
 .card-stats{
  
     width: 80%;

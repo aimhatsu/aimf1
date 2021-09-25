@@ -1,15 +1,7 @@
 (function () {
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["polyfills-css-shim"], {
     /***/
-    "9qUq":
-    /*!****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/css-shim-2ccf4dec.js ***!
-      \****************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function qUq(module, exports) {
+    "9qUq": function qUq(module, exports) {
       /*
        Stencil Client Patch Esm v2.5.0 | MIT Licensed | https://stenciljs.com
        */

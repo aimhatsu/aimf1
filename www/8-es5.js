@@ -9,15 +9,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[8], {
     /***/
-    "4fMi":
-    /*!*****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-checkbox.entry.js ***!
-      \*****************************************************************/
-
-    /*! exports provided: ion_checkbox */
-
-    /***/
-    function fMi(module, __webpack_exports__, __webpack_require__) {
+    "4fMi": function fMi(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

@@ -275,7 +275,7 @@ const Refresher = class {
      */
     this.closeDuration = '280ms';
     /**
-     * Time it takes the refresher to to snap back to the `refreshing` state.
+     * Time it takes the refresher to snap back to the `refreshing` state.
      * Does not apply when the refresher content uses a spinner,
      * enabling the native refresher.
      */
@@ -405,7 +405,7 @@ const Refresher = class {
       });
     };
     this.scrollEl.addEventListener('scroll', this.scrollListenerCallback);
-    this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-f49d994d.js */ "iWo5"))).createGesture({
+    this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-34cb2743.js */ "KF81"))).createGesture({
       el: this.scrollEl,
       gestureName: 'refresher',
       gesturePriority: 31,
@@ -457,7 +457,7 @@ const Refresher = class {
         refreshingCircle.style.setProperty('animation-delay', '-655ms');
       });
     }
-    this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-f49d994d.js */ "iWo5"))).createGesture({
+    this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-34cb2743.js */ "KF81"))).createGesture({
       el: this.scrollEl,
       gestureName: 'refresher',
       gesturePriority: 31,
@@ -562,7 +562,7 @@ const Refresher = class {
       this.setupNativeRefresher(contentEl);
     }
     else {
-      this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-f49d994d.js */ "iWo5"))).createGesture({
+      this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-34cb2743.js */ "KF81"))).createGesture({
         el: contentEl,
         gestureName: 'refresher',
         gesturePriority: 31,

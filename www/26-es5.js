@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[26], {
     /***/
-    "nYbb":
-    /*!********************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-refresher_2.entry.js ***!
-      \********************************************************************/
-
-    /*! exports provided: ion_refresher, ion_refresher_content */
-
-    /***/
-    function nYbb(module, __webpack_exports__, __webpack_require__) {
+    "nYbb": function nYbb(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -412,7 +404,7 @@
 
           this.closeDuration = '280ms';
           /**
-           * Time it takes the refresher to to snap back to the `refreshing` state.
+           * Time it takes the refresher to snap back to the `refreshing` state.
            * Does not apply when the refresher content uses a spinner,
            * enabling the native refresher.
            */
@@ -573,8 +565,8 @@
                         if (!_this.pointerDown && _this.state === 1
                         /* Inactive */
                         ) {
-                            return;
-                          }
+                          return;
+                        }
 
                         Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["f"])(function () {
                           // PTR should only be active when overflow scrolling at the top
@@ -589,12 +581,12 @@
                             if (_this.state === 8
                             /* Refreshing */
                             ) {
-                                var ratio = Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_3__["j"])(0, scrollTop / (refresherHeight * 0.5), 1);
-                                Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["c"])(function () {
-                                  return setSpinnerOpacity(refreshingSpinner, 1 - ratio);
-                                });
-                                return;
-                              }
+                              var ratio = Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_3__["j"])(0, scrollTop / (refresherHeight * 0.5), 1);
+                              Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["c"])(function () {
+                                return setSpinnerOpacity(refreshingSpinner, 1 - ratio);
+                              });
+                              return;
+                            }
 
                             Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["c"])(function () {
                               return setSpinnerOpacity(pullingSpinner, 0);
@@ -656,8 +648,8 @@
                       this.scrollEl.addEventListener('scroll', this.scrollListenerCallback);
                       _context4.next = 9;
                       return Promise.resolve().then(__webpack_require__.bind(null,
-                      /*! ./index-f49d994d.js */
-                      "iWo5"));
+                      /*! ./index-34cb2743.js */
+                      "KF81"));
 
                     case 9:
                       this.gesture = _context4.sent.createGesture({
@@ -748,8 +740,8 @@
 
                       _context6.next = 6;
                       return Promise.resolve().then(__webpack_require__.bind(null,
-                      /*! ./index-f49d994d.js */
-                      "iWo5"));
+                      /*! ./index-34cb2743.js */
+                      "KF81"));
 
                     case 6:
                       this.gesture = _context6.sent.createGesture({
@@ -990,8 +982,8 @@
                     case 19:
                       _context8.next = 21;
                       return Promise.resolve().then(__webpack_require__.bind(null,
-                      /*! ./index-f49d994d.js */
-                      "iWo5"));
+                      /*! ./index-34cb2743.js */
+                      "KF81"));
 
                     case 21:
                       this.gesture = _context8.sent.createGesture({
@@ -1163,8 +1155,8 @@
             if (this.state !== 1
             /* Inactive */
             ) {
-                return false;
-              } // if the scrollTop is greater than zero then it's
+              return false;
+            } // if the scrollTop is greater than zero then it's
             // not possible to pull the content down yet
 
 
@@ -1232,21 +1224,21 @@
             if (this.state === 1
             /* Inactive */
             ) {
-                // this refresh is not already actively pulling down
-                // get the content's scrollTop
-                var scrollHostScrollTop = this.scrollEl.scrollTop; // if the scrollTop is greater than zero then it's
-                // not possible to pull the content down yet
+              // this refresh is not already actively pulling down
+              // get the content's scrollTop
+              var scrollHostScrollTop = this.scrollEl.scrollTop; // if the scrollTop is greater than zero then it's
+              // not possible to pull the content down yet
 
-                if (scrollHostScrollTop > 0) {
-                  this.progress = 0;
-                  return;
-                } // content scrolled all the way to the top, and dragging down
+              if (scrollHostScrollTop > 0) {
+                this.progress = 0;
+                return;
+              } // content scrolled all the way to the top, and dragging down
 
 
-                this.state = 2
-                /* Pulling */
-                ;
-              } // prevent native scroll events
+              this.state = 2
+              /* Pulling */
+              ;
+            } // prevent native scroll events
 
 
             if (ev.cancelable) {
@@ -1304,17 +1296,17 @@
             if (this.state === 4
             /* Ready */
             ) {
-                // they pulled down far enough, so it's ready to refresh
-                this.beginRefresh();
-              } else if (this.state === 2
+              // they pulled down far enough, so it's ready to refresh
+              this.beginRefresh();
+            } else if (this.state === 2
             /* Pulling */
             ) {
-                // they were pulling down, but didn't pull down far enough
-                // set the content back to it's original location
-                // and close the refresher
-                // set that the refresh is actively cancelling
-                this.cancel();
-              }
+              // they were pulling down, but didn't pull down far enough
+              // set the content back to it's original location
+              // and close the refresher
+              // set that the refresh is actively cancelling
+              this.cancel();
+            }
           }
         }, {
           key: "beginRefresh",

@@ -103,7 +103,7 @@ const Range = class {
     this.setupGesture = async () => {
       const rangeSlider = this.rangeSlider;
       if (rangeSlider) {
-        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-f49d994d.js */ "iWo5"))).createGesture({
+        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-34cb2743.js */ "KF81"))).createGesture({
           el: rangeSlider,
           gestureName: 'range',
           gesturePriority: 100,

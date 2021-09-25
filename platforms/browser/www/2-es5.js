@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2], {
     /***/
-    "hgI1":
-    /*!**************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-app_8.entry.js ***!
-      \**************************************************************/
-
-    /*! exports provided: ion_app, ion_buttons, ion_content, ion_footer, ion_header, ion_router_outlet, ion_title, ion_toolbar */
-
-    /***/
-    function hgI1(module, __webpack_exports__, __webpack_require__) {
+    "hgI1": function hgI1(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -112,9 +104,9 @@
       /* harmony import */
 
 
-      var _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! ./index-c3ff7f2e.js */
-      "k4ps");
+      var _index_931440b1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./index-931440b1.js */
+      "Js3/");
 
       var appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html.plt-mobile ion-app [contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
 
@@ -941,6 +933,7 @@
 
           Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
           this.collapsibleHeaderInitialized = false;
+          this.inheritedAttributes = {};
           /**
            * If `true`, the header will be translucent.
            * Only applies when the mode is `"ios"` and the device supports
@@ -954,6 +947,11 @@
         }
 
         _createClass(Header, [{
+          key: "componentWillLoad",
+          value: function componentWillLoad() {
+            this.inheritedAttributes = Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_3__["i"])(this.el, ['role']);
+          }
+        }, {
           key: "componentDidLoad",
           value: function () {
             var _componentDidLoad = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
@@ -1193,13 +1191,14 @@
           value: function render() {
             var _class4;
 
-            var translucent = this.translucent;
+            var translucent = this.translucent,
+                inheritedAttributes = this.inheritedAttributes;
             var mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
             var collapse = this.collapse || 'none';
-            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({
               role: "banner",
               "class": (_class4 = {}, _defineProperty(_class4, mode, true), _defineProperty(_class4, "header-".concat(mode), true), _defineProperty(_class4, "header-translucent", this.translucent), _defineProperty(_class4, "header-collapse-".concat(collapse), true), _defineProperty(_class4, "header-translucent-".concat(mode), this.translucent), _class4)
-            }, mode === 'ios' && translucent && Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
+            }, inheritedAttributes), mode === 'ios' && translucent && Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
               "class": "header-background"
             }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null));
           }
@@ -1227,7 +1226,7 @@
           this.ionNavWillLoad = Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionNavWillLoad", 7);
           this.ionNavWillChange = Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionNavWillChange", 3);
           this.ionNavDidChange = Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionNavDidChange", 3);
-          this.animationEnabled = true;
+          this.gestureOrAnimationInProgress = false;
           /**
            * The mode determines which platform styles to use.
            */
@@ -1253,30 +1252,37 @@
             var _connectedCallback = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
               var _this6 = this;
 
+              var onStart;
               return regeneratorRuntime.wrap(function _callee7$(_context7) {
                 while (1) {
                   switch (_context7.prev = _context7.next) {
                     case 0:
-                      _context7.next = 2;
-                      return __webpack_require__.e(
-                      /*! import() | swipe-back-ee838cf8-js */
-                      "swipe-back-ee838cf8-js").then(__webpack_require__.bind(null,
-                      /*! ./swipe-back-ee838cf8.js */
-                      "IYAk"));
+                      onStart = function onStart() {
+                        _this6.gestureOrAnimationInProgress = true;
 
-                    case 2:
+                        if (_this6.swipeHandler) {
+                          _this6.swipeHandler.onStart();
+                        }
+                      };
+
+                      _context7.next = 3;
+                      return __webpack_require__.e(
+                      /*! import() | swipe-back-fae97365-js */
+                      "swipe-back-fae97365-js").then(__webpack_require__.bind(null,
+                      /*! ./swipe-back-fae97365.js */
+                      "Pu4v"));
+
+                    case 3:
                       this.gesture = _context7.sent.createSwipeBackGesture(this.el, function () {
-                        return !!_this6.swipeHandler && _this6.swipeHandler.canStart() && _this6.animationEnabled;
+                        return !_this6.gestureOrAnimationInProgress && !!_this6.swipeHandler && _this6.swipeHandler.canStart();
                       }, function () {
-                        return _this6.swipeHandler && _this6.swipeHandler.onStart();
+                        return onStart();
                       }, function (step) {
                         return _this6.ani && _this6.ani.progressStep(step);
                       }, function (shouldComplete, step, dur) {
                         if (_this6.ani) {
-                          _this6.animationEnabled = false;
-
                           _this6.ani.onFinish(function () {
-                            _this6.animationEnabled = true;
+                            _this6.gestureOrAnimationInProgress = false;
 
                             if (_this6.swipeHandler) {
                               _this6.swipeHandler.onEnd(shouldComplete);
@@ -1305,11 +1311,13 @@
                           }
 
                           _this6.ani.progressEnd(shouldComplete ? 1 : 0, newStepValue, dur);
+                        } else {
+                          _this6.gestureOrAnimationInProgress = false;
                         }
                       });
                       this.swipeHandlerChanged();
 
-                    case 4:
+                    case 5:
                     case "end":
                       return _context7.stop();
                   }
@@ -1536,16 +1544,50 @@
                       this.ionNavWillChange.emit();
                       el = this.el, mode = this.mode;
                       animated = this.animated && _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true);
-                      animationBuilder = this.animation || opts.animationBuilder || _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation');
+                      animationBuilder = opts.animationBuilder || this.animation || _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation');
                       _context12.next = 9;
-                      return Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_6__["t"])(Object.assign(Object.assign({
+                      return Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_6__["t"])(Object.assign(Object.assign({
                         mode: mode,
                         animated: animated,
                         enteringEl: enteringEl,
                         leavingEl: leavingEl,
                         baseEl: el,
                         progressCallback: opts.progressAnimation ? function (ani) {
-                          return _this7.ani = ani;
+                          /**
+                           * Because this progress callback is called asynchronously
+                           * it is possible for the gesture to start and end before
+                           * the animation is ever set. In that scenario, we should
+                           * immediately call progressEnd so that the transition promise
+                           * resolves and the gesture does not get locked up.
+                           */
+                          if (ani !== undefined && !_this7.gestureOrAnimationInProgress) {
+                            _this7.gestureOrAnimationInProgress = true;
+                            ani.onFinish(function () {
+                              _this7.gestureOrAnimationInProgress = false;
+
+                              if (_this7.swipeHandler) {
+                                _this7.swipeHandler.onEnd(false);
+                              }
+                            }, {
+                              oneTimeCallback: true
+                            });
+                            /**
+                             * Playing animation to beginning
+                             * with a duration of 0 prevents
+                             * any flickering when the animation
+                             * is later cleaned up.
+                             */
+
+                            /**
+                             * Playing animation to beginning
+                             * with a duration of 0 prevents
+                             * any flickering when the animation
+                             * is later cleaned up.
+                             */
+                            ani.progressEnd(0, 0, 0);
+                          } else {
+                            _this7.ani = ani;
+                          }
                         } : undefined
                       }, opts), {
                         animationBuilder: animationBuilder

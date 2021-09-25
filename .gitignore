@@ -1,2 +1,6 @@
 node_modules
 node_modules
+.vscode/typings/jquery/jquery.d.ts
+.vscode/plugins.json
+.vscode/typings/cordova-ionic/plugins/keyboard.d.ts
+typings/cordova-typings.d.ts

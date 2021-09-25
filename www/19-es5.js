@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[19], {
     /***/
-    "kyFE":
-    /*!***************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-menu_3.entry.js ***!
-      \***************************************************************/
-
-    /*! exports provided: ion_menu, ion_menu_button, ion_menu_toggle */
-
-    /***/
-    function kyFE(module, __webpack_exports__, __webpack_require__) {
+    "kyFE": function kyFE(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -230,8 +222,8 @@
 
                       _context.next = 15;
                       return Promise.resolve().then(__webpack_require__.bind(null,
-                      /*! ./index-f49d994d.js */
-                      "iWo5"));
+                      /*! ./index-34cb2743.js */
+                      "KF81"));
 
                     case 15:
                       this.gesture = _context.sent.createGesture({
@@ -882,6 +874,7 @@
           _classCallCheck(this, MenuButton);
 
           Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+          this.inheritedAttributes = {};
           this.visible = false;
           /**
            * If `true`, the user cannot interact with the menu button.
@@ -915,6 +908,11 @@
         }
 
         _createClass(MenuButton, [{
+          key: "componentWillLoad",
+          value: function componentWillLoad() {
+            this.inheritedAttributes = Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_4__["i"])(this.el, ['aria-label']);
+          }
+        }, {
           key: "componentDidLoad",
           value: function componentDidLoad() {
             this.visibilityChanged();
@@ -953,7 +951,8 @@
             var _Object;
 
             var color = this.color,
-                disabled = this.disabled;
+                disabled = this.disabled,
+                inheritedAttributes = this.inheritedAttributes;
             var mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
 
             var menuIcon = _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('menuIcon', mode === 'ios' ? 'menu-outline' : 'menu-sharp');
@@ -962,6 +961,7 @@
             var attrs = {
               type: this.type
             };
+            var ariaLabel = inheritedAttributes['aria-label'] || 'menu';
             return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
               onClick: this.onClick,
               "aria-disabled": disabled ? 'true' : null,
@@ -971,7 +971,7 @@
               disabled: disabled,
               "class": "button-native",
               part: "native",
-              "aria-label": "menu"
+              "aria-label": ariaLabel
             }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", {
               "class": "button-inner"
             }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", {

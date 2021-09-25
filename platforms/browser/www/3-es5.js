@@ -9,15 +9,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3], {
     /***/
-    "CfoV":
-    /*!*****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-avatar_3.entry.js ***!
-      \*****************************************************************/
-
-    /*! exports provided: ion_avatar, ion_badge, ion_thumbnail */
-
-    /***/
-    function CfoV(module, __webpack_exports__, __webpack_require__) {
+    "CfoV": function CfoV(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

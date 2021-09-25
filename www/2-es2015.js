@@ -23,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-dd7e4b7b.js */ "1vRN");
 /* harmony import */ var _cubic_bezier_eea9a7a9_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cubic-bezier-eea9a7a9.js */ "bC4P");
 /* harmony import */ var _framework_delegate_4392cd63_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./framework-delegate-4392cd63.js */ "acej");
-/* harmony import */ var _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index-c3ff7f2e.js */ "k4ps");
+/* harmony import */ var _index_931440b1_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index-931440b1.js */ "Js3/");
 
 
 
@@ -602,6 +602,7 @@ const Header = class {
   constructor(hostRef) {
     Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
     this.collapsibleHeaderInitialized = false;
+    this.inheritedAttributes = {};
     /**
      * If `true`, the header will be translucent.
      * Only applies when the mode is `"ios"` and the device supports
@@ -611,6 +612,9 @@ const Header = class {
      * attribute needs to be set on the content.
      */
     this.translucent = false;
+  }
+  componentWillLoad() {
+    this.inheritedAttributes = Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_3__["i"])(this.el, ['role']);
   }
   async componentDidLoad() {
     await this.checkCollapsibleHeader();
@@ -701,17 +705,17 @@ const Header = class {
     this.collapsibleHeaderInitialized = true;
   }
   render() {
-    const { translucent } = this;
+    const { translucent, inheritedAttributes } = this;
     const mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
     const collapse = this.collapse || 'none';
-    return (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "banner", class: {
+    return (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({ role: "banner", class: {
         [mode]: true,
         // Used internally for styling
         [`header-${mode}`]: true,
         [`header-translucent`]: this.translucent,
         [`header-collapse-${collapse}`]: true,
         [`header-translucent-${mode}`]: this.translucent,
-      } }, mode === 'ios' && translucent &&
+      } }, inheritedAttributes), mode === 'ios' && translucent &&
       Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "header-background" }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
   }
   get el() { return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this); }
@@ -729,7 +733,7 @@ const RouterOutlet = class {
     this.ionNavWillLoad = Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionNavWillLoad", 7);
     this.ionNavWillChange = Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionNavWillChange", 3);
     this.ionNavDidChange = Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionNavDidChange", 3);
-    this.animationEnabled = true;
+    this.gestureOrAnimationInProgress = false;
     /**
      * The mode determines which platform styles to use.
      */
@@ -745,11 +749,16 @@ const RouterOutlet = class {
     }
   }
   async connectedCallback() {
-    this.gesture = (await __webpack_require__.e(/*! import() | swipe-back-ee838cf8-js */ "swipe-back-ee838cf8-js").then(__webpack_require__.bind(null, /*! ./swipe-back-ee838cf8.js */ "IYAk"))).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
+    const onStart = () => {
+      this.gestureOrAnimationInProgress = true;
+      if (this.swipeHandler) {
+        this.swipeHandler.onStart();
+      }
+    };
+    this.gesture = (await __webpack_require__.e(/*! import() | swipe-back-fae97365-js */ "swipe-back-fae97365-js").then(__webpack_require__.bind(null, /*! ./swipe-back-fae97365.js */ "Pu4v"))).createSwipeBackGesture(this.el, () => !this.gestureOrAnimationInProgress && !!this.swipeHandler && this.swipeHandler.canStart(), () => onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
       if (this.ani) {
-        this.animationEnabled = false;
         this.ani.onFinish(() => {
-          this.animationEnabled = true;
+          this.gestureOrAnimationInProgress = false;
           if (this.swipeHandler) {
             this.swipeHandler.onEnd(shouldComplete);
           }
@@ -772,6 +781,9 @@ const RouterOutlet = class {
           newStepValue += Object(_cubic_bezier_eea9a7a9_js__WEBPACK_IMPORTED_MODULE_4__["g"])([0, 0], [0.32, 0.72], [0, 1], [1, 1], step)[0];
         }
         this.ani.progressEnd(shouldComplete ? 1 : 0, newStepValue, dur);
+      }
+      else {
+        this.gestureOrAnimationInProgress = false;
       }
     });
     this.swipeHandlerChanged();
@@ -840,12 +852,39 @@ const RouterOutlet = class {
     this.ionNavWillChange.emit();
     const { el, mode } = this;
     const animated = this.animated && _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true);
-    const animationBuilder = this.animation || opts.animationBuilder || _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation');
-    await Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_6__["t"])(Object.assign(Object.assign({ mode,
+    const animationBuilder = opts.animationBuilder || this.animation || _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation');
+    await Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_6__["t"])(Object.assign(Object.assign({ mode,
       animated,
       enteringEl,
       leavingEl, baseEl: el, progressCallback: (opts.progressAnimation
-        ? ani => this.ani = ani
+        ? ani => {
+          /**
+           * Because this progress callback is called asynchronously
+           * it is possible for the gesture to start and end before
+           * the animation is ever set. In that scenario, we should
+           * immediately call progressEnd so that the transition promise
+           * resolves and the gesture does not get locked up.
+           */
+          if (ani !== undefined && !this.gestureOrAnimationInProgress) {
+            this.gestureOrAnimationInProgress = true;
+            ani.onFinish(() => {
+              this.gestureOrAnimationInProgress = false;
+              if (this.swipeHandler) {
+                this.swipeHandler.onEnd(false);
+              }
+            }, { oneTimeCallback: true });
+            /**
+             * Playing animation to beginning
+             * with a duration of 0 prevents
+             * any flickering when the animation
+             * is later cleaned up.
+             */
+            ani.progressEnd(0, 0, 0);
+          }
+          else {
+            this.ani = ani;
+          }
+        }
         : undefined) }, opts), { animationBuilder }));
     // emit nav changed event
     this.ionNavDidChange.emit();

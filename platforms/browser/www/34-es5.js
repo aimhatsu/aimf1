@@ -9,15 +9,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[34], {
     /***/
-    "nI0H":
-    /*!****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-spinner.entry.js ***!
-      \****************************************************************/
-
-    /*! exports provided: ion_spinner */
-
-    /***/
-    function nI0H(module, __webpack_exports__, __webpack_require__) {
+    "nI0H": function nI0H(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

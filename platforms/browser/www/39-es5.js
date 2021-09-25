@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[39], {
     /***/
-    "U7LX":
-    /*!*****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-textarea.entry.js ***!
-      \*****************************************************************/
-
-    /*! exports provided: ion_textarea */
-
-    /***/
-    function U7LX(module, __webpack_exports__, __webpack_require__) {
+    "U7LX": function U7LX(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

@@ -1190,12 +1190,13 @@ const Picker = class {
     return selected;
   }
   render() {
+    const { htmlAttributes } = this;
     const mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-    return (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { "aria-modal": "true", tabindex: "-1", class: Object.assign({ [mode]: true,
-        // Used internally for styling
-        [`picker-${mode}`]: true }, Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)), style: {
+    return (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({ "aria-modal": "true", tabindex: "-1" }, htmlAttributes, { style: {
         zIndex: `${20000 + this.overlayIndex}`
-      }, onIonBackdropTap: this.onBackdropTap, onIonPickerWillDismiss: this.dispatchCancelHandler }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", { visible: this.showBackdrop, tappable: this.backdropDismiss }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { tabindex: "0" }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-wrapper ion-overlay-wrapper", role: "dialog" }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-toolbar" }, this.buttons.map(b => (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: buttonWrapperClass(b) }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", { type: "button", onClick: () => this.buttonClick(b), class: buttonClass(b) }, b.text))))), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-columns" }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-above-highlight" }), this.presented && this.columns.map(c => Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-picker-column", { col: c })), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-below-highlight" }))), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { tabindex: "0" })));
+      }, class: Object.assign({ [mode]: true,
+        // Used internally for styling
+        [`picker-${mode}`]: true }, Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)), onIonBackdropTap: this.onBackdropTap, onIonPickerWillDismiss: this.dispatchCancelHandler }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", { visible: this.showBackdrop, tappable: this.backdropDismiss }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { tabindex: "0" }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-wrapper ion-overlay-wrapper", role: "dialog" }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-toolbar" }, this.buttons.map(b => (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: buttonWrapperClass(b) }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", { type: "button", onClick: () => this.buttonClick(b), class: buttonClass(b) }, b.text))))), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-columns" }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-above-highlight" }), this.presented && this.columns.map(c => Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-picker-column", { col: c })), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "picker-below-highlight" }))), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { tabindex: "0" })));
   }
   get el() { return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this); }
 };
@@ -1241,7 +1242,7 @@ const PickerColumnCmp = class {
     }
     this.rotateFactor = pickerRotateFactor;
     this.scaleFactor = pickerScaleFactor;
-    this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-f49d994d.js */ "iWo5"))).createGesture({
+    this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-34cb2743.js */ "KF81"))).createGesture({
       el: this.el,
       gestureName: 'picker-swipe',
       gesturePriority: 100,

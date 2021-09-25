@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[12], {
     /***/
-    "uQcF":
-    /*!**************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-fab_3.entry.js ***!
-      \**************************************************************/
-
-    /*! exports provided: ion_fab, ion_fab_button, ion_fab_list */
-
-    /***/
-    function uQcF(module, __webpack_exports__, __webpack_require__) {
+    "uQcF": function uQcF(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

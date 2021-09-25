@@ -7,15 +7,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["login-login-module"], {
     /***/
-    "34Y5":
-    /*!*************************************!*\
-      !*** ./src/app/login/login.page.ts ***!
-      \*************************************/
-
-    /*! exports provided: LoginPage */
-
-    /***/
-    function Y5(module, __webpack_exports__, __webpack_require__) {
+    "34Y5": function Y5(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -30,7 +22,7 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
@@ -54,19 +46,19 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/forms */
-      "3Pt+");
+      "s7LF");
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      "ofXK");
+      "SVse");
 
       function LoginPage_span_24_Template(rf, ctx) {
         if (rf & 1) {
@@ -286,7 +278,7 @@
           }
         },
         directives: [_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonContent"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonItem"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonIcon"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonLabel"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonInput"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["TextValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgModel"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonButton"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonSpinner"]],
-        styles: ["ion-item[_ngcontent-%COMP%] {\n  --color: #ffffff;\n  --highlight-height: 0 ;\n}\n\n.side-icon[_ngcontent-%COMP%] {\n  margin: 0px 8px 0px 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSxzQkFBQTtBQUNKOztBQUVBO0VBQ0ksdUJBQUE7QUFDSiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pdGVte1xyXG4gICAgLS1jb2xvcjogI2ZmZmZmZjtcclxuICAgIC0taGlnaGxpZ2h0LWhlaWdodDogMFxyXG59XHJcblxyXG4uc2lkZS1pY29ue1xyXG4gICAgbWFyZ2luOiAwcHggOHB4IDBweCAwcHg7XHJcbn0iXX0= */"]
+        styles: ["ion-item[_ngcontent-%COMP%] {\n  --color: #ffffff;\n  --highlight-height: 0 ;\n}\n\n.side-icon[_ngcontent-%COMP%] {\n  margin: 0px 8px 0px 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSxzQkFBQTtBQUNKOztBQUVBO0VBQ0ksdUJBQUE7QUFDSiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pdGVte1xuICAgIC0tY29sb3I6ICNmZmZmZmY7XG4gICAgLS1oaWdobGlnaHQtaGVpZ2h0OiAwXG59XG5cbi5zaWRlLWljb257XG4gICAgbWFyZ2luOiAwcHggOHB4IDBweCAwcHg7XG59Il19 */"]
       });
       /*@__PURE__*/
 
@@ -315,15 +307,7 @@
     },
 
     /***/
-    "X3zk":
-    /*!***************************************!*\
-      !*** ./src/app/login/login.module.ts ***!
-      \***************************************/
-
-    /*! exports provided: LoginPageModule */
-
-    /***/
-    function X3zk(module, __webpack_exports__, __webpack_require__) {
+    "X3zk": function X3zk(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -338,31 +322,31 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      "fXoL");
+      "8Y7J");
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/common */
-      "ofXK");
+      "SVse");
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/forms */
-      "3Pt+");
+      "s7LF");
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
-      "tyNb");
+      "iInd");
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @ionic/angular */
-      "TEn/");
+      "sZkV");
       /* harmony import */
 
 

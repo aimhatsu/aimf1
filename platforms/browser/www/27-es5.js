@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[27], {
     /***/
-    "smMY":
-    /*!******************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-reorder_2.entry.js ***!
-      \******************************************************************/
-
-    /*! exports provided: ion_reorder, ion_reorder_group */
-
-    /***/
-    function smMY(module, __webpack_exports__, __webpack_require__) {
+    "smMY": function smMY(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -164,8 +156,8 @@
                     case 5:
                       _context.next = 7;
                       return Promise.resolve().then(__webpack_require__.bind(null,
-                      /*! ./index-f49d994d.js */
-                      "iWo5"));
+                      /*! ./index-34cb2743.js */
+                      "KF81"));
 
                     case 7:
                       this.gesture = _context.sent.createGesture({
@@ -239,8 +231,8 @@
             if (this.selectedItemEl || this.state !== 0
             /* Idle */
             ) {
-                return false;
-              }
+              return false;
+            }
 
             var target = ev.event.target;
             var reorderEl = target.closest('ion-reorder');
@@ -371,49 +363,48 @@
             if (selectedItemEl && this.state === 2
             /* Complete */
             ) {
-                var children = this.el.children;
-                var len = children.length;
-                var toIndex = this.lastToIndex;
-                var fromIndex = indexForItem(selectedItemEl);
+              var children = this.el.children;
+              var len = children.length;
+              var toIndex = this.lastToIndex;
+              var fromIndex = indexForItem(selectedItemEl);
 
-                if (toIndex !== fromIndex && (listOrReorder === undefined || listOrReorder === true)) {
-                  var ref = fromIndex < toIndex ? children[toIndex + 1] : children[toIndex];
-                  this.el.insertBefore(selectedItemEl, ref);
-                }
-
-                if (Array.isArray(listOrReorder)) {
-                  listOrReorder = reorderArray(listOrReorder, fromIndex, toIndex);
-                }
-
-                for (var i = 0; i < len; i++) {
-                  children[i].style['transform'] = '';
-                }
-
-                selectedItemEl.style.transition = '';
-                selectedItemEl.classList.remove(ITEM_REORDER_SELECTED);
-                this.selectedItemEl = undefined;
-                this.state = 0
-                /* Idle */
-                ;
+              if (toIndex !== fromIndex && (listOrReorder === undefined || listOrReorder === true)) {
+                var ref = fromIndex < toIndex ? children[toIndex + 1] : children[toIndex];
+                this.el.insertBefore(selectedItemEl, ref);
               }
+
+              if (Array.isArray(listOrReorder)) {
+                listOrReorder = reorderArray(listOrReorder, fromIndex, toIndex);
+              }
+
+              for (var i = 0; i < len; i++) {
+                children[i].style['transform'] = '';
+              }
+
+              selectedItemEl.style.transition = '';
+              selectedItemEl.classList.remove(ITEM_REORDER_SELECTED);
+              this.selectedItemEl = undefined;
+              this.state = 0
+              /* Idle */
+              ;
+            }
 
             return listOrReorder;
           }
         }, {
           key: "itemIndexForTop",
           value: function itemIndexForTop(deltaY) {
-            var heights = this.cachedHeights;
-            var i = 0; // TODO: since heights is a sorted array of integers, we can do
+            var heights = this.cachedHeights; // TODO: since heights is a sorted array of integers, we can do
             // speed up the search using binary search. Remember that linear-search is still
             // faster than binary-search for small arrays (<64) due CPU branch misprediction.
 
-            for (i = 0; i < heights.length; i++) {
+            for (var i = 0; i < heights.length; i++) {
               if (heights[i] > deltaY) {
-                break;
+                return i;
               }
             }
 
-            return i;
+            return heights.length - 1;
           }
           /********* DOM WRITE ********* */
 

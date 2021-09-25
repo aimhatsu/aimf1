@@ -1,15 +1,7 @@
 (function () {
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["keyboard-5742b5da-js"], {
     /***/
-    "nGaW":
-    /*!****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/keyboard-5742b5da.js ***!
-      \****************************************************************/
-
-    /*! exports provided: KEYBOARD_DID_CLOSE, KEYBOARD_DID_OPEN, copyVisualViewport, keyboardDidClose, keyboardDidOpen, keyboardDidResize, resetKeyboardAssist, setKeyboardClose, setKeyboardOpen, startKeyboardAssist, trackViewportChanges */
-
-    /***/
-    function nGaW(module, __webpack_exports__, __webpack_require__) {
+    "nGaW": function nGaW(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

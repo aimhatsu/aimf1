@@ -17,15 +17,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[21], {
     /***/
-    "vnES":
-    /*!**************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-nav_2.entry.js ***!
-      \**************************************************************/
-
-    /*! exports provided: ion_nav, ion_nav_link */
-
-    /***/
-    function vnES(module, __webpack_exports__, __webpack_require__) {
+    "vnES": function vnES(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -68,9 +60,9 @@
       /* harmony import */
 
 
-      var _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ./index-c3ff7f2e.js */
-      "k4ps");
+      var _index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./index-931440b1.js */
+      "Js3/");
       /* harmony import */
 
 
@@ -293,10 +285,10 @@
                       this.rootChanged();
                       _context2.next = 3;
                       return __webpack_require__.e(
-                      /*! import() | swipe-back-ee838cf8-js */
-                      "swipe-back-ee838cf8-js").then(__webpack_require__.bind(null,
-                      /*! ./swipe-back-ee838cf8.js */
-                      "IYAk"));
+                      /*! import() | swipe-back-fae97365-js */
+                      "swipe-back-fae97365-js").then(__webpack_require__.bind(null,
+                      /*! ./swipe-back-fae97365.js */
+                      "Pu4v"));
 
                     case 3:
                       this.gesture = _context2.sent.createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
@@ -325,7 +317,7 @@
             try {
               for (_iterator.s(); !(_step = _iterator.n()).done;) {
                 var view = _step.value;
-                Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["l"])(view.element, _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["d"]);
+                Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["l"])(view.element, _index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["d"]);
 
                 view._destroy();
               }
@@ -1185,9 +1177,9 @@
               try {
                 for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
                   var _view2 = _step4.value;
-                  Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["l"])(_view2.element, _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["b"]);
-                  Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["l"])(_view2.element, _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["c"]);
-                  Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["l"])(_view2.element, _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["d"]);
+                  Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["l"])(_view2.element, _index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["b"]);
+                  Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["l"])(_view2.element, _index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["c"]);
+                  Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["l"])(_view2.element, _index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["d"]);
                 } // once all lifecycle events has been delivered, we can safely detroy the views
 
               } catch (err) {
@@ -1232,18 +1224,19 @@
                       mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
                       enteringEl = enteringView.element;
                       leavingEl = leavingView && leavingView.element;
-                      animationOpts = Object.assign({
+                      animationOpts = Object.assign(Object.assign({
                         mode: mode,
                         showGoBack: this.canGoBackSync(enteringView),
                         baseEl: this.el,
-                        animationBuilder: this.animation || opts.animationBuilder || _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation'),
                         progressCallback: progressCallback,
                         animated: this.animated && _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true),
                         enteringEl: enteringEl,
                         leavingEl: leavingEl
-                      }, opts);
+                      }, opts), {
+                        animationBuilder: opts.animationBuilder || this.animation || _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('navAnimation')
+                      });
                       _context7.next = 8;
-                      return Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["t"])(animationOpts);
+                      return Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["t"])(animationOpts);
 
                     case 8:
                       _yield$Object = _context7.sent;
@@ -1354,12 +1347,12 @@
                 if (i > activeViewIndex) {
                   // this view comes after the active view
                   // let's unload it
-                  Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["l"])(element, _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["d"]);
+                  Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["l"])(element, _index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["d"]);
                   this.destroyView(view);
                 } else if (i < activeViewIndex) {
                   // this view comes before the active view
                   // and it is not a portal then ensure it is hidden
-                  Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_4__["s"])(element, true);
+                  Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_4__["s"])(element, true);
                 }
               }
             }

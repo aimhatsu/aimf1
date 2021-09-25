@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[30], {
     /***/
-    "OR5t":
-    /*!******************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-searchbar.entry.js ***!
-      \******************************************************************/
-
-    /*! exports provided: ion_searchbar */
-
-    /***/
-    function OR5t(module, __webpack_exports__, __webpack_require__) {
+    "OR5t": function OR5t(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

@@ -279,9 +279,10 @@ const Toast = class {
       'toast-wrapper': true,
       [`toast-${this.position}`]: true
     };
-    return (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { style: {
+    const role = allButtons.length > 0 ? 'dialog' : 'status';
+    return (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({ role: role, tabindex: "-1" }, this.htmlAttributes, { style: {
         zIndex: `${60000 + this.overlayIndex}`,
-      }, class: Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color, Object.assign(Object.assign({ [mode]: true }, Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: wrapperClass }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "toast-container", part: "container" }, this.renderButtons(startButtons, 'start'), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "toast-content" }, this.header !== undefined &&
+      }, class: Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color, Object.assign(Object.assign({ [mode]: true }, Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)), { 'toast-translucent': this.translucent })), onIonToastWillDismiss: this.dispatchCancelHandler }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: wrapperClass }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "toast-container", part: "container" }, this.renderButtons(startButtons, 'start'), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "toast-content" }, this.header !== undefined &&
       Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "toast-header", part: "header" }, this.header), this.message !== undefined &&
       Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "toast-message", part: "message", innerHTML: Object(_index_9e3fe806_js__WEBPACK_IMPORTED_MODULE_3__["s"])(this.message) })), this.renderButtons(endButtons, 'end')))));
   }

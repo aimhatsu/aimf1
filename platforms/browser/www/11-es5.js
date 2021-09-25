@@ -27,15 +27,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[11], {
     /***/
-    "WgF3":
-    /*!*******************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-datetime_3.entry.js ***!
-      \*******************************************************************/
-
-    /*! exports provided: ion_datetime, ion_picker, ion_picker_column */
-
-    /***/
-    function WgF3(module, __webpack_exports__, __webpack_require__) {
+    "WgF3": function WgF3(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1637,17 +1629,19 @@
             var _Object$assign,
                 _this8 = this;
 
+            var htmlAttributes = this.htmlAttributes;
             var mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({
               "aria-modal": "true",
-              tabindex: "-1",
-              "class": Object.assign((_Object$assign = {}, _defineProperty(_Object$assign, mode, true), _defineProperty(_Object$assign, "picker-".concat(mode), true), _Object$assign), Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)),
+              tabindex: "-1"
+            }, htmlAttributes, {
               style: {
                 zIndex: "".concat(20000 + this.overlayIndex)
               },
+              "class": Object.assign((_Object$assign = {}, _defineProperty(_Object$assign, mode, true), _defineProperty(_Object$assign, "picker-".concat(mode), true), _Object$assign), Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)),
               onIonBackdropTap: this.onBackdropTap,
               onIonPickerWillDismiss: this.dispatchCancelHandler
-            }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
+            }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
               visible: this.showBackdrop,
               tappable: this.backdropDismiss
             }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
@@ -1754,8 +1748,8 @@
                       this.scaleFactor = pickerScaleFactor;
                       _context6.next = 8;
                       return Promise.resolve().then(__webpack_require__.bind(null,
-                      /*! ./index-f49d994d.js */
-                      "iWo5"));
+                      /*! ./index-34cb2743.js */
+                      "KF81"));
 
                     case 8:
                       this.gesture = _context6.sent.createGesture({

@@ -9,15 +9,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[38], {
     /***/
-    "ISmu":
-    /*!*************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-text.entry.js ***!
-      \*************************************************************/
-
-    /*! exports provided: ion_text */
-
-    /***/
-    function ISmu(module, __webpack_exports__, __webpack_require__) {
+    "ISmu": function ISmu(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

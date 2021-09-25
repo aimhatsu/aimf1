@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[20], {
     /***/
-    "TvZU":
-    /*!**************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-modal.entry.js ***!
-      \**************************************************************/
-
-    /*! exports provided: ion_modal */
-
-    /***/
-    function TvZU(module, __webpack_exports__, __webpack_require__) {
+    "TvZU": function TvZU(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -64,9 +56,9 @@
       /* harmony import */
 
 
-      var _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ./index-c3ff7f2e.js */
-      "k4ps");
+      var _index_931440b1_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./index-931440b1.js */
+      "Js3/");
       /* harmony import */
 
 
@@ -82,9 +74,9 @@
       /* harmony import */
 
 
-      var _index_f49d994d_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-      /*! ./index-f49d994d.js */
-      "iWo5");
+      var _index_34cb2743_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ./index-34cb2743.js */
+      "KF81");
       /* harmony import */
 
 
@@ -170,7 +162,7 @@
           }
         };
 
-        var gesture = Object(_index_f49d994d_js__WEBPACK_IMPORTED_MODULE_8__["createGesture"])({
+        var gesture = Object(_index_34cb2743_js__WEBPACK_IMPORTED_MODULE_8__["createGesture"])({
           el: el,
           gestureName: 'modalSwipeToClose',
           gesturePriority: 40,
@@ -540,7 +532,7 @@
                     case 8:
                       this.usersElement = _context.sent;
                       _context.next = 11;
-                      return Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_5__["e"])(this.usersElement);
+                      return Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_5__["e"])(this.usersElement);
 
                     case 11:
                       Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["c"])(function () {
@@ -706,22 +698,24 @@
           value: function render() {
             var _Object$assign;
 
+            var htmlAttributes = this.htmlAttributes;
             var mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({
               "no-router": true,
               "aria-modal": "true",
-              tabindex: "-1",
-              "class": Object.assign((_Object$assign = {}, _defineProperty(_Object$assign, mode, true), _defineProperty(_Object$assign, "modal-card", this.presentingElement !== undefined && mode === 'ios'), _Object$assign), Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)),
+              tabindex: "-1"
+            }, htmlAttributes, {
               style: {
                 zIndex: "".concat(20000 + this.overlayIndex)
               },
+              "class": Object.assign((_Object$assign = {}, _defineProperty(_Object$assign, mode, true), _defineProperty(_Object$assign, "modal-card", this.presentingElement !== undefined && mode === 'ios'), _Object$assign), Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_4__["g"])(this.cssClass)),
               onIonBackdropTap: this.onBackdropTap,
               onIonDismiss: this.onDismiss,
               onIonModalDidPresent: this.onLifecycle,
               onIonModalWillPresent: this.onLifecycle,
               onIonModalWillDismiss: this.onLifecycle,
               onIonModalDidDismiss: this.onLifecycle
-            }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
+            }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
               visible: this.showBackdrop,
               tappable: this.backdropDismiss
             }), mode === 'ios' && Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {

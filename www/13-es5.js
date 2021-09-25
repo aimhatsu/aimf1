@@ -7,15 +7,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[13], {
     /***/
-    "wHD8":
-    /*!************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-img.entry.js ***!
-      \************************************************************/
-
-    /*! exports provided: ion_img */
-
-    /***/
-    function wHD8(module, __webpack_exports__, __webpack_require__) {
+    "wHD8": function wHD8(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -82,10 +74,12 @@
             if (typeof window !== 'undefined' && 'IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'isIntersecting' in window.IntersectionObserverEntry.prototype) {
               this.removeIO();
               this.io = new IntersectionObserver(function (data) {
-                // because there will only ever be one instance
-                // of the element we are observing
-                // we can just use data[0]
-                if (data[0].isIntersecting) {
+                /**
+                 * On slower devices, it is possible for an intersection observer entry to contain multiple
+                 * objects in the array. This happens when quickly scrolling an image into view and then out of
+                 * view. In this case, the last object represents the current state of the component.
+                 */
+                if (data[data.length - 1].isIntersecting) {
                   _this2.load();
 
                   _this2.removeIO();

@@ -12,13 +12,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_alert", function() { return Alert; });
 /* harmony import */ var _index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-7a8b7a1c.js */ "wEJo");
 /* harmony import */ var _ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-63a97a32.js */ "E/Mt");
-/* harmony import */ var _button_active_4927a4c1_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button-active-4927a4c1.js */ "JbSX");
+/* harmony import */ var _button_active_d4bd4f74_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button-active-d4bd4f74.js */ "Zcj0");
 /* harmony import */ var _overlays_e9ccff30_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./overlays-e9ccff30.js */ "SOSK");
 /* harmony import */ var _index_9e3fe806_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index-9e3fe806.js */ "39oe");
 /* harmony import */ var _theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./theme-ff3fc52f.js */ "74mu");
 /* harmony import */ var _animation_096c6391_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animation-096c6391.js */ "meiF");
 /* harmony import */ var _haptic_27b3f981_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./haptic-27b3f981.js */ "qULd");
-/* harmony import */ var _index_f49d994d_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index-f49d994d.js */ "iWo5");
+/* harmony import */ var _index_34cb2743_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index-34cb2743.js */ "KF81");
 /* harmony import */ var _gesture_controller_31cb6bb9_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./gesture-controller-31cb6bb9.js */ "y08P");
 /* harmony import */ var _hardware_back_button_4a6b37fb_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./hardware-back-button-4a6b37fb.js */ "B4Jq");
 /* harmony import */ var _helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./helpers-dd7e4b7b.js */ "1vRN");
@@ -288,7 +288,7 @@ const Alert = class {
     if (this.gesture || Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this) === 'md' || !this.wrapperEl) {
       return;
     }
-    this.gesture = Object(_button_active_4927a4c1_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.wrapperEl, (refEl) => refEl.classList.contains('alert-button'));
+    this.gesture = Object(_button_active_d4bd4f74_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.wrapperEl, (refEl) => refEl.classList.contains('alert-button'));
     this.gesture.enable(true);
   }
   /**
@@ -445,14 +445,15 @@ const Alert = class {
     return (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: alertButtonGroupClass }, buttons.map(button => Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", { type: "button", class: buttonClass(button), tabIndex: 0, onClick: () => this.buttonClick(button) }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "alert-button-inner" }, button.text), mode === 'md' && Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", null)))));
   }
   render() {
-    const { overlayIndex, header, subHeader } = this;
+    const { overlayIndex, header, subHeader, htmlAttributes } = this;
     const mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
     const hdrId = `alert-${overlayIndex}-hdr`;
     const subHdrId = `alert-${overlayIndex}-sub-hdr`;
     const msgId = `alert-${overlayIndex}-msg`;
-    return (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "dialog", "aria-modal": "true", tabindex: "-1", style: {
+    const role = this.inputs.length > 0 || this.buttons.length > 0 ? 'alertdialog' : 'alert';
+    return (Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({ role: role, "aria-modal": "true", tabindex: "-1" }, htmlAttributes, { style: {
         zIndex: `${20000 + overlayIndex}`,
-      }, class: Object.assign(Object.assign({}, Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__["g"])(this.cssClass)), { [mode]: true, 'alert-translucent': this.translucent }), onIonAlertWillDismiss: this.dispatchCancelHandler, onIonBackdropTap: this.onBackdropTap }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", { tappable: this.backdropDismiss }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { tabindex: "0" }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "alert-wrapper ion-overlay-wrapper", ref: el => this.wrapperEl = el }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "alert-head" }, header && Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("h2", { id: hdrId, class: "alert-title" }, header), subHeader && Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("h2", { id: subHdrId, class: "alert-sub-title" }, subHeader)), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { id: msgId, class: "alert-message", innerHTML: Object(_index_9e3fe806_js__WEBPACK_IMPORTED_MODULE_4__["s"])(this.message) }), this.renderAlertInputs(), this.renderAlertButtons()), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { tabindex: "0" })));
+      }, class: Object.assign(Object.assign({}, Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__["g"])(this.cssClass)), { [mode]: true, 'alert-translucent': this.translucent }), onIonAlertWillDismiss: this.dispatchCancelHandler, onIonBackdropTap: this.onBackdropTap }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", { tappable: this.backdropDismiss }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { tabindex: "0" }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "alert-wrapper ion-overlay-wrapper", ref: el => this.wrapperEl = el }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "alert-head" }, header && Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("h2", { id: hdrId, class: "alert-title" }, header), subHeader && Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("h2", { id: subHdrId, class: "alert-sub-title" }, subHeader)), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { id: msgId, class: "alert-message", innerHTML: Object(_index_9e3fe806_js__WEBPACK_IMPORTED_MODULE_4__["s"])(this.message) }), this.renderAlertInputs(), this.renderAlertButtons()), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { tabindex: "0" })));
   }
   get el() { return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this); }
   static get watchers() { return {

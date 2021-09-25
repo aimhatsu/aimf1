@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[25], {
     /***/
-    "XGij":
-    /*!**************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-range.entry.js ***!
-      \**************************************************************/
-
-    /*! exports provided: ion_range */
-
-    /***/
-    function XGij(module, __webpack_exports__, __webpack_require__) {
+    "XGij": function XGij(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -168,8 +160,8 @@
 
                     _context.next = 4;
                     return Promise.resolve().then(__webpack_require__.bind(null,
-                    /*! ./index-f49d994d.js */
-                    "iWo5"));
+                    /*! ./index-34cb2743.js */
+                    "KF81"));
 
                   case 4:
                     _this.gesture = _context.sent.createGesture({

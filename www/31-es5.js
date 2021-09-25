@@ -19,15 +19,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[31], {
     /***/
-    "fSgp":
-    /*!******************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-segment_2.entry.js ***!
-      \******************************************************************/
-
-    /*! exports provided: ion_segment, ion_segment_button */
-
-    /***/
-    function fSgp(module, __webpack_exports__, __webpack_require__) {
+    "fSgp": function fSgp(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -211,8 +203,8 @@
                       this.setCheckedClasses();
                       _context.next = 3;
                       return Promise.resolve().then(__webpack_require__.bind(null,
-                      /*! ./index-f49d994d.js */
-                      "iWo5"));
+                      /*! ./index-34cb2743.js */
+                      "KF81"));
 
                     case 3:
                       this.gesture = _context.sent.createGesture({

@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[41], {
     /***/
-    "IUOf":
-    /*!***************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-toggle.entry.js ***!
-      \***************************************************************/
-
-    /*! exports provided: ion_toggle */
-
-    /***/
-    function IUOf(module, __webpack_exports__, __webpack_require__) {
+    "IUOf": function IUOf(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -150,8 +142,8 @@
                     case 0:
                       _context.next = 2;
                       return Promise.resolve().then(__webpack_require__.bind(null,
-                      /*! ./index-f49d994d.js */
-                      "iWo5"));
+                      /*! ./index-34cb2743.js */
+                      "KF81"));
 
                     case 2:
                       this.gesture = _context.sent.createGesture({

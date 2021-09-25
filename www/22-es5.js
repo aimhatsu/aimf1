@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[22], {
     /***/
-    "qCuA":
-    /*!****************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-popover.entry.js ***!
-      \****************************************************************/
-
-    /*! exports provided: ion_popover */
-
-    /***/
-    function qCuA(module, __webpack_exports__, __webpack_require__) {
+    "qCuA": function qCuA(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -64,9 +56,9 @@
       /* harmony import */
 
 
-      var _index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ./index-c3ff7f2e.js */
-      "k4ps");
+      var _index_931440b1_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./index-931440b1.js */
+      "Js3/");
       /* harmony import */
 
 
@@ -389,7 +381,7 @@
                     case 8:
                       this.usersElement = _context.sent;
                       _context.next = 11;
-                      return Object(_index_c3ff7f2e_js__WEBPACK_IMPORTED_MODULE_5__["e"])(this.usersElement);
+                      return Object(_index_931440b1_js__WEBPACK_IMPORTED_MODULE_5__["e"])(this.usersElement);
 
                     case 11:
                       return _context.abrupt("return", Object(_overlays_e9ccff30_js__WEBPACK_IMPORTED_MODULE_3__["d"])(this, 'popoverEnter', iosEnterAnimation, mdEnterAnimation, this.event));
@@ -479,11 +471,13 @@
             var _Object$assign;
 
             var mode = Object(_ionic_global_63a97a32_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-            var onLifecycle = this.onLifecycle;
-            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+            var onLifecycle = this.onLifecycle,
+                htmlAttributes = this.htmlAttributes;
+            return Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["H"], Object.assign({
               "aria-modal": "true",
               "no-router": true,
-              tabindex: "-1",
+              tabindex: "-1"
+            }, htmlAttributes, {
               style: {
                 zIndex: "".concat(20000 + this.overlayIndex)
               },
@@ -494,7 +488,7 @@
               onIonPopoverDidDismiss: onLifecycle,
               onIonDismiss: this.onDismiss,
               onIonBackdropTap: this.onBackdropTap
-            }, Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
+            }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", {
               tappable: this.backdropDismiss,
               visible: this.showBackdrop
             }), Object(_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {

@@ -1,15 +1,7 @@
 (function () {
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["status-tap-bdecfebf-js"], {
     /***/
-    "PaPO":
-    /*!******************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/status-tap-bdecfebf.js ***!
-      \******************************************************************/
-
-    /*! exports provided: startStatusTap */
-
-    /***/
-    function PaPO(module, __webpack_exports__, __webpack_require__) {
+    "PaPO": function PaPO(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

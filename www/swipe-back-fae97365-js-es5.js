@@ -1,15 +1,7 @@
 (function () {
-  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["swipe-back-ee838cf8-js"], {
+  (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["swipe-back-fae97365-js"], {
     /***/
-    "IYAk":
-    /*!******************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/swipe-back-ee838cf8.js ***!
-      \******************************************************************/
-
-    /*! exports provided: createSwipeBackGesture */
-
-    /***/
-    function IYAk(module, __webpack_exports__, __webpack_require__) {
+    "Pu4v": function Pu4v(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -28,9 +20,9 @@
       /* harmony import */
 
 
-      var _index_f49d994d_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ./index-f49d994d.js */
-      "iWo5");
+      var _index_34cb2743_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./index-34cb2743.js */
+      "KF81");
       /* harmony import */
 
 
@@ -78,7 +70,7 @@
           onEndHandler(shouldComplete, stepValue <= 0 ? 0.01 : Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_0__["j"])(0, stepValue, 0.9999), realDur);
         };
 
-        return Object(_index_f49d994d_js__WEBPACK_IMPORTED_MODULE_1__["createGesture"])({
+        return Object(_index_34cb2743_js__WEBPACK_IMPORTED_MODULE_1__["createGesture"])({
           el: el,
           gestureName: 'goback-swipe',
           gesturePriority: 40,
@@ -94,4 +86,4 @@
     }
   }]);
 })();
-//# sourceMappingURL=swipe-back-ee838cf8-js-es5.js.map
+//# sourceMappingURL=swipe-back-fae97365-js-es5.js.map

@@ -9,15 +9,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[35], {
     /***/
-    "NAQR":
-    /*!*******************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-split-pane.entry.js ***!
-      \*******************************************************************/
-
-    /*! exports provided: ion_split_pane */
-
-    /***/
-    function NAQR(module, __webpack_exports__, __webpack_require__) {
+    "NAQR": function NAQR(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

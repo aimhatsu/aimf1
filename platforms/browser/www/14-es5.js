@@ -13,15 +13,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[14], {
     /***/
-    "2lz6":
-    /*!**************************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-infinite-scroll_2.entry.js ***!
-      \**************************************************************************/
-
-    /*! exports provided: ion_infinite_scroll, ion_infinite_scroll_content */
-
-    /***/
-    function lz6(module, __webpack_exports__, __webpack_require__) {
+    "2lz6": function lz6(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

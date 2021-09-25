@@ -11,15 +11,7 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[37], {
     /***/
-    "TpdJ":
-    /*!**************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/ion-tab_2.entry.js ***!
-      \**************************************************************/
-
-    /*! exports provided: ion_tab, ion_tabs */
-
-    /***/
-    function TpdJ(module, __webpack_exports__, __webpack_require__) {
+    "TpdJ": function TpdJ(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

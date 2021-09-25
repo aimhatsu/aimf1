@@ -1,15 +1,7 @@
 (function () {
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["polyfills-dom"], {
     /***/
-    "QdDj":
-    /*!************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/polyfills/dom.js ***!
-      \************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function QdDj(module, exports) {
+    "QdDj": function QdDj(module, exports) {
       (function () {
         /*
           Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
