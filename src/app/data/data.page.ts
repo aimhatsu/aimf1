@@ -1,51 +1,72 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController, AlertController, ModalController } from "@ionic/angular";
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from "@angular/core";
+import {
+  NavController,
+  AlertController,
+  ModalController,
+  LoadingController,
+} from "@ionic/angular";
 import { ApiService } from "../services/api/api.service";
-import { FormModalPage } from '../../app/form-modal/form-modal.page';
+import { FormModalPage } from "../../app/form-modal/form-modal.page";
 
 @Component({
-  selector: 'app-data',
-  templateUrl: './data.page.html',
-  styleUrls: ['./data.page.scss'],
+  selector: "app-data",
+  templateUrl: "./data.page.html",
+  styleUrls: ["./data.page.scss"],
+
 })
 export class DataPage implements OnInit {
-  tab: string = 'forms';
+  tab: string = "forms";
   filterArray: any = [];
   allFilters: any = [];
   status_biomark: any = [];
   filterInputs_alert = [];
   moreOptions: boolean = true;
 
-  constructor(public api: ApiService, public alertController: AlertController,
-    public modalController: ModalController) {
+
+  @ViewChildren('formIndex') formIndex: QueryList<ElementRef>;
+  
+  constructor(
+    public api: ApiService,
+    public alertController: AlertController,
+    public modalController: ModalController,
+    public loadingController: LoadingController
+  ) {
+ 
     this.loadForms();
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewDidEnter(){
+  
   }
 
   segmentChange($event) {
-    if (this.tab == 'forms') {
+    if (this.tab == "forms") {
       this.filterArray = [];
       this.loadForms();
     }
 
-    if (this.tab == 'status') {
+    if (this.tab == "status") {
       this.filterArray = [];
       this.status_biomark = [];
-      this.filterArray = [{
-        checked: true,
-        form: "corpo",
-        nform: "Corpo",
-      }, {
-        checked: true,
-        form: "mente",
-        nform: "Mente",
-      }, {
-        checked: true,
-        form: "emocoes",
-        nform: "Emocoes",
-      }];
+      this.filterArray = [
+        {
+          checked: true,
+          form: "corpo",
+          nform: "Corpo",
+        },
+        {
+          checked: true,
+          form: "mente",
+          nform: "Mente",
+        },
+        {
+          checked: true,
+          form: "emocoes",
+          nform: "Emocoes",
+        },
+      ];
 
       this.filterInputs_alert = [];
       this.filterInputs_alert = this.fillAlertInputs();
@@ -55,54 +76,86 @@ export class DataPage implements OnInit {
       }
     }
 
-    if (this.tab == 'rec') {
+    if (this.tab == "rec") {
       this.filterArray = [];
       this.loadForms();
     }
   }
 
   async loadForms() {
-    this.api.get('forms').then((res: any) => {
+    this.presentLoading();
+    this.api.get("forms").then((res: any) => {
+      this.allFilters = [];
       if (res) {
-        res.subscribe((data) => {
-          console.log("Forms API > ", data);
-          this.filterArray = data;
-          for (var i = 0; i < this.filterArray.length; i++) {
-            this.filterArray[i].checked = true;
-            if (this.tab == 'forms') {
-              this.loadFormFilters(this.filterArray[i].form, this.filterArray[i].checked);
-            }
+        res.subscribe(
+          (data) => {
+            console.log("Forms API > ", data);
+            this.filterArray = data;
+          
+            for (var i = 0; i < this.filterArray.length; i++) {
+              this.filterArray[i].checked = true;
+              if (this.tab == "forms") {
+                this.loadFormFilters(
+                  this.filterArray[i].form,
+                  this.filterArray[i].checked
+                );
+              }
 
-            if (this.tab == 'rec') {
-              this.loadRecomen(this.filterArray[i].form, this.filterArray[i].checked);
+              if (this.tab == "rec") {
+                this.loadRecomen(
+                  this.filterArray[i].form,
+                  this.filterArray[i].checked
+                );
+              }
             }
+            this.filterInputs_alert = this.fillAlertInputs();
+          },
+          (err) => {
+            this.alertController.dismiss();
+            console.log("API error -> ", err);
+            this.api.proccessError(err);
           }
-          this.filterInputs_alert = this.fillAlertInputs();
-        }, (err) => {
-          console.log("API error -> ", err);
-          this.api.proccessError(err)
-        });
+        );
       }
+
+   
     });
   }
 
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Aguarde...',
+     
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
+  }
+
   async loadRecomen(form, checked) {
-    this.allFilters = [];
+   
     if (checked) {
-      this.api.get('recomen/' + form).then((res: any) => {
+      this.api.get("recomen/" + form).then((res: any) => {
+        this.loadingController.dismiss()
         if (res) {
-          res.subscribe((data) => {
-            console.log("Recomen API > ", data);
-            if (data.length > 0) {
-              for (let i = 0; i < data.length; i++) {
-                this.allFilters.push(data[i]);
+          res.subscribe(
+            (data) => {
+              console.log("Recomen API > ", data);
+              if (data.length > 0) {
+                for (let i = 0; i < data.length; i++) {
+                  this.allFilters.push(data[i]);
+                }
+                console.log("Recomen filter > ", this.allFilters);
               }
-              console.log("Recomen filter > ", this.allFilters);
+            },
+            (err) => {
+              console.log("API error -> ", err);
+              this.loadingController.dismiss()
+              this.api.proccessError(err);
             }
-          }, (err) => {
-            console.log("API error -> ", err);
-            this.api.proccessError(err)
-          });
+          );
         }
       });
     }
@@ -111,74 +164,85 @@ export class DataPage implements OnInit {
   async loadStatus(form, checked) {
     this.allFilters = [];
     if (checked) {
-      this.api.get('pato/status/' + form).then((res: any) => {
+      this.api.get("pato/status/" + form).then((res: any) => {
         if (res) {
-          res.subscribe((data) => {
-            console.log("Status API > ", data);
-            if (data.result.length > 0) {
-              for (let i = 0; i < data.result.length; i++) {
-                this.allFilters.push(data.result[i]);
+          res.subscribe(
+            (data) => {
+              console.log("Status API > ", data);
+              if (data.result.length > 0) {
+                for (let i = 0; i < data.result.length; i++) {
+                  this.allFilters.push(data.result[i]);
+                }
+                console.log("Status filter > ", this.allFilters);
               }
-              console.log("Status filter > ", this.allFilters);
+            },
+            (err) => {
+              console.log("API error -> ", err);
+              this.api.proccessError(err);
             }
-          }, (err) => {
-            console.log("API error -> ", err);
-            this.api.proccessError(err)
-          });
+          );
         }
       });
 
-      this.api.get('biomark/' + form).then((res: any) => {
+      this.api.get("biomark/" + form).then((res: any) => {
         if (res) {
-          res.subscribe((data) => {
-            console.log("Status biomark API > ", data);
-            if (data.result.length > 0) {
-              for (let i = 0; i < data.result.length; i++) {
-                this.status_biomark.push(data.result[i]);
+          res.subscribe(
+            (data) => {
+              console.log("Status biomark API > ", data);
+              if (data.result.length > 0) {
+                for (let i = 0; i < data.result.length; i++) {
+                  this.status_biomark.push(data.result[i]);
+                }
+                console.log("Status biomark filter > ", this.status_biomark);
               }
-              console.log("Status biomark filter > ", this.status_biomark);
+            },
+            (err) => {
+              console.log("API error -> ", err);
+              this.api.proccessError(err);
             }
-          }, (err) => {
-            console.log("API error -> ", err);
-            this.api.proccessError(err)
-          });
+          );
         }
       });
     }
   }
 
-  async del_multiple(item){
+  async del_multiple(item) {
     let fd = new FormData();
-    fd.append('YES', 'YES');
+    fd.append("YES", "YES");
 
     const alert = await this.alertController.create({
-      header: 'Are you sure',
-      message: 'Are you sure, you want to delete this QUESTION',
+      header: "Are you sure",
+      message: "Are you sure, you want to delete this QUESTION",
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
+          text: "Cancel",
+          role: "cancel",
+          cssClass: "secondary",
           handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Delete',
+            console.log("Confirm Cancel: blah");
+          },
+        },
+        {
+          text: "Delete",
           handler: () => {
-            this.api.post_params('delquest/' + item.formulario + '/' + item.ordem, fd).then((res: any) => {
-              if (res) {
-                res.subscribe((data) => {
-                  console.log("Multiple del API > ", data);
-
-                }, (err) => {
-                  console.log("API error -> ", err);
-                  this.api.proccessError(err)
-                });
-              }
-            });
-          }
-        }
-      ]
+            this.api
+              .post_params("delquest/" + item.formulario + "/" + item.ordem, fd)
+              .then((res: any) => {
+                if (res) {
+                  res.subscribe(
+                    (data) => {
+                      console.log("Multiple del API > ", data);
+                    },
+                    (err) => {
+                      console.log("API error -> ", err);
+                      this.api.proccessError(err);
+                    }
+                  );
+                }
+              });
+          },
+        },
+      ],
     });
 
     await alert.present();
@@ -186,33 +250,36 @@ export class DataPage implements OnInit {
 
   async delStatus() {
     const alert = await this.alertController.create({
-      header: 'Are you sure',
-      message: 'Are you sure, you want to delete this status',
+      header: "Are you sure",
+      message: "Are you sure, you want to delete this status",
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
+          text: "Cancel",
+          role: "cancel",
+          cssClass: "secondary",
           handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Delete',
+            console.log("Confirm Cancel: blah");
+          },
+        },
+        {
+          text: "Delete",
           handler: () => {
-            this.api.get('delpato').then((res: any) => {
+            this.api.get("delpato").then((res: any) => {
               if (res) {
-                res.subscribe((data) => {
-                  console.log("Status del API > ", data);
-
-                }, (err) => {
-                  console.log("API error -> ", err);
-                  this.api.proccessError(err)
-                });
+                res.subscribe(
+                  (data) => {
+                    console.log("Status del API > ", data);
+                  },
+                  (err) => {
+                    console.log("API error -> ", err);
+                    this.api.proccessError(err);
+                  }
+                );
               }
             });
-          }
-        }
-      ]
+          },
+        },
+      ],
     });
 
     await alert.present();
@@ -220,71 +287,84 @@ export class DataPage implements OnInit {
 
   async delBiomark(biomark) {
     const alert = await this.alertController.create({
-      header: 'Are you sure',
-      message: 'Are you sure, you want to delete this Biomark',
+      header: "Are you sure",
+      message: "Are you sure, you want to delete this Biomark",
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
+          text: "Cancel",
+          role: "cancel",
+          cssClass: "secondary",
           handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Delete',
+            console.log("Confirm Cancel: blah");
+          },
+        },
+        {
+          text: "Delete",
           handler: () => {
-            this.api.post('delbiomark/' + biomark).then((res: any) => {
+            this.api.post("delbiomark/" + biomark).then((res: any) => {
               if (res) {
-                res.subscribe((data) => {
-                  console.log("Status Biomark del API > ", data);
-
-                }, (err) => {
-                  console.log("API error -> ", err);
-                  this.api.proccessError(err)
-                });
+                res.subscribe(
+                  (data) => {
+                    console.log("Status Biomark del API > ", data);
+                  },
+                  (err) => {
+                    console.log("API error -> ", err);
+                    this.api.proccessError(err);
+                  }
+                );
               }
             });
-          }
-        }
-      ]
+          },
+        },
+      ],
     });
 
     await alert.present();
   }
 
   async loadFormFilters(form, checked) {
-    this.allFilters = [];
     if (checked) {
-      this.api.get('forms/' + form).then((res: any) => {
+      this.api.get("forms/" + form).then((res: any) => {
         if (res) {
-          res.subscribe((data) => {
-            console.log(form + " filter > ", data);
-            if (data.length > 0) {
-              for (let i = 0; i < data.length; i++) {
-                this.allFilters.push(data[i]);
-              }
-              console.log("filter > ", this.allFilters);
+          res.subscribe(
+            (data) => {
+              console.log(form + " filter > ", data);
+              
+           
+              this.allFilters.push(data);
+
+                   this.loadingController.dismiss()
+                   console.log("filter > ", this.allFilters);
+          
+            },
+            (err) => {
+              this.loadingController.dismiss()
+              console.log("API error -> ", err);
+              this.api.proccessError(err);
             }
-          }, (err) => {
-            console.log("API error -> ", err);
-            this.api.proccessError(err)
-          });
+          );
         }
       });
     }
+
+   
+  }
+
+  queryFormIndex(index){
+   
+    const forms = this.formIndex.toArray()
+    console.log(forms[index])
   }
 
   fillAlertInputs() {
     const theNewInputs = [];
     for (let i = 0; i < this.filterArray.length; i++) {
-      theNewInputs.push(
-        {
-          type: 'checkbox',
-          label: this.filterArray[i].nform,
-          value: this.filterArray[i],
-          checked: this.filterArray[i].checked
-        }
-      );
+      theNewInputs.push({
+        type: "checkbox",
+        label: this.filterArray[i].nform,
+        value: this.filterArray[i],
+        checked: this.filterArray[i].checked,
+      });
     }
     return theNewInputs;
   }
@@ -295,16 +375,17 @@ export class DataPage implements OnInit {
       inputs: this.filterInputs_alert,
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
+          text: "Cancel",
+          role: "cancel",
+          cssClass: "secondary",
           handler: () => {
-            console.log('Confirm Cancel');
-          }
-        }, {
-          text: 'Ok',
+            console.log("Confirm Cancel");
+          },
+        },
+        {
+          text: "Ok",
           handler: (data) => {
-            console.log('Confirm Ok', data);
+            console.log("Confirm Ok", data);
 
             let isMatch = false;
             for (let i = 0; i < this.filterArray.length; i++) {
@@ -327,33 +408,43 @@ export class DataPage implements OnInit {
                 isMatch = false;
               }
             }
-            console.log('Filter array -> ', this.filterArray);
+            console.log("Filter array -> ", this.filterArray);
 
             // Call to API according to selected filters
-            if (this.tab == 'forms') {
+            if (this.tab == "forms") {
+              this.allFilters = [];
               for (var i = 0; i < this.filterArray.length; i++) {
-                this.loadFormFilters(this.filterArray[i].form, this.filterArray[i].checked);
+                this.loadFormFilters(
+                  this.filterArray[i].form,
+                  this.filterArray[i].checked
+                );
               }
             }
 
-            if (this.tab == 'status') {
+            if (this.tab == "status") {
               for (var i = 0; i < this.filterArray.length; i++) {
-                this.loadStatus(this.filterArray[i].form, this.filterArray[i].checked);
+                this.loadStatus(
+                  this.filterArray[i].form,
+                  this.filterArray[i].checked
+                );
               }
             }
 
-            if (this.tab == 'rec') {
+            if (this.tab == "rec") {
               for (var i = 0; i < this.filterArray.length; i++) {
-                this.loadRecomen(this.filterArray[i].form, this.filterArray[i].checked);
+                this.loadRecomen(
+                  this.filterArray[i].form,
+                  this.filterArray[i].checked
+                );
               }
             }
 
             // Filling alert array
             this.filterInputs_alert = [];
             this.filterInputs_alert = this.fillAlertInputs();
-          }
-        }
-      ]
+          },
+        },
+      ],
     });
 
     await alert.present();
@@ -363,9 +454,9 @@ export class DataPage implements OnInit {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'patologia',
-        'title': 'Inserir novo Estado Clínico / Patologia'
-      }
+        form_type: "patologia",
+        title: "Inserir novo Estado Clínico / Patologia",
+      },
     });
     await modal.present();
 
@@ -373,14 +464,14 @@ export class DataPage implements OnInit {
     console.log("patologia Modal Dismiss ", data);
   }
 
-  async editStatus(item){
+  async editStatus(item) {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'patologia',
-        'title': 'EEstado Clínico / Patologia',
-        'item': item
-      }
+        form_type: "patologia",
+        title: "EEstado Clínico / Patologia",
+        item: item,
+      },
     });
     await modal.present();
 
@@ -392,9 +483,9 @@ export class DataPage implements OnInit {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'biomark',
-        'title': 'Inserior novo Biomarcador'
-      }
+        form_type: "biomark",
+        title: "Inserior novo Biomarcador",
+      },
     });
     await modal.present();
 
@@ -402,13 +493,13 @@ export class DataPage implements OnInit {
     console.log("biomark Modal Dismiss ", data);
   }
 
-  async open_tratamento(){
+  async open_tratamento() {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'tratamento',
-        'title': 'Inserir novo Tratamento'
-      }
+        form_type: "tratamento",
+        title: "Inserir novo Tratamento",
+      },
     });
     await modal.present();
 
@@ -416,13 +507,13 @@ export class DataPage implements OnInit {
     console.log("Tratamento Modal Dismiss ", data);
   }
 
-  async open_content(){
+  async open_content() {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'content',
-        'title': 'Inserir novo Conteúdo'
-      }
+        form_type: "content",
+        title: "Inserir novo Conteúdo",
+      },
     });
     await modal.present();
 
@@ -430,13 +521,13 @@ export class DataPage implements OnInit {
     console.log("Content Modal Dismiss ", data);
   }
 
-  async open_food(){
+  async open_food() {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'food',
-        'title': 'Inserir nova Alimentação'
-      }
+        form_type: "food",
+        title: "Inserir nova Alimentação",
+      },
     });
     await modal.present();
 
@@ -444,13 +535,13 @@ export class DataPage implements OnInit {
     console.log("Food Modal Dismiss ", data);
   }
 
-  async open_activity(){
+  async open_activity() {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'activity',
-        'title': 'Inserir nova Atividade'
-      }
+        form_type: "activity",
+        title: "Inserir nova Atividade",
+      },
     });
     await modal.present();
 
@@ -458,42 +549,54 @@ export class DataPage implements OnInit {
     console.log("Activity Modal Dismiss ", data);
   }
 
-  async open_multiple(){
+  async open_multiple() {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'multiple',
-        'title': 'Inserir Questão de Múltipla Escolha'
-      }
+        form_type: "multiple",
+        title: "Inserir Questão de Múltipla Escolha",
+      },
     });
     await modal.present();
 
     const { data } = await modal.onWillDismiss();
-    console.log("Multiple Modal Dismiss ", data);
+    await modal.onWillDismiss().then(data=>{
+       
+      if (data.data) {
+        this.loadForms();
+      }else{
+        return
+      }
+      console.log("Edit multiple Modal Dismiss ", data);
+    });
   }
 
-  async edit_multiple(item){
+  async edit_multiple(item) {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'multiple',
-        'title': 'Editar Questão de Múltipla Escolha',
-        'item': item
-      }
+        form_type: "multiple",
+        title: "Editar Questão de Múltipla Escolha",
+        item: item,
+      },
     });
     await modal.present();
 
-    const { data } = await modal.onWillDismiss();
-    console.log("Edit multiple Modal Dismiss ", data);
+    await modal.onWillDismiss().then(data=>{
+      this.loadForms();
+      console.log("Edit multiple Modal Dismiss ", data);
+    });
+    
+
   }
 
-  async open_gestalt(){
+  async open_gestalt() {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'gestalt',
-        'title': 'Inserir Questão de Gestalt'
-      }
+        form_type: "gestalt",
+        title: "Inserir Questão de Gestalt",
+      },
     });
     await modal.present();
 
@@ -501,13 +604,13 @@ export class DataPage implements OnInit {
     console.log("Gestalt Modal Dismiss ", data);
   }
 
-  async open_binaria(){
+  async open_binaria() {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'binaria',
-        'title': 'Inserir Questão de SIM ou NÃO'
-      }
+        form_type: "binaria",
+        title: "Inserir Questão de SIM ou NÃO",
+      },
     });
     await modal.present();
 
@@ -515,13 +618,13 @@ export class DataPage implements OnInit {
     console.log("Binaria Modal Dismiss ", data);
   }
 
-  async open_levels(){
+  async open_levels() {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
-        'form_type': 'levels',
-        'title': 'Inserir Questão de Níveis'
-      }
+        form_type: "levels",
+        title: "Inserir Questão de Níveis",
+      },
     });
     await modal.present();
 

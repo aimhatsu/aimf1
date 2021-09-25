@@ -1,3 +1,4 @@
+import { UtilService } from './../services/util/util.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from "../services/api/api.service";
@@ -30,11 +31,14 @@ export class FormModalPage implements OnInit {
 
   constructor(public router: Router, public loadingCtrl: LoadingController,
     public modalController: ModalController, public navParams: NavParams,
-    public formBuilder: FormBuilder, public api: ApiService) {
+    public formBuilder: FormBuilder, public api: ApiService,private util:UtilService) {
 
     this.title = navParams.get('title');
     this.form_type = navParams.get('form_type');
     this.item = navParams.get('item');
+    console.log(this.title)
+    console.log(this.form_type)
+    console.log(this.item)
 
     this.statusForm = formBuilder.group({
       patolog: ['', Validators.compose([Validators.maxLength(150), Validators.required])],
@@ -141,16 +145,16 @@ export class FormModalPage implements OnInit {
       ans5: ['', Validators.compose([Validators.maxLength(150), Validators.required])]
     });
 
-    if (this.title == 'Edit MULTIPLE CHOICE QUESTION') {
+    if (this.title == 'Editar Questão de Múltipla Escolha') {
       this.multipleForm = formBuilder.group({
-        category: [this.item.category, Validators.compose([Validators.maxLength(150), Validators.required])],
-        nform: [this.item.nform, Validators.compose([Validators.maxLength(150), Validators.required])],
-        formulario: [this.item.formulario, Validators.compose([Validators.maxLength(150), Validators.required])],
-        fordem: [this.item.fordem, Validators.compose([Validators.maxLength(150), Validators.required])],
-        nivel: [this.item.nivel, Validators.compose([Validators.maxLength(150), Validators.required])],
-        ordem: [this.item.ordem, Validators.compose([Validators.maxLength(150), Validators.required])],
-        pergunta: [this.item.pergunta, Validators.compose([Validators.maxLength(150), Validators.required])],
-        parametro: [this.item.parametro, Validators.compose([Validators.maxLength(150), Validators.required])],
+        category: [this.item.questoes[0]?.category, Validators.compose([Validators.maxLength(150), Validators.required])],
+        nform: [this.item.formularios[0]?.nform, Validators.compose([Validators.maxLength(150), Validators.required])],
+        formulario: [this.item.formularios[0].form, Validators.compose([Validators.maxLength(150), Validators.required])],
+        fordem: [this.item.formularios[0].fordem, Validators.compose([Validators.maxLength(150), Validators.required])],
+        nivel: [this.item.formularios[0].nivel, Validators.compose([Validators.maxLength(150), Validators.required])],
+        ordem: [this.item.questoes[0]?.ordem, Validators.compose([Validators.maxLength(150), Validators.required])],
+        pergunta: [this.item.questoes[0]?.pergunta, Validators.compose([Validators.maxLength(150), Validators.required])],
+        parametro: [this.item.questoes[0]?.parametro, Validators.compose([Validators.maxLength(150), Validators.required])],
         ans1: [this.item.ans1, Validators.compose([Validators.maxLength(150), Validators.required])],
         ans2: [this.item.ans2, Validators.compose([Validators.maxLength(150), Validators.required])],
         ans3: [this.item.ans3, Validators.compose([Validators.maxLength(150), Validators.required])],
@@ -212,9 +216,7 @@ export class FormModalPage implements OnInit {
   }
 
   close() {
-    this.modalController.dismiss({
-      'dismissed': true
-    });
+    this.modalController.dismiss();
   }
 
   async submitStatus(data: any) {
@@ -333,7 +335,7 @@ export class FormModalPage implements OnInit {
     fd.append('ans4', data.ans4);
     fd.append('ans5', data.ans5);
 
-    if (this.title == 'Edit MULTIPLE CHOICE QUESTION') {
+    if (this.title == 'Editar Questão de Múltipla Escolha') {
       this.post_API('changequest/' + data.ordem, fd);
     } else {
       this.post_API('insertquest', fd);
@@ -401,8 +403,13 @@ export class FormModalPage implements OnInit {
       console.log("After parse ", res);
       if (res) {
         res.subscribe((data) => {
-          console.log("Multiple form submit API > ", data.text());
+          console.log("Multiple form submit API > ", data);
 
+          this.util.presentToast({header: 'Success!', message: data}).then(()=>{
+            this.modalController.dismiss({
+              data:'edited'
+            });
+          })
         }, (err) => {
           console.log("API error -> ", err);
           this.api.proccessError(err)
