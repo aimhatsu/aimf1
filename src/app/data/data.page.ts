@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-import { Component, ElementRef, OnInit, QueryList, ViewChildren } from "@angular/core";
-=======
 import {
   Component,
   ElementRef,
@@ -8,7 +5,6 @@ import {
   QueryList,
   ViewChildren,
 } from "@angular/core";
->>>>>>> Stashed changes
 import {
   NavController,
   AlertController,
@@ -22,10 +18,6 @@ import { FormModalPage } from "../../app/form-modal/form-modal.page";
   selector: "app-data",
   templateUrl: "./data.page.html",
   styleUrls: ["./data.page.scss"],
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 })
 export class DataPage implements OnInit {
   tab: string = "forms";
@@ -35,36 +27,20 @@ export class DataPage implements OnInit {
   filterInputs_alert = [];
   moreOptions: boolean = true;
 
-<<<<<<< Updated upstream
-
-  @ViewChildren('formIndex') formIndex: QueryList<ElementRef>;
-  
-=======
   @ViewChildren("formIndex") formIndex: QueryList<ElementRef>;
 
->>>>>>> Stashed changes
   constructor(
     public api: ApiService,
     public alertController: AlertController,
     public modalController: ModalController,
     public loadingController: LoadingController
   ) {
-<<<<<<< Updated upstream
- 
-=======
->>>>>>> Stashed changes
     this.loadForms();
   }
 
   ngOnInit() {}
 
-<<<<<<< Updated upstream
-  ionViewDidEnter(){
-  
-  }
-=======
   ionViewDidEnter() {}
->>>>>>> Stashed changes
 
   segmentChange($event) {
     if (this.tab == "forms") {
@@ -116,11 +92,7 @@ export class DataPage implements OnInit {
           (data) => {
             console.log("Forms API > ", data);
             this.filterArray = data;
-<<<<<<< Updated upstream
-          
-=======
 
->>>>>>> Stashed changes
             for (var i = 0; i < this.filterArray.length; i++) {
               this.filterArray[i].checked = true;
               if (this.tab == "forms") {
@@ -146,35 +118,17 @@ export class DataPage implements OnInit {
           }
         );
       }
-
-   
     });
   }
 
   async presentLoading() {
     const loading = await this.loadingController.create({
-<<<<<<< Updated upstream
-      cssClass: 'my-custom-class',
-      message: 'Aguarde...',
-     
-=======
       cssClass: "my-custom-class",
       message: "Aguarde...",
->>>>>>> Stashed changes
     });
     await loading.present();
 
     const { role, data } = await loading.onDidDismiss();
-<<<<<<< Updated upstream
-    console.log('Loading dismissed!');
-  }
-
-  async loadRecomen(form, checked) {
-   
-    if (checked) {
-      this.api.get("recomen/" + form).then((res: any) => {
-        this.loadingController.dismiss()
-=======
     console.log("Loading dismissed!");
   }
 
@@ -182,7 +136,6 @@ export class DataPage implements OnInit {
     if (checked) {
       this.api.get("recomen/" + form).then((res: any) => {
         this.loadingController.dismiss();
->>>>>>> Stashed changes
         if (res) {
           res.subscribe(
             (data) => {
@@ -196,11 +149,7 @@ export class DataPage implements OnInit {
             },
             (err) => {
               console.log("API error -> ", err);
-<<<<<<< Updated upstream
-              this.loadingController.dismiss()
-=======
               this.loadingController.dismiss();
->>>>>>> Stashed changes
               this.api.proccessError(err);
             }
           );
@@ -377,18 +326,6 @@ export class DataPage implements OnInit {
           res.subscribe(
             (data) => {
               console.log(form + " filter > ", data);
-<<<<<<< Updated upstream
-              
-           
-              this.allFilters.push(data);
-
-                   this.loadingController.dismiss()
-                   console.log("filter > ", this.allFilters);
-          
-            },
-            (err) => {
-              this.loadingController.dismiss()
-=======
 
               this.allFilters.push(data);
 
@@ -397,7 +334,6 @@ export class DataPage implements OnInit {
             },
             (err) => {
               this.loadingController.dismiss();
->>>>>>> Stashed changes
               console.log("API error -> ", err);
               this.api.proccessError(err);
             }
@@ -405,14 +341,6 @@ export class DataPage implements OnInit {
         }
       });
     }
-
-   
-  }
-
-  queryFormIndex(index){
-   
-    const forms = this.formIndex.toArray()
-    console.log(forms[index])
   }
 
   queryFormIndex(item, index) {
@@ -632,20 +560,11 @@ export class DataPage implements OnInit {
     await modal.present();
 
     const { data } = await modal.onWillDismiss();
-<<<<<<< Updated upstream
-    await modal.onWillDismiss().then(data=>{
-       
-      if (data.data) {
-        this.loadForms();
-      }else{
-        return
-=======
     await modal.onWillDismiss().then((data) => {
       if (data.data) {
         this.loadForms();
       } else {
         return;
->>>>>>> Stashed changes
       }
       console.log("Edit multiple Modal Dismiss ", data);
     });
@@ -662,19 +581,10 @@ export class DataPage implements OnInit {
     });
     await modal.present();
 
-<<<<<<< Updated upstream
-    await modal.onWillDismiss().then(data=>{
-      this.loadForms();
-      console.log("Edit multiple Modal Dismiss ", data);
-    });
-    
-
-=======
     await modal.onWillDismiss().then((data) => {
       this.loadForms();
       console.log("Edit multiple Modal Dismiss ", data);
     });
->>>>>>> Stashed changes
   }
 
   async open_gestalt() {
