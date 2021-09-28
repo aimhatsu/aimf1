@@ -135,6 +135,8 @@ export class DataPage implements OnInit {
   async loadRecomen(form, checked) {
     if (checked) {
       this.api.get("recomen/" + form).then((res: any) => {
+
+        this.loadingController.dismiss();
         if (res) {
           res.subscribe(
             (data) => {
