@@ -107,25 +107,67 @@ export class PacientesPage implements OnInit {
     });
   }
 
-  searchPatient(event) {
+ async searchPatient(event) {
     console.log(event.target.value);
 
     let result;
 
-    if (event.target.value) {
+    if (event.target.value.length>0) {
       if (/^\d/.test(event.target.value)) {
-        result = this.pacientesOrig.filter((x) =>
+        /**/
+       result = this.pacientesOrig.filter((x) =>
           x.cpf.toLowerCase().includes(event.target.value.toLowerCase())
         );
+
+        if (result.length === 0 && event.target.value.length >= 4) {
+          try {
+            this.api.get(`seepati/${event.target.value}`).then((res)=>{          
+              
+                res.subscribe(data=>{
+                  if (data) {
+                  result = data
+                  console.log(data)
+                  this.pacientes = data;
+
+                  this.pacientes.forEach((el) => {
+                    //this.loadChart(el._id, dataset)
+                    setTimeout(() => {
+                      this.loadChart("id" + el._id.$oid, {
+                        labels: ["Corpo", "Mente", "Emoções"],
+                        datasets: [
+                          {
+                            backgroundColor: "#F1B4AE",
+                            borderColor: "#2694a3",
+                            pointBackgroundColor: "#2694a3",
+                            data: [el.corpo, el.mente, el.emocoes],
+                          },
+                        ],
+                      });
+                    }, 200);
+                  });
+
+                }
+                })
+             
+       
+            })
+          } catch (error) {
+            
+          }
+          
+        }else{
+          this.pacientes = result
+        }
       } else {
         result = this.pacientesOrig.filter((x) =>
           x.nome.toLowerCase().includes(event.target.value.toLowerCase())
         );
+        this.pacientes = result
       }
 
-      this.pacientes = result;
-      console.log(result);
-      if (this.pacientes.length >0) {
+   
+      console.log(await result);
+      if (await this.pacientes && await this.pacientes.length > 0) {
         this.pacientes.forEach((el) => {
           //this.loadChart(el._id, dataset)
           setTimeout(() => {
@@ -138,7 +180,6 @@ export class PacientesPage implements OnInit {
                   pointBackgroundColor: "#2694a3",
                   data: [el.corpo, el.mente, el.emocoes],
                 },
-           
               ],
             });
           }, 200);
@@ -147,10 +188,29 @@ export class PacientesPage implements OnInit {
     } else {
       this.clearSearch();
     }
+
+  
   }
 
   clearSearch() {
     this.pacientes = this.pacientesOrig;
+    
+    this.pacientes.forEach((el) => {
+      //this.loadChart(el._id, dataset)
+      setTimeout(() => {
+        this.loadChart("id" + el._id.$oid, {
+          labels: ["Corpo", "Mente", "Emoções"],
+          datasets: [
+            {
+              backgroundColor: "#F1B4AE",
+              borderColor: "#2694a3",
+              pointBackgroundColor: "#2694a3",
+              data: [el.corpo, el.mente, el.emocoes],
+            },
+          ],
+        });
+      }, 200);
+    });
   }
 
   get_corpo() {
