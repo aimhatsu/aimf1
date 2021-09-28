@@ -421,10 +421,21 @@ export class DashboardPage implements OnInit {
       ],
       layout: {
         autosize: true,
-        title: "Radar 3D",
         scene: { xaxis: { autorange: "reversed" } },
       },
     };
+
+    setTimeout(() => {
+      let scene = document.getElementById('scene')
+      console.log(scene)
+      scene.style.width = '850px';
+      scene.style.height = '500px';
+      scene.style.left = '0px';
+      scene.style.right = 'auto';
+      scene.style.margin = '0px';
+      scene.style.top = '5px';
+    }, 500);
+
   }
 
   renderChartHistoricoGeral(data) {

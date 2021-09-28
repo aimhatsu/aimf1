@@ -378,82 +378,19 @@
         <ion-card
           class="data-card"
           *ngFor="let item of allFilters; let i = index"
-<<<<<<< Updated upstream
-         
-        >
-          <ion-item>
-            <ion-label  >
-              <p>{{item.titles.nform}} 
-              </p>
-            </ion-label>
-            <ion-label class="ion-hide-sm-down" >
-              <p>{{item.titles.formulario}} 
-              </p>
-            </ion-label>
-            <ion-label  class="ion-hide-sm-down">
-              <p>{{item.titles.nivel}} 
-              </p>
-            </ion-label>
-            <ion-label  >
-              <p>Editar Formulário
-              </p>
-            </ion-label>
-          </ion-item>
-          <ion-item  lines='none'>
-            <ion-label>
-              <p>{{item.formularios[0].nform}}</p>
-            </ion-label>
-            <ion-label class="ion-hide-sm-down">
-              <p>{{item.formularios[0].form}}</p>
-            </ion-label>
-            <ion-label class="ion-hide-sm-down">
-              <p>{{item.formularios[0].nivel}}</p>
-            </ion-label>
-            <ion-label>
-              <ion-icon name="create-outline" style="font-size: x-large;margin-left: 15%;cursor: pointer;"
-              (click)="edit_multiple(item)"  color="primary"></ion-icon>
-            </ion-label>
-          </ion-item>
-          <ion-grid fixed>
-            <ion-row>
-              <ion-col size="12" style="cursor: pointer;" (click)="queryFormIndex(i)" >
-                <ion-label class="ion-margin-start">
-                  <ion-icon name="caret-forward-outline" style="margin-right: 10px;"></ion-icon> Ver Questões ({{item.questoes?.length? item.questoes?.length:0}})</ion-label>
-              </ion-col>
-          
-            </ion-row>
-
-            <div *ngIf="item.questoes?.length" >
-              <ion-row *ngFor="let questao of item.questoes" >
-                <ion-col size="12">   <ion-item>
-                  <ion-label  >
-                    <p>{{item.titles.pergunta}}: <b>{{questao.pergunta}}</b> 
-                    </p>
-                    <p>{{item.titles.category}}: <b>{{questao.category}}</b> 
-                    </p>
-                    <p>{{item.titles.ordem}}: <b>{{questao.ordem}}</b>
-                    </p>
-                  
-                  </ion-label>
-             
-                </ion-item></ion-col>
-              </ion-row>
-            </div>
-      
-=======
         >
           <ion-item>
             <ion-label>
               <p>{{item.titles.nform}}</p>
-              <p><b>{{item.formularios[0].nform}}</b></p>
+              <p><b>{{item.formularios[0]?.nform}}</b></p>
             </ion-label>
             <ion-label class="ion-hide-sm-down">
               <p>{{item.titles.formulario}}</p>
-              <p><b>>{{item.formularios[0].form}}</b></p>
+              <p><b>{{item.formularios[0]?.form}}</b></p>
             </ion-label>
             <ion-label class="ion-hide-sm-down">
               <p>{{item.titles.nivel}}</p>
-              <p><b>{{item.formularios[0].nivel?item.formularios[0].nivel:'N/A'}}</b></p>
+              <p><b>{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b></p>
             </ion-label>
             <ion-label>
               <p>Editar Formulário</p>
@@ -486,9 +423,11 @@
             </ion-row>
 
             <div *ngIf="item.questoes?.length"  class="question-div" [class.opened]='item.show'>
-              <ion-row *ngFor="let questao of item.questoes" >
+              <ion-row *ngFor="let questao of item.questoes;let i = index"
+           >
                 <ion-col size="12">
-                  <ion-item lines="none">
+                  <ion-item lines="none"
+                  [ngClass]="{'item-bg-dark': 0 === i % 2}" >
                     <ion-label style="max-width: 80px">
                       <p>Editar</p>
                       <ion-icon
@@ -527,7 +466,6 @@
              
               </ion-row>
             </div>
->>>>>>> Stashed changes
           </ion-grid>
         </ion-card>
 
@@ -796,7 +734,7 @@
                   <ion-label>
                     <p>
                       <ion-icon color="secondary" name="md-create"></ion-icon>
-                      {{item.labs}}
+                      {{item?.labs}}
                     </p>
                     <br />
                     <p>
