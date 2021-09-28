@@ -34,13 +34,18 @@ export class DataPage implements OnInit {
     public alertController: AlertController,
     public modalController: ModalController,
     public loadingController: LoadingController
-  ) {
-    this.loadForms();
-  }
+  ) {}
 
   ngOnInit() {}
 
-  ionViewDidEnter() {}
+  ionViewDidEnter() {
+    this.loadForms();
+  }
+
+  ionViewDidLeave() {
+    this.allFilters = [];
+    this.filterArray = [];
+  }
 
   segmentChange($event) {
     if (this.tab == "forms") {
@@ -85,8 +90,9 @@ export class DataPage implements OnInit {
 
   async loadForms() {
     this.presentLoading();
+    this.allFilters = [];
+    this.filterArray = [];
     this.api.get("forms").then((res: any) => {
-      this.allFilters = [];
       if (res) {
         res.subscribe(
           (data) => {
@@ -100,12 +106,24 @@ export class DataPage implements OnInit {
                   this.filterArray[i].form,
                   this.filterArray[i].checked
                 );
+
+                if (i + 1 === this.filterArray.length) {
+                  setTimeout(() => {
+                    console.log("dismiss load forms");
+                    this.loadingController
+                      .getTop()
+                      .then((v) =>
+                        v ? this.loadingController.dismiss() : null
+                      );
+                  }, 2000);
+                }
               }
 
               if (this.tab == "rec") {
                 this.loadRecomen(
                   this.filterArray[i].form,
-                  this.filterArray[i].checked
+                  this.filterArray[i].checked,
+                  i
                 );
               }
             }
@@ -132,26 +150,16 @@ export class DataPage implements OnInit {
     console.log("Loading dismissed!");
   }
 
-  async loadRecomen(form, checked) {
+  async loadRecomen(form, checked, index?) {
     if (checked) {
       this.api.get("recomen/" + form).then((res: any) => {
-
-        this.loadingController.dismiss();
         if (res) {
           res.subscribe(
             (data) => {
               console.log("Recomen API > ", data);
               this.allFilters.push(data);
-              this.loadingController
-              .getTop()
-              .then((v) => (v ? this.loadingController.dismiss() : null));
-              console.log("Recomen filter > ", this.allFilters);
-              if (data.length > 0) {
-                for (let i = 0; i < data.length; i++) {
-             
-                }
 
-              }
+              console.log("Recomen filter > ", this.allFilters);
             },
             (err) => {
               console.log("API error -> ", err);
@@ -159,16 +167,26 @@ export class DataPage implements OnInit {
               this.api.proccessError(err);
             }
           );
-        }(error)=>{
+        }
+        (error) => {
           console.log("API error -> ", error);
           this.loadingController.dismiss();
           this.api.proccessError(error);
+        };
+
+        if (index + 1 === this.filterArray.length) {
+          setTimeout(() => {
+            console.log("dismiss rec loader");
+            this.loadingController
+              .getTop()
+              .then((v) => (v ? this.loadingController.dismiss() : null));
+          }, 2000);
         }
       });
     }
   }
 
-  async loadStatus(form, checked) {
+  async loadStatus(form, checked, index?) {
     this.allFilters = [];
     if (checked) {
       this.api.get("pato/status/" + form).then((res: any) => {
@@ -177,9 +195,6 @@ export class DataPage implements OnInit {
             (data) => {
               console.log("Status API > ", data);
               this.allFilters.push(data);
-              this.loadingController
-              .getTop()
-              .then((v) => (v ? this.loadingController.dismiss() : null));
             },
             (err) => {
               console.log("API error -> ", err);
@@ -197,8 +212,8 @@ export class DataPage implements OnInit {
               this.status_biomark.push(data.status);
               console.log("Status biomark filter > ", this.status_biomark);
               this.loadingController
-              .getTop()
-              .then((v) => (v ? this.loadingController.dismiss() : null));
+                .getTop()
+                .then((v) => (v ? this.loadingController.dismiss() : null));
             },
             (err) => {
               console.log("API error -> ", err);
@@ -336,9 +351,6 @@ export class DataPage implements OnInit {
 
               this.allFilters.push(data);
 
-              this.loadingController
-                .getTop()
-                .then((v) => (v ? this.loadingController.dismiss() : null));
               console.log("filter > ", this.allFilters);
             },
             (err) => {
@@ -378,6 +390,7 @@ export class DataPage implements OnInit {
   }
 
   async openFilter() {
+    this.allFilters = [];
     const alert = await this.alertController.create({
       header: "Filtros",
       inputs: this.filterInputs_alert,

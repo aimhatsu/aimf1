@@ -374,34 +374,68 @@
         </ion-row>
       </ion-grid>
 
-      <ion-list>
+      <ion-list *ngIf="allFilters" >
         <ion-card
           class="data-card"
           *ngFor="let item of allFilters; let i = index"
         >
-          <ion-item>
+          <ion-item class="ion-hide-sm-down">
             <ion-label>
-              <p>{{item.titles.nform}}</p>
-              <p><b>{{item.formularios[0]?.nform}}</b></p>
+              <p>{{item.titles?.nform}}</p>
+              <p><b>{{item?.formularios[0]?.nform}}</b></p>
             </ion-label>
-            <ion-label class="ion-hide-sm-down">
-              <p>{{item.titles.formulario}}</p>
+            <ion-label >
+              <p>{{item.titles?.formulario}}</p>
               <p><b>{{item.formularios[0]?.form}}</b></p>
             </ion-label>
-            <ion-label class="ion-hide-sm-down">
+            <ion-label >
               <p>{{item.titles.nivel}}</p>
               <p><b>{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b></p>
             </ion-label>
             <ion-label>
-              <p>Editar Formulário</p>
+           <p>Editar Formulário </p>
               <ion-icon
               name="create-outline"
-              style="font-size: x-large; margin-left: 15%; cursor: pointer"
+              style="font-size: x-large; margin-left: 15%; cursor: pointer;color: #EF9E95;"
               (click)="edit_multiple(item)"
-              color="primary"
+              
             ></ion-icon>
             </ion-label>
+            <ion-label>
+              <p>Excluir Formulário </p>
+                 <ion-icon
+                 name="close-outline"
+                 style="font-size: x-large; margin-left: 15%; cursor: pointer;color: #EF9E95;"
+                 (click)="del_multiple(item)"
+         
+               ></ion-icon>
+               </ion-label>
           </ion-item>
+
+          <ion-item class="ion-hide-sm-up">
+            <ion-label>
+              <p style="display: flex;">Excluir Formulário     <ion-icon
+                name="close-outline"
+                style="font-size: x-large; margin-left: auto; cursor: pointer;color: #EF9E95;"
+                (click)="del_multiple(item)"
+            
+              ></ion-icon></p>
+              <p style="display: flex;">Editar Formulário     <ion-icon
+                name="create-outline"
+                style="font-size: x-large; margin-left: auto; cursor: pointer;color: #EF9E95;"
+                (click)="edit_multiple(item)"
+            
+              ></ion-icon></p>
+          
+              <p>{{item.titles?.nform}}: <b>{{item?.formularios[0]?.nform}}</b></p>
+              <p>{{item.titles?.formulario}}: <b>{{item.formularios[0]?.form}}</b></p>
+              <p>{{item.titles.nivel}}: <b>{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b></p>
+             
+           
+           
+            </ion-label>
+          </ion-item>
+     
      
           <ion-grid fixed>
             <ion-row>
@@ -426,14 +460,14 @@
               <ion-row *ngFor="let questao of item.questoes;let i = index"
            >
                 <ion-col size="12">
-                  <ion-item lines="none"
+                  <ion-item lines="none"  class="ion-hide-sm-down"
                   [ngClass]="{'item-bg-dark': 0 === i % 2}" >
                     <ion-label style="max-width: 80px">
                       <p>Editar</p>
                       <ion-icon
                         name="create-outline"
-                        style="font-size: large"
-                        color="primary"
+                        style="font-size: large;color: #EF9E95;"
+       
                       ></ion-icon
                     ></ion-label>
                     <ion-label style="min-width: 400px">
@@ -461,9 +495,45 @@
                          <b></b>
                       </p></ion-label
                     >
-                  </ion-item></ion-col
+                  </ion-item><ion-item lines="none" class="ion-hide-sm-up"
+                [ngClass]="{'item-bg-dark': 0 === i % 2}">
+                  <ion-label>
+                    <p style="display: flex;">Excluir Questão
+                      <ion-icon
+                      name="close-outline"
+                      style="font-size: large;margin-left: auto;color: #EF9E95;"
+               
+                    ></ion-icon
+                  >
+                    </p>
+                    <p style="display: flex;">Editar Questão
+                      <ion-icon
+                      name="create-outline"
+                      style="font-size: large;margin-left: auto;color: #EF9E95;"
+                 
+                    ></ion-icon
+                  >
+                    </p>
+               
+                    <p>
+                      {{item.titles.pergunta}}: <b>{{questao.pergunta}}</b>
+                    </p>
+                    <p>
+                      {{item.titles.category}}: <b>{{questao.category}}</b>
+                    </p>
+                    <p>
+                      {{item.titles.ordem}}: <b>{{questao.ordem}}</b>
+                    </p>
+                    <p>
+                      {{item.titles.tipo}}: <b>{{questao.tipo}}</b>
+                    </p>
+                    <p>
+                      {{item.titles.parametro}}: <b>{{questao.parametro}}</b>
+                    </p>
+                  </ion-label>
+                </ion-item>
+                </ion-col
                 >
-             
               </ion-row>
             </div>
           </ion-grid>
@@ -751,7 +821,7 @@
                   <ion-label>
                     <p>
                       <ion-icon color="secondary" name="md-create"></ion-icon>
-                      {{item.exams}}
+                      {{item?.exams}}
                     </p>
                     <br />
                     <p>
@@ -768,7 +838,7 @@
                   <ion-label>
                     <p>
                       <ion-icon color="secondary" name="md-create"></ion-icon>
-                      {{item.autoexams}}
+                      {{item?.autoexams}}
                     </p>
                     <br />
                     <p>
@@ -785,7 +855,7 @@
                   <ion-label>
                     <p>
                       <ion-icon color="secondary" name="md-create"></ion-icon>
-                      {{item.biosens}}
+                      {{item?.biosens}}
                     </p>
                     <br />
                     <p>
