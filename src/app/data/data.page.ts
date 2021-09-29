@@ -229,17 +229,16 @@ export class DataPage implements OnInit {
 
   async del_multiple(item,index) {
     let fd = new FormData();
-    fd.append("yes", "yes");
 console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].ordem)
 
     const alert = await this.alertController.create({
       header: `Deseja deletar a questão,${item.questoes[index].pergunta}`,
-      message: "Digite 'SIM' para deletar a questão selecionada",
+      message: "Digite 'Sim' para deletar a questão selecionada",
       inputs: [
         {
           name: 'inputOK',
           type: 'text',
-          placeholder: "Digite 'SIM' aqui."
+          placeholder: "Digite 'Sim' aqui."
         },],
       buttons: [
         {
@@ -255,8 +254,8 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
           handler: (value) => {
             console.log(value.inputOK)
 
-            if (value.inputOK === 'SIM') {
-              fd.append("yes", "yes");
+            if (value.inputOK === 'Sim') {
+              fd.append("yes", "Sim");
               this.api
               .post_params("delquest/" + item.formularios[0].form + "/" + item.questoes[index].ordem, fd)
               .then((res: any) => {
