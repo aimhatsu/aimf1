@@ -396,6 +396,7 @@ export class FormModalPage implements OnInit {
     });
 
     if (this.title == "Editar Questão de Múltipla Escolha") {
+      
       this.multipleForm = formBuilder.group({
         category: [
           this.item.questoes[this.index]?.category,
@@ -430,23 +431,23 @@ export class FormModalPage implements OnInit {
           Validators.compose([Validators.maxLength(150), Validators.required]),
         ],
         ans1: [
-          this.item.ans1,
+          this.item.questoes[this.index]?.ans1,
           Validators.compose([Validators.maxLength(150), Validators.required]),
         ],
         ans2: [
-          this.item.ans2,
+          this.item.questoes[this.index]?.ans2,
           Validators.compose([Validators.maxLength(150), Validators.required]),
         ],
         ans3: [
-          this.item.ans3,
+          this.item.questoes[this.index]?.ans3,
           Validators.compose([Validators.maxLength(150), Validators.required]),
         ],
         ans4: [
-          this.item.ans4,
+          this.item.questoes[this.index]?.ans4,
           Validators.compose([Validators.maxLength(150), Validators.required]),
         ],
         ans5: [
-          this.item.ans5,
+          this.item.questoes[this.index]?.ans5,
           Validators.compose([Validators.maxLength(150), Validators.required]),
         ],
       });

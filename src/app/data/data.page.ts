@@ -1,3 +1,4 @@
+import { UtilService } from './../services/util/util.service';
 import {
   Component,
   ElementRef,
@@ -33,7 +34,8 @@ export class DataPage implements OnInit {
     public api: ApiService,
     public alertController: AlertController,
     public modalController: ModalController,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    private util:UtilService
   ) {}
 
   ngOnInit() {}
@@ -231,8 +233,14 @@ export class DataPage implements OnInit {
 console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].ordem)
 
     const alert = await this.alertController.create({
-      header: "Are you sure",
-      message: "Are you sure, you want to delete this QUESTION",
+      header: `Deseja deletar a questão,${item.questoes[index].pergunta}`,
+      message: "Digite 'SIM' para deletar a questão selecionada",
+      inputs: [
+        {
+          name: 'inputOK',
+          type: 'text',
+          placeholder: "Digite 'SIM' aqui."
+        },],
       buttons: [
         {
           text: "Cancel",
@@ -244,15 +252,21 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
         },
         {
           text: "Delete",
-          handler: () => {
-            this.api
+          handler: (value) => {
+            console.log(value.inputOK)
+
+            if (value.inputOK === 'SIM') {
+              fd.append("yes", "yes");
+              this.api
               .post_params("delquest/" + item.formularios[0].form + "/" + item.questoes[index].ordem, fd)
               .then((res: any) => {
                 if (res) {
                   res.subscribe(
                     (data) => {
                       console.log("Multiple del API > ", data);
+                      this.util.presentToast({ header: "", message: data });
                       this.loadForms();
+                   
                     },
                     (err) => {
                       console.log("API error -> ", err);
@@ -261,6 +275,10 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
                   );
                 }
               });
+            } else {
+        return
+            }
+         
           },
         },
       ],

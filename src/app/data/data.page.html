@@ -392,6 +392,10 @@
               <p>{{item.titles.nivel}}</p>
               <p><b>{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b></p>
             </ion-label>
+            <ion-label >
+              <p>{{item.titles.fordem}}</p>
+              <p><b>{{item.formularios[0]?.fordem?item.formularios[0]?.fordem:'N/A'}}</b></p>
+            </ion-label>
                  <!-- 
                     <ion-label>
          
@@ -437,6 +441,7 @@
               <p>{{item.titles?.nform}}: <b>{{item?.formularios[0]?.nform}}</b></p>
               <p>{{item.titles?.formulario}}: <b>{{item.formularios[0]?.form}}</b></p>
               <p>{{item.titles.nivel}}: <b>{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b></p>
+              <p>{{item.titles.fordem}}: <b>{{item.formularios[0]?.fordem?item.formularios[0]?.fordem:'N/A'}}</b></p>
              
            
            
@@ -517,7 +522,7 @@
                       <ion-icon
                       name="close-outline"
                       style="font-size: large;margin-left: auto;color: #EF9E95;"
-               
+                      (click)="del_multiple(item,i)"
                     ></ion-icon
                   >
                     </p>
@@ -525,7 +530,7 @@
                       <ion-icon
                       name="create-outline"
                       style="font-size: large;margin-left: auto;color: #EF9E95;"
-                      (click)="edit_multiple(item)"
+                      (click)="edit_multiple(item,i)"
                     ></ion-icon
                   >
                     </p>
