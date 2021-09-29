@@ -183,7 +183,7 @@
 
     <ion-grid>
       <ion-row>
-        <ion-col size="4" *ngFor="let item of pacientes">
+        <ion-col sizeLg="4" sizeMd="6" sizeXs="12" *ngFor="let item of pacientes">
           <ion-card class="slide-card">
             <ion-row>
               <ion-col size="3">
@@ -220,7 +220,7 @@
                   style="margin-top: 45px"
                   width="300"
                   height="320"
-                  id="id{{item._id.$oid}}"
+                  id="id{{item?._id.$oid}}"
                   responsive="true"
                 ></canvas>
               </ion-col>
@@ -249,4 +249,8 @@
     </ion-grid>
   </div>
   <!-- /wrap -->
+
+  <ion-infinite-scroll (ionInfinite)="loadNextPage($event)" loadingSpinner="bubbles" loadingText="Carregando Pacientes...">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

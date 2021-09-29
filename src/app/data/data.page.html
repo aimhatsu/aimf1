@@ -392,7 +392,9 @@
               <p>{{item.titles.nivel}}</p>
               <p><b>{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b></p>
             </ion-label>
-            <ion-label>
+                 <!-- 
+                    <ion-label>
+         
            <p>Editar Formulário </p>
               <ion-icon
               name="create-outline"
@@ -410,11 +412,14 @@
          
                ></ion-icon>
                </ion-label>
+              -->
+        
           </ion-item>
 
           <ion-item class="ion-hide-sm-up">
             <ion-label>
-              <p style="display: flex;">Excluir Formulário     <ion-icon
+              <!-- 
+          <p style="display: flex;">Excluir Formulário     <ion-icon
                 name="close-outline"
                 style="font-size: x-large; margin-left: auto; cursor: pointer;color: #EF9E95;"
                 (click)="del_multiple(item)"
@@ -426,6 +431,8 @@
                 (click)="edit_multiple(item)"
             
               ></ion-icon></p>
+              -->
+    
           
               <p>{{item.titles?.nform}}: <b>{{item?.formularios[0]?.nform}}</b></p>
               <p>{{item.titles?.formulario}}: <b>{{item.formularios[0]?.form}}</b></p>
@@ -467,7 +474,15 @@
                       <ion-icon
                         name="create-outline"
                         style="font-size: large;color: #EF9E95;"
-       
+                        (click)="edit_multiple(item,i)"
+                      ></ion-icon
+                    ></ion-label>
+                    <ion-label style="max-width: 80px">
+                      <p>Excluir</p>
+                      <ion-icon
+                        name="close-outline"
+                        style="font-size: large;color: #EF9E95;"
+                        (click)="del_multiple(item,i)"
                       ></ion-icon
                     ></ion-label>
                     <ion-label style="min-width: 400px">
@@ -510,7 +525,7 @@
                       <ion-icon
                       name="create-outline"
                       style="font-size: large;margin-left: auto;color: #EF9E95;"
-                 
+                      (click)="edit_multiple(item)"
                     ></ion-icon
                   >
                     </p>

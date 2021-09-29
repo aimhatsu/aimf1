@@ -225,9 +225,10 @@ export class DataPage implements OnInit {
     }
   }
 
-  async del_multiple(item) {
+  async del_multiple(item,index) {
     let fd = new FormData();
-    fd.append("YES", "YES");
+    fd.append("yes", "yes");
+console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].ordem)
 
     const alert = await this.alertController.create({
       header: "Are you sure",
@@ -245,12 +246,13 @@ export class DataPage implements OnInit {
           text: "Delete",
           handler: () => {
             this.api
-              .post_params("delquest/" + item.formulario + "/" + item.ordem, fd)
+              .post_params("delquest/" + item.formularios[0].form + "/" + item.questoes[index].ordem, fd)
               .then((res: any) => {
                 if (res) {
                   res.subscribe(
                     (data) => {
                       console.log("Multiple del API > ", data);
+                      this.loadForms();
                     },
                     (err) => {
                       console.log("API error -> ", err);
@@ -590,13 +592,14 @@ export class DataPage implements OnInit {
     });
   }
 
-  async edit_multiple(item) {
+  async edit_multiple(item,index?) {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
         form_type: "multiple",
         title: "Editar Questão de Múltipla Escolha",
         item: item,
+        index:index
       },
     });
     await modal.present();

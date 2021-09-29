@@ -24,8 +24,9 @@ export class ApiService {
 	}
 
 	async post_params(url, formData) {
+	
 		let token = await this.getToken();
-		return await this.http.post(`${apiURL}/${url}`, formData, { headers: { Bearer: token } });
+		return await this.http.post(`${apiURL}/${url}`, formData, { headers: { Bearer: token }, });
 	}
 
 	async viaCEP(cep) {
