@@ -248,6 +248,7 @@ export class DashboardPage implements OnInit {
 
   ionViewDidEnter() {
     this.loadHistoricoGeral();
+    this.slider.lockSwipes(true);
   }
 
   nextYear() {
@@ -464,9 +465,13 @@ export class DashboardPage implements OnInit {
   }
 
   nextSlide() {
+   
     if (this.slideCount == 0 || this.slideCount > 0) {
+      this.slider.lockSwipes(false);
       this.slideCount++;
       this.loadSlides();
+      this.slider.lockSwipes(true);
+
     }
   }
 
@@ -474,8 +479,10 @@ export class DashboardPage implements OnInit {
     if (this.slideCount < 0) {
     } else {
       if (this.slideCount != 0) {
+        this.slider.lockSwipes(false);
         this.slideCount--;
         this.loadSlides();
+        this.slider.lockSwipes(true);
       }
     }
   }
