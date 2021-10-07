@@ -5,7 +5,7 @@ import { StorageService } from "../services/storage/storage.service";
 import { ApiService } from "../services/api/api.service";
 import { IonSlides } from "@ionic/angular";
 import Chart from "chart.js";
-
+declare var plotly: any;
 declare var google: any;
 
 @Component({
@@ -30,7 +30,7 @@ export class DashboardPage implements OnInit {
   instaveis: any;
   bioconectados: any;
   inativos: any;
-
+  chartID:any;
   // map: any;
   heatmap: any;
 
@@ -418,16 +418,19 @@ export class DashboardPage implements OnInit {
             -5, -10, -5, 5, 10, 5, -5, -10, -5, 4, 2, 5, -5, -10, -5, 5, 10, 5,
           ],
           type: "scatter3d",
+          hoverinfo:'text',
+         hovertext:'texto',
+
+        //text: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E'],
         	marker: {
             size: 12,
-            symbol: 'cross',
+            symbol: 'circle',
             line: {
             width: 1},
-            opacity: 0.8},
+            opacity: 0.8,},
         },
       
       ],
-   
     
       layout: {
         autosize: true,
@@ -448,6 +451,11 @@ export class DashboardPage implements OnInit {
       scene.style.top = '5px';
     }, 500);
 
+
+   
+  }
+
+  graphonHover(e){
   }
 
   renderChartHistoricoGeral(data) {
