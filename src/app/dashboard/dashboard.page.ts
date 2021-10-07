@@ -418,11 +418,22 @@ export class DashboardPage implements OnInit {
             -5, -10, -5, 5, 10, 5, -5, -10, -5, 4, 2, 5, -5, -10, -5, 5, 10, 5,
           ],
           type: "scatter3d",
+        	marker: {
+            size: 12,
+            symbol: 'cross',
+            line: {
+            width: 1},
+            opacity: 0.8},
         },
+      
       ],
+   
+    
       layout: {
         autosize: true,
-        scene: { xaxis: { autorange: "reversed" } },
+        scene: { xaxis: { autorange: "reversed" } },  
+     
+    
       },
     };
 

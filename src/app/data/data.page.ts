@@ -56,7 +56,10 @@ export class DataPage implements OnInit {
     }
 
     if (this.tab == "status") {
+      
+    this.presentLoading();
       this.filterArray = [];
+      this.allFilters = [];
       this.status_biomark = [];
       this.filterArray = [
         {
@@ -78,7 +81,8 @@ export class DataPage implements OnInit {
 
       this.filterInputs_alert = [];
       this.filterInputs_alert = this.fillAlertInputs();
-
+      console.log(this.filterArray)
+    
       for (var i = 0; i < this.filterArray.length; i++) {
         this.loadStatus(this.filterArray[i].form, this.filterArray[i].checked);
       }
@@ -189,7 +193,7 @@ export class DataPage implements OnInit {
   }
 
   async loadStatus(form, checked, index?) {
-    this.allFilters = [];
+   
     if (checked) {
       this.api.get("pato/status/" + form).then((res: any) => {
         if (res) {
@@ -197,21 +201,39 @@ export class DataPage implements OnInit {
             (data) => {
               console.log("Status API > ", data);
               this.allFilters.push(data);
+              setTimeout(() => {
+                console.log("dismiss load forms");
+                this.loadingController
+                  .getTop()
+                  .then((v) =>
+                    v ? this.loadingController.dismiss() : null
+                  );
+              }, 2000);
             },
             (err) => {
               console.log("API error -> ", err);
               this.api.proccessError(err);
+              setTimeout(() => {
+                console.log("dismiss load forms");
+                this.loadingController
+                  .getTop()
+                  .then((v) =>
+                    v ? this.loadingController.dismiss() : null
+                  );
+              }, 2000);
             }
           );
         }
       });
 
-      this.api.get("biomark/" + form).then((res: any) => {
+      this.api.get("biomark/"+form).then((res: any) => {
         if (res) {
           res.subscribe(
             (data) => {
               console.log("Status biomark API > ", data);
-              this.status_biomark.push(data.status);
+              this.status_biomark.push(data.Status);
+            
+              
               console.log("Status biomark filter > ", this.status_biomark);
               this.loadingController
                 .getTop()
@@ -220,6 +242,14 @@ export class DataPage implements OnInit {
             (err) => {
               console.log("API error -> ", err);
               this.api.proccessError(err);
+              setTimeout(() => {
+                console.log("dismiss load forms");
+                this.loadingController
+                  .getTop()
+                  .then((v) =>
+                    v ? this.loadingController.dismiss() : null
+                  );
+              }, 2000);
             }
           );
         }
@@ -472,6 +502,7 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
 
             if (this.tab == "rec") {
               for (var i = 0; i < this.filterArray.length; i++) {
+   
                 this.loadRecomen(
                   this.filterArray[i].form,
                   this.filterArray[i].checked

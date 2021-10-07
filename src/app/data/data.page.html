@@ -213,7 +213,80 @@
         </ion-row>
       </ion-grid>
 
-      <ion-card class="data-card">
+
+      <ion-list *ngIf="allFilters" >
+        <ion-card
+        class="data-card"
+        *ngFor="let item of allFilters; let i = index"
+      >
+        <ion-item class="ion-hide-sm-down">
+          <ion-label>
+            <p>{{item.titles?.categoria}}</p>
+            <p><b>{{item?.status[0]?.nform}}</b></p>
+          </ion-label>
+          <ion-label >
+            <p>{{item.titles?.duration}}</p>
+            <p><b>{{item.status[0]?.form}}</b></p>
+          </ion-label>
+          <ion-label >
+            <p>{{item.titles.fileupl}}</p>
+            <p><b>{{item.status[0]?.nivel?item.status[0]?.nivel:'N/A'}}</b></p>
+          </ion-label>
+          <ion-label >
+            <p>{{item.titles.ordem}}</p>
+            <p><b>{{item.status[0]?.ordem? item.status?.length:'N/A'}}</b></p>
+          </ion-label>
+               <!-- 
+                  <ion-label>
+       
+         <p>Editar Formulário </p>
+            <ion-icon
+            name="create-outline"
+            style="font-size: x-large; margin-left: 15%; cursor: pointer;color: #EF9E95;"
+            (click)="edit_multiple(item)"
+            
+          ></ion-icon>
+          </ion-label>
+          <ion-label>
+            <p>Excluir Formulário </p>
+               <ion-icon
+               name="close-outline"
+               style="font-size: x-large; margin-left: 15%; cursor: pointer;color: #EF9E95;"
+               (click)="del_multiple(item)"
+       
+             ></ion-icon>
+             </ion-label>
+            -->
+      
+        </ion-item>
+
+        <ion-item class="ion-hide-sm-up">
+          <ion-label>
+            <!-- 
+        <p style="display: flex;">Excluir Formulário     <ion-icon
+              name="close-outline"
+              style="font-size: x-large; margin-left: auto; cursor: pointer;color: #EF9E95;"
+              (click)="del_multiple(item)"
+          
+            ></ion-icon></p>
+            <p style="display: flex;">Editar Formulário     <ion-icon
+              name="create-outline"
+              style="font-size: x-large; margin-left: auto; cursor: pointer;color: #EF9E95;"
+              (click)="edit_multiple(item)"
+          
+            ></ion-icon></p>
+            -->
+           
+         
+         
+          </ion-label>
+        </ion-item>
+   
+      </ion-card>
+      </ion-list>
+
+      <!--
+ <ion-card class="data-card">
         <ion-list>
           <ion-item lines="none">
             <ion-label>
@@ -342,6 +415,8 @@
           </ion-item>
         </ion-list>
       </ion-card>
+      -->
+     
     </div>
 
     <!-- Formularios -->
@@ -689,7 +764,60 @@
             </ion-col>
           </ion-row>
 
+
           <ion-row>
+            <ion-col size="12">
+              
+      <ion-list *ngIf="allFilters" >
+        <ion-card
+        class="data-card"
+        *ngFor="let item of allFilters; let i = index"
+      >
+        <ion-item class="ion-hide-sm-down">
+          <ion-label>
+            <p>{{item.Titles?.category}}</p>
+            <p><b>{{item?.Status[0]?.category}}</b></p>
+          </ion-label>
+          <ion-label >
+            <p>{{item.Titles?.cid}}</p>
+            <p><b>{{item.Status[0]?.cid}}</b></p>
+          </ion-label>
+          <ion-label >
+            <p>{{item.Titles?.form}}</p>
+            <p><b>{{item.Status[0]?.form?item.Status[0]?.form:'N/A'}}</b></p>
+          </ion-label>
+          <ion-label >
+            <p>{{item.Titles.parametro}}</p>
+            <p><b>{{item.Status[0]?.parametro? item.Status[0]?.parametro:'N/A'}}</b></p>
+          </ion-label>
+          <ion-label >
+            <p>{{item.Titles.patolog}}</p>
+            <p><b>{{item.Status[0]?.patolog? item.Status[0]?.patolog:'N/A'}}</b></p>
+          </ion-label>
+      
+          <ion-label >
+            <p>{{item.Titles.typo}}</p>
+            <p><b>{{item.Status[0]?.typo? item.Status[0]?.typo:'N/A'}}</b></p>
+          </ion-label>
+
+        </ion-item>
+
+        <ion-item class="ion-hide-sm-up">
+          <ion-label>
+   
+           
+         
+         
+          </ion-label>
+        </ion-item>
+   
+      </ion-card>
+      </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <!-- 
+ <ion-row>
             <ion-col size="6" style="padding: 0px">
               <ion-row class="item-bg-dark">
                 <ion-col size="0.5"> </ion-col>
@@ -890,6 +1018,8 @@
               </ion-row>
             </ion-col>
           </ion-row>
+          
+          -->      
         </ion-grid>
       </ion-card>
     </div>
