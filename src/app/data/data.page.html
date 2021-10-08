@@ -213,75 +213,164 @@
         </ion-row>
       </ion-grid>
 
-
-      <ion-list *ngIf="allFilters" >
+      <ion-list *ngIf="allFilters">
         <ion-card
         class="data-card"
         *ngFor="let item of allFilters; let i = index"
       >
         <ion-item class="ion-hide-sm-down">
-          <ion-label>
-            <p>{{item.titles?.categoria}}</p>
-            <p><b>{{item?.status[0]?.nform}}</b></p>
+          <ion-label *ngIf="i === 0" >
+            <p>Categoria: Tratamento</p>
+          
           </ion-label>
-          <ion-label >
-            <p>{{item.titles?.duration}}</p>
-            <p><b>{{item.status[0]?.form}}</b></p>
+          <ion-label *ngIf="i === 1" >
+            <p>Categoria: Alimentação</p>
+         
           </ion-label>
-          <ion-label >
-            <p>{{item.titles.fileupl}}</p>
-            <p><b>{{item.status[0]?.nivel?item.status[0]?.nivel:'N/A'}}</b></p>
-          </ion-label>
-          <ion-label >
-            <p>{{item.titles.ordem}}</p>
-            <p><b>{{item.status[0]?.ordem? item.status?.length:'N/A'}}</b></p>
-          </ion-label>
-               <!-- 
-                  <ion-label>
-       
-         <p>Editar Formulário </p>
-            <ion-icon
-            name="create-outline"
-            style="font-size: x-large; margin-left: 15%; cursor: pointer;color: #EF9E95;"
-            (click)="edit_multiple(item)"
-            
-          ></ion-icon>
-          </ion-label>
-          <ion-label>
-            <p>Excluir Formulário </p>
-               <ion-icon
-               name="close-outline"
-               style="font-size: x-large; margin-left: 15%; cursor: pointer;color: #EF9E95;"
-               (click)="del_multiple(item)"
-       
-             ></ion-icon>
-             </ion-label>
-            -->
+          <ion-label *ngIf="i === 2" >
+            <p>Categoria: Satisfação</p>
       
+          </ion-label>
+          <ion-label *ngIf="i === 3" >
+            <p>Categoria: Atividade</p>
+       
+          </ion-label>
+   
         </ion-item>
 
         <ion-item class="ion-hide-sm-up">
-          <ion-label>
-            <!-- 
-        <p style="display: flex;">Excluir Formulário     <ion-icon
-              name="close-outline"
-              style="font-size: x-large; margin-left: auto; cursor: pointer;color: #EF9E95;"
-              (click)="del_multiple(item)"
+          <ion-label *ngIf="i === 0" >
+            <p>Categoria: Tratamento</p>
           
-            ></ion-icon></p>
-            <p style="display: flex;">Editar Formulário     <ion-icon
-              name="create-outline"
-              style="font-size: x-large; margin-left: auto; cursor: pointer;color: #EF9E95;"
-              (click)="edit_multiple(item)"
-          
-            ></ion-icon></p>
-            -->
-           
-         
+          </ion-label>
+          <ion-label *ngIf="i === 1" >
+            <p>Categoria: Alimentação</p>
          
           </ion-label>
+          <ion-label *ngIf="i === 2" >
+            <p>Categoria: Satisfação</p>
+      
+          </ion-label>
+          <ion-label *ngIf="i === 3" >
+            <p>Categoria: Atividade</p>
+       
+          </ion-label>
         </ion-item>
-   
+
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col
+              size="12"
+              style="cursor: pointer"
+              (click)="queryFormIndexRec(item,i)"
+            >
+              <ion-label class="ion-margin-start">
+                <ion-icon
+                  [name]="item.show? 'caret-down-outline':'caret-forward-outline'"
+                  style="margin-right: 10px"
+                ></ion-icon>
+                Ver Status ({{item.status?.length?
+                item.status?.length:0}})</ion-label
+              >
+            </ion-col>
+          </ion-row>
+
+          <div
+            *ngIf="item.status?.length"
+            class="question-div"
+            [class.opened]="item.show"
+          >
+            <ion-row *ngFor="let status of item.status;let i = index">
+              <ion-col size="12">
+                <ion-item
+                  lines="none"
+                  class="ion-hide-sm-down"
+                  [ngClass]="{'item-bg-dark': 0 === i % 2}"
+                >
+                  <ion-label style="max-width: 80px">
+                    <p>Editar</p>
+                    <ion-icon
+                      name="create-outline"
+                      style="font-size: large; color: #ef9e95"
+                      (click)="edit_Rec(item,i)"
+                    ></ion-icon
+                  ></ion-label>
+                  <ion-label style="max-width: 80px">
+                    <p>Excluir</p>
+                    <ion-icon
+                      name="close-outline"
+                      style="font-size: large; color: #ef9e95"
+                      (click)="delRec(item,i)"
+                    ></ion-icon
+                  ></ion-label>
+                  <ion-label style="min-width: 400px;">
+                    <p>
+                      {{item.titles.categoria}}: <b>{{status.categoria}}</b>
+                    </p>
+                    <p>
+                      {{item.titles.status}}: <b>{{status.status}}</b>
+                    </p>
+                  </ion-label>
+                  <ion-label>
+                    <p>{{item.titles.fileupl}}: <b>{{status.fileupl}}</b></p>
+                    <p>
+                      {{item.titles.ordem}}: <b>{{status.ordem}}</b>
+                    </p></ion-label
+                  >
+
+                  <ion-label>
+                 
+                    <p>
+                      <b></b></p
+                  ></ion-label> </ion-item
+                ><ion-item
+                  lines="none"
+                  class="ion-hide-sm-up"
+                  [ngClass]="{'item-bg-dark': 0 === i % 2}"
+                >
+                  <ion-label>
+                    <p style="display: flex">
+                      Excluir Questão
+                      <ion-icon
+                        name="close-outline"
+                        style="
+                          font-size: large;
+                          margin-left: auto;
+                          color: #ef9e95;
+                        "
+                        (click)="del_multiple(item,i)"
+                      ></ion-icon>
+                    </p>
+                    <p style="display: flex">
+                      Editar Questão
+                      <ion-icon
+                        name="create-outline"
+                        style="
+                          font-size: large;
+                          margin-left: auto;
+                          color: #ef9e95;
+                        "
+                        (click)="edit_multiple(item,i)"
+                      ></ion-icon>
+                    </p>
+
+                    <p>
+                      {{item.titles.categoria}}: <b>{{status.categoria}}</b>
+                    </p>
+                    <p>
+                      {{item.titles.duration}}: <b>{{status.duration}}</b>
+                    </p>
+                    <p>{{item.titles.fileupl}}: <b>{{status.fileupl}}</b></p>
+                    <p>{{item.titles.ordem}}: <b>{{status.ordem}}</b></p>
+                    <p>
+                      {{item.titles.status}}: <b>{{status.status}}</b>
+                    </p>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-grid>
       </ion-card>
       </ion-list>
 
@@ -416,7 +505,6 @@
         </ion-list>
       </ion-card>
       -->
-     
     </div>
 
     <!-- Formularios -->
@@ -449,7 +537,7 @@
         </ion-row>
       </ion-grid>
 
-      <ion-list *ngIf="allFilters" >
+      <ion-list *ngIf="allFilters">
         <ion-card
           class="data-card"
           *ngFor="let item of allFilters; let i = index"
@@ -459,19 +547,27 @@
               <p>{{item.titles?.nform}}</p>
               <p><b>{{item?.formularios[0]?.nform}}</b></p>
             </ion-label>
-            <ion-label >
+            <ion-label>
               <p>{{item.titles?.formulario}}</p>
               <p><b>{{item.formularios[0]?.form}}</b></p>
             </ion-label>
-            <ion-label >
+            <ion-label>
               <p>{{item.titles.nivel}}</p>
-              <p><b>{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b></p>
+              <p>
+                <b
+                  >{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b
+                >
+              </p>
             </ion-label>
-            <ion-label >
+            <ion-label>
               <p>{{item.titles.fordem}}</p>
-              <p><b>{{item.formularios[0]?.fordem?item.formularios[0]?.fordem:'N/A'}}</b></p>
+              <p>
+                <b
+                  >{{item.formularios[0]?.fordem?item.formularios[0]?.fordem:'N/A'}}</b
+                >
+              </p>
             </ion-label>
-                 <!-- 
+            <!-- 
                     <ion-label>
          
            <p>Editar Formulário </p>
@@ -492,7 +588,6 @@
                ></ion-icon>
                </ion-label>
               -->
-        
           </ion-item>
 
           <ion-item class="ion-hide-sm-up">
@@ -511,19 +606,29 @@
             
               ></ion-icon></p>
               -->
-    
-          
-              <p>{{item.titles?.nform}}: <b>{{item?.formularios[0]?.nform}}</b></p>
-              <p>{{item.titles?.formulario}}: <b>{{item.formularios[0]?.form}}</b></p>
-              <p>{{item.titles.nivel}}: <b>{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b></p>
-              <p>{{item.titles.fordem}}: <b>{{item.formularios[0]?.fordem?item.formularios[0]?.fordem:'N/A'}}</b></p>
-             
-           
-           
+
+              <p>
+                {{item.titles?.nform}}: <b>{{item?.formularios[0]?.nform}}</b>
+              </p>
+              <p>
+                {{item.titles?.formulario}}:
+                <b>{{item.formularios[0]?.form}}</b>
+              </p>
+              <p>
+                {{item.titles.nivel}}:
+                <b
+                  >{{item.formularios[0]?.nivel?item.formularios[0]?.nivel:'N/A'}}</b
+                >
+              </p>
+              <p>
+                {{item.titles.fordem}}:
+                <b
+                  >{{item.formularios[0]?.fordem?item.formularios[0]?.fordem:'N/A'}}</b
+                >
+              </p>
             </ion-label>
           </ion-item>
-     
-     
+
           <ion-grid fixed>
             <ion-row>
               <ion-col
@@ -533,8 +638,7 @@
               >
                 <ion-label class="ion-margin-start">
                   <ion-icon
-                  [name]="item.show? 'caret-down-outline':'caret-forward-outline'"
-                    
+                    [name]="item.show? 'caret-down-outline':'caret-forward-outline'"
                     style="margin-right: 10px"
                   ></ion-icon>
                   Ver Questões ({{item.questoes?.length?
@@ -543,17 +647,23 @@
               </ion-col>
             </ion-row>
 
-            <div *ngIf="item.questoes?.length"  class="question-div" [class.opened]='item.show'>
-              <ion-row *ngFor="let questao of item.questoes;let i = index"
-           >
+            <div
+              *ngIf="item.questoes?.length"
+              class="question-div"
+              [class.opened]="item.show"
+            >
+              <ion-row *ngFor="let questao of item.questoes;let i = index">
                 <ion-col size="12">
-                  <ion-item lines="none"  class="ion-hide-sm-down"
-                  [ngClass]="{'item-bg-dark': 0 === i % 2}" >
+                  <ion-item
+                    lines="none"
+                    class="ion-hide-sm-down"
+                    [ngClass]="{'item-bg-dark': 0 === i % 2}"
+                  >
                     <ion-label style="max-width: 80px">
                       <p>Editar</p>
                       <ion-icon
                         name="create-outline"
-                        style="font-size: large;color: #EF9E95;"
+                        style="font-size: large; color: #ef9e95"
                         (click)="edit_multiple(item,i)"
                       ></ion-icon
                     ></ion-label>
@@ -561,7 +671,7 @@
                       <p>Excluir</p>
                       <ion-icon
                         name="close-outline"
-                        style="font-size: large;color: #EF9E95;"
+                        style="font-size: large; color: #ef9e95"
                         (click)="del_multiple(item,i)"
                       ></ion-icon
                     ></ion-label>
@@ -574,9 +684,7 @@
                       </p>
                     </ion-label>
                     <ion-label>
-                      <p>
-                        {{item.titles.ordem}}: <b>{{questao.ordem}}</b>
-                      </p>
+                      <p>{{item.titles.ordem}}: <b>{{questao.ordem}}</b></p>
                       <p>
                         {{item.titles.tipo}}: <b>{{questao.tipo}}</b>
                       </p></ion-label
@@ -587,48 +695,53 @@
                         {{item.titles.parametro}}: <b>{{questao.parametro}}</b>
                       </p>
                       <p>
-                         <b></b>
-                      </p></ion-label
-                    >
-                  </ion-item><ion-item lines="none" class="ion-hide-sm-up"
-                [ngClass]="{'item-bg-dark': 0 === i % 2}">
-                  <ion-label>
-                    <p style="display: flex;">Excluir Questão
-                      <ion-icon
-                      name="close-outline"
-                      style="font-size: large;margin-left: auto;color: #EF9E95;"
-                      (click)="del_multiple(item,i)"
-                    ></ion-icon
+                        <b></b></p
+                    ></ion-label> </ion-item
+                  ><ion-item
+                    lines="none"
+                    class="ion-hide-sm-up"
+                    [ngClass]="{'item-bg-dark': 0 === i % 2}"
                   >
-                    </p>
-                    <p style="display: flex;">Editar Questão
-                      <ion-icon
-                      name="create-outline"
-                      style="font-size: large;margin-left: auto;color: #EF9E95;"
-                      (click)="edit_multiple(item,i)"
-                    ></ion-icon
-                  >
-                    </p>
-               
-                    <p>
-                      {{item.titles.pergunta}}: <b>{{questao.pergunta}}</b>
-                    </p>
-                    <p>
-                      {{item.titles.category}}: <b>{{questao.category}}</b>
-                    </p>
-                    <p>
-                      {{item.titles.ordem}}: <b>{{questao.ordem}}</b>
-                    </p>
-                    <p>
-                      {{item.titles.tipo}}: <b>{{questao.tipo}}</b>
-                    </p>
-                    <p>
-                      {{item.titles.parametro}}: <b>{{questao.parametro}}</b>
-                    </p>
-                  </ion-label>
-                </ion-item>
-                </ion-col
-                >
+                    <ion-label>
+                      <p style="display: flex">
+                        Excluir Questão
+                        <ion-icon
+                          name="close-outline"
+                          style="
+                            font-size: large;
+                            margin-left: auto;
+                            color: #ef9e95;
+                          "
+                          (click)="del_multiple(item,i)"
+                        ></ion-icon>
+                      </p>
+                      <p style="display: flex">
+                        Editar Questão
+                        <ion-icon
+                          name="create-outline"
+                          style="
+                            font-size: large;
+                            margin-left: auto;
+                            color: #ef9e95;
+                          "
+                          (click)="edit_multiple(item,i)"
+                        ></ion-icon>
+                      </p>
+
+                      <p>
+                        {{item.titles.pergunta}}: <b>{{questao.pergunta}}</b>
+                      </p>
+                      <p>
+                        {{item.titles.category}}: <b>{{questao.category}}</b>
+                      </p>
+                      <p>{{item.titles.ordem}}: <b>{{questao.ordem}}</b></p>
+                      <p>{{item.titles.tipo}}: <b>{{questao.tipo}}</b></p>
+                      <p>
+                        {{item.titles.parametro}}: <b>{{questao.parametro}}</b>
+                      </p>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
               </ion-row>
             </div>
           </ion-grid>
@@ -746,73 +859,275 @@
 
       <ion-card class="data-card">
         <ion-grid style="padding: 0px">
-          <ion-row>
+          <ion-row class="ion-hide-sm-down">
             <ion-col size="6">
               <ion-item lines="none">
                 <ion-label>
                   <h2><strong>Data processing</strong></h2>
                 </ion-label>
               </ion-item>
-            </ion-col>
+              <ion-list *ngIf="allFilters">
+                <ion-card
+                  class="data-card"
+                  *ngFor="let item of allFilters; let i = index"
+                >
+                  <ion-item>
+                    <ion-label>
+                      <p>
+                        {{item.Titles?.category}}:
+                        <b>{{item?.Status[0]?.category}}</b>
+                      </p>
 
+                      <p>
+                        {{item.Titles?.cid}}: <b>{{item.Status[0]?.cid}}</b>
+                      </p>
+                      <p>
+                        {{item.Titles?.form}}
+                        <b
+                          >{{item.Status[0]?.form?item.Status[0]?.form:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.parametro}}:
+                        <b
+                          >{{item.Status[0]?.parametro?
+                          item.Status[0]?.parametro:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.patolog}}:
+                        <b
+                          >{{item.Status[0]?.patolog?
+                          item.Status[0]?.patolog:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.typo}}:
+                        <b
+                          >{{item.Status[0]?.typo?
+                          item.Status[0]?.typo:'N/A'}}</b
+                        >
+                      </p>
+                    </ion-label>
+                  </ion-item>
+                </ion-card>
+              </ion-list>
+            </ion-col>
             <ion-col size="6">
               <ion-item lines="none">
                 <ion-label>
                   <h2><strong>Biomarcadores</strong></h2>
                 </ion-label>
               </ion-item>
+              <ion-list *ngIf="status_biomark">
+                <ion-card
+                  class="data-card"
+                  *ngFor="let item of status_biomark; let i = index"
+                >
+                  <ion-item>
+                    <ion-label>
+                      <p>
+                        {{item.Titles?.biomark}}:
+                        <b>{{item?.Status[0]?.biomark}}</b>
+                      </p>
+
+                      <p>
+                        {{item.Titles?.category}}:
+                        <b>{{item.Status[0]?.category}}</b>
+                      </p>
+                      <p>
+                        {{item.Titles?.cid}}
+                        <b>{{item.Status[0]?.cid?item.Status[0]?.cid:'N/A'}}</b>
+                      </p>
+                      <p>
+                        {{item.Titles.status}}:
+                        <b
+                          >{{item.Status[0]?.status?
+                          item.Status[0]?.status:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.imgref}}:
+                        <b
+                          >{{item.Status[0]?.imgref?
+                          item.Status[0]?.imgref:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles?.ref1}}:
+                        <b
+                          >{{item.Status[0]?.ref1?
+                          item.Status[0]?.ref1:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.ref2}}:
+                        <b
+                          >{{item.Status[0]?.ref2?
+                          item.Status[0]?.ref2:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.ref3}}:
+                        <b
+                          >{{item.Status[0]?.ref3?
+                          item.Status[0]?.ref3:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.ref4}}:
+                        <b
+                          >{{item.Status[0]?.ref4?
+                          item.Status[0]?.ref4:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.ref5}}:
+                        <b
+                          >{{item.Status[0]?.ref5?
+                          item.Status[0]?.ref5:'N/A'}}</b
+                        >
+                      </p>
+                    </ion-label>
+                  </ion-item>
+                </ion-card>
+              </ion-list>
             </ion-col>
           </ion-row>
 
-
-          <ion-row>
+          <ion-row class="ion-hide-sm-up">
             <ion-col size="12">
-              
-      <ion-list *ngIf="allFilters" >
-        <ion-card
-        class="data-card"
-        *ngFor="let item of allFilters; let i = index"
-      >
-        <ion-item class="ion-hide-sm-down">
-          <ion-label>
-            <p>{{item.Titles?.category}}</p>
-            <p><b>{{item?.Status[0]?.category}}</b></p>
-          </ion-label>
-          <ion-label >
-            <p>{{item.Titles?.cid}}</p>
-            <p><b>{{item.Status[0]?.cid}}</b></p>
-          </ion-label>
-          <ion-label >
-            <p>{{item.Titles?.form}}</p>
-            <p><b>{{item.Status[0]?.form?item.Status[0]?.form:'N/A'}}</b></p>
-          </ion-label>
-          <ion-label >
-            <p>{{item.Titles.parametro}}</p>
-            <p><b>{{item.Status[0]?.parametro? item.Status[0]?.parametro:'N/A'}}</b></p>
-          </ion-label>
-          <ion-label >
-            <p>{{item.Titles.patolog}}</p>
-            <p><b>{{item.Status[0]?.patolog? item.Status[0]?.patolog:'N/A'}}</b></p>
-          </ion-label>
-      
-          <ion-label >
-            <p>{{item.Titles.typo}}</p>
-            <p><b>{{item.Status[0]?.typo? item.Status[0]?.typo:'N/A'}}</b></p>
-          </ion-label>
+              <ion-item lines="none">
+                <ion-label>
+                  <h2><strong>Data processing</strong></h2>
+                </ion-label>
+              </ion-item>
+              <ion-list *ngIf="allFilters">
+                <ion-card
+                  class="data-card"
+                  *ngFor="let item of allFilters; let i = index"
+                >
+                  <ion-item>
+                    <ion-label>
+                      <p>
+                        {{item.Titles?.category}}:
+                        <b>{{item?.Status[0]?.category}}</b>
+                      </p>
 
-        </ion-item>
+                      <p>
+                        {{item.Titles?.cid}}: <b>{{item.Status[0]?.cid}}</b>
+                      </p>
+                      <p>
+                        {{item.Titles?.form}}
+                        <b
+                          >{{item.Status[0]?.form?item.Status[0]?.form:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.parametro}}:
+                        <b
+                          >{{item.Status[0]?.parametro?
+                          item.Status[0]?.parametro:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.patolog}}:
+                        <b
+                          >{{item.Status[0]?.patolog?
+                          item.Status[0]?.patolog:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.typo}}:
+                        <b
+                          >{{item.Status[0]?.typo?
+                          item.Status[0]?.typo:'N/A'}}</b
+                        >
+                      </p>
+                    </ion-label>
+                  </ion-item>
+                </ion-card>
+              </ion-list>
+            </ion-col>
+            <ion-col size="12">
+              <ion-item lines="none">
+                <ion-label>
+                  <h2><strong>Biomarcadores</strong></h2>
+                </ion-label>
+              </ion-item>
+              <ion-list *ngIf="status_biomark">
+                <ion-card
+                  class="data-card"
+                  *ngFor="let item of status_biomark; let i = index"
+                >
+                  <ion-item>
+                    <ion-label>
+                      <p>
+                        {{item.Titles?.biomark}}:
+                        <b>{{item?.Status[0]?.biomark}}</b>
+                      </p>
 
-        <ion-item class="ion-hide-sm-up">
-          <ion-label>
-   
-           
-         
-         
-          </ion-label>
-        </ion-item>
-   
-      </ion-card>
-      </ion-list>
+                      <p>
+                        {{item.Titles?.category}}:
+                        <b>{{item.Status[0]?.category}}</b>
+                      </p>
+                      <p>
+                        {{item.Titles?.cid}}
+                        <b>{{item.Status[0]?.cid?item.Status[0]?.cid:'N/A'}}</b>
+                      </p>
+                      <p>
+                        {{item.Titles.status}}:
+                        <b
+                          >{{item.Status[0]?.status?
+                          item.Status[0]?.status:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.imgref}}:
+                        <b
+                          >{{item.Status[0]?.imgref?
+                          item.Status[0]?.imgref:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles?.ref1}}:
+                        <b
+                          >{{item.Status[0]?.ref1?
+                          item.Status[0]?.ref1:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.ref2}}:
+                        <b
+                          >{{item.Status[0]?.ref2?
+                          item.Status[0]?.ref2:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.ref3}}:
+                        <b
+                          >{{item.Status[0]?.ref3?
+                          item.Status[0]?.ref3:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.ref4}}:
+                        <b
+                          >{{item.Status[0]?.ref4?
+                          item.Status[0]?.ref4:'N/A'}}</b
+                        >
+                      </p>
+                      <p>
+                        {{item.Titles.ref5}}:
+                        <b
+                          >{{item.Status[0]?.ref5?
+                          item.Status[0]?.ref5:'N/A'}}</b
+                        >
+                      </p>
+                    </ion-label>
+                  </ion-item>
+                </ion-card>
+              </ion-list>
             </ion-col>
           </ion-row>
 
@@ -1019,7 +1334,7 @@
             </ion-col>
           </ion-row>
           
-          -->      
+          -->
         </ion-grid>
       </ion-card>
     </div>

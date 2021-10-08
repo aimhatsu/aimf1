@@ -29,6 +29,7 @@ export class DataPage implements OnInit {
   moreOptions: boolean = true;
 
   @ViewChildren("formIndex") formIndex: QueryList<ElementRef>;
+  filterBiomark: any[];
 
   constructor(
     public api: ApiService,
@@ -79,6 +80,25 @@ export class DataPage implements OnInit {
         },
       ];
 
+      this.filterBiomark = [
+        {
+          checked: true,
+          form: "biosens",
+        },
+        {
+          checked: true,
+          form: "labs",
+        },
+        {
+          checked: true,
+          form: "exams",
+        },
+        {
+          checked: true,
+          form: "autoexams",
+        },
+      ]
+
       this.filterInputs_alert = [];
       this.filterInputs_alert = this.fillAlertInputs();
       console.log(this.filterArray)
@@ -86,11 +106,42 @@ export class DataPage implements OnInit {
       for (var i = 0; i < this.filterArray.length; i++) {
         this.loadStatus(this.filterArray[i].form, this.filterArray[i].checked);
       }
+
+      for (let i = 0; i < this.filterBiomark.length; i++) {
+        this.loadBiomarks(this.filterBiomark[i].form,this.filterBiomark[i].checked)
+        
+      }
     }
 
     if (this.tab == "rec") {
-      this.filterArray = [];
-      this.loadForms();
+      this.allFilters = [];
+      this.filterArray = [
+        {
+          checked: true,
+          form: "treatm",
+          title:'Tratamento'
+        },
+        {
+          checked: true,
+          form: "food",
+          title:'Alimentação'
+        },
+        {
+          checked: true,
+          form: "content",
+          title:'Satisfação'
+        },
+        {
+          checked: true,
+          form: "activie",
+          title:'Atividade'
+        },
+      ];
+
+      for (let i = 0; i < this.filterArray.length; i++) {
+       this.loadRecomen(this.filterArray[i].form, this.filterArray[i].checked);
+        
+      }
     }
   }
 
@@ -124,14 +175,14 @@ export class DataPage implements OnInit {
                   }, 2000);
                 }
               }
-
+/*
               if (this.tab == "rec") {
                 this.loadRecomen(
                   this.filterArray[i].form,
                   this.filterArray[i].checked,
                   i
                 );
-              }
+              }*/
             }
             this.filterInputs_alert = this.fillAlertInputs();
           },
@@ -157,8 +208,9 @@ export class DataPage implements OnInit {
   }
 
   async loadRecomen(form, checked, index?) {
+    console.log(form)
     if (checked) {
-      this.api.get("recomen/" + form).then((res: any) => {
+      this.api.get("recomen/"+form).then((res: any) => {
         if (res) {
           res.subscribe(
             (data) => {
@@ -226,12 +278,19 @@ export class DataPage implements OnInit {
         }
       });
 
+    }
+  }
+
+  async loadBiomarks(form, checked,){
+
+    if (checked) {
+      
       this.api.get("biomark/"+form).then((res: any) => {
         if (res) {
           res.subscribe(
             (data) => {
               console.log("Status biomark API > ", data);
-              this.status_biomark.push(data.Status);
+              this.status_biomark.push(data);
             
               
               console.log("Status biomark filter > ", this.status_biomark);
@@ -255,6 +314,7 @@ export class DataPage implements OnInit {
         }
       });
     }
+
   }
 
   async del_multiple(item,index) {
@@ -315,6 +375,46 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
 
     await alert.present();
   }
+
+  async delRec(item,index){
+
+    const alert = await this.alertController.create({
+      header: "Are you sure",
+      message: "Are you sure, you want to delete this status",
+      buttons: [
+        {
+          text: "Cancel",
+          role: "cancel",
+          cssClass: "secondary",
+          handler: (blah) => {
+            console.log("Confirm Cancel: blah");
+          },
+        },
+        {
+          text: "Delete",
+          handler: () => {
+            this.api.get("delpato").then((res: any) => {
+              if (res) {
+                res.subscribe(
+                  (data) => {
+                    console.log("Status del API > ", data);
+                  },
+                  (err) => {
+                    console.log("API error -> ", err);
+                    this.api.proccessError(err);
+                  }
+                );
+              }
+            });
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+    
+  }
+
 
   async delStatus() {
     const alert = await this.alertController.create({
@@ -415,6 +515,18 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
 
   queryFormIndex(item, index) {
     const height = item.questoes.length * 75;
+    console.log(item);
+
+    if (item.show) {
+      item.show = false;
+    } else {
+      item.show = true;
+    }
+    console.log(item.show);
+  }
+
+  queryFormIndexRec(item, index) {
+    const height = item.status.length * 75;
     console.log(item);
 
     if (item.show) {
@@ -646,6 +758,29 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
       componentProps: {
         form_type: "multiple",
         title: "Editar Questão de Múltipla Escolha",
+        item: item,
+        index:index
+      },
+    });
+    await modal.present();
+
+    await modal.onWillDismiss().then((data) => {
+      if (data.data) {
+        this.loadForms();
+      } else {
+        return;
+      }
+
+      console.log("Edit multiple Modal Dismiss ", data);
+    });
+  }
+
+  async edit_Rec(item,index?){
+    const modal = await this.modalController.create({
+      component: FormModalPage,
+      componentProps: {
+        form_type: "rec",
+        title: "Editar Recomendações",
         item: item,
         index:index
       },
