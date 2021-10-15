@@ -290,10 +290,28 @@ export class DataPage implements OnInit {
           res.subscribe(
             (data) => {
               console.log("Status biomark API > ", data);
-              this.status_biomark.push(data);
+        
             
               
               console.log("Status biomark filter > ", this.status_biomark);
+
+
+              if (data.Status) {
+                for (let i = 0; i < data.Status.length; i++) {
+                  console.log(`biomark/${data.Status[i].category}/${data.Status[i].status}`)
+                  this.api.get(`biomark/${data.Status[i].category}/${data.Status[i].status}`).then(res=>{
+                    if(res){
+                      res.subscribe((Filter)=>{
+                        this.status_biomark.push(Filter);
+                        console.log(Filter)
+                      })
+                    }
+                  })
+                  
+                }
+             
+                
+              }
               this.loadingController
                 .getTop()
                 .then((v) => (v ? this.loadingController.dismiss() : null));
