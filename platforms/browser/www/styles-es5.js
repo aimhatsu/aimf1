@@ -3,11 +3,11 @@
     /***/
     3: function _(module, exports, __webpack_require__) {
       __webpack_require__(
-      /*! C:\Users\felip\OneDrive\Área de Trabalho\aimf1-main\aimf1-main\src\theme\variables.scss */
+      /*! /home/aim/aimf1-layout-tables-card-form/aimf1/src/theme/variables.scss */
       "fFqt");
 
       module.exports = __webpack_require__(
-      /*! C:\Users\felip\OneDrive\Área de Trabalho\aimf1-main\aimf1-main\src\global.scss */
+      /*! /home/aim/aimf1-layout-tables-card-form/aimf1/src/global.scss */
       "8oQk");
       /***/
     },

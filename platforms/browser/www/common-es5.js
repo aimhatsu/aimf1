@@ -1,10 +1,4 @@
 (function () {
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
   function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -121,218 +115,6 @@
           return _ref.apply(this, arguments);
         };
       }();
-      /***/
-
-    },
-
-    /***/
-    "YOl1": function YOl1(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "UtilService", function () {
-        return UtilService;
-      });
-      /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/core */
-      "8Y7J");
-      /* harmony import */
-
-
-      var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @ionic/angular */
-      "sZkV");
-
-      var UtilService = /*#__PURE__*/function () {
-        function UtilService(loadingCtrl, toastCtrl, alertCtrl) {
-          _classCallCheck(this, UtilService);
-
-          this.loadingCtrl = loadingCtrl;
-          this.toastCtrl = toastCtrl;
-          this.alertCtrl = alertCtrl;
-        }
-
-        _createClass(UtilService, [{
-          key: "presentAlert",
-          value: function presentAlert(data) {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-              var alert;
-              return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                while (1) {
-                  switch (_context2.prev = _context2.next) {
-                    case 0:
-                      _context2.next = 2;
-                      return this.alertCtrl.create(data);
-
-                    case 2:
-                      alert = _context2.sent;
-                      _context2.next = 5;
-                      return alert.present();
-
-                    case 5:
-                      return _context2.abrupt("return", _context2.sent);
-
-                    case 6:
-                    case "end":
-                      return _context2.stop();
-                  }
-                }
-              }, _callee2, this);
-            }));
-          }
-        }, {
-          key: "presentErr",
-          value: function presentErr(hdr, msg) {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-              var alert;
-              return regeneratorRuntime.wrap(function _callee3$(_context3) {
-                while (1) {
-                  switch (_context3.prev = _context3.next) {
-                    case 0:
-                      _context3.next = 2;
-                      return this.alertCtrl.create({
-                        header: hdr,
-                        message: msg,
-                        buttons: ['OK']
-                      });
-
-                    case 2:
-                      alert = _context3.sent;
-                      _context3.next = 5;
-                      return alert.present();
-
-                    case 5:
-                    case "end":
-                      return _context3.stop();
-                  }
-                }
-              }, _callee3, this);
-            }));
-          }
-        }, {
-          key: "presentToast",
-          value: function presentToast(data) {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-              var toast;
-              return regeneratorRuntime.wrap(function _callee4$(_context4) {
-                while (1) {
-                  switch (_context4.prev = _context4.next) {
-                    case 0:
-                      _context4.next = 2;
-                      return this.toastCtrl.create(Object.assign({
-                        duration: data.duration ? data.duration : 3500
-                      }, data));
-
-                    case 2:
-                      toast = _context4.sent;
-                      _context4.next = 5;
-                      return toast.present();
-
-                    case 5:
-                      return _context4.abrupt("return", _context4.sent);
-
-                    case 6:
-                    case "end":
-                      return _context4.stop();
-                  }
-                }
-              }, _callee4, this);
-            }));
-          }
-        }, {
-          key: "presentLoading",
-          value: function presentLoading(data) {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-              return regeneratorRuntime.wrap(function _callee5$(_context5) {
-                while (1) {
-                  switch (_context5.prev = _context5.next) {
-                    case 0:
-                      _context5.next = 2;
-                      return this.loadingCtrl.create(data);
-
-                    case 2:
-                      this.loading = _context5.sent;
-                      _context5.next = 5;
-                      return this.loading.present();
-
-                    case 5:
-                      return _context5.abrupt("return", _context5.sent);
-
-                    case 6:
-                    case "end":
-                      return _context5.stop();
-                  }
-                }
-              }, _callee5, this);
-            }));
-          }
-        }, {
-          key: "dismissLoading",
-          value: function dismissLoading() {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
-              return regeneratorRuntime.wrap(function _callee6$(_context6) {
-                while (1) {
-                  switch (_context6.prev = _context6.next) {
-                    case 0:
-                      if (!this.loading) {
-                        _context6.next = 2;
-                        break;
-                      }
-
-                      return _context6.abrupt("return", this.loading.dismiss());
-
-                    case 2:
-                    case "end":
-                      return _context6.stop();
-                  }
-                }
-              }, _callee6, this);
-            }));
-          }
-        }]);
-
-        return UtilService;
-      }();
-
-      UtilService.ɵfac = function UtilService_Factory(t) {
-        return new (t || UtilService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"]));
-      };
-
-      UtilService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-        token: UtilService,
-        factory: UtilService.ɵfac,
-        providedIn: 'root'
-      });
-      /*@__PURE__*/
-
-      (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](UtilService, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
-          args: [{
-            providedIn: 'root'
-          }]
-        }], function () {
-          return [{
-            type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"]
-          }, {
-            type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"]
-          }, {
-            type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"]
-          }];
-        }, null);
-      })();
       /***/
 
     },
@@ -476,22 +258,22 @@
       "1vRN");
 
       var attachComponent = /*#__PURE__*/function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7(delegate, container, component, cssClasses, componentProps) {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(delegate, container, component, cssClasses, componentProps) {
           var el;
-          return regeneratorRuntime.wrap(function _callee7$(_context7) {
+          return regeneratorRuntime.wrap(function _callee2$(_context2) {
             while (1) {
-              switch (_context7.prev = _context7.next) {
+              switch (_context2.prev = _context2.next) {
                 case 0:
                   if (!delegate) {
-                    _context7.next = 2;
+                    _context2.next = 2;
                     break;
                   }
 
-                  return _context7.abrupt("return", delegate.attachViewToDom(container, component, componentProps, cssClasses));
+                  return _context2.abrupt("return", delegate.attachViewToDom(container, component, componentProps, cssClasses));
 
                 case 2:
                   if (!(typeof component !== 'string' && !(component instanceof HTMLElement))) {
-                    _context7.next = 4;
+                    _context2.next = 4;
                     break;
                   }
 
@@ -511,20 +293,20 @@
                   }
 
                   container.appendChild(el);
-                  _context7.next = 10;
+                  _context2.next = 10;
                   return new Promise(function (resolve) {
                     return Object(_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_0__["c"])(el, resolve);
                   });
 
                 case 10:
-                  return _context7.abrupt("return", el);
+                  return _context2.abrupt("return", el);
 
                 case 11:
                 case "end":
-                  return _context7.stop();
+                  return _context2.stop();
               }
             }
-          }, _callee7);
+          }, _callee2);
         }));
 
         return function attachComponent(_x5, _x6, _x7, _x8, _x9) {

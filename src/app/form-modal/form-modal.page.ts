@@ -396,7 +396,7 @@ export class FormModalPage implements OnInit {
     });
 
     if (this.title == "Editar Questão de Múltipla Escolha") {
-      
+
       this.multipleForm = formBuilder.group({
         category: [
           this.item.questoes[this.index]?.category,
@@ -628,6 +628,7 @@ export class FormModalPage implements OnInit {
     fd.append("cid", data.cid);
     fd.append("type", data.type);
     fd.append("form", data.form);
+    fd.append("calc", data.calc);
     fd.append("parametro", data.parametro);
 
     if (this.title == "Edit Status") {
