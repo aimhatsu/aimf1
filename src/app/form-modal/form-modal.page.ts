@@ -77,6 +77,10 @@ export class FormModalPage implements OnInit {
         "",
         Validators.compose([Validators.maxLength(150), Validators.required]),
       ],
+      calc: [
+        "",
+        Validators.compose([Validators.maxLength(150), Validators.required]),
+      ],
       parametro: [
         "",
         Validators.compose([Validators.maxLength(150), Validators.required]),
@@ -105,6 +109,10 @@ export class FormModalPage implements OnInit {
           this.item.form,
           Validators.compose([Validators.maxLength(150), Validators.required]),
         ],
+        calc: [
+          this.item.form,
+          Validators.compose([Validators.maxLength(150), Validators.required]),
+        ],
         parametro: [
           this.item.parametro,
           Validators.compose([Validators.maxLength(150), Validators.required]),
@@ -114,6 +122,10 @@ export class FormModalPage implements OnInit {
 
     this.biomarkForm = formBuilder.group({
       status: [
+        "",
+        Validators.compose([Validators.maxLength(150), Validators.required]),
+      ],
+      cid: [
         "",
         Validators.compose([Validators.maxLength(150), Validators.required]),
       ],
@@ -145,7 +157,10 @@ export class FormModalPage implements OnInit {
         "",
         Validators.compose([Validators.maxLength(150), Validators.required]),
       ],
-      imgref: [""],
+      imgref: [
+        "",
+      Validators.compose([Validators.maxLength(150), Validators.required]),
+    ],
     });
 
     this.tratamentoForm = formBuilder.group({
@@ -641,6 +656,7 @@ export class FormModalPage implements OnInit {
   async submitBiomark(data: any) {
     let fd = new FormData();
     fd.append("status", data.status);
+    fd.append("cid", data.cid);
     fd.append("biomark", data.biomark);
     fd.append("category", data.category);
     fd.append("ref1", data.ref1);
