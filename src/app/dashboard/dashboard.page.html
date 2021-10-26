@@ -237,13 +237,17 @@
                   </ion-row>
 
                   <ion-row>
+                    <img #detailImage *ngIf="showImage"  src="../../assets/images/chakra-icon.png" alt="" style="position: absolute;z-index: 10;"
+                    [style.margin-left.px]="pointX" 
+                    [style.margin-top.px]="pointY" >
+
                     <ion-col size="12">
                       <!--  <img (click)="get_emot()" class="mind-img" src="../../assets/images/mind-icon.png">
                       <img (click)="get_corpo()" class="body-img" src="../../assets/images/body-icon.png">
                       <img (click)="get_mente()" class="emot-img" src="../../assets/images/emot-icon.png">
                    <canvas id="radarChart" style="margin-top: 45px" width="300" height="320"
                         responsive="true"></canvas>-->
-                      <div style="display: flex;">
+                      <div style="display: flex;height: auto;" *ngIf="graph.data" >
                         <plotly-plot class="plotly-chart"
                         [divId]='chartID'
                           [data]="graph.data"
@@ -251,7 +255,10 @@
                           [useResizeHandler]="true"
                           [style]="{position: 'relative'}"
                           (hover)="graphonHover($event)"
+                          (unhover)="graphunHover($event)"
+                     
                         >
+                    
                         </plotly-plot>
                       </div>
                     </ion-col>

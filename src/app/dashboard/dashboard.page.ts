@@ -1,10 +1,12 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { async } from "@angular/core/testing";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NavController } from "@ionic/angular";
 import { NavigationExtras } from "@angular/router";
 import { StorageService } from "../services/storage/storage.service";
 import { ApiService } from "../services/api/api.service";
 import { IonSlides } from "@ionic/angular";
 import Chart from "chart.js";
+import { GraphModel } from "../services/models/3dgraph";
 declare var plotly: any;
 declare var google: any;
 
@@ -30,10 +32,10 @@ export class DashboardPage implements OnInit {
   instaveis: any;
   bioconectados: any;
   inativos: any;
-  chartID:any;
+  chartID: any;
   // map: any;
   heatmap: any;
-
+  showImage: boolean = false;
   months = [
     "Janeiro",
     "Fevereiro",
@@ -174,7 +176,9 @@ export class DashboardPage implements OnInit {
   };
 
   // Slides option End
-  graph: any;
+  graph: GraphModel 
+  pointX: any;
+  pointY: any;
 
   constructor(
     public api: ApiService,
@@ -184,13 +188,16 @@ export class DashboardPage implements OnInit {
     this.date = new Date();
     this.year = this.date.getFullYear();
     this.monthIndex = this.date.getMonth();
-
+    
+    this.createChart();
     this.loadUserData();
     this.loadTotals();
     this.loadSlides();
     this.loadRiskFactor();
     this.loadAudience();
-    this.createChart();
+  
+    
+    
   }
 
   ngOnInit() {
@@ -404,58 +411,63 @@ export class DashboardPage implements OnInit {
     });
   }
 
-  createChart() {
+  createChart() {  
 
-    this.graph = {
+  this.graph = {
       data: [
         {
           y: [
-            10, 0, -10, -10, 0, 10, 10, 0, -10, -8, 0, 10, 10, 0, -10, -10, 0,
-            10,
           ],
-          x: [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3],
-          z: [
-            -5, -10, -5, 5, 10, 5, -5, -10, -5, 4, 2, 5, -5, -10, -5, 5, 10, 5,
-          ],
+          x: [],
+          z: [],
           type: "scatter3d",
-          hoverinfo:'text',
-         hovertext:'texto',
-
-        //text: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E'],
-        	marker: {
+          hoverinfo: "none",
+  
+          //text: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E'],
+          marker: {
             size: 12,
-            symbol: 'circle',
+            symbol: "circle",
             line: {
-            width: 1},
-            opacity: 0.8,},
+              width: 1,
+            },
+            opacity: 0.8,
+          },
         },
-      
       ],
-    
+  
       layout: {
         autosize: true,
-        scene: { xaxis: { autorange: "reversed" } },  
-     
-    
+        scene: { xaxis: { autorange: "reversed" }},
+        margin: {
+          l: 80,
+          r: 0,
+          b: 0,
+          t: 0,
+          pad: 0
       },
+      },
+
     };
 
-    setTimeout(() => {
-      let scene = document.getElementById('scene')
-      console.log(scene)
-      scene.style.width = '850px';
-      scene.style.height = '500px';
-      scene.style.left = '0px';
-      scene.style.right = 'auto';
-      scene.style.margin = '0px';
-      scene.style.top = '5px';
-    }, 500);
-
-
-   
   }
 
-  graphonHover(e){
+  graphonHover(e) {
+    console.log("Hover " + e);
+    console.log(e);
+
+    this.pointX = e.points[0].bbox.x0 - 70;
+    this.pointY = e.points[0].bbox.y0 - 70;
+
+    setTimeout(() => {
+      this.showImage = true;
+    }, 10);
+  }
+
+  graphunHover(e) {
+    console.log("Unhover " + e);
+    setTimeout(() => {
+      this.showImage = false;
+    }, 10);
   }
 
   renderChartHistoricoGeral(data) {
@@ -483,14 +495,45 @@ export class DashboardPage implements OnInit {
     });
   }
 
+  loadGraphData(graphData:any) {
+    this.storage.get("mia_graph_data").then((data) => {
+      if (data) {
+        this.graph.data[0].x = data.x;
+        this.graph.data[0].y = data.y;
+        this.graph.data[0].z = data.z;
+      } else {
+     /*
+        let grapDataObj = {graphData[0].x,
+          graphData[0].y,
+          graphData[0].z,
+      }
+*/
+        let grapDataObj = {x: [
+          1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3,
+        ],
+        y:[
+          10, 0, -10, -10, 0, 10, 10, 0, -10, -8, 0, 10, 10, 0, -10, -10, 0, 10,
+        ],
+        z:[
+          -5, -10, -5, 5, 10, 5, -5, -10, -5, 4, 2, 5, -5, -10, -5, 5, 10, 5,
+        ]
+      }
+
+        this.storage.set('mia_graph_data',grapDataObj).then(()=>{
+          this.graph.data[0].x = grapDataObj.x;
+          this.graph.data[0].y = grapDataObj.y;
+          this.graph.data[0].z = grapDataObj.z;
+        })
+      }
+    });
+  }
+
   nextSlide() {
-   
     if (this.slideCount == 0 || this.slideCount > 0) {
       this.slider.lockSwipes(false);
       this.slideCount++;
       this.loadSlides();
       this.slider.lockSwipes(true);
-
     }
   }
 
@@ -518,6 +561,9 @@ export class DashboardPage implements OnInit {
               this.slideDate = data[0].date;
               this.slide_Uid = data[0]._id;
               this.slidePatology = data[0].patology;
+
+              console.log(data[0].corpo);
+              this.loadGraphData(data)
               //this.radarChart(data[0].corpo, data[0].emocoes, data[0].mente);
             } else {
               //this.radarChart(1, 1, 1);
