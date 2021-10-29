@@ -26,7 +26,9 @@ export interface Line {
 export interface Layout {
     autosize: boolean;
     scene:    Scene;
-    margin:any
+    margin:any,
+    width:any,
+    height:any
 }
 
 export interface Scene {

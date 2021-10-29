@@ -237,9 +237,19 @@
                   </ion-row>
 
                   <ion-row>
-                    <img #detailImage *ngIf="showImage"  src="../../assets/images/chakra-icon.png" alt="" style="position: absolute;z-index: 10;"
-                    [style.margin-left.px]="pointX" 
+                    <ion-card   *ngIf="showImage" style="position: absolute;z-index: 10;background: transparent;box-shadow: none !important;"    [style.margin-left.px]="pointX" 
                     [style.margin-top.px]="pointY" >
+                      <ion-card-content>
+                     
+                        <img #detailImage  src="../../assets/images/pointHover.jpeg" style="width: 80px;"
+                     >
+                     <ion-item lines='none' color="none"  >
+                   
+                      <ion-label >x:{{xNumber}}</ion-label>
+                    </ion-item>
+                      </ion-card-content>
+                    </ion-card>
+               
 
                     <ion-col size="12">
                       <!--  <img (click)="get_emot()" class="mind-img" src="../../assets/images/mind-icon.png">

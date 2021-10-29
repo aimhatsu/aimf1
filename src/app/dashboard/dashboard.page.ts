@@ -179,7 +179,9 @@ export class DashboardPage implements OnInit {
   graph: GraphModel 
   pointX: any;
   pointY: any;
-
+  xNumber:any;
+  yNumber:any;
+  zNumber:any;
   constructor(
     public api: ApiService,
     public storage: StorageService,
@@ -413,6 +415,9 @@ export class DashboardPage implements OnInit {
 
   createChart() {  
 
+   let width = 900;
+   let height = 500
+
   this.graph = {
       data: [
         {
@@ -439,12 +444,14 @@ export class DashboardPage implements OnInit {
         autosize: true,
         scene: { xaxis: { autorange: "reversed" }},
         margin: {
-          l: 80,
-          r: 0,
+          l: 0,
+          r: 10,
           b: 0,
           t: 0,
           pad: 0
       },
+      width:width,
+      height:height,
       },
 
     };
@@ -457,6 +464,9 @@ export class DashboardPage implements OnInit {
 
     this.pointX = e.points[0].bbox.x0 - 70;
     this.pointY = e.points[0].bbox.y0 - 70;
+    this.xNumber = e.points[0].x
+    this.yNumber = e.points[0].y
+    this.zNumber = e.points[0].z
 
     setTimeout(() => {
       this.showImage = true;
@@ -498,16 +508,18 @@ export class DashboardPage implements OnInit {
   loadGraphData(graphData:any) {
     this.storage.get("mia_graph_data").then((data) => {
       if (data) {
+
+        console.log(data)
         this.graph.data[0].x = data.x;
         this.graph.data[0].y = data.y;
         this.graph.data[0].z = data.z;
       } else {
-     /*
-        let grapDataObj = {graphData[0].x,
-          graphData[0].y,
-          graphData[0].z,
+    
+        let grapDataObj = {x: graphData.AimChart.x,
+         y:  graphData.AimChart.y,
+         z:  graphData.AimChart.z,
       }
-*/
+ /*
         let grapDataObj = {x: [
           1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3,
         ],
@@ -517,7 +529,7 @@ export class DashboardPage implements OnInit {
         z:[
           -5, -10, -5, 5, 10, 5, -5, -10, -5, 4, 2, 5, -5, -10, -5, 5, 10, 5,
         ]
-      }
+      }*/
 
         this.storage.set('mia_graph_data',grapDataObj).then(()=>{
           this.graph.data[0].x = grapDataObj.x;
@@ -556,13 +568,13 @@ export class DashboardPage implements OnInit {
           (data) => {
             console.log(data);
             // console.log("Scientist > ", data);
-            this.slideLength = data;
+            this.slideLength = data.PerfilDoPaciente;
             if (this.slideLength.length != 0) {
-              this.slideDate = data[0].date;
-              this.slide_Uid = data[0]._id;
-              this.slidePatology = data[0].patology;
+              this.slideDate = data.PerfilDoPaciente[0].date;
+              this.slide_Uid = data.PerfilDoPaciente[0]._id;
+              this.slidePatology = data.PerfilDoPaciente[0].patology;
 
-              console.log(data[0].corpo);
+              console.log(data.PerfilDoPaciente[0].corpo);
               this.loadGraphData(data)
               //this.radarChart(data[0].corpo, data[0].emocoes, data[0].mente);
             } else {
