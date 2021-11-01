@@ -122,8 +122,8 @@
     <ion-card class="ion-no-padding ion-no-margin card-style">
       <ion-card-header style="padding: 0px;">
         <ion-row>
-          <ion-col size="2" style="padding: 0px;">
-            <ion-item class="card-heading" lines="none">
+          <ion-col size="2" style="padding: 0px;" (click)="changeContent('PRONTUARIO')">
+            <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'PRONTUARIO') ? 'tab-selected' : 'tab-not-selected'">
               <ion-icon class="icon-header" slot="start" name="heart"></ion-icon>
               <ion-label class="ion-text-center label-item" color="light">
                 PRONTUARIO
@@ -131,13 +131,27 @@
             </ion-item>
           </ion-col>
 
-          <ion-col size="10">
+          <ion-col size="2" style="padding: 0px;" (click)="changeContent('DIAGNOSTICO')">
+            <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'DIAGNOSTICO') ? 'tab-selected' : 'tab-not-selected'">
+              <ion-icon class="icon-header" slot="start" name="reader"></ion-icon>
+              <ion-label class="ion-text-center label-item" color="light">
+                DIAGNOSTICO
+              </ion-label>
+            </ion-item>
+          </ion-col>
 
+          <ion-col size="2" style="padding: 0px;" (click)="changeContent('TRATAMENTO')">
+            <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'TRATAMENTO') ? 'tab-selected' : 'tab-not-selected'">
+              <ion-icon class="icon-header" slot="start" name="reader"></ion-icon>
+              <ion-label class="ion-text-center label-item" color="light">
+                TRATAMENTO
+              </ion-label>
+            </ion-item>
           </ion-col>
         </ion-row>
       </ion-card-header>
 
-      <ion-card-content style="padding: 0px;">
+      <ion-card-content style="padding: 0px;" *ngIf="cardContentSelected === 'PRONTUARIO'">
         <div class="segment-bg">
           <ion-segment color="primary" (ionChange)="segmentChange($event)" [(ngModel)]="tab">
             <ion-segment-button value="hoje">Hoje</ion-segment-button>
@@ -490,8 +504,89 @@
           </ion-row>
         </div>
       </ion-card-content>
+
+      <ion-card-content *ngIf="cardContentSelected === 'DIAGNOSTICO'">
+        <ion-row>
+          <ion-col size="auto">
+            <img class="hoje-person-img" src="../../assets/images/person.png">
+          </ion-col>
+          <ion-col size="4">
+            <h4 class="h4-hoje">
+              <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+              <strong>JOSÉ ANACLETO</strong>
+            </h4>
+            <p class="p-hoje-title">Histórico 360º</p>
+            <p class="p-hoje-subtitle">Última análise às 5:37 PM, hoje</p>
+          </ion-col>
+          <ion-col size="4">
+            <ion-item lines="none">
+              <ion-label position="stacked">
+                <h4 style="font-size: 20px; color: #238E9E;">
+                  <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+                  <strong>EXAMES PRESENCIAIS DE HOJE:</strong>
+                </h4>
+              </ion-label>
+              <ion-textarea class="textarea" placeholder="Digite aqui o nome do exame..." rows="1"></ion-textarea>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item lines="none">
+              <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
+              <ion-label position="stacked">
+                <h4 style="font-size: 20px; color: #238E9E;">
+                  <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+                  <strong>ANOMALIAS?</strong>
+                </h4>
+              </ion-label>
+              <ion-textarea class="textarea" placeholder="Digite um valor..." rows="1"></ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5">
+            <ion-item lines="none">
+              <ion-label position="stacked">
+                <h4 style="font-size: 20px; color: #238E9E;">
+                  <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+                  <strong>OPINIAO TECNICA DE HOJE:</strong>
+                </h4>
+              </ion-label>
+              <ion-textarea class="textarea" placeholder="Digite o parecer tecnico aqui..." [(ngModel)]="opiniao" (ionChange)="setOpiniao($event)"></ion-textarea>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label position="stacked">
+                <h4 style="font-size: 20px; color: #238E9E;">
+                  <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+                  <strong>SINTOMAS TECNICA DE HOJE:</strong>
+                </h4>
+              </ion-label>
+              <ion-textarea class="textarea" placeholder="Digite o parecer tecnico aqui..." [(ngModel)]="sintomas" (ionChange)="setSintomas($event)"></ion-textarea>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <div *ngFor="let tag of tags" style="display: inline-block;">
+              <ion-chip class="chip">
+                {{ tag }}
+              </ion-chip>
+            </div>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+      <ion-card-content style="padding: 0px;" *ngIf="cardContentSelected === 'TRATAMENTO'">
+      
+      </ion-card-content>
     </ion-card>
   </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button style="--background: deeppink;" (click)="sendForm()">
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
 </ion-content>
 
 

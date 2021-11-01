@@ -206,3 +206,24 @@ hr{
     left: 43px; 
     top: 22px;
 }
+
+.textarea{
+    border: solid;
+    border-color: #2694a3;
+}
+
+.chip{
+    background: white;
+    border: solid;
+    border-color: #2694a3;
+    color: #2694a3;
+    border-radius: 0;
+}
+
+.tab-selected{
+    --background: #EF9E95 !important;
+}
+
+.tab-not-selected{
+    --background: transparent linear-gradient(264deg, #2694A3 0%, #01426A 100%) 0% 0% no-repeat padding-box !important;
+}

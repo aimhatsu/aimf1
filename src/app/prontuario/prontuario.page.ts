@@ -19,6 +19,10 @@ export class ProntuarioPage implements OnInit {
   userData: any;
   totalpati: any; geralpoint: any; globalpoint: any;
   estaveis: any; instaveis: any; bioconectados: any; inativos: any;
+  cardContentSelected: any = 'PRONTUARIO';
+  tags: any = [];
+  sintomas: any = '';
+  opiniao: any = '';
 
   constructor(public api: ApiService, public storage: StorageService,
     public navCtrl: NavController, private route: ActivatedRoute) {
@@ -29,10 +33,9 @@ export class ProntuarioPage implements OnInit {
       this.year = params["year"];
       this.month = params["month"];
       this.loadHoje(this.category);
+      this.loadUserData();
+      this.loadTotals();
     });
-
-    this.loadUserData();
-    this.loadTotals();
   }
 
   ngOnInit() {
@@ -212,6 +215,22 @@ export class ProntuarioPage implements OnInit {
           console.log("inativos > ", data);
 
           this.inativos = (data && data[0] && data[0].PacientesEstaveis) ? data[0].PacientesEstaveis : '0'
+        }, (err) => {
+          console.log(err);
+          this.api.proccessError(err)
+        });
+      }
+    });
+
+    //get tags
+    this.api.get('triag/tags').then((res: any) => {
+      if (res) {
+        res.subscribe((data) => {
+          console.log("tags > ", data);
+
+          data.forEach(element => {
+            this.tags.push(element.expres)
+          });
         }, (err) => {
           console.log(err);
           this.api.proccessError(err)
@@ -419,4 +438,38 @@ export class ProntuarioPage implements OnInit {
       }
     });
   }
+
+  changeContent(type: any) {
+    this.cardContentSelected = type
+  }
+
+  sendForm() {
+    let postData = {
+      //"sintomas": this.sintomas,
+      "opiniao": this.opiniao
+    }
+    
+    this.api.post_params("triag/" + this.patientId, postData).then((res: any) => {
+      if (res) {
+        res.subscribe(
+          (data) => {
+            console.log("Diagnostico post API > ", data);
+          },
+          (err) => {
+            console.log("API error -> ", err);
+            this.api.proccessError(err);
+          }
+        );
+      }
+    });
+  }
+
+  setOpiniao(data) {
+    this.opiniao = data.detail.value
+  }
+
+  setSintomas(data) {
+    this.sintomas = data.detail.value
+  }
+
 }
