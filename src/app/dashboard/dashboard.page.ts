@@ -182,6 +182,8 @@ export class DashboardPage implements OnInit {
   xNumber:any;
   yNumber:any;
   zNumber:any;
+  graphPoints: any;
+  graphHoverPoint: any;
   constructor(
     public api: ApiService,
     public storage: StorageService,
@@ -462,6 +464,8 @@ export class DashboardPage implements OnInit {
     console.log("Hover " + e);
     console.log(e);
 
+    this.graphHoverPoint = this.graphPoints[e.points[0].pointNumber]
+
     this.pointX = e.points[0].bbox.x0 - 70;
     this.pointY = e.points[0].bbox.y0 - 70;
     this.xNumber = e.points[0].x
@@ -474,6 +478,7 @@ export class DashboardPage implements OnInit {
   }
 
   graphunHover(e) {
+    this.graphHoverPoint = ''
     console.log("Unhover " + e);
     setTimeout(() => {
       this.showImage = false;
@@ -506,8 +511,10 @@ export class DashboardPage implements OnInit {
   }
 
   loadGraphData(graphData:any) {
+    
+    this.graphPoints = graphData.AimChart[1].AimLabels
     this.storage.get("mia_graph_data").then((data) => {
-      if (data) {
+      if (data) { 
 
         console.log(data)
         this.graph.data[0].x = data.x;
@@ -515,9 +522,9 @@ export class DashboardPage implements OnInit {
         this.graph.data[0].z = data.z;
       } else {
     
-        let grapDataObj = {x: graphData.AimChart.x,
-         y:  graphData.AimChart.y,
-         z:  graphData.AimChart.z,
+        let grapDataObj = {x: graphData.AimChart[0].x,
+         y:  graphData.AimChart[0].y,
+         z:  graphData.AimChart[0].z,
       }
  /*
         let grapDataObj = {x: [
