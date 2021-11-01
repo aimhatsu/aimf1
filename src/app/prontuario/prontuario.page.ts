@@ -476,4 +476,11 @@ export class ProntuarioPage implements OnInit {
     this.sintomas = data.detail.value
   }
 
+  nextPage() {
+    if (this.cardContentSelected === 'PRONTUARIO')
+      this.cardContentSelected = 'DIAGNOSTICO'
+    else if (this.cardContentSelected === 'DIAGNOSTICO')
+      this.cardContentSelected = 'TRIAGEM'
+  }
+
 }
