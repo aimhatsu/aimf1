@@ -444,10 +444,14 @@ export class ProntuarioPage implements OnInit {
   }
 
   sendForm() {
-    let postData = {
+    //let postData = {
       //"sintomas": this.sintomas,
-      "opiniao": this.opiniao
-    }
+      //"opiniao": this.opiniao
+    //}
+
+    let postData = new FormData();
+    postData.append("sintomas", this.sintomas);
+    postData.append("opiniao", this.opiniao);
     
     this.api.post_params("triag/" + this.patientId, postData).then((res: any) => {
       if (res) {
