@@ -22,27 +22,27 @@ export class ProntuarioPage implements OnInit {
   cardContentSelected: any = 'PRONTUARIO';
   triagTags: any = [];
   diagTags: any = [];
-  sintomasTriag: any;
-  opiniaoTriag: any;
-  sintomasDiag: any;
-  opiniaoDiag: any;
-  conhecimento: any;
-  link: any;
-  conhecimentohDia: any;
-  tratamento: any;
-  alimento: any;
-  alimentohDia: any;
-  agendar: any;
-  agendarhDia: any;
-  agendarHorario: any;
-  agendarDuracao: any;
-  atividadehDia: any;
-  especialista: any;
-  atividade: any;
-  examesTriag: any;
-  anomaliasTriag: any;
-  examesDiag: any;
-  anomaliasDiag: any;
+  sintomasTriag: any = '';
+  opiniaoTriag: any = '';
+  sintomasDiag: any = '';
+  opiniaoDiag: any = '';
+  conhecimento: any = '';
+  link: any = '';
+  conhecimentohDia: any = '';
+  tratamento: any = '';
+  alimento: any = '';
+  alimentohDia: any = '';
+  agendar: any = '';
+  agendarhDia: any = '';
+  agendarHorario: any = '';
+  agendarDuracao: any = '';
+  atividadehDia: any = '';
+  especialista: any = '';
+  atividade: any = '';
+  examesTriag: any = '';
+  anomaliasTriag: any = '';
+  examesDiag: any = '';
+  anomaliasDiag: any = '';
 
   constructor(public api: ApiService, public storage: StorageService,
     public navCtrl: NavController, private route: ActivatedRoute) {
