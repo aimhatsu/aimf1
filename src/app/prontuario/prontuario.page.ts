@@ -21,8 +21,21 @@ export class ProntuarioPage implements OnInit {
   estaveis: any; instaveis: any; bioconectados: any; inativos: any;
   cardContentSelected: any = 'PRONTUARIO';
   tags: any = [];
-  sintomas: any = '';
-  opiniao: any = '';
+  sintomas: any;
+  opiniao: any;
+  conhecimento: any;
+  link: any;
+  conhecimentohDia: any;
+  tratamento: any;
+  alimento: any;
+  alimentohDia: any;
+  agendar: any;
+  agendarhDia: any;
+  agendarHorario: any;
+  agendarDuracao: any;
+  atividadehDia: any;
+  especialista: any;
+  atividade: any;
 
   constructor(public api: ApiService, public storage: StorageService,
     public navCtrl: NavController, private route: ActivatedRoute) {
@@ -474,6 +487,58 @@ export class ProntuarioPage implements OnInit {
 
   setSintomas(data) {
     this.sintomas = data.detail.value
+  }
+
+  setConhecimento(data) {
+    this.conhecimento = data.detail.value
+  }
+
+  setLink(data) {
+    this.link = data.detail.value
+  }
+
+  setConhecimentohDia(data) {
+    this.conhecimentohDia = data.detail.value
+  }
+
+  setTratamento(data) {
+    this.tratamento = data.detail.value
+  }
+
+  setAlimento(data) {
+    this.alimento = data.detail.value
+  }
+
+  setAlimentohDia(data) {
+    this.alimentohDia = data.detail.value
+  }
+
+  setAgendar(data) {
+    this.agendar = data.detail.value
+  }
+
+  setAgendarhDia(data) {
+    this.agendarhDia = data.detail.value
+  }
+
+  setAgendarHorario(data) {
+    this.agendarHorario = data.detail.value
+  }
+
+  setAgendarDuracao(data) {
+    this.agendarDuracao = data.detail.value
+  }
+
+  setAtividade(data) {
+    this.atividade = data.detail.value
+  }
+
+  setAtividadehDia(data) {
+    this.atividadehDia = data.detail.value
+  }
+
+  setEspecialista(data) {
+    this.especialista = data.detail.value
   }
 
   nextPage() {
