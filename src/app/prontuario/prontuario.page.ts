@@ -22,8 +22,10 @@ export class ProntuarioPage implements OnInit {
   cardContentSelected: any = 'PRONTUARIO';
   triagTags: any = [];
   diagTags: any = [];
-  sintomas: any;
-  opiniao: any;
+  sintomasTriag: any;
+  opiniaoTriag: any;
+  sintomasDiag: any;
+  opiniaoDiag: any;
   conhecimento: any;
   link: any;
   conhecimentohDia: any;
@@ -37,8 +39,10 @@ export class ProntuarioPage implements OnInit {
   atividadehDia: any;
   especialista: any;
   atividade: any;
-  exames: any;
-  anomalias: any;
+  examesTriag: any;
+  anomaliasTriag: any;
+  examesDiag: any;
+  anomaliasDiag: any;
 
   constructor(public api: ApiService, public storage: StorageService,
     public navCtrl: NavController, private route: ActivatedRoute) {
@@ -475,26 +479,26 @@ export class ProntuarioPage implements OnInit {
     this.cardContentSelected = type
   }
 
-  sendTriagSintOpin() {
+  sendSintOpin(triagem?) {
     let postData = new FormData();
-    postData.append("sintomas", this.sintomas);
-    postData.append("opiniao", this.opiniao);
+    postData.append("sintomas", triagem ? this.sintomasTriag : this.sintomasDiag);
+    postData.append("opiniao", triagem ? this.opiniaoTriag : this.opiniaoDiag);
     
-    this.api.post_params("triag/" + this.patientId, postData).then((res: any) => {
+    this.api.post_params(triagem ? "triag/" : "diag/" + this.patientId, postData).then((res: any) => {
       if (res) {
         res.subscribe(
           (data) => {
-            console.log("Triagem post API > ", data);
+            console.log("post API > ", data);
 
-            this.sintomas = ''
-            this.opiniao = ''
+            triagem ? this.sintomasTriag = '' : this.sintomasDiag = ''
+            triagem ? this.opiniaoTriag = '' : this.opiniaoDiag = ''
           },
           (err) => {
             console.log("API error -> ", err);
             this.api.proccessError(err);
             if (err.status === 200 && err.statusText === 'OK') {
-              this.sintomas = ''
-              this.opiniao = ''
+              triagem ? this.sintomasTriag = '' : this.sintomasDiag = ''
+              triagem ? this.opiniaoTriag = '' : this.opiniaoDiag = ''
             }
           }
         );
@@ -502,26 +506,29 @@ export class ProntuarioPage implements OnInit {
     });
   }
 
-  sendDiagSintOpin() {
+  sendConhecimento() {
     let postData = new FormData();
-    postData.append("sintomas", this.sintomas);
-    postData.append("opiniao", this.opiniao);
-    
-    this.api.post_params("diag/" + this.patientId, postData).then((res: any) => {
+    postData.append("content", this.conhecimento);
+    postData.append("contentlink", this.link);
+    postData.append("contentqtd", this.conhecimentohDia);
+
+    this.api.post_params("tratamento/mcontent/" + this.patientId, postData).then((res: any) => {
       if (res) {
         res.subscribe(
           (data) => {
-            console.log("Diagnostico post API > ", data);
+            console.log("post API > ", data);
 
-            this.sintomas = ''
-            this.opiniao = ''
+            this.conhecimento = ''
+            this.link = ''
+            this.conhecimentohDia = ''
           },
           (err) => {
             console.log("API error -> ", err);
             this.api.proccessError(err);
             if (err.status === 200 && err.statusText === 'OK') {
-              this.sintomas = ''
-              this.opiniao = ''
+              this.conhecimento = ''
+              this.link = ''
+              this.conhecimentohDia = ''
             }
           }
         );
@@ -529,20 +536,155 @@ export class ProntuarioPage implements OnInit {
     });
   }
 
-  setAnomalias(data) {
-    this.anomalias = data.detail.value
+  sendAlimentacao() {
+    let postData = new FormData();
+    postData.append("food", this.alimento);
+    postData.append("fqtd", this.alimentohDia);
+
+    this.api.post_params("tratamento/mfood/" + this.patientId, postData).then((res: any) => {
+      if (res) {
+        res.subscribe(
+          (data) => {
+            console.log("post API > ", data);
+
+            this.alimento = ''
+            this.alimentohDia = ''
+          },
+          (err) => {
+            console.log("API error -> ", err);
+            this.api.proccessError(err);
+            if (err.status === 200 && err.statusText === 'OK') {
+              this.alimento = ''
+              this.alimentohDia = ''
+            }
+          }
+        );
+      }
+    });
   }
 
-  setExames(data) {
-    this.exames = data.detail.value
+  sendAtividades() {
+    let postData = new FormData();
+    postData.append("activies", this.atividade);
+    postData.append("aqtd", this.atividadehDia);
+
+    this.api.post_params("tratamento/mactivie/" + this.patientId, postData).then((res: any) => {
+      if (res) {
+        res.subscribe(
+          (data) => {
+            console.log("post API > ", data);
+
+            this.atividade = ''
+            this.atividadehDia = ''
+          },
+          (err) => {
+            console.log("API error -> ", err);
+            this.api.proccessError(err);
+            if (err.status === 200 && err.statusText === 'OK') {
+              this.atividade = ''
+              this.atividadehDia = ''
+            }
+          }
+        );
+      }
+    });
   }
 
-  setOpiniao(data) {
-    this.opiniao = data.detail.value
+  sendEspecialista() {
+    let postData = new FormData();
+    postData.append("especialista", this.especialista);
+
+    this.api.post_params("tratamento/mtreatm/" + this.patientId, postData).then((res: any) => {
+      if (res) {
+        res.subscribe(
+          (data) => {
+            console.log("post API > ", data);
+
+            this.especialista = ''
+          },
+          (err) => {
+            console.log("API error -> ", err);
+            this.api.proccessError(err);
+            if (err.status === 200 && err.statusText === 'OK') {
+              this.especialista = ''
+            }
+          }
+        );
+      }
+    });
   }
 
-  setSintomas(data) {
-    this.sintomas = data.detail.value
+  sendTratamento() {
+    let postData = new FormData();
+    postData.append("tratamento", this.tratamento);
+    
+    this.api.post_params("tratamento/" + this.patientId, postData).then((res: any) => {
+      if (res) {
+        res.subscribe(
+          (data) => {
+            console.log("post API > ", data);
+
+            this.tratamento = ''
+          },
+          (err) => {
+            console.log("API error -> ", err);
+            this.api.proccessError(err);
+            if (err.status === 200 && err.statusText === 'OK') {
+              this.tratamento = ''
+            }
+          }
+        );
+      }
+    });
+  }
+
+  sendAgendar() {
+    let postData = new FormData();
+    postData.append("servico", this.agendar);
+    postData.append("data", this.agendarhDia);
+    postData.append("hora", this.agendarHorario);
+    postData.append("duracao", this.agendarDuracao);
+    
+    this.api.post_params("reagendar/" + this.patientId, postData).then((res: any) => {
+      if (res) {
+        res.subscribe(
+          (data) => {
+            console.log("post API > ", data);
+
+            this.agendar = ''
+            this.agendarhDia = ''
+            this.agendarHorario = ''
+            this.agendarDuracao = ''
+          },
+          (err) => {
+            console.log("API error -> ", err);
+            this.api.proccessError(err);
+            if (err.status === 200 && err.statusText === 'OK') {
+              this.agendar = ''
+              this.agendarhDia = ''
+              this.agendarHorario = ''
+              this.agendarDuracao = ''
+            }
+          }
+        );
+      }
+    });
+  }
+
+  setAnomalias(data, triagem?) {
+    triagem ? this.anomaliasTriag = data.detail.value : this.anomaliasDiag = data.detail.value
+  }
+
+  setExames(data, triagem?) {
+    triagem ? this.examesTriag = data.detail.value : this.examesDiag = data.detail.value
+  }
+
+  setOpiniao(data, triagem?) {
+    triagem ? this.opiniaoTriag = data.detail.value : this.opiniaoDiag = data.detail.value
+  }
+
+  setSintomas(data, triagem?) {
+    triagem ? this.sintomasTriag = data.detail.value : this.sintomasDiag = data.detail.value
   }
 
   setConhecimento(data) {
@@ -598,8 +740,20 @@ export class ProntuarioPage implements OnInit {
   }
 
   setTag(type, tag) {
-    if (type === 'exames')
-      this.exames = tag
+    if (type === 'examesTriag')
+      this.examesTriag = tag
+    else if (type === 'examesDiag')
+      this.examesDiag = tag
+    else if (type === 'conhecimento')
+      this.conhecimento = tag
+    else if (type === 'agendar')
+      this.agendar = tag
+    else if (type === 'atividade')
+      this.atividade = tag
+    else if (type === 'especialista')
+      this.especialista = tag
+    else if (type === 'alimento')
+      this.alimento = tag
   }
 
   nextPage() {
