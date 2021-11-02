@@ -30,6 +30,7 @@ export class DataPage implements OnInit {
 
   @ViewChildren("formIndex") formIndex: QueryList<ElementRef>;
   filterBiomark: any[];
+  allFiltersLabels: any;
 
   constructor(
     public api: ApiService,
@@ -112,6 +113,7 @@ export class DataPage implements OnInit {
 
     if (this.tab == "rec") {
       this.allFilters = [];
+      this.allFiltersLabels =[]
       this.filterArray = [
         {
           checked: true,
@@ -211,8 +213,17 @@ export class DataPage implements OnInit {
           res.subscribe(
             (data) => {
               console.log("Recomen API > ", data);
-              this.allFilters.push(data);
-
+              if (this.allFilters.length <=0) {
+                this.allFiltersLabels.push({
+                  label:data.titles})
+              }
+              console.log(this.allFiltersLabels)
+              for (let i = 0; i < data.status.length; i++) {
+                data.status[i].form = form
+               
+                this.allFilters.push(data.status[i]);
+                
+              }
               console.log("Recomen filter > ", this.allFilters);
             },
             (err) => {
@@ -571,6 +582,7 @@ export class DataPage implements OnInit {
 
   async openFilter() {
     this.allFilters = [];
+    this.allFiltersLabels =[]
     const alert = await this.alertController.create({
       header: "Filtros",
       inputs: this.filterInputs_alert,
