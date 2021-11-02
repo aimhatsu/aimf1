@@ -20,7 +20,8 @@ export class ProntuarioPage implements OnInit {
   totalpati: any; geralpoint: any; globalpoint: any;
   estaveis: any; instaveis: any; bioconectados: any; inativos: any;
   cardContentSelected: any = 'PRONTUARIO';
-  tags: any = [];
+  triagTags: any = [];
+  diagTags: any = [];
   sintomas: any;
   opiniao: any;
   conhecimento: any;
@@ -36,6 +37,8 @@ export class ProntuarioPage implements OnInit {
   atividadehDia: any;
   especialista: any;
   atividade: any;
+  exames: any;
+  anomalias: any;
 
   constructor(public api: ApiService, public storage: StorageService,
     public navCtrl: NavController, private route: ActivatedRoute) {
@@ -235,14 +238,30 @@ export class ProntuarioPage implements OnInit {
       }
     });
 
-    //get tags
+    //get triag tags
     this.api.get('triag/tags').then((res: any) => {
       if (res) {
         res.subscribe((data) => {
-          console.log("tags > ", data);
+          console.log("triag tags > ", data);
 
           data.forEach(element => {
-            this.tags.push(element.expres)
+            this.triagTags.push(element.expres)
+          });
+        }, (err) => {
+          console.log(err);
+          this.api.proccessError(err)
+        });
+      }
+    });
+
+    //get diag tags
+    this.api.get('diag/tags').then((res: any) => {
+      if (res) {
+        res.subscribe((data) => {
+          console.log("diag tags > ", data);
+
+          data.forEach(element => {
+            this.diagTags.push(element.expres)
           });
         }, (err) => {
           console.log(err);
@@ -456,12 +475,7 @@ export class ProntuarioPage implements OnInit {
     this.cardContentSelected = type
   }
 
-  sendForm() {
-    //let postData = {
-      //"sintomas": this.sintomas,
-      //"opiniao": this.opiniao
-    //}
-
+  sendTriagSintOpin() {
     let postData = new FormData();
     postData.append("sintomas", this.sintomas);
     postData.append("opiniao", this.opiniao);
@@ -470,15 +484,57 @@ export class ProntuarioPage implements OnInit {
       if (res) {
         res.subscribe(
           (data) => {
-            console.log("Diagnostico post API > ", data);
+            console.log("Triagem post API > ", data);
+
+            this.sintomas = ''
+            this.opiniao = ''
           },
           (err) => {
             console.log("API error -> ", err);
             this.api.proccessError(err);
+            if (err.status === 200 && err.statusText === 'OK') {
+              this.sintomas = ''
+              this.opiniao = ''
+            }
           }
         );
       }
     });
+  }
+
+  sendDiagSintOpin() {
+    let postData = new FormData();
+    postData.append("sintomas", this.sintomas);
+    postData.append("opiniao", this.opiniao);
+    
+    this.api.post_params("diag/" + this.patientId, postData).then((res: any) => {
+      if (res) {
+        res.subscribe(
+          (data) => {
+            console.log("Diagnostico post API > ", data);
+
+            this.sintomas = ''
+            this.opiniao = ''
+          },
+          (err) => {
+            console.log("API error -> ", err);
+            this.api.proccessError(err);
+            if (err.status === 200 && err.statusText === 'OK') {
+              this.sintomas = ''
+              this.opiniao = ''
+            }
+          }
+        );
+      }
+    });
+  }
+
+  setAnomalias(data) {
+    this.anomalias = data.detail.value
+  }
+
+  setExames(data) {
+    this.exames = data.detail.value
   }
 
   setOpiniao(data) {
@@ -541,11 +597,18 @@ export class ProntuarioPage implements OnInit {
     this.especialista = data.detail.value
   }
 
+  setTag(type, tag) {
+    if (type === 'exames')
+      this.exames = tag
+  }
+
   nextPage() {
     if (this.cardContentSelected === 'PRONTUARIO')
+      this.cardContentSelected = 'TRIAGEM'
+    else if (this.cardContentSelected === 'TRIAGEM')
       this.cardContentSelected = 'DIAGNOSTICO'
     else if (this.cardContentSelected === 'DIAGNOSTICO')
-      this.cardContentSelected = 'TRIAGEM'
+      this.cardContentSelected = 'TRATAMENTO'
   }
 
 }

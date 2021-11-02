@@ -131,6 +131,15 @@
             </ion-item>
           </ion-col>
 
+          <ion-col size="2" style="padding: 0px;" (click)="changeContent('TRIAGEM')">
+            <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'TRIAGEM') ? 'tab-selected' : 'tab-not-selected'">
+              <ion-icon class="icon-header" slot="start" name="reader"></ion-icon>
+              <ion-label class="ion-text-center label-item" color="light">
+                TRIAGEM
+              </ion-label>
+            </ion-item>
+          </ion-col>
+
           <ion-col size="2" style="padding: 0px;" (click)="changeContent('DIAGNOSTICO')">
             <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'DIAGNOSTICO') ? 'tab-selected' : 'tab-not-selected'">
               <ion-icon class="icon-header" slot="start" name="reader"></ion-icon>
@@ -140,11 +149,11 @@
             </ion-item>
           </ion-col>
 
-          <ion-col size="2" style="padding: 0px;" (click)="changeContent('TRIAGEM')">
-            <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'TRIAGEM') ? 'tab-selected' : 'tab-not-selected'">
+          <ion-col size="2" style="padding: 0px;" (click)="changeContent('TRATAMENTO')">
+            <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'TRATAMENTO') ? 'tab-selected' : 'tab-not-selected'">
               <ion-icon class="icon-header" slot="start" name="reader"></ion-icon>
               <ion-label class="ion-text-center label-item" color="light">
-                TRIAGEM
+                TRATAMENTO
               </ion-label>
             </ion-item>
           </ion-col>
@@ -505,6 +514,78 @@
         </div>
       </ion-card-content>
 
+      <ion-card-content *ngIf="cardContentSelected === 'TRIAGEM'">
+        <ion-row>
+          <ion-col size="auto">
+            <img class="hoje-person-img" src="../../assets/images/person.png">
+          </ion-col>
+          <ion-col size="4">
+            <h4 class="h4-hoje">
+              <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+              <strong>JOSÉ ANACLETO</strong>
+            </h4>
+            <p class="p-hoje-title">Histórico 360º</p>
+            <p class="p-hoje-subtitle">Última análise às 5:37 PM, hoje</p>
+          </ion-col>
+          <ion-col size="4">
+            <ion-item lines="none">
+              <ion-label position="stacked">
+                <h4 style="font-size: 20px; color: #238E9E;">
+                  <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+                  <strong>EXAMES PRESENCIAIS DE HOJE:</strong>
+                </h4>
+              </ion-label>
+              <ion-textarea class="textarea" placeholder="Digite aqui o nome do exame..." rows="1" [(ngModel)]="exames" (ionChange)="setExames($event)"></ion-textarea>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item lines="none">
+              <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
+              <ion-label position="stacked">
+                <h4 style="font-size: 20px; color: #238E9E;">
+                  <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+                  <strong>ANOMALIAS?</strong>
+                </h4>
+              </ion-label>
+              <ion-textarea style="border-width: thin;" class="textarea" placeholder="Digite um valor..." rows="1" [(ngModel)]="anomalias" (ionChange)="setAnomalias($event)"></ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5">
+            <ion-item lines="none">
+              <ion-label position="stacked">
+                <h4 style="font-size: 20px; color: #238E9E;">
+                  <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+                  <strong>SINTOMAS DE HOJE:</strong>
+                </h4>
+              </ion-label>
+              <ion-textarea class="textarea" placeholder="Digite o parecer tecnico aqui..." [(ngModel)]="sintomas" (ionChange)="setSintomas($event)"></ion-textarea>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;" (click)="sendTriagSintOpin()"></ion-icon>
+              <ion-label position="stacked">
+                <h4 style="font-size: 20px; color: #238E9E;">
+                  <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
+                  <strong>OPINIAO TECNICA DE HOJE:</strong>
+                </h4>
+              </ion-label>
+              <ion-textarea class="textarea" placeholder="Digite o parecer tecnico aqui..." [(ngModel)]="opiniao" (ionChange)="setOpiniao($event)"></ion-textarea>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <div>
+              <ion-chip *ngFor="let tag of triagTags" class="chip" (click)="setTag('exames', tag)">
+                {{ tag }}
+              </ion-chip>
+            </div>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+
       <ion-card-content *ngIf="cardContentSelected === 'DIAGNOSTICO'">
         <ion-row>
           <ion-col size="auto">
@@ -526,7 +607,7 @@
                   <strong>EXAMES PRESENCIAIS DE HOJE:</strong>
                 </h4>
               </ion-label>
-              <ion-textarea class="textarea" placeholder="Digite aqui o nome do exame..." rows="1"></ion-textarea>
+              <ion-textarea class="textarea" placeholder="Digite aqui o nome do exame..." rows="1" [(ngModel)]="exames" (ionChange)="setExames($event)"></ion-textarea>
             </ion-item>
           </ion-col>
           <ion-col>
@@ -538,7 +619,7 @@
                   <strong>ANOMALIAS?</strong>
                 </h4>
               </ion-label>
-              <ion-textarea style="border-width: thin;" class="textarea" placeholder="Digite um valor..." rows="1"></ion-textarea>
+              <ion-textarea style="border-width: thin;" class="textarea" placeholder="Digite um valor..." rows="1" [(ngModel)]="anomalias" (ionChange)="setAnomalias($event)"></ion-textarea>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -554,6 +635,7 @@
               <ion-textarea class="textarea" placeholder="Digite o parecer tecnico aqui..." [(ngModel)]="sintomas" (ionChange)="setSintomas($event)"></ion-textarea>
             </ion-item>
             <ion-item lines="none">
+              <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;" (click)="sendDiagSintOpin()"></ion-icon>
               <ion-label position="stacked">
                 <h4 style="font-size: 20px; color: #238E9E;">
                   <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
@@ -565,7 +647,7 @@
           </ion-col>
           <ion-col>
             <div>
-              <ion-chip *ngFor="let tag of tags" class="chip">
+              <ion-chip *ngFor="let tag of diagTags" class="chip">
                 {{ tag }}
               </ion-chip>
             </div>
@@ -575,47 +657,48 @@
           </ion-col>
         </ion-row>
       </ion-card-content>
-      <ion-card-content *ngIf="cardContentSelected === 'TRIAGEM'">
+
+      <ion-card-content *ngIf="cardContentSelected === 'TRATAMENTO'">
         <ion-row>
-          <ion-col size="auto">
-            <img class="hoje-person-img" src="../../assets/images/person.png">
+          <ion-col size="6">
+            <div style="display: inline-flex;">
+              <div>
+                <img class="hoje-person-img" src="../../assets/images/person.png">
+              </div>
+              <div style="margin-left: 10px;">
+                <h4 class="h4-hoje">
+                  <strong>JOSÉ ANACLETO</strong>
+                </h4>
+                <p class="p-hoje-title">Histórico 360º</p>
+                <p class="p-hoje-subtitle">Última análise às 5:37 PM, hoje</p>
+              </div>
+            </div>
           </ion-col>
-          <ion-col size="4">
-            <h4 class="h4-hoje">
-              <strong>JOSÉ ANACLETO</strong>
-            </h4>
-            <p class="p-hoje-title">Histórico 360º</p>
-            <p class="p-hoje-subtitle">Última análise às 5:37 PM, hoje</p>
-          </ion-col>
-          <ion-col>
-            <ion-item lines="none">
-              <ion-label position="stacked" style="margin: 5px;">
-                <h4 style="font-size: 20px; color: #238E9E;">
+          <ion-col size="6">
+            <div>
+              <div>
+                <h4 style="color: #238E9E;">
                   <strong>CONHECIMENTO</strong>
                 </h4>
-              </ion-label>
+              </div>
               <div>
-                <ion-chip *ngFor="let tag of tags" class="chip">
+                <ion-chip *ngFor="let tag of triagTags" class="chip">
                   {{ tag }}
                 </ion-chip>
               </div>
-            </ion-item>
+            </div>
             <div style="display: inline-flex;">
-              <div style="align-self: self-end;">
-                <ion-item lines="none">
-                  <ion-textarea style="width: 15rem;" class="textarea" placeholder="Digite o nome do conteudo..." [(ngModel)]="conhecimento" (ionChange)="setConhecimento($event)" rows="1"></ion-textarea>
-                </ion-item>
+              <div style="align-self: self-end; margin-right: 20px;">
+                <ion-textarea style="width: 15rem;" class="textarea" placeholder="Digite o nome do conteudo..." [(ngModel)]="conhecimento" (ionChange)="setConhecimento($event)" rows="1"></ion-textarea>
               </div>
               <div style="align-self: self-end;">
-                <ion-item lines="none">
-                  <ion-textarea style="width: 5rem; border-width: thin;" class="textarea" placeholder="https://..." [(ngModel)]="link" (ionChange)="setLink($event)" rows="1"></ion-textarea>
-                </ion-item>
+                <ion-textarea style="width: 5rem; border-width: thin;" class="textarea" placeholder="https://..." [(ngModel)]="link" (ionChange)="setLink($event)" rows="1"></ion-textarea>
               </div>
               <div>
                 <ion-item lines="none">
                   <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
                   <ion-label position="stacked">
-                    <h4 style="font-size: 18px; color: #238E9E;">
+                    <h4 style="color: #238E9E;">
                       <strong>Qtde (hr/dia)</strong>
                     </h4>
                   </ion-label>
@@ -626,41 +709,38 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="5">
-            <ion-item lines="none">
-              <ion-label position="stacked">
-                <h4 style="font-size: 20px; color: #238E9E;">
-                  <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
-                  <strong>TRATAMENTO PROPOSTO</strong>
-                </h4>
-              </ion-label>
+          <ion-col size="6">
+            <div>
+              <h4 style="color: #238E9E;">
+                <strong>TRATAMENTO PROPOSTO</strong>
+              </h4>
+            </div>
+            <div style="width: 25rem;">
               <ion-textarea class="textarea" placeholder="Descreva o tratamento aplicado..." [(ngModel)]="tratamento" (ionChange)="setTratamento($event)" rows="4"></ion-textarea>
-            </ion-item>
+            </div>
           </ion-col>
-          <ion-col style="align-self: self-end;">
-            <ion-item lines="none">
-              <ion-label position="stacked" style="margin: 5px;">
-                <h4 style="font-size: 20px; color: #238E9E;">
+          <ion-col size="6">
+            <div>
+              <div>
+                <h4 style="color: #238E9E;">
                   <strong>ALIMENTACAO</strong>
                 </h4>
-              </ion-label>
+              </div>
               <div>
-                <ion-chip *ngFor="let tag of tags" class="chip">
+                <ion-chip *ngFor="let tag of triagTags" class="chip">
                   {{ tag }}
                 </ion-chip>
               </div>
-            </ion-item>
+            </div>
             <div style="display: inline-flex;">
-              <div style="align-self: self-end;">
-                <ion-item lines="none">
-                  <ion-textarea style="width: 15rem;" class="textarea" placeholder="Digite aqui o nome do alimento ou do grupo..." [(ngModel)]="alimento" (ionChange)="setAlimento($event)" rows="1"></ion-textarea>
-                </ion-item>
+              <div style="align-self: self-end; margin-right: 20px;">
+                <ion-textarea style="width: 20rem;" class="textarea" placeholder="Digite aqui o nome do alimento ou do grupo..." [(ngModel)]="alimento" (ionChange)="setAlimento($event)" rows="1"></ion-textarea>
               </div>
               <div>
                 <ion-item lines="none">
                   <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
                   <ion-label position="stacked">
-                    <h4 style="font-size: 18px; color: #238E9E;">
+                    <h4 style="color: #238E9E;">
                       <strong>Qtde (hr/dia)</strong>
                     </h4>
                   </ion-label>
@@ -670,113 +750,122 @@
             </div>
           </ion-col>
         </ion-row>
-        <ion-row style="align-items: center;">
-          <ion-col size="5">
-            <ion-item lines="none">
-              <ion-label position="stacked" style="margin: 5px;">
-                <h4 style="font-size: 20px; color: #238E9E;">
+        <ion-row style="margin-top: 20px;">
+          <ion-col size="6">
+            <div>
+              <div>
+                <h4 style="color: #238E9E;">
                   <strong>AGENDAR RETORNO</strong>
                 </h4>
-              </ion-label>
+              </div>
               <div>
-                <ion-chip *ngFor="let tag of tags" class="chip">
+                <ion-chip *ngFor="let tag of triagTags" class="chip">
                   {{ tag }}
                 </ion-chip>
               </div>
-            </ion-item>
-            <ion-item lines="none">
-              <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
-              <ion-textarea class="textarea" placeholder="Digite o nome do tratamento..." [(ngModel)]="agendar" (ionChange)="setAgendar($event)" rows="1"></ion-textarea>
-            </ion-item>
+            </div>
+            <div>
+              <div style="align-self: self-end;">
+                <ion-item lines="none" style="width: 25rem;">
+                  <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
+                  <ion-label position="stacked">
+                    <h4 style="color: #238E9E;">
+                      <strong>Tratamento</strong>
+                    </h4>
+                  </ion-label>
+                  <ion-textarea class="textarea" placeholder="Digite o nome do tratamento..." [(ngModel)]="agendar" (ionChange)="setAgendar($event)" rows="1"></ion-textarea>
+                </ion-item>              
+              </div>
+              <div style="display: inline-flex;">
+                <div>
+                  <ion-item lines="none">
+                    <ion-label position="stacked">
+                      <h4 style="color: #238E9E;">
+                        <strong>Data</strong>
+                      </h4>
+                    </ion-label>
+                    <ion-textarea style="border-width: thin; width: 5rem;" class="textarea" placeholder="dd/mm/aaaa" [(ngModel)]="agendarhDia" (ionChange)="setAgendarhDia($event)" rows="1"></ion-textarea>
+                  </ion-item>
+                </div>
+                <div>
+                  <ion-item lines="none">
+                    <ion-label position="stacked">
+                      <h4 style="color: #238E9E;">
+                        <strong>Horario</strong>
+                      </h4>
+                    </ion-label>
+                    <ion-textarea style="border-width: thin; width: 5rem;" class="textarea" placeholder="00:00" [(ngModel)]="agendarHorario" (ionChange)="setAgendarHorario($event)" rows="1"></ion-textarea>
+                  </ion-item>
+                </div>
+                <div>
+                  <ion-item lines="none">
+                    <ion-label position="stacked">
+                      <h4 style="color: #238E9E;">
+                        <strong>Duracao</strong>
+                      </h4>
+                    </ion-label>
+                    <ion-textarea style="border-width: thin; width: 5rem;" class="textarea" placeholder="00:00" [(ngModel)]="agendarDuracao" (ionChange)="setAgendarDuracao($event)" rows="1"></ion-textarea>
+                  </ion-item>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div>
+              <div>
+                <h4 style="color: #238E9E;">
+                  <strong>ATIVIDADES</strong>
+                </h4>
+              </div>
+              <div>
+                <ion-chip *ngFor="let tag of triagTags" class="chip">
+                  {{ tag }}
+                </ion-chip>
+              </div>
+            </div>
             <div style="display: inline-flex;">
-              <div style="align-self: self-end;">
-                <ion-item lines="none">
-                  <ion-label position="stacked">
-                    <h4 style="font-size: 18px; color: #238E9E;">
-                      <strong>Data</strong>
-                    </h4>
-                  </ion-label>
-                  <ion-textarea style="border-width: thin; width: 5rem;" class="textarea" placeholder="dd/mm/aaaa" [(ngModel)]="agendarhDia" (ionChange)="setAgendarhDia($event)" rows="1"></ion-textarea>
-                </ion-item>
+              <div style="align-self: self-end; margin-right: 20px;">
+                <ion-textarea style="width: 20rem;" class="textarea" placeholder="Digite o nome da atividade ou..." [(ngModel)]="atividade" (ionChange)="setAtividade($event)" rows="1"></ion-textarea>
               </div>
-              <div style="align-self: self-end;">
+              <div>
                 <ion-item lines="none">
+                  <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
                   <ion-label position="stacked">
-                    <h4 style="font-size: 18px; color: #238E9E;">
-                      <strong>Horario</strong>
+                    <h4 style="color: #238E9E;">
+                      <strong>Qtde (hr/dia)</strong>
                     </h4>
                   </ion-label>
-                  <ion-textarea style="border-width: thin; width: 5rem;" class="textarea" placeholder="00:00" [(ngModel)]="agendarHorario" (ionChange)="setAgendarHorario($event)" rows="1"></ion-textarea>
-                </ion-item>
-              </div>
-              <div style="align-self: self-end;">
-                <ion-item lines="none">
-                  <ion-label position="stacked">
-                    <h4 style="font-size: 18px; color: #238E9E;">
-                      <strong>Duracao</strong>
-                    </h4>
-                  </ion-label>
-                  <ion-textarea style="border-width: thin; width: 5rem;" class="textarea" placeholder="00:00" [(ngModel)]="agendarDuracao" (ionChange)="setAgendarDuracao($event)" rows="1"></ion-textarea>
+                  <ion-textarea style="border-width: thin; width: 5rem;" class="textarea" placeholder="00:00" [(ngModel)]="atividadehDia" (ionChange)="setAtividadehDia($event)" rows="1"></ion-textarea>
                 </ion-item>
               </div>
             </div>
           </ion-col>
-          <ion-col>
-            <ion-item lines="none">
-              <ion-label position="stacked" style="margin: 5px;">
-                <h4 style="font-size: 20px; color: #238E9E;">
-                  <strong>ATIVIDADES</strong>
-                </h4>
-              </ion-label>
-              <div>
-                <ion-chip *ngFor="let tag of tags" class="chip">
-                  {{ tag }}
-                </ion-chip>
-              </div>
-              <div style="display: inline-flex;">
-                <div style="align-self: self-end;">
-                  <ion-textarea style="width: 20rem;" class="textarea" placeholder="Digite o nome da atividade ou..." [(ngModel)]="atividade" (ionChange)="setAtividade($event)" rows="1"></ion-textarea>
-                </div>
-                <div>
-                  <ion-item lines="none">
-                    <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
-                    <ion-label position="stacked">
-                      <h4 style="font-size: 18px; color: #238E9E;">
-                        <strong>Qtde (hr/dia)</strong>
-                      </h4>
-                    </ion-label>
-                    <ion-textarea style="border-width: thin; width: 5rem;" class="textarea" placeholder="00:00" [(ngModel)]="atividadehDia" (ionChange)="setAtividadehDia($event)" rows="1"></ion-textarea>
-                  </ion-item>
-                </div>
-              </div>
-            </ion-item>
-          </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="5">
-
-          </ion-col>
-          <ion-col>
-            <ion-item lines="none">
-              <ion-label position="stacked" style="margin: 5px;">
-                <h4 style="font-size: 20px; color: #238E9E;">
+          <ion-col size="6"></ion-col>
+          <ion-col size="6">
+            <div>
+              <div>
+                <h4 style="color: #238E9E;">
                   <strong>INDICAR ESPECIALISTA</strong>
                 </h4>
-              </ion-label>
+              </div>
               <div>
-                <ion-chip *ngFor="let tag of tags" class="chip">
+                <ion-chip *ngFor="let tag of triagTags" class="chip">
                   {{ tag }}
                 </ion-chip>
               </div>
-              <div style="display: inline-flex;">
-                <div>
-                  <ion-item lines="none" style="width: 25rem;">
-                    <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
-                    <ion-textarea style="border-width: thin;" class="textarea" placeholder="Digite aqui o nome do especialista" [(ngModel)]="especialista" (ionChange)="setEspecialista($event)" rows="1"></ion-textarea>
-                  </ion-item>
-                </div>
+            </div>
+            <div style="display: inline-flex;">
+              <div style="align-self: self-end;">
+                <ion-textarea style="width: 20rem;" class="textarea" placeholder="Digite aqui o nome do especialista" [(ngModel)]="especialista" (ionChange)="setEspecialista($event)" rows="1"></ion-textarea>
               </div>
-            </ion-item>
+              <div>
+                <ion-item lines="none">
+                  <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;"></ion-icon>
+                </ion-item>
+              </div>
+            </div>
           </ion-col>
         </ion-row>
 
@@ -787,7 +876,7 @@
     </ion-card>
   </div>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="cardContentSelected === 'PRONTUARIO' || cardContentSelected === 'DIAGNOSTICO'">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="cardContentSelected === 'PRONTUARIO' || cardContentSelected === 'DIAGNOSTICO' || cardContentSelected === 'TRIAGEM'">
     <ion-fab-button style="--background: deeppink;" (click)="nextPage()">
       <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-fab-button>
