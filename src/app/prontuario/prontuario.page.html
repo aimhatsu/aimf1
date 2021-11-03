@@ -563,7 +563,6 @@
               <ion-textarea class="textarea" placeholder="Digite o parecer tecnico aqui..." [(ngModel)]="sintomasTriag" (ionChange)="setSintomas($event, true)"></ion-textarea>
             </ion-item>
             <ion-item lines="none">
-              <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;" (click)="sendSintOpin(true)"></ion-icon>
               <ion-label position="stacked">
                 <h4 style="font-size: 20px; color: #238E9E;">
                   <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
@@ -635,7 +634,6 @@
               <ion-textarea class="textarea" placeholder="Digite o parecer tecnico aqui..." [(ngModel)]="sintomasDiag" (ionChange)="setSintomas($event)"></ion-textarea>
             </ion-item>
             <ion-item lines="none">
-              <ion-icon name="cloud-upload" slot="end" style="align-self: end; color: #F1B4AE;" (click)="sendSintOpin()"></ion-icon>
               <ion-label position="stacked">
                 <h4 style="font-size: 20px; color: #238E9E;">
                   <!-- <strong>ID: {{'*******************'+(slide_Uid | slice:20:24)}}</strong> -->
@@ -877,8 +875,14 @@
     </ion-card>
   </div>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="cardContentSelected === 'PRONTUARIO' || cardContentSelected === 'DIAGNOSTICO' || cardContentSelected === 'TRIAGEM'">
-    <ion-fab-button style="--background: deeppink;" (click)="nextPage()">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="cardContentSelected === 'TRIAGEM'">
+    <ion-fab-button style="--background: deeppink;" (click)="sendSintOpin(true)">
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="cardContentSelected === 'DIAGNOSTICO'">
+    <ion-fab-button style="--background: deeppink;" (click)="sendSintOpin()">
       <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>

@@ -484,7 +484,7 @@ export class ProntuarioPage implements OnInit {
     postData.append("sintomas", triagem ? this.sintomasTriag : this.sintomasDiag);
     postData.append("opiniao", triagem ? this.opiniaoTriag : this.opiniaoDiag);
     
-    this.api.post_params(triagem ? "triag/" : "diag/" + this.patientId, postData).then((res: any) => {
+    this.api.post_params(triagem ? "triag/" + this.patientId : "diag/" + this.patientId, postData).then((res: any) => {
       if (res) {
         res.subscribe(
           (data) => {
@@ -793,15 +793,6 @@ export class ProntuarioPage implements OnInit {
       this.especialista = tag
     else if (type === 'alimento')
       this.alimento = tag
-  }
-
-  nextPage() {
-    if (this.cardContentSelected === 'PRONTUARIO')
-      this.cardContentSelected = 'TRIAGEM'
-    else if (this.cardContentSelected === 'TRIAGEM')
-      this.cardContentSelected = 'DIAGNOSTICO'
-    else if (this.cardContentSelected === 'DIAGNOSTICO')
-      this.cardContentSelected = 'TRATAMENTO'
   }
 
   async presentToast(response) {
