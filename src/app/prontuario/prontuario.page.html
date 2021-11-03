@@ -131,7 +131,7 @@
             </ion-item>
           </ion-col>
 
-          <ion-col size="2" style="padding: 0px;" (click)="changeContent('TRIAGEM')">
+          <ion-col size="2" style="padding: 0px;" (click)="changeContent('TRIAGEM')" *ngIf="tabsShown">
             <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'TRIAGEM') ? 'tab-selected' : 'tab-not-selected'">
               <ion-icon class="icon-header" slot="start" name="reader"></ion-icon>
               <ion-label class="ion-text-center label-item" color="light">
@@ -140,7 +140,7 @@
             </ion-item>
           </ion-col>
 
-          <ion-col size="2" style="padding: 0px;" (click)="changeContent('DIAGNOSTICO')">
+          <ion-col size="2" style="padding: 0px;" (click)="changeContent('DIAGNOSTICO')" *ngIf="tabsShown">
             <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'DIAGNOSTICO') ? 'tab-selected' : 'tab-not-selected'">
               <ion-icon class="icon-header" slot="start" name="reader"></ion-icon>
               <ion-label class="ion-text-center label-item" color="light">
@@ -149,7 +149,7 @@
             </ion-item>
           </ion-col>
 
-          <ion-col size="2" style="padding: 0px;" (click)="changeContent('TRATAMENTO')">
+          <ion-col size="2" style="padding: 0px;" (click)="changeContent('TRATAMENTO')" *ngIf="tabsShown">
             <ion-item class="card-heading" lines="none" [ngClass]="(cardContentSelected === 'TRATAMENTO') ? 'tab-selected' : 'tab-not-selected'">
               <ion-icon class="icon-header" slot="start" name="reader"></ion-icon>
               <ion-label class="ion-text-center label-item" color="light">
@@ -883,6 +883,12 @@
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="cardContentSelected === 'DIAGNOSTICO'">
     <ion-fab-button style="--background: deeppink;" (click)="sendSintOpin()">
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="cardContentSelected === 'PRONTUARIO'">
+    <ion-fab-button style="--background: deeppink;" (click)="showTabs()">
       <ion-icon name="arrow-forward-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>

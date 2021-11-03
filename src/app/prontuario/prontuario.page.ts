@@ -43,6 +43,7 @@ export class ProntuarioPage implements OnInit {
   anomaliasTriag: any = '';
   examesDiag: any = '';
   anomaliasDiag: any = '';
+  tabsShown: boolean = false;
 
   constructor(public api: ApiService, public storage: StorageService,
     public navCtrl: NavController, private route: ActivatedRoute, private toastController: ToastController) {
@@ -658,6 +659,8 @@ export class ProntuarioPage implements OnInit {
             console.log("post API > ", data);
 
             this.tratamento = ''
+            this.tabsShown = false
+            this.cardContentSelected = 'PRONTUARIO'
           },
           (err) => {
             console.log("API error -> ", err);
@@ -665,6 +668,8 @@ export class ProntuarioPage implements OnInit {
             if (err.status === 200 && err.statusText === 'OK') {
               this.tratamento = ''
               this.presentToast(err.error.text)
+              this.tabsShown = false
+              this.cardContentSelected = 'PRONTUARIO'
             }
           }
         );
@@ -802,5 +807,10 @@ export class ProntuarioPage implements OnInit {
 		});
 		toast.present();
 	}
+
+  showTabs() {
+    this.tabsShown = true
+    this.cardContentSelected = 'TRIAGEM'
+  }
 
 }
