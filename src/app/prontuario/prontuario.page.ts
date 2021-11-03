@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NavController } from "@ionic/angular";
+import { NavController, ToastController } from "@ionic/angular";
 import { ActivatedRoute } from "@angular/router";
 import { StorageService } from "../services/storage/storage.service";
 import { ApiService } from "../services/api/api.service";
@@ -45,7 +45,7 @@ export class ProntuarioPage implements OnInit {
   anomaliasDiag: any = '';
 
   constructor(public api: ApiService, public storage: StorageService,
-    public navCtrl: NavController, private route: ActivatedRoute) {
+    public navCtrl: NavController, private route: ActivatedRoute, private toastController: ToastController) {
 
     this.route.queryParams.subscribe(params => {
       this.patientId = params["patientId"];
@@ -499,6 +499,7 @@ export class ProntuarioPage implements OnInit {
             if (err.status === 200 && err.statusText === 'OK') {
               triagem ? this.sintomasTriag = '' : this.sintomasDiag = ''
               triagem ? this.opiniaoTriag = '' : this.opiniaoDiag = ''
+              this.presentToast(err.error.text)
             }
           }
         );
@@ -529,6 +530,7 @@ export class ProntuarioPage implements OnInit {
               this.conhecimento = ''
               this.link = ''
               this.conhecimentohDia = ''
+              this.presentToast(err.error.text)
             }
           }
         );
@@ -556,6 +558,7 @@ export class ProntuarioPage implements OnInit {
             if (err.status === 200 && err.statusText === 'OK') {
               this.alimento = ''
               this.alimentohDia = ''
+              this.presentToast(err.error.text)
             }
           }
         );
@@ -583,6 +586,7 @@ export class ProntuarioPage implements OnInit {
             if (err.status === 200 && err.statusText === 'OK') {
               this.atividade = ''
               this.atividadehDia = ''
+              this.presentToast(err.error.text)
             }
           }
         );
@@ -607,6 +611,7 @@ export class ProntuarioPage implements OnInit {
             this.api.proccessError(err);
             if (err.status === 200 && err.statusText === 'OK') {
               this.especialista = ''
+              this.presentToast(err.error.text)
             }
           }
         );
@@ -631,6 +636,7 @@ export class ProntuarioPage implements OnInit {
             this.api.proccessError(err);
             if (err.status === 200 && err.statusText === 'OK') {
               this.tratamento = ''
+              this.presentToast(err.error.text)
             }
           }
         );
@@ -640,11 +646,13 @@ export class ProntuarioPage implements OnInit {
 
   sendAgendar() {
     console.log(this.agendarhDia)
+    let split_tz = this.agendarhDia.toString().substr(this.agendarhDia.toString().indexOf('+')+1, this.agendarhDia.toString().length).replace(':', '')
+    let seconds = this.agendarhDia.toString().substring(0, this.agendarhDia.toString().indexOf('+')-6) + '00.000+' + split_tz
     this.agendarDuracao = this.agendarDuracao.split(':');
     this.agendarDuracao = (+this.agendarDuracao[0]) * 60 + (+this.agendarDuracao[1])
     let postData = new FormData();
     postData.append("servico", this.agendar);
-    postData.append("dataiso", this.agendarhDia);
+    postData.append("dataiso", seconds);
     postData.append("duracao", this.agendarDuracao);
     
     this.api.post_params("reagendar/" + this.patientId, postData).then((res: any) => {
@@ -666,6 +674,7 @@ export class ProntuarioPage implements OnInit {
               this.agendarhDia = ''
               //this.agendarHorario = ''
               this.agendarDuracao = ''
+              this.presentToast(err.error.text)
             }
           }
         );
@@ -766,5 +775,13 @@ export class ProntuarioPage implements OnInit {
     else if (this.cardContentSelected === 'DIAGNOSTICO')
       this.cardContentSelected = 'TRATAMENTO'
   }
+
+  async presentToast(response) {
+		const toast = await this.toastController.create({
+			message: response,
+			duration: 2000,
+		});
+		toast.present();
+	}
 
 }
