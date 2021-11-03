@@ -640,9 +640,11 @@ export class ProntuarioPage implements OnInit {
 
   sendAgendar() {
     console.log(this.agendarhDia)
+    this.agendarDuracao = this.agendarDuracao.split(':');
+    this.agendarDuracao = (+this.agendarDuracao[0]) * 60 + (+this.agendarDuracao[1])
     let postData = new FormData();
     postData.append("servico", this.agendar);
-    postData.append("isodate", this.agendarhDia);
+    postData.append("dataiso", this.agendarhDia);
     postData.append("duracao", this.agendarDuracao);
     
     this.api.post_params("reagendar/" + this.patientId, postData).then((res: any) => {
