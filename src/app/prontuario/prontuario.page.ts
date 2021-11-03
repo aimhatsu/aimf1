@@ -507,6 +507,34 @@ export class ProntuarioPage implements OnInit {
     });
   }
 
+  sendExamAnom(triagem?) {
+    let postData = new FormData();
+    postData.append("expres", triagem ? this.examesTriag : this.examesDiag);
+    postData.append("valor", triagem ? this.anomaliasTriag : this.anomaliasDiag);
+    
+    this.api.post_params(triagem ? "triag/expres/" + this.patientId : "diag/expres/" + this.patientId, postData).then((res: any) => {
+      if (res) {
+        res.subscribe(
+          (data) => {
+            console.log("post API > ", data);
+
+            triagem ? this.examesTriag = '' : this.examesDiag = ''
+            triagem ? this.anomaliasTriag = '' : this.anomaliasDiag = ''
+          },
+          (err) => {
+            console.log("API error -> ", err);
+            this.api.proccessError(err);
+            if (err.status === 200 && err.statusText === 'OK') {
+              triagem ? this.examesTriag = '' : this.examesDiag = ''
+              triagem ? this.anomaliasTriag = '' : this.anomaliasDiag = ''
+              this.presentToast(err.error.text)
+            }
+          }
+        );
+      }
+    });
+  }
+
   sendConhecimento() {
     let postData = new FormData();
     postData.append("content", this.conhecimento);
