@@ -639,10 +639,10 @@ export class ProntuarioPage implements OnInit {
   }
 
   sendAgendar() {
+    console.log(this.agendarhDia)
     let postData = new FormData();
     postData.append("servico", this.agendar);
-    postData.append("data", this.agendarhDia);
-    postData.append("hora", this.agendarHorario);
+    postData.append("isodate", this.agendarhDia);
     postData.append("duracao", this.agendarDuracao);
     
     this.api.post_params("reagendar/" + this.patientId, postData).then((res: any) => {
@@ -653,7 +653,7 @@ export class ProntuarioPage implements OnInit {
 
             this.agendar = ''
             this.agendarhDia = ''
-            this.agendarHorario = ''
+            //this.agendarHorario = ''
             this.agendarDuracao = ''
           },
           (err) => {
@@ -662,7 +662,7 @@ export class ProntuarioPage implements OnInit {
             if (err.status === 200 && err.statusText === 'OK') {
               this.agendar = ''
               this.agendarhDia = ''
-              this.agendarHorario = ''
+              //this.agendarHorario = ''
               this.agendarDuracao = ''
             }
           }

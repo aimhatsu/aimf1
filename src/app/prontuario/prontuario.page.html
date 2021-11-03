@@ -784,10 +784,11 @@
                         <strong>Data</strong>
                       </h4>
                     </ion-label>
-                    <ion-textarea style="border-width: thin; width: 10rem;" class="textarea" placeholder="dd/mm/aaaa" [(ngModel)]="agendarhDia" (ionChange)="setAgendarhDia($event)" rows="1"></ion-textarea>
+                    <ion-datetime displayFormat="DD-MM-YYYY HH:mm:ss" placeholder="DD-MM-YYYY HH:mm:ss" [(ngModel)]="agendarhDia" (ionChange)="setAgendarhDia($event)"></ion-datetime>
+                    <!-- <ion-textarea style="border-width: thin; width: 10rem;" class="textarea" placeholder="dd/mm/aaaa" [(ngModel)]="agendarhDia" (ionChange)="setAgendarhDia($event)" rows="1"></ion-textarea>-->
                   </ion-item>
                 </div>
-                <div>
+                <!-- <div>
                   <ion-item lines="none">
                     <ion-label position="stacked">
                       <h4 style="color: #238E9E;">
@@ -796,7 +797,7 @@
                     </ion-label>
                     <ion-textarea style="border-width: thin; width: 5rem;" class="textarea" placeholder="00:00" [(ngModel)]="agendarHorario" (ionChange)="setAgendarHorario($event)" rows="1"></ion-textarea>
                   </ion-item>
-                </div>
+                </div> -->
                 <div>
                   <ion-item lines="none">
                     <ion-label position="stacked">
