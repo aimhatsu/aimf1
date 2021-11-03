@@ -680,7 +680,7 @@
                 </h4>
               </div>
               <div>
-                <ion-chip *ngFor="let tag of triagTags" class="chip" (click)="setTag('conhecimento', tag)">
+                <ion-chip *ngFor="let tag of conhecimentoTags" class="chip" (click)="setTag('conhecimento', tag)">
                   {{ tag }}
                 </ion-chip>
               </div>
@@ -725,7 +725,7 @@
                 </h4>
               </div>
               <div>
-                <ion-chip *ngFor="let tag of triagTags" class="chip" (click)="setTag('alimento', tag)">
+                <ion-chip *ngFor="let tag of alimentacaoTags" class="chip" (click)="setTag('alimento', tag)">
                   {{ tag }}
                 </ion-chip>
               </div>
@@ -756,11 +756,11 @@
                   <strong>AGENDAR RETORNO</strong>
                 </h4>
               </div>
-              <div>
+              <!-- <div>
                 <ion-chip *ngFor="let tag of triagTags" class="chip" (click)="setTag('agendar', tag)">
                   {{ tag }}
                 </ion-chip>
-              </div>
+              </div> -->
             </div>
             <div>
               <div style="align-self: self-end;">
@@ -817,7 +817,7 @@
                 </h4>
               </div>
               <div>
-                <ion-chip *ngFor="let tag of triagTags" class="chip" (click)="setTag('atividade', tag)">
+                <ion-chip *ngFor="let tag of atividadesTags" class="chip" (click)="setTag('atividade', tag)">
                   {{ tag }}
                 </ion-chip>
               </div>
@@ -850,7 +850,7 @@
                 </h4>
               </div>
               <div>
-                <ion-chip *ngFor="let tag of triagTags" class="chip" (click)="setTag('especialista', tag)">
+                <ion-chip *ngFor="let tag of especialistaTags" class="chip" (click)="setTag('especialista', tag)">
                   {{ tag }}
                 </ion-chip>
               </div>

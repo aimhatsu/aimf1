@@ -22,6 +22,10 @@ export class ProntuarioPage implements OnInit {
   cardContentSelected: any = 'PRONTUARIO';
   triagTags: any = [];
   diagTags: any = [];
+  conhecimentoTags: any = [];
+  alimentacaoTags: any = [];
+  atividadesTags: any = [];
+  especialistaTags: any = [];
   sintomasTriag: any = '';
   opiniaoTriag: any = '';
   sintomasDiag: any = '';
@@ -274,6 +278,70 @@ export class ProntuarioPage implements OnInit {
         });
       }
     });
+
+    //get conhecimento tags
+    this.api.get('mcontent/tags').then((res: any) => {
+      if (res) {
+        res.subscribe((data) => {
+          console.log("mcontent tags > ", data);
+
+          data.forEach(element => {
+            this.conhecimentoTags.push(element.content)
+          });
+        }, (err) => {
+          console.log(err);
+          this.api.proccessError(err)
+        });
+      }
+    });
+
+    //get mfood tags
+    this.api.get('mfood/tags').then((res: any) => {
+      if (res) {
+        res.subscribe((data) => {
+          console.log("mfood tags > ", data);
+
+          data.forEach(element => {
+            this.alimentacaoTags.push(element.food)
+          });
+        }, (err) => {
+          console.log(err);
+          this.api.proccessError(err)
+        });
+      }
+    });
+
+    //get mactivie tags
+    this.api.get('mactivie/tags').then((res: any) => {
+      if (res) {
+        res.subscribe((data) => {
+          console.log("mactivie tags > ", data);
+
+          data.forEach(element => {
+            this.atividadesTags.push(element.activies)
+          });
+        }, (err) => {
+          console.log(err);
+          this.api.proccessError(err)
+        });
+      }
+    });
+
+    //get mtreatm tags
+    this.api.get('mtreatm/tags').then((res: any) => {
+      if (res) {
+        res.subscribe((data) => {
+          console.log("mtreatm tags > ", data);
+
+          data.forEach(element => {
+            this.especialistaTags.push(element.treatm)
+          });
+        }, (err) => {
+          console.log(err);
+          this.api.proccessError(err)
+        });
+      }
+    });
   }
 
   async loadHoje(category) {
@@ -493,6 +561,7 @@ export class ProntuarioPage implements OnInit {
 
             triagem ? this.sintomasTriag = '' : this.sintomasDiag = ''
             triagem ? this.opiniaoTriag = '' : this.opiniaoDiag = ''
+            triagem ? this.cardContentSelected = 'DIAGNOSTICO' : this.cardContentSelected = 'TRATAMENTO'
           },
           (err) => {
             console.log("API error -> ", err);
@@ -501,6 +570,7 @@ export class ProntuarioPage implements OnInit {
               triagem ? this.sintomasTriag = '' : this.sintomasDiag = ''
               triagem ? this.opiniaoTriag = '' : this.opiniaoDiag = ''
               this.presentToast(err.error.text)
+              triagem ? this.cardContentSelected = 'DIAGNOSTICO' : this.cardContentSelected = 'TRATAMENTO'
             }
           }
         );
