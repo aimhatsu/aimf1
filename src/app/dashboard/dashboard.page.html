@@ -237,8 +237,10 @@
                   </ion-row>
 
                   <ion-row>
-                    <ion-card *ngIf="showImage"  style="position: absolute;z-index: 10;background: transparent;box-shadow: none !important;margin-top:10%;margin-left: 35%"   
-                  >
+                    <ion-card *ngIf="showImage"  style="position: absolute;z-index: 10;background: transparent;box-shadow: none !important;" 
+                    [style.margin-left.px]="pointX" 
+                    [style.margin-top.px]="pointY"  >
+                    <!--   -->
                       <ion-card-content>
                         <div style="position: absolute; margin-left: 40%;margin-top: 0px;border-radius: 100%;background: lightblue ;width: 10%;">
                           {{this.graphHoverPoint}}

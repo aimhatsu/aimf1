@@ -465,9 +465,10 @@ export class DashboardPage implements OnInit {
     console.log(e);
 
     this.graphHoverPoint = this.graphPoints[e.points[0].pointNumber]
+ 
 
-    this.pointX = e.points[0].bbox.x0 - 70;
-    this.pointY = e.points[0].bbox.y0 - 70;
+    this.pointX = e.points[0].bbox.x0 - 100;
+    //this.pointY = e.points[0].bbox.y0 - 100;
     this.xNumber = e.points[0].x
     this.yNumber = e.points[0].y
     this.zNumber = e.points[0].z
@@ -513,6 +514,7 @@ export class DashboardPage implements OnInit {
   loadGraphData(graphData:any) {
     
     this.graphPoints = graphData.AimChart[1].AimLabels
+    this.pointY =   graphData.AimChart[0].y[7]
     this.storage.get("mia_graph_data").then((data) => {
       if (data) { 
 
