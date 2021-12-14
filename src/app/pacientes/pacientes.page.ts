@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { NavController } from "@ionic/angular";
+import { ModalController, NavController } from "@ionic/angular";
 import { NavigationExtras } from "@angular/router";
 import { StorageService } from "../services/storage/storage.service";
 import { ApiService } from "../services/api/api.service";
 import Chart from "chart.js";
+import { FormModalPage } from "../form-modal/form-modal.page";
 
 @Component({
   selector: "app-pacientes",
@@ -29,7 +30,8 @@ export class PacientesPage implements OnInit {
   constructor(
     public api: ApiService,
     public storage: StorageService,
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    private modalController: ModalController
   ) {
     this.date = new Date();
     this.year = this.date.getFullYear();
@@ -434,4 +436,20 @@ export class PacientesPage implements OnInit {
     };
     this.navCtrl.navigateForward("prontuario", navigationExtras);
   }
+
+  async open_agendar(item) {
+    const modal = await this.modalController.create({
+      component: FormModalPage,
+      componentProps: {
+        form_type: "agendar",
+        title: "Agendar retorno",
+        item: item._id.$oid
+      },
+    });
+    await modal.present();
+
+    const { data } = await modal.onWillDismiss();
+    console.log("agendar Modal Dismiss ", data);
+  }
+
 }
