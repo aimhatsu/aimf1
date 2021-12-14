@@ -38,7 +38,6 @@ export class FormModalPage implements OnInit {
   contentForm: FormGroup;
   foodForm: FormGroup;
   activityForm: FormGroup;
-  agendarForm: FormGroup;
 
   constructor(
     public router: Router,
@@ -56,21 +55,6 @@ export class FormModalPage implements OnInit {
     console.log(this.title);
     console.log(this.form_type);
     console.log(this.item);
-
-    this.agendarForm = formBuilder.group({
-      tratamento: [
-        "",
-        Validators.compose([Validators.maxLength(150), Validators.required]),
-      ],
-      data: [
-        "",
-        Validators.compose([Validators.maxLength(150), Validators.required]),
-      ],
-      duracao: [
-        "",
-        Validators.compose([Validators.maxLength(150), Validators.required]),
-      ]
-    });
 
     this.statusForm = formBuilder.group({
       patolog: [
@@ -833,19 +817,6 @@ export class FormModalPage implements OnInit {
     this.post_API("insertnivel", fd);
   }
 
-  async submitAgendar(data: any) {
-    let split_tz = data.data.toString().substr(data.data.toString().indexOf('+')+1, data.data.toString().length).replace(':', '')
-    let seconds = data.data.toString().substring(0, data.data.toString().indexOf('+')-6) + '00.000+' + split_tz
-    data.duracao = data.duracao.split(':');
-    data.duracao = (+data.duracao[0]) * 60 + (+data.duracao[1])
-    let fd = new FormData();
-    fd.append("servico", data.tratamento);
-    fd.append("dataiso", seconds);
-    fd.append("duracao", data.duracao);
-
-    this.post_API("reagendar/" + this.item, fd);
-  }
-
   async post_API(url, fd) {
     this.api.post_params(url, fd).then((res: any) => {
       console.log("After parse ", res);
@@ -865,14 +836,6 @@ export class FormModalPage implements OnInit {
           (err) => {
             console.log("API error -> ", err);
             this.api.proccessError(err);
-            if (err.status === 200 && err.statusText === 'OK' && url.toString().includes('reagendar')) {
-              this.util.presentToast({ header: "Success!", message: err.error.text })
-              .then(() => {
-                this.modalController.dismiss({
-                  data: "created",
-                });
-              });
-            }
           }
         );
       }
