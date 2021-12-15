@@ -1,4 +1,4 @@
-<ion-header> 
+<ion-header>
   <ion-toolbar color="light">
     <ion-buttons slot="start">
       <ion-icon name="close" style="font-size: 1.5rem;" (click)="close()"></ion-icon>
@@ -870,6 +870,36 @@
       </ion-item>
 
       <ion-button (click)="submitLevels(levelForm.value)" expand="block" color="secondary">
+        <p>Publicar</p>
+      </ion-button>
+    </form>
+  </div>
+
+  <!-- Agendar -->
+  <div *ngIf="form_type == 'agendar'">
+    <form [formGroup]="agendarForm">
+      <ion-item color="transparent">
+        <ion-label position="stacked">
+          Tratamento:
+        </ion-label>
+        <ion-input type="text" formControlName="tratamento"></ion-input>
+      </ion-item>
+
+      <ion-item color="transparent">
+        <ion-label position="stacked">
+          Data:
+        </ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY HH:mm" placeholder="DD-MM-YYYY HH:mm" formControlName="data"></ion-datetime>
+      </ion-item>
+
+      <ion-item color="transparent">
+        <ion-label position="stacked">
+          Duracao:
+        </ion-label>
+        <ion-input placeholder="00:00" type="text" formControlName="duracao"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="submitAgendar(agendarForm.value)" expand="block" color="secondary">
         <p>Publicar</p>
       </ion-button>
     </form>
