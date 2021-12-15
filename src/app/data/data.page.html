@@ -504,15 +504,15 @@
                 >
               </p>
             </ion-label>
-            <!-- 
+            <!--
                     <ion-label>
-         
+
            <p>Editar Formulário </p>
               <ion-icon
               name="create-outline"
               style="font-size: x-large; margin-left: 15%; cursor: pointer;color: #EF9E95;"
               (click)="edit_multiple(item)"
-              
+
             ></ion-icon>
             </ion-label>
             <ion-label>
@@ -521,7 +521,7 @@
                  name="close-outline"
                  style="font-size: x-large; margin-left: 15%; cursor: pointer;color: #EF9E95;"
                  (click)="del_multiple(item)"
-         
+
                ></ion-icon>
                </ion-label>
               -->
@@ -529,18 +529,18 @@
 
           <ion-item class="ion-hide-sm-up">
             <ion-label>
-              <!-- 
+              <!--
           <p style="display: flex;">Excluir Formulário     <ion-icon
                 name="close-outline"
                 style="font-size: x-large; margin-left: auto; cursor: pointer;color: #EF9E95;"
                 (click)="del_multiple(item)"
-            
+
               ></ion-icon></p>
               <p style="display: flex;">Editar Formulário     <ion-icon
                 name="create-outline"
                 style="font-size: x-large; margin-left: auto; cursor: pointer;color: #EF9E95;"
                 (click)="edit_multiple(item)"
-            
+
               ></ion-icon></p>
               -->
 
@@ -684,7 +684,7 @@
           </ion-grid>
         </ion-card>
 
-        <!-- 
+        <!--
 <ion-item lines="none">
             <ion-label>
               <h2><strong>Input</strong></h2>
@@ -815,6 +815,11 @@
                       </p>
 
                       <p>
+                        {{item.Titles?.calc}}:
+                        <b>{{item?.Status[0]?.calc}}</b>
+                      </p>
+
+                      <p>
                         {{item.Titles?.cid}}: <b>{{item.Status[0]?.cid}}</b>
                       </p>
                       <p>
@@ -838,7 +843,7 @@
                         >
                       </p>
                       <p>
-                        {{item.Titles.typo}}:
+                        {{item.Titles.type}}:
                         <b
                           >{{item.Status[0]?.typo?
                           item.Status[0]?.typo:'N/A'}}</b
@@ -1213,7 +1218,9 @@
           </ion-col>
         </ion-row>
 
-        <!-- 
+
+          <!--
+
  <ion-row>
             <ion-col size="6" style="padding: 0px">
               <ion-row class="item-bg-dark">
@@ -1415,7 +1422,7 @@
               </ion-row>
             </ion-col>
           </ion-row>
-          
+
           -->
       </ion-grid>
     </div>

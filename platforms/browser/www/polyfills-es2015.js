@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\felip\OneDrive\Área de Trabalho\aimf1-main\aimf1-main\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /home/aim/aimf1-layout-tables-card-form/aimf1/src/polyfills.ts */"hN/g");
 
 
 /***/ }),
