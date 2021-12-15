@@ -1,4 +1,4 @@
-import { UtilService } from './../services/util/util.service';
+import { UtilService } from "./../services/util/util.service";
 import {
   Component,
   ElementRef,
@@ -30,13 +30,14 @@ export class DataPage implements OnInit {
 
   @ViewChildren("formIndex") formIndex: QueryList<ElementRef>;
   filterBiomark: any[];
+  allFiltersLabels: any;
 
   constructor(
     public api: ApiService,
     public alertController: AlertController,
     public modalController: ModalController,
     public loadingController: LoadingController,
-    private util:UtilService
+    private util: UtilService
   ) {}
 
   ngOnInit() {}
@@ -57,8 +58,7 @@ export class DataPage implements OnInit {
     }
 
     if (this.tab == "status") {
-      
-    this.presentLoading();
+      this.presentLoading();
       this.filterArray = [];
       this.allFilters = [];
       this.status_biomark = [];
@@ -97,50 +97,48 @@ export class DataPage implements OnInit {
           checked: true,
           form: "autoexams",
         },
-      ]
+      ];
 
       this.filterInputs_alert = [];
       this.filterInputs_alert = this.fillAlertInputs();
-      console.log(this.filterArray)
-    
+      console.log(this.filterArray);
+
       for (var i = 0; i < this.filterArray.length; i++) {
-        this.loadStatus(this.filterArray[i].form, this.filterArray[i].checked);
+        this.loadStatus(this.filterArray[i].form, this.filterArray[i].checked,i);
       }
 
-      for (let i = 0; i < this.filterBiomark.length; i++) {
-        this.loadBiomarks(this.filterBiomark[i].form,this.filterBiomark[i].checked)
-        
-      }
+
+     
     }
 
     if (this.tab == "rec") {
       this.allFilters = [];
+      this.allFiltersLabels =[]
       this.filterArray = [
         {
           checked: true,
           form: "treatm",
-          title:'Tratamento'
+          title: "Tratamento",
         },
         {
           checked: true,
           form: "food",
-          title:'Alimentação'
+          title: "Alimentação",
         },
         {
           checked: true,
           form: "content",
-          title:'Satisfação'
+          title: "Satisfação",
         },
         {
           checked: true,
           form: "activie",
-          title:'Atividade'
+          title: "Atividade",
         },
       ];
 
       for (let i = 0; i < this.filterArray.length; i++) {
-       this.loadRecomen(this.filterArray[i].form, this.filterArray[i].checked);
-        
+        this.loadRecomen(this.filterArray[i].form, this.filterArray[i].checked);
       }
     }
   }
@@ -175,7 +173,7 @@ export class DataPage implements OnInit {
                   }, 2000);
                 }
               }
-/*
+              /*
               if (this.tab == "rec") {
                 this.loadRecomen(
                   this.filterArray[i].form,
@@ -208,15 +206,24 @@ export class DataPage implements OnInit {
   }
 
   async loadRecomen(form, checked, index?) {
-    console.log(form)
+    console.log(form);
     if (checked) {
-      this.api.get("recomen/"+form).then((res: any) => {
+      this.api.get("recomen/" + form).then((res: any) => {
         if (res) {
           res.subscribe(
             (data) => {
               console.log("Recomen API > ", data);
-              this.allFilters.push(data);
-
+              if (this.allFilters.length <=0) {
+                this.allFiltersLabels.push({
+                  label:data.titles})
+              }
+              console.log(this.allFiltersLabels)
+              for (let i = 0; i < data.status.length; i++) {
+                data.status[i].form = form
+               
+                this.allFilters.push(data.status[i]);
+                
+              }
               console.log("Recomen filter > ", this.allFilters);
             },
             (err) => {
@@ -245,7 +252,6 @@ export class DataPage implements OnInit {
   }
 
   async loadStatus(form, checked, index?) {
-   
     if (checked) {
       this.api.get("pato/status/" + form).then((res: any) => {
         if (res) {
@@ -253,13 +259,21 @@ export class DataPage implements OnInit {
             (data) => {
               console.log("Status API > ", data);
               this.allFilters.push(data);
+              this.allFilters['index']= index;
+
+              if (data.Status.length >0 && data.Status[0].patolog) {
+
+                this.filterBiomark.forEach((element) => {
+                  this.loadBiomarks(element.form, element.checked,data,index);
+                });
+
+                
+              }
               setTimeout(() => {
                 console.log("dismiss load forms");
                 this.loadingController
                   .getTop()
-                  .then((v) =>
-                    v ? this.loadingController.dismiss() : null
-                  );
+                  .then((v) => (v ? this.loadingController.dismiss() : null));
               }, 2000);
             },
             (err) => {
@@ -269,67 +283,82 @@ export class DataPage implements OnInit {
                 console.log("dismiss load forms");
                 this.loadingController
                   .getTop()
-                  .then((v) =>
-                    v ? this.loadingController.dismiss() : null
-                  );
+                  .then((v) => (v ? this.loadingController.dismiss() : null));
               }, 2000);
             }
           );
         }
       });
-
     }
   }
 
-  async loadBiomarks(form, checked,){
-
-    if (checked) {
-      
-      this.api.get("biomark/"+form).then((res: any) => {
-        if (res) {
-          res.subscribe(
-            (data) => {
+  async loadBiomarks(form, checked,data,index?) {
+    if (data.Status[0].patolog) {
+          
+          
               console.log("Status biomark API > ", data);
-              this.status_biomark.push(data);
-            
-              
-              console.log("Status biomark filter > ", this.status_biomark);
-              this.loadingController
-                .getTop()
-                .then((v) => (v ? this.loadingController.dismiss() : null));
-            },
-            (err) => {
-              console.log("API error -> ", err);
-              this.api.proccessError(err);
-              setTimeout(() => {
-                console.log("dismiss load forms");
-                this.loadingController
-                  .getTop()
-                  .then((v) =>
-                    v ? this.loadingController.dismiss() : null
-                  );
-              }, 2000);
-            }
-          );
-        }
-      });
-    }
+              console.log("Index > ", index);
 
+              console.log("Status biomark filter > ", this.status_biomark);
+
+        
+                  console.log(
+                    `biomark/${form}/${data.Status[0].patolog}`
+                  );
+
+
+                  this.api
+                    .get(
+                      `biomark/${form}/${data.Status[0].patolog}`
+                    )
+                    .then((res) => {
+                      if (res) {
+                        res.subscribe((Filter) => {
+                         // this.allFilters[index].biomarks.push(Filter)
+                          this.status_biomark.push(Filter);
+                     
+                       
+                        });
+                        this.loadingController
+                        .getTop()
+                        .then((v) => (v ? this.loadingController.dismiss() : null));
+                      }
+                    }).catch(err=>{
+                      console.log("API error -> ", err);
+                      this.api.proccessError(err);
+                      setTimeout(() => {
+                        console.log("dismiss load forms");
+                        this.loadingController
+                          .getTop()
+                          .then((v) => (v ? this.loadingController.dismiss() : null));
+                      }, 2000);
+                    })
+              
+         
+       
+        
+       
+       
+        
+    }
   }
 
-  async del_multiple(item,index) {
+  async del_multiple(item, index) {
     let fd = new FormData();
-console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].ordem)
+    console.log(
+      "delquest/" + item.formularios[0].form + "/" + item.questoes[index].ordem
+    );
 
     const alert = await this.alertController.create({
       header: `Deseja deletar a questão,${item.questoes[index].pergunta}`,
       message: "Digite 'Sim' para deletar a questão selecionada",
       inputs: [
         {
-          name: 'inputOK',
-          type: 'text',
-          placeholder: "Digite 'Sim' aqui."
-        },],
+          name: "inputOK",
+          type: "text",
+          placeholder: "Digite 'Sim' aqui.",
+        },
+      ],
       buttons: [
         {
           text: "Cancel",
@@ -342,32 +371,36 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
         {
           text: "Delete",
           handler: (value) => {
-            console.log(value.inputOK)
+            console.log(value.inputOK);
 
-            if (value.inputOK === 'Sim') {
+            if (value.inputOK === "Sim") {
               fd.append("yes", "Sim");
               this.api
-              .post_params("delquest/" + item.formularios[0].form + "/" + item.questoes[index].ordem, fd)
-              .then((res: any) => {
-                if (res) {
-                  res.subscribe(
-                    (data) => {
-                      console.log("Multiple del API > ", data);
-                      this.util.presentToast({ header: "", message: data });
-                      this.loadForms();
-                   
-                    },
-                    (err) => {
-                      console.log("API error -> ", err);
-                      this.api.proccessError(err);
-                    }
-                  );
-                }
-              });
+                .post_params(
+                  "delquest/" +
+                    item.formularios[0].form +
+                    "/" +
+                    item.questoes[index].ordem,
+                  fd
+                )
+                .then((res: any) => {
+                  if (res) {
+                    res.subscribe(
+                      (data) => {
+                        console.log("Multiple del API > ", data);
+                        this.util.presentToast({ header: "", message: data });
+                        this.loadForms();
+                      },
+                      (err) => {
+                        console.log("API error -> ", err);
+                        this.api.proccessError(err);
+                      }
+                    );
+                  }
+                });
             } else {
-        return
+              return;
             }
-         
           },
         },
       ],
@@ -376,8 +409,7 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
     await alert.present();
   }
 
-  async delRec(item,index){
-
+  async delRec(item, index) {
     const alert = await this.alertController.create({
       header: "Are you sure",
       message: "Are you sure, you want to delete this status",
@@ -412,9 +444,7 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
     });
 
     await alert.present();
-    
   }
-
 
   async delStatus() {
     const alert = await this.alertController.create({
@@ -514,7 +544,7 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
   }
 
   queryFormIndex(item, index) {
-    const height = item.questoes.length * 75;
+    const height = item.Status.length * 75;
     console.log(item);
 
     if (item.show) {
@@ -552,6 +582,7 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
 
   async openFilter() {
     this.allFilters = [];
+    this.allFiltersLabels =[]
     const alert = await this.alertController.create({
       header: "Filtros",
       inputs: this.filterInputs_alert,
@@ -607,14 +638,14 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
               for (var i = 0; i < this.filterArray.length; i++) {
                 this.loadStatus(
                   this.filterArray[i].form,
-                  this.filterArray[i].checked
+                  this.filterArray[i].checked,
+                  i
                 );
               }
             }
 
             if (this.tab == "rec") {
               for (var i = 0; i < this.filterArray.length; i++) {
-   
                 this.loadRecomen(
                   this.filterArray[i].form,
                   this.filterArray[i].checked
@@ -752,14 +783,14 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
     });
   }
 
-  async edit_multiple(item,index?) {
+  async edit_multiple(item, index?) {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
         form_type: "multiple",
         title: "Editar Questão de Múltipla Escolha",
         item: item,
-        index:index
+        index: index,
       },
     });
     await modal.present();
@@ -775,14 +806,14 @@ console.log("delquest/" + item.formularios[0].form + "/" + item.questoes[index].
     });
   }
 
-  async edit_Rec(item,index?){
+  async edit_Rec(item, index?) {
     const modal = await this.modalController.create({
       component: FormModalPage,
       componentProps: {
         form_type: "rec",
         title: "Editar Recomendações",
         item: item,
-        index:index
+        index: index,
       },
     });
     await modal.present();

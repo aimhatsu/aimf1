@@ -237,13 +237,51 @@
                   </ion-row>
 
                   <ion-row>
+                    <ion-card *ngIf="showImage"  style="position: absolute;z-index: 10;background: transparent;box-shadow: none !important;" 
+                    [style.margin-left.px]="pointX" 
+                    [style.margin-top.px]="pointY"  >
+                    <!--   -->
+                      <ion-card-content>
+                        <div style="position: absolute; margin-left: 40%;margin-top: 0px;border-radius: 100%;background: lightblue ;width: 10%;">
+                          {{this.graphHoverPoint}}
+                        </div>
+                        <div style="position: absolute; margin-left: -10px;margin-top: 24%;border-radius: 100%;background: lightblue ;width: 10%">
+                          {{this.graphHoverPoint}}
+                        </div>
+                        <div style="position: absolute; margin-left: 85%;margin-top: 24%;border-radius: 100%;background: lightblue ;width: 10%">
+                          {{this.graphHoverPoint}}
+                        </div>
+                        <div style="position: absolute; margin-left: -10px;margin-top: 75%;border-radius: 100%;background: lightblue ;width: 10%">
+                          {{this.graphHoverPoint}}
+                        </div>
+                        <div style="position: absolute; margin-left: 85%;margin-top: 75%;border-radius: 100%;background: lightblue ;width: 10%">
+                          {{this.graphHoverPoint}}
+                        </div>
+                   
+                        <img #detailImage  src="../../assets/images/pointHover.png" style="width: 300px;max-width: 300px ;"
+                     >
+                      
+                     <div style="position: absolute; margin-left: 40%;margin-top: -20px;border-radius: 100%;background: lightblue ;width: 10%">
+                      {{this.graphHoverPoint}}
+                    </div>
+
+                     <ion-item lines='none' color="none"  >
+                   
+                      <ion-label >x: {{xNumber}}</ion-label>
+                      <ion-label >y: {{yNumber}}</ion-label>
+                      <ion-label >z: {{zNumber}}</ion-label>
+                    </ion-item>
+                      </ion-card-content>
+                    </ion-card>
+               
+
                     <ion-col size="12">
                       <!--  <img (click)="get_emot()" class="mind-img" src="../../assets/images/mind-icon.png">
                       <img (click)="get_corpo()" class="body-img" src="../../assets/images/body-icon.png">
                       <img (click)="get_mente()" class="emot-img" src="../../assets/images/emot-icon.png">
                    <canvas id="radarChart" style="margin-top: 45px" width="300" height="320"
                         responsive="true"></canvas>-->
-                      <div style="display: flex;">
+                      <div style="display: flex;height: auto;" *ngIf="graph.data" >
                         <plotly-plot class="plotly-chart"
                         [divId]='chartID'
                           [data]="graph.data"
@@ -251,7 +289,10 @@
                           [useResizeHandler]="true"
                           [style]="{position: 'relative'}"
                           (hover)="graphonHover($event)"
+                          (unhover)="graphunHover($event)"
+                     
                         >
+                    
                         </plotly-plot>
                       </div>
                     </ion-col>
