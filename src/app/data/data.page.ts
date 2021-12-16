@@ -546,8 +546,9 @@ export class DataPage implements OnInit {
   }
 
   queryFormIndex(item, index) {
-    const height = item.Status.length * 75;
-    console.log(item);
+    console.log(item)
+    //const height = item.Status.length * 75;
+   // console.log(item);
 
     if (item.show) {
       item.show = false;
