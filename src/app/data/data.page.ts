@@ -258,17 +258,25 @@ export class DataPage implements OnInit {
           res.subscribe(
             (data) => {
               console.log("Status API > ", data);
-              this.allFilters.push(data);
-              this.allFilters['index']= index;
 
-              if (data.Status.length >0 && data.Status[0].patolog) {
-
-                this.filterBiomark.forEach((element) => {
-                  this.loadBiomarks(element.form, element.checked,data,index);
-                });
-
-                
+              if (data.Status.length >0) {
+                this.allFilters.push(data);
+                this.allFilters['index']= index;
+                console.log(this.allFilters)
               }
+            
+              for (let i = 0; i < data.Status.length; i++) {
+         
+                if (data.Status.length >0 && data.Status[i].patolog) {
+
+                  this.filterBiomark.forEach((element) => {
+                    this.loadBiomarks(element.form, element.checked,data.Status[i],index);
+                  });
+  
+                  
+                }
+              }
+             
               setTimeout(() => {
                 console.log("dismiss load forms");
                 this.loadingController
@@ -293,7 +301,7 @@ export class DataPage implements OnInit {
   }
 
   async loadBiomarks(form, checked,data,index?) {
-    if (data.Status[0].patolog) {
+    if (data.patolog) {
           
           
               console.log("Status biomark API > ", data);
@@ -303,13 +311,13 @@ export class DataPage implements OnInit {
 
         
                   console.log(
-                    `biomark/${form}/${data.Status[0].patolog}`
+                    `biomark/${form}/${data.patolog}`
                   );
 
 
                   this.api
                     .get(
-                      `biomark/${form}/${data.Status[0].patolog}`
+                      `biomark/${form}/${data.patolog}`
                     )
                     .then((res) => {
                       if (res) {
@@ -332,14 +340,8 @@ export class DataPage implements OnInit {
                           .getTop()
                           .then((v) => (v ? this.loadingController.dismiss() : null));
                       }, 2000);
-                    })
-              
-         
+                    })              
        
-        
-       
-       
-        
     }
   }
 
