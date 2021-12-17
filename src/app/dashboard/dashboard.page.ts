@@ -7,6 +7,7 @@ import { ApiService } from "../services/api/api.service";
 import { IonSlides } from "@ionic/angular";
 import Chart from "chart.js";
 import { GraphModel } from "../services/models/3dgraph";
+import { stringify } from "querystring";
 declare var plotly: any;
 declare var google: any;
 
@@ -420,49 +421,173 @@ export class DashboardPage implements OnInit {
    let width = 900;
    let height = 500
 
-  this.graph = {
-      data: [
-        {
-          y: [
-          ],
-          x: [],
-          z: [],
-          type: "scatter3d",
-          hoverinfo: "none",
-  
-          //text: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E'],
-          marker: {
-            size: 12,
-            symbol: "circle",
-            line: {
-              width: 1,
-            },
-            opacity: 0.8,
-          },
+   this.graph = {
+    data: [
+      {
+        y: [
+        ],
+        x: [],
+        z: [],
+        text:["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a"],
+        labels: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D'],
+        
+        type: "scatter3d",
+        mode: "markers+ text",
+        hoverinfo: "text",
+        hovermode:"x unified",
+        line:{
+          width: 12
         },
-      ],
-  
-      layout: {
-        autosize: true,
-        scene: { xaxis: { autorange: "reversed" }},
-        margin: {
-          l: 0,
-          r: 10,
-          b: 0,
-          t: 0,
-          pad: 0
-      },
-      width:width,
-      height:height,
-      },
+      
+       // hovermode: "x unified",
+        
+        showlegend: false,
 
-    };
+        //text: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E'],
+        marker: {
+          size: 12,
+          sizemode:"area", 
+          symbol: "circle",
+          line: {
+            width: 12,
+          },
+          color:"#3333FF",   
+          opacity: 0.8,
+       
+        },
+      },
+      {
+        y: [
+        ],
+        x: [],
+        z:  [
+        ],
+        type: "scatter3d",
+        mode: "lines",
+        hoverinfo: "none",
+        hovermode:"x unified",
+        line:{
+          width: 5
+        },
+        showlegend: false,
+
+        text: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D'],
+        labels: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D'],
+        
+        marker: {
+          size: 200,
+          sizemode:"area",
+         
+          symbol: "square",
+          line: {
+            width: 12,
+          },
+          color:"#AEB4B8",   
+          opacity: 1,
+          
+        },
+      },
+      {
+        y: [
+        ],
+        x: [],
+        z:  [
+        ],
+        type: "scatter3d",
+        mode: "lines",
+       hoverinfo: "none", 
+       hovermode:"x unified",
+       line:{
+        width: 8
+      },
+      
+       
+        showlegend: false,
+
+        text: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D'],
+        labels: ['Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D', 'Text E','Text A', 'Text B', 'Text C', 'Text D'],
+        
+        marker: {
+          size: 12,  sizemode:"area",
+          
+          symbol: "circle",
+          line: {
+            width: 8,
+          },
+          color:"#F43209",   
+          opacity: 1,
+        },
+      }
+    ],
+
+    layout: {
+      hovermode: "x unified",
+      hoverdistance: 500,
+      autosize: true,
+      scene: { xaxis: { autorange: "reversed" }},
+      margin: {
+        l: 0,
+        r: 10,
+        b: 0,
+        t: 0,
+        pad: 0
+    },
+    width:width,
+    height:height,
+    },
+
+  };
+
 
   }
 
   graphonHover(e) {
     console.log("Hover " + e);
     console.log(e);
+    console.log("Value of x is", e.points[0].x)
+    let hdata=this.graph.data[0].x
+    console.log("Value of hdata is", hdata)
+    let datax=[]
+    let datay=[]//this.graph.data[0].y
+    let dataz=[]//this.graph.data[0].z
+  let iarr=[]
+  hdata.forEach(function (value,index) {
+    if(value==e.points[0].x)
+    {
+      iarr.push(index)
+      //datay.push(this.graph.data[0].y[index])
+      //dataz.push(this.graph.data[0].z[index])
+
+    }
+  console.log(">>>>>>>>>", iarr)
+  });
+let i=0
+this.graph.data[2].x=[]
+this.graph.data[2].y=[]
+this.graph.data[2].z=[]
+this.graph.data[1].x=[]
+this.graph.data[1].y=[]
+this.graph.data[1].z=[]
+  for( i = 0; i < iarr.length; i++)
+  {
+    this.graph.data[2].x.push(this.graph.data[0].x[iarr[i]])
+    this.graph.data[2].y.push(this.graph.data[0].y[iarr[i]])
+    this.graph.data[2].z.push(this.graph.data[0].z[iarr[i]])
+
+    this.graph.data[1].x.push(this.graph.data[0].x[iarr[i]])
+    this.graph.data[1].y.push(this.graph.data[0].y[iarr[i]])
+    this.graph.data[1].z.push(this.graph.data[0].z[iarr[i]])
+
+    this.graph.data[1].x.push(this.graph.data[0].x[iarr[i]])
+    this.graph.data[1].y.push(0)
+    this.graph.data[1].z.push(0)
+
+  }
+  this.graph.data[2].x.push(this.graph.data[0].x[iarr[0]])
+  this.graph.data[2].y.push(this.graph.data[0].y[iarr[0]])
+  this.graph.data[2].z.push(this.graph.data[0].z[iarr[0]])
+console.log(">>>>>", this.graph.data[2])
+    
 
     this.graphHoverPoint = this.graphPoints[e.points[0].pointNumber]
  
@@ -480,6 +605,12 @@ export class DashboardPage implements OnInit {
 
   graphunHover(e) {
     this.graphHoverPoint = ''
+    this.graph.data[2].x=[]
+    this.graph.data[2].y=[]
+    this.graph.data[2].z=[]
+    this.graph.data[1].x=[]
+    this.graph.data[1].y=[]
+    this.graph.data[1].z=[]
     console.log("Unhover " + e);
     setTimeout(() => {
       this.showImage = false;
@@ -513,15 +644,36 @@ export class DashboardPage implements OnInit {
 
   loadGraphData(graphData:any) {
     
+   
     this.graphPoints = graphData.AimChart[1].AimLabels
+    let labels=[]
+
+    for(let i=0; i<this.graphPoints.length; i++ )
+    {
+labels.push(this.graphPoints[i].toString())
+    }
+    console.log(this.graphPoints)
+    this.graph.data[0].text=labels
     this.pointY =   graphData.AimChart[0].y[7]
     this.storage.get("mia_graph_data").then((data) => {
       if (data) { 
+        /*x: (19) [1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3]
+y: (19) [10, 0, -10, -10, 0, 10, 0, 10,? 0, -10, -8, 0, 10, 10, 0, -10, -10, 0, 10]
+z: (19) [-5, -10, -5, 5, ?10, 5, 0, -5, ? -10, -5, 4, 2, 5, -5, -10, -5, 5, 10, 5]
+*/
 
+        console.log("***********Graph data***********")
         console.log(data)
         this.graph.data[0].x = data.x;
         this.graph.data[0].y = data.y;
         this.graph.data[0].z = data.z;
+        
+       /* this.graph.data[1].x = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+        this.graph.data[1].y = [10, 0, 0, 0,-10,0,-10,0,0,0,10]
+        this.graph.data[1].z = [-5,0, -10,0, -5,0,5,0,10,0,5]
+        this.graph.data[2].x=[1,1,1,1,1,1,1]
+        this.graph.data[2].y= [10, 0, -10, -10, 0,10]
+        this.graph.data[2].z= [-5, -10, -5, 5, 10, 5]*/
       } else {
     
         let grapDataObj = {x: graphData.AimChart[0].x,
