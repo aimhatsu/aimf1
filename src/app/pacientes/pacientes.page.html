@@ -191,13 +191,21 @@
                 <p class="p-slide-subtitlecpf">CPF:{{item.cpf}}</p>
               </ion-col>
 
-              <ion-col size="9">
+              <ion-col size="7">
                 <h4 class="h4-slide">
                   <strong>{{item.nome}} {{item.snome}}</strong>
                 </h4>
                 <p class="p-slide-title">Historic 360</p>
                 <p class="p-slide-subtitle">Última análise em:</p>
               </ion-col>
+              <ion-col size="2">
+                
+             <div class="btnn" [ngStyle]="{'background-color': item.priority}"></div>
+           
+              </ion-col>
+              
+
+              
             </ion-row>
 
             <ion-row>

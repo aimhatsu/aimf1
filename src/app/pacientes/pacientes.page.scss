@@ -4,7 +4,19 @@
     display: flex; 
     margin: 0px;
 }
-
+.btnn {
+    height: 40px;
+    line-height: 40px;  
+    width: 40px;  
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 50%;
+   
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+  }
 .search-bar {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 2px 6px #00000029;
@@ -70,7 +82,10 @@
         left: 43%;
     }
 }
-
+.colorcycle
+{
+    z-index: 100;
+}
 .slide-img{
     width: 70px;
     height: 70px;
@@ -106,4 +121,5 @@
     p{
         color: #3C3C3C !important;
     }
+    
 }
